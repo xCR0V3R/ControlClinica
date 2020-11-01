@@ -159,7 +159,7 @@ public class VReporteCitas extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jcbMedicos, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(101, 101, 101)
+                        .addGap(110, 110, 110)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 493, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(257, 257, 257)
@@ -185,7 +185,7 @@ public class VReporteCitas extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jcbMedicos))))
-                .addGap(54, 54, 54)
+                .addGap(42, 42, 42)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(76, 76, 76)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -242,24 +242,24 @@ public class VReporteCitas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBuscar;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    public javax.swing.JButton btnBuscar;
+    public javax.swing.JButton jButton1;
+    public javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JMenuBar jMenuBar1;
+    public javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JComboBox<String> jcbArea;
-    private javax.swing.JComboBox<String> jcbMedicos;
-    private javax.swing.JMenu jmArchivo;
-    private javax.swing.JMenu jmAyuda;
-    private javax.swing.JMenu jmExportar;
-    private javax.swing.JMenuItem jmiAyuda;
-    private javax.swing.JMenuItem jmiExcel;
-    private javax.swing.JMenuItem jmiForo;
-    private javax.swing.JMenuItem jmiPDF;
-    private javax.swing.JMenuItem jmiSitioWeb;
+    public javax.swing.JTable jTable1;
+    public javax.swing.JComboBox<String> jcbArea;
+    public javax.swing.JComboBox<String> jcbMedicos;
+    public javax.swing.JMenu jmArchivo;
+    public javax.swing.JMenu jmAyuda;
+    public javax.swing.JMenu jmExportar;
+    public javax.swing.JMenuItem jmiAyuda;
+    public javax.swing.JMenuItem jmiExcel;
+    public javax.swing.JMenuItem jmiForo;
+    public javax.swing.JMenuItem jmiPDF;
+    public javax.swing.JMenuItem jmiSitioWeb;
     // End of variables declaration//GEN-END:variables
 }
