@@ -2,7 +2,7 @@
 
 package modelo;
 
-
+//Probando 123
 
 public class Medico {
     int precio;
