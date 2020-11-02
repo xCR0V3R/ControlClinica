@@ -1,5 +1,5 @@
 package util;
-import java.sql.*;
+import java.sql.*;//n
 public class MySQLConexion {
 	public static Connection getConexion(){ 
 		Connection con = null;
