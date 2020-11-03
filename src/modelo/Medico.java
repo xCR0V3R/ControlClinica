@@ -2,33 +2,36 @@
 
 package modelo;
 
-//Probando 123
-//Volviendo a probar 123
-//Re probando
-//........
-public class Medico {
-    int precio;
-    private int cantidad;
+public class Medico extends Usuario {
+    private String codes; 
+    private String codmed;
+
+    public Medico() {
+    }
+
+    public Medico(String codes, String codmed, String iptip, String fecha, String nombre, String correo, String pswd) {
+        super(iptip, fecha, nombre, correo, pswd);
+        this.codes = codes;
+        this.codmed = codmed;
+    }
+
+    public String getCodes() {
+        return codes;
+    }
+
+    public void setCodes(String codes) {
+        this.codes = codes;
+    }
+
+    public String getCodmed() {
+        return codmed;
+    }
+
+    public void setCodmed(String codmed) {
+        this.codmed = codmed;
+    }
     
-    double Total(){
-        return precio*cantidad;
-    }
-
-    public int getCantidad() {
-        return cantidad;
-    }
-
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
-    }
-
-    public int getPrecio() {
-        return precio;
-    }
-
-    public void setPrecio(int precio) {
-        this.precio = precio;
-    }
+    
     
     
 }
