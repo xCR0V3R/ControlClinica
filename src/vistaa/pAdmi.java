@@ -50,7 +50,12 @@ public class pAdmi extends javax.swing.JFrame {
         btnReportes.setText("Reporte Citas");
 
         btnNuevoP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/nuevoPaciente.png"))); // NOI18N
-        btnNuevoP.setText("Nuevo Paciente");
+        btnNuevoP.setText("Nuevo Cita");
+        btnNuevoP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNuevoPActionPerformed(evt);
+            }
+        });
 
         btnConfigUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/configUser.png"))); // NOI18N
         btnConfigUser.setText("Configurar Perfil");
@@ -106,9 +111,10 @@ public class pAdmi extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(14, 14, 14)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(btnNuevoP)
-                                    .addComponent(btnReportes, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btnConfigUser))))
+                                    .addComponent(btnConfigUser)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(btnNuevoP, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(btnReportes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)))))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -173,6 +179,10 @@ public class pAdmi extends javax.swing.JFrame {
     private void jmiAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiAyudaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jmiAyudaActionPerformed
+
+    private void btnNuevoPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoPActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnNuevoPActionPerformed
 
     /**
      * @param args the command line arguments
