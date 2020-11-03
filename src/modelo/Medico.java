@@ -2,7 +2,7 @@
 
 package modelo;
 
-public class Medico extends Usuario {
+public class Medico extends Usuario1 {
     private String codes; 
     private String codmed;
 
