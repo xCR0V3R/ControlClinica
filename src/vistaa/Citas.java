@@ -82,12 +82,15 @@ public class Citas extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(102, 0, 51));
         jLabel5.setText("DNI:");
 
+        btnRegistrar.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
         btnRegistrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Registrar.png"))); // NOI18N
         btnRegistrar.setText("Registrar");
 
+        btnRetornar.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
         btnRetornar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/volver.png"))); // NOI18N
         btnRetornar.setText("Retornar");
 
+        btnSalir.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
         btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/salir.png"))); // NOI18N
         btnSalir.setText("Salir");
 
