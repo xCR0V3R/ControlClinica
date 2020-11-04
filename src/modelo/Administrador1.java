@@ -1,7 +1,7 @@
 
 package modelo;
 //..
-//agree
+//nuv
 public class Administrador1 extends Usuario1 {
     private String codad;  
 
