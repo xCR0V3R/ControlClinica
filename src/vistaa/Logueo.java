@@ -28,15 +28,236 @@ public class Logueo extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        nuevRegistro = new javax.swing.JFrame();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        txtNombre = new javax.swing.JTextField();
+        btnRetornar = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        btnSubirFoto = new javax.swing.JButton();
+        btnRegistro = new javax.swing.JButton();
+        txtDNI = new javax.swing.JTextField();
+        txtCorreo = new javax.swing.JTextField();
+        txtContraseña = new javax.swing.JTextField();
+        dtNacimiento = new com.toedter.calendar.JDateChooser();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jmAyuda = new javax.swing.JMenu();
+        jmiAyuda = new javax.swing.JMenuItem();
+        jmiForo = new javax.swing.JMenuItem();
+        jmiSitioWeb = new javax.swing.JMenuItem();
+        jfEspecialidad = new javax.swing.JFrame();
+        jLabel7 = new javax.swing.JLabel();
+        jcbxEspecialidad = new javax.swing.JComboBox<>();
+        btnAceptar = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jtxtCorreo = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        jpssContra = new javax.swing.JPasswordField();
         jLabel4 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        btnAcceder = new javax.swing.JButton();
+
+        nuevRegistro.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "- Seleccionar -", "Médico", "Administrador" }));
+
+        btnRetornar.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
+        btnRetornar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/volver.png"))); // NOI18N
+        btnRetornar.setText("Retornar");
+
+        btnSalir.setFont(new java.awt.Font("Quicksand", 0, 11)); // NOI18N
+        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/salir.png"))); // NOI18N
+        btnSalir.setText("Salir");
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fotoAdmi.png"))); // NOI18N
+
+        btnSubirFoto.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
+        btnSubirFoto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/menu1.png"))); // NOI18N
+        btnSubirFoto.setText("Suba foto");
+
+        btnRegistro.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
+        btnRegistro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Registrar.png"))); // NOI18N
+        btnRegistro.setText("Registrar");
+
+        jLabel11.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(102, 0, 0));
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/configUser.png"))); // NOI18N
+        jLabel11.setText("REGISTRO DE PERSONAL");
+
+        jLabel6.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(102, 0, 51));
+        jLabel6.setText("Nombre");
+
+        jLabel12.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(102, 0, 51));
+        jLabel12.setText("Fecha de nacimiento");
+
+        jLabel13.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(102, 0, 51));
+        jLabel13.setText("Tipo de usuario");
+
+        jLabel14.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(102, 0, 51));
+        jLabel14.setText("DNI");
+
+        jLabel15.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(102, 0, 51));
+        jLabel15.setText("Correo");
+
+        jLabel16.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(102, 0, 51));
+        jLabel16.setText("Contraseña");
+
+        jmAyuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ayuda.png"))); // NOI18N
+        jmAyuda.setText("Ayuda");
+
+        jmiAyuda.setText("Ayuda de Clinimax");
+        jmAyuda.add(jmiAyuda);
+
+        jmiForo.setText("Foro de soporte Clinimax");
+        jmAyuda.add(jmiForo);
+
+        jmiSitioWeb.setText("Sitio web de Clinimax");
+        jmAyuda.add(jmiSitioWeb);
+
+        jMenuBar1.add(jmAyuda);
+
+        nuevRegistro.setJMenuBar(jMenuBar1);
+
+        javax.swing.GroupLayout nuevRegistroLayout = new javax.swing.GroupLayout(nuevRegistro.getContentPane());
+        nuevRegistro.getContentPane().setLayout(nuevRegistroLayout);
+        nuevRegistroLayout.setHorizontalGroup(
+            nuevRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(nuevRegistroLayout.createSequentialGroup()
+                .addGap(113, 113, 113)
+                .addComponent(jLabel11)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(nuevRegistroLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addGroup(nuevRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(nuevRegistroLayout.createSequentialGroup()
+                        .addComponent(btnRetornar)
+                        .addGap(85, 85, 85)
+                        .addComponent(btnRegistro)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnSalir))
+                    .addGroup(nuevRegistroLayout.createSequentialGroup()
+                        .addGroup(nuevRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel13)
+                            .addComponent(jLabel14)
+                            .addComponent(jLabel15)
+                            .addComponent(jLabel16))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                        .addGroup(nuevRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(dtNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtDNI, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(61, 61, 61)
+                        .addGroup(nuevRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnSubirFoto)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, nuevRegistroLayout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addGap(10, 10, 10)))))
+                .addGap(44, 44, 44))
+        );
+        nuevRegistroLayout.setVerticalGroup(
+            nuevRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(nuevRegistroLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(jLabel11)
+                .addGroup(nuevRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(nuevRegistroLayout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)
+                        .addComponent(btnSubirFoto))
+                    .addGroup(nuevRegistroLayout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addGroup(nuevRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6))
+                        .addGap(18, 18, 18)
+                        .addGroup(nuevRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel12)
+                            .addComponent(dtNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(nuevRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(nuevRegistroLayout.createSequentialGroup()
+                                .addGap(22, 22, 22)
+                                .addComponent(jLabel13)
+                                .addGap(22, 22, 22)
+                                .addComponent(jLabel14)
+                                .addGap(22, 22, 22)
+                                .addComponent(jLabel15)
+                                .addGap(22, 22, 22)
+                                .addComponent(jLabel16))
+                            .addGroup(nuevRegistroLayout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtDNI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                .addGroup(nuevRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnRetornar)
+                    .addComponent(btnRegistro)
+                    .addComponent(btnSalir))
+                .addGap(68, 68, 68))
+        );
+
+        jLabel7.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(102, 0, 51));
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/tipodoc.png"))); // NOI18N
+        jLabel7.setText("Especialidad");
+
+        jcbxEspecialidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Seleccionar-", "Medicina General", "Odontologia" }));
+
+        btnAceptar.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
+        btnAceptar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Check.png"))); // NOI18N
+        btnAceptar.setText("Aceptar");
+
+        javax.swing.GroupLayout jfEspecialidadLayout = new javax.swing.GroupLayout(jfEspecialidad.getContentPane());
+        jfEspecialidad.getContentPane().setLayout(jfEspecialidadLayout);
+        jfEspecialidadLayout.setHorizontalGroup(
+            jfEspecialidadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jfEspecialidadLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37)
+                .addComponent(jcbxEspecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(47, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jfEspecialidadLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnAceptar)
+                .addGap(115, 115, 115))
+        );
+        jfEspecialidadLayout.setVerticalGroup(
+            jfEspecialidadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jfEspecialidadLayout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addGroup(jfEspecialidadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(jcbxEspecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addComponent(btnAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -60,9 +281,9 @@ public class Logueo extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(51, 51, 51));
         jLabel4.setText("CONTRASEÑA");
 
-        jButton2.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/enter.png"))); // NOI18N
-        jButton2.setText("Acceder");
+        btnAcceder.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
+        btnAcceder.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/enter.png"))); // NOI18N
+        btnAcceder.setText("Acceder");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -79,9 +300,9 @@ public class Logueo extends javax.swing.JFrame {
                                     .addComponent(jLabel4))
                                 .addGap(42, 42, 42)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButton2))
+                                    .addComponent(jtxtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jpssContra, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnAcceder))
                                 .addGap(37, 37, 37))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addContainerGap()
@@ -107,13 +328,13 @@ public class Logueo extends javax.swing.JFrame {
                 .addGap(31, 31, 31)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtxtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jpssContra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
                 .addGap(18, 18, 18)
-                .addComponent(jButton2)
+                .addComponent(btnAcceder)
                 .addGap(18, 18, 18)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -170,15 +391,43 @@ public class Logueo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    public javax.swing.JButton btnAcceder;
+    public javax.swing.JButton btnAceptar;
+    private javax.swing.JButton btnRegistro;
+    private javax.swing.JButton btnRetornar;
+    private javax.swing.JButton btnSalir;
+    private javax.swing.JButton btnSubirFoto;
+    private com.toedter.calendar.JDateChooser dtNacimiento;
+    public javax.swing.JButton jButton1;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
+    public javax.swing.JComboBox<String> jcbxEspecialidad;
+    private javax.swing.JFrame jfEspecialidad;
+    private javax.swing.JMenu jmAyuda;
+    private javax.swing.JMenuItem jmiAyuda;
+    private javax.swing.JMenuItem jmiForo;
+    private javax.swing.JMenuItem jmiSitioWeb;
+    public javax.swing.JPasswordField jpssContra;
+    public javax.swing.JTextField jtxtCorreo;
+    public javax.swing.JFrame nuevRegistro;
+    private javax.swing.JTextField txtContraseña;
+    private javax.swing.JTextField txtCorreo;
+    private javax.swing.JTextField txtDNI;
+    private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
 
 
