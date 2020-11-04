@@ -6,6 +6,8 @@
 package vistaa;
 
 
+
+
 /**
  *
  * @author Mishi
@@ -17,6 +19,7 @@ public class Logueo extends javax.swing.JFrame {
      */
     public Logueo() {
         initComponents();
+        
     }
 
     /**
@@ -60,13 +63,15 @@ public class Logueo extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jtxtCorreo = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btnRegistrar = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jpssContra = new javax.swing.JPasswordField();
         jLabel4 = new javax.swing.JLabel();
         btnAcceder = new javax.swing.JButton();
+        btnLogout = new javax.swing.JButton();
 
         nuevRegistro.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        nuevRegistro.setPreferredSize(new java.awt.Dimension(576, 486));
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "- Seleccionar -", "Médico", "Administrador" }));
 
@@ -213,7 +218,7 @@ public class Logueo extends javax.swing.JFrame {
                                 .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
                 .addGroup(nuevRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnRetornar)
                     .addComponent(btnRegistro)
@@ -270,9 +275,9 @@ public class Logueo extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(51, 51, 51));
         jLabel2.setText("CORREO");
 
-        jButton1.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/registrar_1.png"))); // NOI18N
-        jButton1.setText("Registrarse");
+        btnRegistrar.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
+        btnRegistrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/registrar_1.png"))); // NOI18N
+        btnRegistrar.setText("Registrarse");
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/logIcon.png"))); // NOI18N
         jLabel5.setPreferredSize(new java.awt.Dimension(50, 65));
@@ -284,6 +289,10 @@ public class Logueo extends javax.swing.JFrame {
         btnAcceder.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
         btnAcceder.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/enter.png"))); // NOI18N
         btnAcceder.setText("Acceder");
+
+        btnLogout.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
+        btnLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/salir.png"))); // NOI18N
+        btnLogout.setText("Salir");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -311,8 +320,10 @@ public class Logueo extends javax.swing.JFrame {
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 46, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1)))
+                        .addContainerGap()
+                        .addComponent(btnLogout)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnRegistrar)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -336,7 +347,9 @@ public class Logueo extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(btnAcceder)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -393,12 +406,13 @@ public class Logueo extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnAcceder;
     public javax.swing.JButton btnAceptar;
-    private javax.swing.JButton btnRegistro;
-    private javax.swing.JButton btnRetornar;
-    private javax.swing.JButton btnSalir;
+    public javax.swing.JButton btnLogout;
+    public javax.swing.JButton btnRegistrar;
+    public javax.swing.JButton btnRegistro;
+    public javax.swing.JButton btnRetornar;
+    public javax.swing.JButton btnSalir;
     private javax.swing.JButton btnSubirFoto;
     private com.toedter.calendar.JDateChooser dtNacimiento;
-    public javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
