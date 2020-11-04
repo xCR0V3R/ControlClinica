@@ -40,6 +40,8 @@ public class pMedico extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
+        jfCitasMed = new javax.swing.JFrame();
+        jLabel1 = new javax.swing.JLabel();
         btnLogout = new javax.swing.JButton();
         btnReportes = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
@@ -153,6 +155,25 @@ public class pMedico extends javax.swing.JFrame {
             .addGroup(jfConfigPLayout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
+        );
+
+        jLabel1.setText("PRUEBA DE CITAS");
+
+        javax.swing.GroupLayout jfCitasMedLayout = new javax.swing.GroupLayout(jfCitasMed.getContentPane());
+        jfCitasMed.getContentPane().setLayout(jfCitasMedLayout);
+        jfCitasMedLayout.setHorizontalGroup(
+            jfCitasMedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jfCitasMedLayout.createSequentialGroup()
+                .addGap(117, 117, 117)
+                .addComponent(jLabel1)
+                .addContainerGap(168, Short.MAX_VALUE))
+        );
+        jfCitasMedLayout.setVerticalGroup(
+            jfCitasMedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jfCitasMedLayout.createSequentialGroup()
+                .addGap(45, 45, 45)
+                .addComponent(jLabel1)
+                .addContainerGap(182, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -336,6 +357,7 @@ public class pMedico extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -350,6 +372,7 @@ public class pMedico extends javax.swing.JFrame {
     private javax.swing.JPasswordField jPasswordField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField5;
+    public javax.swing.JFrame jfCitasMed;
     public javax.swing.JFrame jfConfigP;
     private javax.swing.JMenu jmAyuda;
     private javax.swing.JMenuItem jmiAyuda;
