@@ -2,7 +2,7 @@
 package modelo;
 //...
 //agree
-public class Usuario1 {
+public abstract class Usuario1 {
   private String iptip; 
   private String fecha; 
   private String nombre; 
