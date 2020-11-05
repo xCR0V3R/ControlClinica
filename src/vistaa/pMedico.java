@@ -58,6 +58,8 @@ public class pMedico extends javax.swing.JFrame {
         jmiForo = new javax.swing.JMenuItem();
         jmiSitioWeb = new javax.swing.JMenuItem();
 
+        jfConfigP.setPreferredSize(new java.awt.Dimension(393, 386));
+
         btnActualizar.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
         btnActualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/actualizar.png"))); // NOI18N
         btnActualizar.setText("Actualizar");

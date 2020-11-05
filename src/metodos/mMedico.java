@@ -13,15 +13,18 @@ public class mMedico {
 
     public void inicializarConfUser(JFrame med){
         med.setTitle("Configurar Usuario");
+        
+        //med.setSize(393, 386);
         med.setVisible(true);
         med.setLocationRelativeTo(null);
-        //med.setSize(393, 400);
     }
     
     public void inicializarCitas(JFrame med){
          med.setTitle("Citas");
-        med.setVisible(true);
-        med.setLocationRelativeTo(null);
-        //med.setSize(373, 242);
+         
+        // med.setSize(373, 242);
+         med.setVisible(true);
+         med.setLocationRelativeTo(null);
+        
     }
 }
