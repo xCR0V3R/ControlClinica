@@ -9,6 +9,7 @@ import modelo.*;import vistaa.*; import metodos.*;
 public class ctrlMedico implements ActionListener {
     pMedico med; 
     mMedico ingresar=new mMedico();
+    
     public ctrlMedico(pMedico med){
         this.med = med;
         ingresar.inicializarMed(this.med);
@@ -18,6 +19,7 @@ public class ctrlMedico implements ActionListener {
         this.med.btnVolver.addActionListener(this);
         this.med.btnActualizar.addActionListener(this);
     } 
+    
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==med.btnLogout){

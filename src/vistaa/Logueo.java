@@ -72,8 +72,8 @@ public class Logueo extends javax.swing.JFrame {
 
         nuevRegistro.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         nuevRegistro.setLocationByPlatform(true);
-        nuevRegistro.setMinimumSize(new java.awt.Dimension(576, 486));
-        nuevRegistro.setPreferredSize(new java.awt.Dimension(576, 486));
+        nuevRegistro.setMinimumSize(new java.awt.Dimension(566, 456));
+        nuevRegistro.setPreferredSize(new java.awt.Dimension(566, 456));
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "- Seleccionar -", "Médico", "Administrador" }));
 
@@ -153,10 +153,11 @@ public class Logueo extends javax.swing.JFrame {
                 .addGroup(nuevRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(nuevRegistroLayout.createSequentialGroup()
                         .addComponent(btnRetornar)
-                        .addGap(85, 85, 85)
+                        .addGap(42, 42, 42)
                         .addComponent(btnRegistro)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnSalir))
+                        .addGap(45, 45, 45)
+                        .addComponent(btnSalir)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(nuevRegistroLayout.createSequentialGroup()
                         .addGroup(nuevRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel6)
@@ -165,7 +166,7 @@ public class Logueo extends javax.swing.JFrame {
                             .addComponent(jLabel14)
                             .addComponent(jLabel15)
                             .addComponent(jLabel16))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                         .addGroup(nuevRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(dtNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -220,12 +221,12 @@ public class Logueo extends javax.swing.JFrame {
                                 .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
                 .addGroup(nuevRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnRetornar)
-                    .addComponent(btnRegistro)
-                    .addComponent(btnSalir))
-                .addGap(68, 68, 68))
+                    .addComponent(btnRetornar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
         jfEspecialidad.setMinimumSize(new java.awt.Dimension(352, 142));
@@ -436,9 +437,9 @@ public class Logueo extends javax.swing.JFrame {
     public javax.swing.JComboBox<String> jcbxEspecialidad;
     private javax.swing.JFrame jfEspecialidad;
     private javax.swing.JMenu jmAyuda;
-    private javax.swing.JMenuItem jmiAyuda;
-    private javax.swing.JMenuItem jmiForo;
-    private javax.swing.JMenuItem jmiSitioWeb;
+    public javax.swing.JMenuItem jmiAyuda;
+    public javax.swing.JMenuItem jmiForo;
+    public javax.swing.JMenuItem jmiSitioWeb;
     public javax.swing.JPasswordField jpssContra;
     public javax.swing.JTextField jtxtCorreo;
     public javax.swing.JFrame nuevRegistro;

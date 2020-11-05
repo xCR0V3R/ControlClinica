@@ -1,44 +1,41 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
+
 package metodos;
 
 import javax.swing.JFrame;
-import vistaa.pAdmi;
+import vistaa.pAdmi; import metodos.mLog;
 
 
 public class mAdmi {
+    mLog log=new mLog();
     
-    public void inicializarMed(pAdmi ad){ 
+    public void inicializarAdmi(pAdmi ad){ 
+         ad.setTitle("ADMINISTRADOR");
         ad.setLocationRelativeTo(null);
         ad.setVisible(true);
+        log.esIcono(ad);
     }
 
     public void confUser(JFrame ad){
         ad.setTitle("Configurar Usuario");
-        
-        //med.setSize(393, 386);
         ad.setVisible(true);
         ad.setLocationRelativeTo(null);
+        log.esIcono(ad);
     }
     
     public void reporteCitas(JFrame ad){
          ad.setTitle("Citas");
-         
-        // med.setSize(373, 242);
          ad.setVisible(true);
          ad.setLocationRelativeTo(null);
-        
+        log.esIcono(ad);
     }
     public void nuevaCitas(JFrame ad){
          ad.setTitle("Citas");
-         
-        // med.setSize(373, 242);
          ad.setVisible(true);
          ad.setLocationRelativeTo(null);
-        
+        log.esIcono(ad);
     }
+    
+ 
     
 }

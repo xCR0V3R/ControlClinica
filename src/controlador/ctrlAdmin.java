@@ -12,9 +12,10 @@ public class ctrlAdmin implements ActionListener{
 
     pAdmi ad; 
     mAdmi ingresar=new mAdmi();
+    
     public ctrlAdmin(pAdmi ad){
         this.ad = ad;
-        ingresar.inicializarMed(this.ad);
+        ingresar.inicializarAdmi(this.ad);
         this.ad.btnConfigUser.addActionListener(this);
         this.ad.btnLogout.addActionListener(this);
         this.ad.btnSalir2.addActionListener(this);

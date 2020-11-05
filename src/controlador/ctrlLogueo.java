@@ -12,6 +12,7 @@ import modelo.*;import vistaa.*; import metodos.*;
 public class ctrlLogueo implements ActionListener{
     Logueo log;
     mLog mlog=new mLog();
+    
     public ctrlLogueo(Logueo log){
         this.log=log; mlog.inicializarLog(this.log);
         this.log.btnAcceder.addActionListener(this);
@@ -20,6 +21,7 @@ public class ctrlLogueo implements ActionListener{
         this.log.btnRetornar.addActionListener(this);
         this.log.btnSalir.addActionListener(this);
         this.log.btnRegistro.addActionListener(this);
+        this.log.jmiAyuda.addActionListener(this);
     }
     
     
@@ -50,6 +52,10 @@ public class ctrlLogueo implements ActionListener{
           //evento de Aceptar registro. Llamar a DAO
          if(e.getSource()==log.btnRegistro){
              JOptionPane.showMessageDialog(null, "Registrado con exito");
-        }  
+        }
+         
+         if(e.getSource()==log.jmiAyuda){
+             mlog.support("https://www.clinicainternacional.com.pe/");
+         }
     }
 }

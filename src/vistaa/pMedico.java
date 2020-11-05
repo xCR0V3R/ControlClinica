@@ -162,7 +162,6 @@ public class pMedico extends javax.swing.JFrame {
         );
 
         jfCitasMed.setMinimumSize(new java.awt.Dimension(373, 242));
-        jfCitasMed.setPreferredSize(new java.awt.Dimension(373, 242));
 
         jLabel1.setText("PRUEBA DE CITAS");
 
