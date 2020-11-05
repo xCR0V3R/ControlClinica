@@ -49,7 +49,7 @@ public class ctrlLogueo implements ActionListener{
         }
           //evento de Aceptar registro. Llamar a DAO
          if(e.getSource()==log.btnRegistro){
-             JOptionPane.showMessageDialog(null, "Registrese con exito");
+             JOptionPane.showMessageDialog(null, "Registrado con exito");
         }  
     }
 }

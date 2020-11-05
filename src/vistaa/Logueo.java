@@ -71,6 +71,8 @@ public class Logueo extends javax.swing.JFrame {
         btnLogout = new javax.swing.JButton();
 
         nuevRegistro.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        nuevRegistro.setLocationByPlatform(true);
+        nuevRegistro.setMinimumSize(new java.awt.Dimension(576, 486));
         nuevRegistro.setPreferredSize(new java.awt.Dimension(576, 486));
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "- Seleccionar -", "Médico", "Administrador" }));
@@ -225,6 +227,8 @@ public class Logueo extends javax.swing.JFrame {
                     .addComponent(btnSalir))
                 .addGap(68, 68, 68))
         );
+
+        jfEspecialidad.setMinimumSize(new java.awt.Dimension(352, 142));
 
         jLabel7.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(102, 0, 51));

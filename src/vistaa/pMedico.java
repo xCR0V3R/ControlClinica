@@ -58,6 +58,8 @@ public class pMedico extends javax.swing.JFrame {
         jmiForo = new javax.swing.JMenuItem();
         jmiSitioWeb = new javax.swing.JMenuItem();
 
+        jfConfigP.setLocationByPlatform(true);
+        jfConfigP.setMinimumSize(new java.awt.Dimension(410, 410));
         jfConfigP.setPreferredSize(new java.awt.Dimension(393, 386));
 
         btnActualizar.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
@@ -143,7 +145,7 @@ public class pMedico extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnActualizar))
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jfConfigPLayout = new javax.swing.GroupLayout(jfConfigP.getContentPane());
@@ -159,6 +161,7 @@ public class pMedico extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jfCitasMed.setMinimumSize(new java.awt.Dimension(373, 242));
         jfCitasMed.setPreferredSize(new java.awt.Dimension(373, 242));
 
         jLabel1.setText("PRUEBA DE CITAS");

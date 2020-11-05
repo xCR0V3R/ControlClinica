@@ -11,7 +11,10 @@ public class test {
         //Logueo log=new Logueo();
         //ctrlLogueo cLog=new ctrlLogueo(log); 
         
-        pMedico med=new pMedico(); 
-        ctrlMedico cMed=new ctrlMedico(med);
+        //pMedico med=new pMedico(); 
+        //ctrlMedico cMed=new ctrlMedico(med);
+        
+        pAdmi ad=new pAdmi();
+        ctrlAdmin cAd=new ctrlAdmin(ad);
     }
 }

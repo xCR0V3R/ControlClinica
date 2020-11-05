@@ -31,7 +31,7 @@ public class pAdmi extends javax.swing.JFrame {
         jTextField2 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
         jPasswordField1 = new javax.swing.JPasswordField();
-        jButton3 = new javax.swing.JButton();
+        btnRetornar1 = new javax.swing.JButton();
         dtNacimiento = new com.toedter.calendar.JDateChooser();
         jLabel13 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -47,8 +47,8 @@ public class pAdmi extends javax.swing.JFrame {
         jcbMedicos = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        btnRetornar2 = new javax.swing.JButton();
+        btnSalir2 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jMenuBar2 = new javax.swing.JMenuBar();
         jmArchivo = new javax.swing.JMenu();
@@ -69,8 +69,8 @@ public class pAdmi extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         txtDNI = new javax.swing.JTextField();
         btnRegistrar = new javax.swing.JButton();
-        btnRetornar = new javax.swing.JButton();
-        btnSalir = new javax.swing.JButton();
+        btnRetornar3 = new javax.swing.JButton();
+        btnSalir3 = new javax.swing.JButton();
         dtNacimiento1 = new com.toedter.calendar.JDateChooser();
         dtCita = new com.toedter.calendar.JDateChooser();
         jLabel18 = new javax.swing.JLabel();
@@ -106,13 +106,15 @@ public class pAdmi extends javax.swing.JFrame {
         jmiForo = new javax.swing.JMenuItem();
         jmiSitioWeb = new javax.swing.JMenuItem();
 
+        jfConfigP.setMinimumSize(new java.awt.Dimension(395, 398));
+
         jButton2.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/actualizar.png"))); // NOI18N
         jButton2.setText("Actualizar");
 
-        jButton3.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/volver.png"))); // NOI18N
-        jButton3.setText("Volver");
+        btnRetornar1.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
+        btnRetornar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/volver.png"))); // NOI18N
+        btnRetornar1.setText("Volver");
 
         jLabel13.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(102, 0, 0));
@@ -156,7 +158,7 @@ public class pAdmi extends javax.swing.JFrame {
                             .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(55, 55, 55)
-                        .addComponent(jButton3)
+                        .addComponent(btnRetornar1)
                         .addGap(33, 33, 33)
                         .addComponent(jButton2))
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -187,7 +189,7 @@ public class pAdmi extends javax.swing.JFrame {
                     .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(34, 34, 34)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRetornar1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2))
                 .addContainerGap(27, Short.MAX_VALUE))
         );
@@ -206,6 +208,7 @@ public class pAdmi extends javax.swing.JFrame {
         );
 
         jfReporteCitas.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jfReporteCitas.setMinimumSize(new java.awt.Dimension(730, 541));
 
         jLabel5.setFont(new java.awt.Font("Russo One", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(51, 51, 51));
@@ -248,11 +251,11 @@ public class pAdmi extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/volver.png"))); // NOI18N
-        jButton4.setText("Retornar");
+        btnRetornar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/volver.png"))); // NOI18N
+        btnRetornar2.setText("Retornar");
 
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/salir.png"))); // NOI18N
-        jButton5.setText("Salir");
+        btnSalir2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/salir.png"))); // NOI18N
+        btnSalir2.setText("Salir");
 
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mostrarIcono.png"))); // NOI18N
         jButton6.setText("Mostrar");
@@ -313,9 +316,9 @@ public class pAdmi extends javax.swing.JFrame {
                         .addComponent(jLabel5))
                     .addGroup(jfReporteCitasLayout.createSequentialGroup()
                         .addGap(257, 257, 257)
-                        .addComponent(jButton4)
+                        .addComponent(btnRetornar2)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton5))
+                        .addComponent(btnSalir2))
                     .addGroup(jfReporteCitasLayout.createSequentialGroup()
                         .addGap(57, 57, 57)
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -355,12 +358,13 @@ public class pAdmi extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(57, 57, 57)
                 .addGroup(jfReporteCitasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton4)
-                    .addComponent(jButton5))
+                    .addComponent(btnRetornar2)
+                    .addComponent(btnSalir2))
                 .addGap(22, 22, 22))
         );
 
         jfNuevaCita.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jfNuevaCita.setMinimumSize(new java.awt.Dimension(725, 489));
 
         jLabel8.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(51, 51, 51));
@@ -389,13 +393,13 @@ public class pAdmi extends javax.swing.JFrame {
         btnRegistrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Registrar.png"))); // NOI18N
         btnRegistrar.setText("Registrar");
 
-        btnRetornar.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
-        btnRetornar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/volver.png"))); // NOI18N
-        btnRetornar.setText("Retornar");
+        btnRetornar3.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
+        btnRetornar3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/volver.png"))); // NOI18N
+        btnRetornar3.setText("Retornar");
 
-        btnSalir.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
-        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/salir.png"))); // NOI18N
-        btnSalir.setText("Salir");
+        btnSalir3.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
+        btnSalir3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/salir.png"))); // NOI18N
+        btnSalir3.setText("Salir");
 
         jLabel18.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(102, 0, 51));
@@ -498,9 +502,9 @@ public class pAdmi extends javax.swing.JFrame {
                                 .addGap(110, 110, 110)
                                 .addComponent(btnRegistrar)
                                 .addGap(32, 32, 32)
-                                .addComponent(btnRetornar)
+                                .addComponent(btnRetornar3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnSalir))))
+                                .addComponent(btnSalir3))))
                     .addGroup(jfNuevaCitaLayout.createSequentialGroup()
                         .addGap(236, 236, 236)
                         .addGroup(jfNuevaCitaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -575,8 +579,8 @@ public class pAdmi extends javax.swing.JFrame {
                 .addGap(45, 45, 45)
                 .addGroup(jfNuevaCitaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnRegistrar)
-                    .addComponent(btnRetornar)
-                    .addComponent(btnSalir))
+                    .addComponent(btnRetornar3)
+                    .addComponent(btnSalir3))
                 .addGap(23, 23, 23))
         );
 
@@ -792,8 +796,11 @@ public class pAdmi extends javax.swing.JFrame {
     public javax.swing.JButton btnNuevoP;
     private javax.swing.JButton btnRegistrar;
     public javax.swing.JButton btnReportes;
-    public javax.swing.JButton btnRetornar;
-    public javax.swing.JButton btnSalir;
+    public javax.swing.JButton btnRetornar1;
+    public javax.swing.JButton btnRetornar2;
+    public javax.swing.JButton btnRetornar3;
+    public javax.swing.JButton btnSalir2;
+    public javax.swing.JButton btnSalir3;
     private javax.swing.JComboBox<String> cbSexo;
     private javax.swing.JComboBox<String> cbSexo1;
     private com.toedter.calendar.JDateChooser dtCita;
@@ -801,9 +808,6 @@ public class pAdmi extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser dtNacimiento1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    public javax.swing.JButton jButton4;
-    public javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

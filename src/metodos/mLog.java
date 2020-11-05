@@ -14,10 +14,11 @@ public class mLog {
         log.setIconImage(new ImageIcon(getClass().getResource(URLIcono)).getImage());
     }
     
-     public void inRegistro(JFrame log){
-        log.setTitle("Registro");
-        log.setVisible(true);
-        log.setLocationRelativeTo(null);
-        log.setIconImage(new ImageIcon(getClass().getResource(URLIcono)).getImage());
+     public void inRegistro(JFrame loge){
+        loge.setTitle("Registro");
+        loge.setVisible(true);
+        loge.setLocationRelativeTo(null);
+        loge.setSize(600, 800);
+        loge.setIconImage(new ImageIcon(getClass().getResource(URLIcono)).getImage());
      }
 }

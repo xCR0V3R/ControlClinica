@@ -38,5 +38,5 @@ public class ctrlMedico implements ActionListener {
             JOptionPane.showMessageDialog(null, "Actualización exitosa");
         }
     }
-} 
+}
 }
