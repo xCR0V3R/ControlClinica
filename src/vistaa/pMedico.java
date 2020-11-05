@@ -14,7 +14,7 @@ public class pMedico extends javax.swing.JFrame {
     /**
      * Creates new form pMedico
      */
-    public pMedico() {
+    public pMedico() { 
         initComponents();
     }
 
@@ -29,11 +29,11 @@ public class pMedico extends javax.swing.JFrame {
 
         jfConfigP = new javax.swing.JFrame();
         jPanel2 = new javax.swing.JPanel();
-        jButton4 = new javax.swing.JButton();
+        btnActualizar = new javax.swing.JButton();
         jTextField3 = new javax.swing.JTextField();
         jTextField5 = new javax.swing.JTextField();
         jPasswordField2 = new javax.swing.JPasswordField();
-        jButton5 = new javax.swing.JButton();
+        btnVolver = new javax.swing.JButton();
         dtNacimiento1 = new com.toedter.calendar.JDateChooser();
         jLabel13 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -58,13 +58,13 @@ public class pMedico extends javax.swing.JFrame {
         jmiForo = new javax.swing.JMenuItem();
         jmiSitioWeb = new javax.swing.JMenuItem();
 
-        jButton4.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/actualizar.png"))); // NOI18N
-        jButton4.setText("Actualizar");
+        btnActualizar.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
+        btnActualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/actualizar.png"))); // NOI18N
+        btnActualizar.setText("Actualizar");
 
-        jButton5.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/volver.png"))); // NOI18N
-        jButton5.setText("Volver");
+        btnVolver.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
+        btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/volver.png"))); // NOI18N
+        btnVolver.setText("Volver");
 
         jLabel13.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(102, 0, 0));
@@ -108,9 +108,9 @@ public class pMedico extends javax.swing.JFrame {
                             .addComponent(jPasswordField2, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(55, 55, 55)
-                        .addComponent(jButton5)
+                        .addComponent(btnVolver)
                         .addGap(33, 33, 33)
-                        .addComponent(jButton4))
+                        .addComponent(btnActualizar))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(63, 63, 63)
                         .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -139,8 +139,8 @@ public class pMedico extends javax.swing.JFrame {
                     .addComponent(jPasswordField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(34, 34, 34)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4))
+                    .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnActualizar))
                 .addContainerGap(27, Short.MAX_VALUE))
         );
 
@@ -156,6 +156,8 @@ public class pMedico extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
+
+        jfCitasMed.setPreferredSize(new java.awt.Dimension(373, 242));
 
         jLabel1.setText("PRUEBA DE CITAS");
 
@@ -191,6 +193,11 @@ public class pMedico extends javax.swing.JFrame {
         btnConfigUser.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
         btnConfigUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/configUser.png"))); // NOI18N
         btnConfigUser.setText("Configurar Perfil");
+        btnConfigUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConfigUserActionPerformed(evt);
+            }
+        });
 
         rSLabelFecha1.setForeground(new java.awt.Color(102, 0, 102));
 
@@ -314,6 +321,11 @@ public class pMedico extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jmiAyudaActionPerformed
 
+    private void btnConfigUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfigUserActionPerformed
+        // TODO add your handling code here: 
+        
+    }//GEN-LAST:event_btnConfigUserActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -350,13 +362,13 @@ public class pMedico extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btnActualizar;
     public javax.swing.JButton btnConfigUser;
     public javax.swing.JButton btnLogout;
     public javax.swing.JButton btnReportes;
+    public javax.swing.JButton btnVolver;
     private com.toedter.calendar.JDateChooser dtNacimiento1;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

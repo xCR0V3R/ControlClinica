@@ -51,8 +51,5 @@ public class ctrlLogueo implements ActionListener{
          if(e.getSource()==log.btnRegistro){
              JOptionPane.showMessageDialog(null, "Registrese con exito");
         }  
-         
-       
     }
-    
 }
