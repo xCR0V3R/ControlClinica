@@ -41,7 +41,17 @@ public class pMedico extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jfCitasMed = new javax.swing.JFrame();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        btnRetornar1 = new javax.swing.JButton();
+        btnRetornar2 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        btnRetornar3 = new javax.swing.JButton();
+        jMenuBar3 = new javax.swing.JMenuBar();
+        jmAyuda2 = new javax.swing.JMenu();
+        jmiAyuda2 = new javax.swing.JMenuItem();
+        jmiForo1 = new javax.swing.JMenuItem();
+        jmiSitioWeb1 = new javax.swing.JMenuItem();
         btnLogout = new javax.swing.JButton();
         btnReportes = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
@@ -160,25 +170,103 @@ public class pMedico extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jfCitasMed.setMinimumSize(new java.awt.Dimension(373, 242));
+        jfCitasMed.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("PRUEBA DE CITAS");
+        jLabel19.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 18)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(102, 0, 0));
+        jLabel19.setText("CITAS PENDIENTES");
+
+        btnRetornar1.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
+        btnRetornar1.setText("Volver");
+        btnRetornar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRetornar1ActionPerformed(evt);
+            }
+        });
+
+        btnRetornar2.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
+        btnRetornar2.setText("Salir");
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "ID", "Fecha ", "Hora", "Nombre Paciente", "Estado"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(jTable1);
+
+        btnRetornar3.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
+        btnRetornar3.setText("Actualizar");
+
+        jmAyuda2.setText("Ayuda");
+
+        jmiAyuda2.setText("Ayuda de CliniMax");
+        jmiAyuda2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiAyuda2ActionPerformed(evt);
+            }
+        });
+        jmAyuda2.add(jmiAyuda2);
+
+        jmiForo1.setText("Foro de soporte CliniMax");
+        jmAyuda2.add(jmiForo1);
+
+        jmiSitioWeb1.setText("Sitio web de CliniMax");
+        jmAyuda2.add(jmiSitioWeb1);
+
+        jMenuBar3.add(jmAyuda2);
+
+        jfCitasMed.setJMenuBar(jMenuBar3);
 
         javax.swing.GroupLayout jfCitasMedLayout = new javax.swing.GroupLayout(jfCitasMed.getContentPane());
         jfCitasMed.getContentPane().setLayout(jfCitasMedLayout);
         jfCitasMedLayout.setHorizontalGroup(
             jfCitasMedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jfCitasMedLayout.createSequentialGroup()
+                .addGap(0, 29, Short.MAX_VALUE)
+                .addGroup(jfCitasMedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 476, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRetornar3))
+                .addGap(43, 43, 43))
             .addGroup(jfCitasMedLayout.createSequentialGroup()
-                .addGap(117, 117, 117)
-                .addComponent(jLabel1)
-                .addContainerGap(168, Short.MAX_VALUE))
+                .addGroup(jfCitasMedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jfCitasMedLayout.createSequentialGroup()
+                        .addGap(150, 150, 150)
+                        .addComponent(btnRetornar1)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnRetornar2))
+                    .addGroup(jfCitasMedLayout.createSequentialGroup()
+                        .addGap(165, 165, 165)
+                        .addComponent(jLabel19)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jfCitasMedLayout.setVerticalGroup(
             jfCitasMedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jfCitasMedLayout.createSequentialGroup()
-                .addGap(45, 45, 45)
-                .addComponent(jLabel1)
-                .addContainerGap(182, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jfCitasMedLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(jLabel19)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnRetornar3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addGroup(jfCitasMedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnRetornar1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRetornar2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(44, 44, 44))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -329,6 +417,14 @@ public class pMedico extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnConfigUserActionPerformed
 
+    private void btnRetornar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRetornar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRetornar1ActionPerformed
+
+    private void jmiAyuda2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiAyuda2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jmiAyuda2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -369,10 +465,12 @@ public class pMedico extends javax.swing.JFrame {
     public javax.swing.JButton btnConfigUser;
     public javax.swing.JButton btnLogout;
     public javax.swing.JButton btnReportes;
+    public javax.swing.JButton btnRetornar1;
+    public javax.swing.JButton btnRetornar2;
+    public javax.swing.JButton btnRetornar3;
     public javax.swing.JButton btnVolver;
     private com.toedter.calendar.JDateChooser dtNacimiento1;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -382,17 +480,25 @@ public class pMedico extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JMenuBar jMenuBar1;
+    public javax.swing.JMenuBar jMenuBar3;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPasswordField jPasswordField2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField5;
     public javax.swing.JFrame jfCitasMed;
     public javax.swing.JFrame jfConfigP;
     private javax.swing.JMenu jmAyuda;
+    public javax.swing.JMenu jmAyuda2;
     public javax.swing.JMenuItem jmiAyuda;
+    public javax.swing.JMenuItem jmiAyuda2;
     public javax.swing.JMenuItem jmiForo;
+    public javax.swing.JMenuItem jmiForo1;
     public javax.swing.JMenuItem jmiSitioWeb;
+    public javax.swing.JMenuItem jmiSitioWeb1;
     private rojeru_san.RSLabelFecha rSLabelFecha1;
     private rojeru_san.RSLabelHora rSLabelHora1;
     // End of variables declaration//GEN-END:variables
