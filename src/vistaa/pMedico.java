@@ -42,14 +42,14 @@ public class pMedico extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         jfCitasMed = new javax.swing.JFrame();
         jLabel19 = new javax.swing.JLabel();
-        btnRetornar1 = new javax.swing.JButton();
-        btnRetornar2 = new javax.swing.JButton();
+        btnVolver1 = new javax.swing.JButton();
+        btnLogout1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        btnRetornar3 = new javax.swing.JButton();
+        btnActualizar1 = new javax.swing.JButton();
         jMenuBar3 = new javax.swing.JMenuBar();
         jmAyuda2 = new javax.swing.JMenu();
-        jmiAyuda2 = new javax.swing.JMenuItem();
+        jmiAyuda1 = new javax.swing.JMenuItem();
         jmiForo1 = new javax.swing.JMenuItem();
         jmiSitioWeb1 = new javax.swing.JMenuItem();
         btnLogout = new javax.swing.JButton();
@@ -171,21 +171,25 @@ public class pMedico extends javax.swing.JFrame {
         );
 
         jfCitasMed.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jfCitasMed.setMinimumSize(new java.awt.Dimension(500, 550));
+        jfCitasMed.setPreferredSize(new java.awt.Dimension(500, 550));
 
         jLabel19.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 18)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(102, 0, 0));
         jLabel19.setText("CITAS PENDIENTES");
 
-        btnRetornar1.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
-        btnRetornar1.setText("Volver");
-        btnRetornar1.addActionListener(new java.awt.event.ActionListener() {
+        btnVolver1.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
+        btnVolver1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/volver.png"))); // NOI18N
+        btnVolver1.setText("Volver");
+        btnVolver1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRetornar1ActionPerformed(evt);
+                btnVolver1ActionPerformed(evt);
             }
         });
 
-        btnRetornar2.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
-        btnRetornar2.setText("Salir");
+        btnLogout1.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
+        btnLogout1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/salir.png"))); // NOI18N
+        btnLogout1.setText("Salir");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -208,18 +212,20 @@ public class pMedico extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        btnRetornar3.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
-        btnRetornar3.setText("Actualizar");
+        btnActualizar1.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
+        btnActualizar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/actualizar.png"))); // NOI18N
+        btnActualizar1.setText("Actualizar");
 
+        jmAyuda2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ayuda.png"))); // NOI18N
         jmAyuda2.setText("Ayuda");
 
-        jmiAyuda2.setText("Ayuda de CliniMax");
-        jmiAyuda2.addActionListener(new java.awt.event.ActionListener() {
+        jmiAyuda1.setText("Ayuda de CliniMax");
+        jmiAyuda1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jmiAyuda2ActionPerformed(evt);
+                jmiAyuda1ActionPerformed(evt);
             }
         });
-        jmAyuda2.add(jmiAyuda2);
+        jmAyuda2.add(jmiAyuda1);
 
         jmiForo1.setText("Foro de soporte CliniMax");
         jmAyuda2.add(jmiForo1);
@@ -239,15 +245,15 @@ public class pMedico extends javax.swing.JFrame {
                 .addGap(0, 29, Short.MAX_VALUE)
                 .addGroup(jfCitasMedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 476, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnRetornar3))
+                    .addComponent(btnActualizar1))
                 .addGap(43, 43, 43))
             .addGroup(jfCitasMedLayout.createSequentialGroup()
                 .addGroup(jfCitasMedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jfCitasMedLayout.createSequentialGroup()
                         .addGap(150, 150, 150)
-                        .addComponent(btnRetornar1)
+                        .addComponent(btnVolver1)
                         .addGap(18, 18, 18)
-                        .addComponent(btnRetornar2))
+                        .addComponent(btnLogout1))
                     .addGroup(jfCitasMedLayout.createSequentialGroup()
                         .addGap(165, 165, 165)
                         .addComponent(jLabel19)))
@@ -261,11 +267,11 @@ public class pMedico extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnRetornar3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addComponent(btnActualizar1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                 .addGroup(jfCitasMedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnRetornar1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnRetornar2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnVolver1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnLogout1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(44, 44, 44))
         );
 
@@ -417,13 +423,13 @@ public class pMedico extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnConfigUserActionPerformed
 
-    private void btnRetornar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRetornar1ActionPerformed
+    private void btnVolver1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolver1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnRetornar1ActionPerformed
+    }//GEN-LAST:event_btnVolver1ActionPerformed
 
-    private void jmiAyuda2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiAyuda2ActionPerformed
+    private void jmiAyuda1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiAyuda1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jmiAyuda2ActionPerformed
+    }//GEN-LAST:event_jmiAyuda1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -462,13 +468,13 @@ public class pMedico extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnActualizar;
+    public javax.swing.JButton btnActualizar1;
     public javax.swing.JButton btnConfigUser;
     public javax.swing.JButton btnLogout;
+    public javax.swing.JButton btnLogout1;
     public javax.swing.JButton btnReportes;
-    public javax.swing.JButton btnRetornar1;
-    public javax.swing.JButton btnRetornar2;
-    public javax.swing.JButton btnRetornar3;
     public javax.swing.JButton btnVolver;
+    public javax.swing.JButton btnVolver1;
     private com.toedter.calendar.JDateChooser dtNacimiento1;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel10;
@@ -494,7 +500,7 @@ public class pMedico extends javax.swing.JFrame {
     private javax.swing.JMenu jmAyuda;
     public javax.swing.JMenu jmAyuda2;
     public javax.swing.JMenuItem jmiAyuda;
-    public javax.swing.JMenuItem jmiAyuda2;
+    public javax.swing.JMenuItem jmiAyuda1;
     public javax.swing.JMenuItem jmiForo;
     public javax.swing.JMenuItem jmiForo1;
     public javax.swing.JMenuItem jmiSitioWeb;

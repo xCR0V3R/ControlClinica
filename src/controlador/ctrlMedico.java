@@ -22,6 +22,12 @@ public class ctrlMedico implements ActionListener {
         this.med.jmiAyuda.addActionListener(this);
         this.med.jmiForo.addActionListener(this);
         this.med.jmiSitioWeb.addActionListener(this);
+        this.med.jmiAyuda1.addActionListener(this);
+        this.med.jmiForo1.addActionListener(this);
+        this.med.jmiSitioWeb1.addActionListener(this);
+        this.med.btnLogout1.addActionListener(this);
+        this.med.btnVolver1.addActionListener(this);
+        this.med.btnActualizar1.addActionListener(this);
     } 
     
     @Override
@@ -32,18 +38,18 @@ public class ctrlMedico implements ActionListener {
         if(e.getSource()==med.btnConfigUser){
         med.setVisible(false); 
         ingresar.inicializarConfUser(med.jfConfigP); 
-    } 
+    }
         if(e.getSource()==med.btnReportes){
             med.setVisible(false);
             ingresar.inicializarCitas(med.jfCitasMed);
-        } 
+        }
         if(e.getSource()==med.btnVolver){
            med.jfConfigP.setVisible(false);
            ingresar.inicializarMed(med);
+        }
         if(e.getSource()==med.btnActualizar){
             JOptionPane.showMessageDialog(null, "Actualización exitosa");
         }
-    }
         if(e.getSource()==med.jmiAyuda){
              url.support("https://www.clinicainternacional.com.pe/");
         }
@@ -53,6 +59,26 @@ public class ctrlMedico implements ActionListener {
         if(e.getSource()==med.jmiSitioWeb){
              url.support("https://www.clinicainternacional.com.pe/");
         }
+        if(e.getSource()==med.jmiAyuda1){
+             url.support("https://www.clinicainternacional.com.pe/");
+        }
+        if(e.getSource()==med.jmiForo1){
+             url.support("https://www.clinicainternacional.com.pe/");
+        }
+        if(e.getSource()==med.jmiSitioWeb1){
+             url.support("https://www.clinicainternacional.com.pe/");
+        }
+        if(e.getSource()==med.btnLogout1){
+           System.exit(0);
+        } 
         
+        if(e.getSource()==med.btnVolver1){
+           med.jfCitasMed.setVisible(false);
+           ingresar.inicializarMed(med);
+        }
+        if(e.getSource()==med.btnActualizar1){
+            JOptionPane.showMessageDialog(null, "Actualización exitosa");
+        }
+    
 }
 }
