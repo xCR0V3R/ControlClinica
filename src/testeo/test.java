@@ -16,5 +16,6 @@ public class test {
         
         pAdmi ad=new pAdmi();
         ctrlAdmin cAd=new ctrlAdmin(ad);*/
+       //
     }
 }
