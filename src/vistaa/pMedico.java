@@ -60,7 +60,6 @@ public class pMedico extends javax.swing.JFrame {
 
         jfConfigP.setLocationByPlatform(true);
         jfConfigP.setMinimumSize(new java.awt.Dimension(410, 410));
-        jfConfigP.setPreferredSize(new java.awt.Dimension(393, 386));
 
         btnActualizar.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
         btnActualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/actualizar.png"))); // NOI18N
@@ -391,9 +390,9 @@ public class pMedico extends javax.swing.JFrame {
     public javax.swing.JFrame jfCitasMed;
     public javax.swing.JFrame jfConfigP;
     private javax.swing.JMenu jmAyuda;
-    private javax.swing.JMenuItem jmiAyuda;
-    private javax.swing.JMenuItem jmiForo;
-    private javax.swing.JMenuItem jmiSitioWeb;
+    public javax.swing.JMenuItem jmiAyuda;
+    public javax.swing.JMenuItem jmiForo;
+    public javax.swing.JMenuItem jmiSitioWeb;
     private rojeru_san.RSLabelFecha rSLabelFecha1;
     private rojeru_san.RSLabelHora rSLabelHora1;
     // End of variables declaration//GEN-END:variables

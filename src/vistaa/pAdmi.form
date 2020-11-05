@@ -623,12 +623,14 @@
                       <Component id="jLabel20" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel21" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jcbArea1" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="btnBuscar1" alignment="1" min="-2" pref="29" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel21" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jcbArea1" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -893,16 +895,25 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Ayuda de CliniMax"/>
                   </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                  </AuxValues>
                 </MenuItem>
                 <MenuItem class="javax.swing.JMenuItem" name="jmiForo2">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Foro de soporte CliniMax"/>
                   </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                  </AuxValues>
                 </MenuItem>
-                <MenuItem class="javax.swing.JMenuItem" name="jMenuItem3">
+                <MenuItem class="javax.swing.JMenuItem" name="jmiSitioWeb2">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Sitio Web de CliniMax"/>
                   </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                  </AuxValues>
                 </MenuItem>
               </SubComponents>
             </Menu>

@@ -22,6 +22,8 @@ public class ctrlLogueo implements ActionListener{
         this.log.btnSalir.addActionListener(this);
         this.log.btnRegistro.addActionListener(this);
         this.log.jmiAyuda.addActionListener(this);
+        this.log.jmiForo.addActionListener(this);
+        this.log.jmiSitioWeb.addActionListener(this);
     }
     
     
@@ -55,6 +57,12 @@ public class ctrlLogueo implements ActionListener{
         }
          
          if(e.getSource()==log.jmiAyuda){
+             mlog.support("https://www.clinicainternacional.com.pe/");
+         }
+         if(e.getSource()==log.jmiForo){
+             mlog.support("https://www.clinicainternacional.com.pe/");
+         }
+         if(e.getSource()==log.jmiSitioWeb){
              mlog.support("https://www.clinicainternacional.com.pe/");
          }
     }

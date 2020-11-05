@@ -9,6 +9,7 @@ import modelo.*;import vistaa.*; import metodos.*;
 public class ctrlMedico implements ActionListener {
     pMedico med; 
     mMedico ingresar=new mMedico();
+    mLog url=new mLog();
     
     public ctrlMedico(pMedico med){
         this.med = med;
@@ -18,6 +19,9 @@ public class ctrlMedico implements ActionListener {
         this.med.btnReportes.addActionListener(this);
         this.med.btnVolver.addActionListener(this);
         this.med.btnActualizar.addActionListener(this);
+        this.med.jmiAyuda.addActionListener(this);
+        this.med.jmiForo.addActionListener(this);
+        this.med.jmiSitioWeb.addActionListener(this);
     } 
     
     @Override
@@ -40,5 +44,15 @@ public class ctrlMedico implements ActionListener {
             JOptionPane.showMessageDialog(null, "Actualización exitosa");
         }
     }
+        if(e.getSource()==med.jmiAyuda){
+             url.support("https://www.clinicainternacional.com.pe/");
+        }
+        if(e.getSource()==med.jmiForo){
+             url.support("https://www.clinicainternacional.com.pe/");
+        }
+        if(e.getSource()==med.jmiSitioWeb){
+             url.support("https://www.clinicainternacional.com.pe/");
+        }
+        
 }
 }

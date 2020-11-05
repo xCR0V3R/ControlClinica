@@ -84,7 +84,7 @@ public class pAdmi extends javax.swing.JFrame {
         jmAyuda2 = new javax.swing.JMenu();
         jmiAyuda2 = new javax.swing.JMenuItem();
         jmiForo2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        jmiSitioWeb2 = new javax.swing.JMenuItem();
         btnReportes = new javax.swing.JButton();
         btnNuevoP = new javax.swing.JButton();
         btnConfigUser = new javax.swing.JButton();
@@ -444,8 +444,8 @@ public class pAdmi extends javax.swing.JFrame {
         jmiForo2.setText("Foro de soporte CliniMax");
         jmAyuda2.add(jmiForo2);
 
-        jMenuItem3.setText("Sitio Web de CliniMax");
-        jmAyuda2.add(jMenuItem3);
+        jmiSitioWeb2.setText("Sitio Web de CliniMax");
+        jmAyuda2.add(jmiSitioWeb2);
 
         jMenuBar3.add(jmAyuda2);
 
@@ -521,12 +521,13 @@ public class pAdmi extends javax.swing.JFrame {
                     .addComponent(jLabel19)
                     .addComponent(jLabel20))
                 .addGap(27, 27, 27)
-                .addGroup(jfNuevaCitaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel21)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9)
-                    .addComponent(jcbArea1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnBuscar1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jfNuevaCitaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnBuscar1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jfNuevaCitaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel21)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel9)
+                        .addComponent(jcbArea1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(21, 21, 21)
                 .addGroup(jfNuevaCitaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel17)
@@ -807,7 +808,6 @@ public class pAdmi extends javax.swing.JFrame {
     public javax.swing.JMenuBar jMenuBar1;
     public javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JMenuBar jMenuBar3;
-    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JScrollPane jScrollPane1;
@@ -829,14 +829,15 @@ public class pAdmi extends javax.swing.JFrame {
     public javax.swing.JMenu jmExportar;
     public javax.swing.JMenuItem jmiAyuda;
     public javax.swing.JMenuItem jmiAyuda1;
-    private javax.swing.JMenuItem jmiAyuda2;
+    public javax.swing.JMenuItem jmiAyuda2;
     public javax.swing.JMenuItem jmiExcel;
     public javax.swing.JMenuItem jmiForo;
     public javax.swing.JMenuItem jmiForo1;
-    private javax.swing.JMenuItem jmiForo2;
+    public javax.swing.JMenuItem jmiForo2;
     public javax.swing.JMenuItem jmiPDF;
     public javax.swing.JMenuItem jmiSitioWeb;
     public javax.swing.JMenuItem jmiSitioWeb1;
+    public javax.swing.JMenuItem jmiSitioWeb2;
     private rojeru_san.RSLabelFecha rSLabelFecha1;
     private rojeru_san.RSLabelHora rSLabelHora1;
     private javax.swing.JTextField txtDNI;

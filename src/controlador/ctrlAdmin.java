@@ -12,6 +12,7 @@ public class ctrlAdmin implements ActionListener{
 
     pAdmi ad; 
     mAdmi ingresar=new mAdmi();
+    mLog url=new mLog();
     
     public ctrlAdmin(pAdmi ad){
         this.ad = ad;
@@ -26,6 +27,15 @@ public class ctrlAdmin implements ActionListener{
         this.ad.btnRetornar1.addActionListener(this);
         this.ad.btnRetornar2.addActionListener(this);
         this.ad.btnRetornar3.addActionListener(this);
+        this.ad.jmiAyuda.addActionListener(this);
+        this.ad.jmiAyuda1.addActionListener(this);
+        this.ad.jmiAyuda2.addActionListener(this);
+        this.ad.jmiForo.addActionListener(this);
+        this.ad.jmiForo1.addActionListener(this);
+        this.ad.jmiForo2.addActionListener(this);
+        this.ad.jmiSitioWeb.addActionListener(this);
+        this.ad.jmiSitioWeb1.addActionListener(this);
+        this.ad.jmiSitioWeb2.addActionListener(this);
     } 
     
     @Override
@@ -66,7 +76,31 @@ public class ctrlAdmin implements ActionListener{
             ad.jfNuevaCita.setVisible(false);
         }
         if(e.getSource()==ad.jmiAyuda){
-            
+             url.support("https://www.clinicainternacional.com.pe/");
+        }
+        if(e.getSource()==ad.jmiAyuda1){
+             url.support("https://www.clinicainternacional.com.pe/");
+        }
+        if(e.getSource()==ad.jmiAyuda2){
+             url.support("https://www.clinicainternacional.com.pe/");
+        }
+        if(e.getSource()==ad.jmiForo){
+             url.support("https://www.clinicainternacional.com.pe/");
+        }
+        if(e.getSource()==ad.jmiForo1){
+             url.support("https://www.clinicainternacional.com.pe/");
+        }
+        if(e.getSource()==ad.jmiForo2){
+             url.support("https://www.clinicainternacional.com.pe/");
+        }
+        if(e.getSource()==ad.jmiSitioWeb){
+             url.support("https://www.clinicainternacional.com.pe/");
+        }
+        if(e.getSource()==ad.jmiSitioWeb1){
+             url.support("https://www.clinicainternacional.com.pe/");
+        }
+        if(e.getSource()==ad.jmiSitioWeb2){
+             url.support("https://www.clinicainternacional.com.pe/");
         }
     }
     
