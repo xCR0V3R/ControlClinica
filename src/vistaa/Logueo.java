@@ -42,7 +42,7 @@ public class Logueo extends javax.swing.JFrame {
         txtDNI = new javax.swing.JTextField();
         txtCorreo = new javax.swing.JTextField();
         txtContraseña = new javax.swing.JTextField();
-        dtNacimiento = new com.toedter.calendar.JDateChooser();
+        dateNacimiento = new com.toedter.calendar.JDateChooser();
         jLabel11 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
@@ -166,7 +166,7 @@ public class Logueo extends javax.swing.JFrame {
                             .addComponent(jLabel16))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                         .addGroup(nuevRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(dtNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(dateNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jcbTipoUser, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtDNI, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -212,7 +212,7 @@ public class Logueo extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(nuevRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel12)
-                            .addComponent(dtNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(dateNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(nuevRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(nuevRegistroLayout.createSequentialGroup()
                                 .addGap(22, 22, 22)
@@ -391,7 +391,7 @@ public class Logueo extends javax.swing.JFrame {
     public javax.swing.JButton btnRetornar;
     public javax.swing.JButton btnSalir;
     private javax.swing.JButton btnSubirFoto;
-    public com.toedter.calendar.JDateChooser dtNacimiento;
+    public com.toedter.calendar.JDateChooser dateNacimiento;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;

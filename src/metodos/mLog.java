@@ -8,6 +8,7 @@ import javax.swing.*;
 import modelo.*;import daos.*;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 public class mLog {
     private static final String URLIcono="/imagenes/iconoSistema.png";
@@ -49,15 +50,12 @@ public class mLog {
         
         public void regAdmi(Logueo log){
             String nom=log.txtNombre.getText();
-         /*   SimpleDateFormat formato=new SimpleDateFormat("yyyy-MM-dd");
-            String nac=formato.format(log.dtNacimiento.getDate().toString());
-            System.out.println("ESTO ES NACIMIENTO: "+nac);*/
-            String naci=log.dtNacimiento.getDateFormatString();
+            String naci=(String)log.dateNacimiento.getDateFormatString();
             String tip="U001";
             int DNI=Integer.parseInt(log.txtDNI.getText());
             String correo=log.txtCorreo.getText();
             String contra=log.txtContraseña.getText();
-            Administrador a=new Administrador(tip, naci, nom, correo, contra, DNI);
+            Administrador a=new Administrador(tip,naci, nom, correo, contra, DNI);
             dao.addAdmi(a);
         }
         

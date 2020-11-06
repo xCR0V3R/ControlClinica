@@ -23,11 +23,12 @@ public class DAOLog {
             while (rs.next()) {
                 Administrador a = new Administrador();
                 a.setCodad(rs.getString(1));
-                a.setNombre(rs.getString(2));
-                a.setIptip(rs.getString(3));
-                a.setDni(rs.getInt(4));
-                a.setCorreo(rs.getString(5));
-                a.setPswd(rs.getString(6));
+                a.setIptip(rs.getString(2));
+                a.setFecha(rs.getString(3));
+                a.setCorreo(rs.getString(4));
+                a.setPswd(rs.getString(5));
+                a.setNombre(rs.getString(6));
+                a.setDni(rs.getInt(7));
                 lis.add(a);
             }
         } catch (Exception ex) {

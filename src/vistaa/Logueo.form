@@ -39,7 +39,7 @@
                           </Group>
                           <EmptySpace pref="15" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="dtNacimiento" alignment="0" min="-2" pref="164" max="-2" attributes="0"/>
+                              <Component id="dateNacimiento" alignment="0" min="-2" pref="164" max="-2" attributes="0"/>
                               <Component id="txtNombre" alignment="0" min="-2" pref="164" max="-2" attributes="0"/>
                               <Component id="jcbTipoUser" alignment="0" min="-2" pref="164" max="-2" attributes="0"/>
                               <Component id="txtDNI" alignment="0" min="-2" pref="164" max="-2" attributes="0"/>
@@ -98,7 +98,7 @@
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel12" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="dtNacimiento" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="dateNacimiento" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
@@ -236,7 +236,7 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
-        <Component class="com.toedter.calendar.JDateChooser" name="dtNacimiento">
+        <Component class="com.toedter.calendar.JDateChooser" name="dateNacimiento">
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
