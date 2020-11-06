@@ -12,7 +12,7 @@ import java.util.Date;
 
 public class mLog {
     private static final String URLIcono="/imagenes/iconoSistema.png";
-    DAOLog dao=new DAOLog();
+    DAORegistro dao=new DAORegistro();
     
     public void inicializarLog(Logueo log){
         log.setTitle("Sistema CliniMAX");

@@ -1,91 +1,45 @@
 
-
 package daos;
 import java.sql.*;
 import java.text.DecimalFormat;
 import java.util.*;
+import javax.swing.JOptionPane;
 import util.MySQLConexion;
 import modelo.*;
+import vistaa.*;
 
-
-public class DAOLog {
+public class DAOLog { 
+    Connection con = null;
     
-     public List<Administrador> lisAdmi() {
-        List<Administrador> lis = new ArrayList<>();
-        Connection conn = null;
-
+    public void validarUsuario(Medico m){ 
+        
+        Logueo buscar=new Logueo();
+        String pws=String.valueOf(buscar.jpssContra.getPassword());
+        int busqueda=0;
+        String cr=buscar.jtxtCorreo.getText(); 
+        String SQL="select from* Medico where correo='"+cr+"' and pswd='"+pws+"'";
+        
         try {
-            conn = MySQLConexion.getConexion();
-            String sql = "select * from Administrador";
-            PreparedStatement st = conn.prepareStatement(sql);
-            ResultSet rs = st.executeQuery();
+            Statement st=con.createStatement(); 
+            ResultSet rs=st.executeQuery(SQL);
             
-            while (rs.next()) {
-                Administrador a = new Administrador();
-                a.setCodad(rs.getString(1));
-                a.setIptip(rs.getString(2));
-                a.setFecha(rs.getString(3));
-                a.setCorreo(rs.getString(4));
-                a.setPswd(rs.getString(5));
-                a.setNombre(rs.getString(6));
-                a.setDni(rs.getInt(7));
-                lis.add(a);
-            }
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        } finally {
-            try {
-
-                if (conn != null) {
-                    conn.close();
+            if(rs.next()){
+                busqueda=1; 
+                if (busqueda==1){
+                    JOptionPane.showMessageDialog(null, "Acceso Exitoso");
+                    pMedico form=new pMedico(); 
+                    form.setVisible(true);    
+                } else {
+                    JOptionPane.showMessageDialog(null, "Acceso Exitoso");
+                    pAdmi form2=new pAdmi(); 
+                    form2.setVisible(true);
                 }
-            } catch (Exception e2) {
             }
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error de Acceso: Usted no está registrado");
         }
-
-        return lis;
     }
     
     
-     public String genCodAdmi() {
-        String cod;
-        if (lisAdmi().size() == 0) {
-            cod = "A001";
-        } else {
-            int fin = lisAdmi().size() - 1;
-            cod = lisAdmi().get(fin).getCodad();
-            int nro = Integer.parseInt(cod.substring(1)) + 1;
-            DecimalFormat sd = new DecimalFormat("000");
-            cod = "A" + sd.format(nro);
-        }
-        return cod;
-    }
-    
-    public void addAdmi(Administrador a) {
-        int resp = 0;           
-        Connection conn = null; 
-        try {
-            String sql = "Insert into Administrador values(?,?,?,?,?,?,?)";
-            conn = MySQLConexion.getConexion();
-            PreparedStatement st = conn.prepareStatement(sql);
-            st.setString(1,genCodAdmi());
-            st.setString(2, a.getIptip());
-            st.setString(3, a.getFecha());
-            st.setString(4, a.getCorreo());
-            st.setString(5, a.getPswd());
-            st.setString(6, a.getNombre());
-            st.setInt(7,a.getDni());
-            st.executeUpdate();
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        } finally {
-            try {
-       if (conn != null) {
-                    conn.close();
-                }
-            } catch (Exception e2) {
-            }
-        }
-
-    }
 }

@@ -71,7 +71,6 @@ public class Logueo extends javax.swing.JFrame {
         nuevRegistro.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         nuevRegistro.setLocationByPlatform(true);
         nuevRegistro.setMinimumSize(new java.awt.Dimension(566, 500));
-        nuevRegistro.setPreferredSize(new java.awt.Dimension(566, 500));
 
         jcbTipoUser.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Seleccionar-", "Médico", "Administrador" }));
 
@@ -269,6 +268,11 @@ public class Logueo extends javax.swing.JFrame {
         btnAcceder.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
         btnAcceder.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/enter.png"))); // NOI18N
         btnAcceder.setText("Acceder");
+        btnAcceder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAccederActionPerformed(evt);
+            }
+        });
 
         btnLogout.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
         btnLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/salir.png"))); // NOI18N
@@ -346,6 +350,10 @@ public class Logueo extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnAccederActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccederActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAccederActionPerformed
 
     /**
      * @param args the command line arguments

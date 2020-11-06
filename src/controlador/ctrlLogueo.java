@@ -34,7 +34,8 @@ public class ctrlLogueo implements ActionListener{
            System.exit(0);
         }
          if(e.getSource()==log.btnAcceder){
-             JOptionPane.showMessageDialog(null, "Registrese 1ero");
+             JOptionPane.showMessageDialog(null, "Registrese 1ero"); 
+            
         }
         
          if(e.getSource()==log.btnRegistrar){
@@ -81,6 +82,9 @@ public class ctrlLogueo implements ActionListener{
          }
          if(e.getSource()==log.jmiSitioWeb){
              mlog.support("https://www.clinicainternacional.com.pe/");
-         }
-    }
+         } 
+         
+         
+    } 
+    
 }
