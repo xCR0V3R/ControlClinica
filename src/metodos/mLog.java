@@ -49,14 +49,15 @@ public class mLog {
         
         public void regAdmi(Logueo log){
             String nom=log.txtNombre.getText();
-            SimpleDateFormat formato=new SimpleDateFormat("yyyy-MM-dd");
+         /*   SimpleDateFormat formato=new SimpleDateFormat("yyyy-MM-dd");
             String nac=formato.format(log.dtNacimiento.getDate().toString());
-            System.out.println("ESTO ES NACIMIENTO: "+nac);
+            System.out.println("ESTO ES NACIMIENTO: "+nac);*/
+            String naci=log.dtNacimiento.getDateFormatString();
             String tip="U001";
             int DNI=Integer.parseInt(log.txtDNI.getText());
             String correo=log.txtCorreo.getText();
             String contra=log.txtContraseña.getText();
-            Administrador a=new Administrador(tip, nac, nom, correo, contra, DNI);
+            Administrador a=new Administrador(tip, naci, nom, correo, contra, DNI);
             dao.addAdmi(a);
         }
         
