@@ -2,18 +2,19 @@
 
 package modelo;
 
-public class Medico extends Usuario1 {
+public class Medico extends Usuario {
     private String codes; 
     private String codmed;
 
-    public Medico() {
-    }
-
-    public Medico(String codes, String codmed, String iptip, String fecha, String nombre, String correo, String pswd) {
-        super(iptip, fecha, nombre, correo, pswd);
+   public Medico(){
+          }
+    
+    public Medico(String codmed,String codes,String iptip, String fecha, String nombre, String correo, String pswd, int dni) {
+        super(iptip, fecha, nombre, correo, pswd, dni);
         this.codes = codes;
         this.codmed = codmed;
     }
+    
 
     public String getCodes() {
         return codes;
@@ -30,6 +31,10 @@ public class Medico extends Usuario1 {
     public void setCodmed(String codmed) {
         this.codmed = codmed;
     }
+
+  
+
+ 
     
     
     

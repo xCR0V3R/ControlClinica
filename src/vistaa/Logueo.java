@@ -32,7 +32,7 @@ public class Logueo extends javax.swing.JFrame {
     private void initComponents() {
 
         nuevRegistro = new javax.swing.JFrame();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        jcbTipoUser = new javax.swing.JComboBox<>();
         txtNombre = new javax.swing.JTextField();
         btnRetornar = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
@@ -50,15 +50,13 @@ public class Logueo extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
+        jlEspecialidad = new javax.swing.JLabel();
+        jcbxEspecialidad1 = new javax.swing.JComboBox<>();
         jMenuBar1 = new javax.swing.JMenuBar();
         jmAyuda = new javax.swing.JMenu();
         jmiAyuda = new javax.swing.JMenuItem();
         jmiForo = new javax.swing.JMenuItem();
         jmiSitioWeb = new javax.swing.JMenuItem();
-        jfEspecialidad = new javax.swing.JFrame();
-        jLabel7 = new javax.swing.JLabel();
-        jcbxEspecialidad = new javax.swing.JComboBox<>();
-        btnAceptar = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -72,10 +70,10 @@ public class Logueo extends javax.swing.JFrame {
 
         nuevRegistro.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         nuevRegistro.setLocationByPlatform(true);
-        nuevRegistro.setMinimumSize(new java.awt.Dimension(566, 456));
-        nuevRegistro.setPreferredSize(new java.awt.Dimension(566, 456));
+        nuevRegistro.setMinimumSize(new java.awt.Dimension(566, 500));
+        nuevRegistro.setPreferredSize(new java.awt.Dimension(566, 500));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "- Seleccionar -", "Médico", "Administrador" }));
+        jcbTipoUser.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Seleccionar-", "Médico", "Administrador" }));
 
         btnRetornar.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
         btnRetornar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/volver.png"))); // NOI18N
@@ -124,6 +122,13 @@ public class Logueo extends javax.swing.JFrame {
         jLabel16.setForeground(new java.awt.Color(102, 0, 51));
         jLabel16.setText("Contraseña");
 
+        jlEspecialidad.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
+        jlEspecialidad.setForeground(new java.awt.Color(102, 0, 51));
+        jlEspecialidad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/tipodoc.png"))); // NOI18N
+        jlEspecialidad.setText("Especialidad");
+
+        jcbxEspecialidad1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Seleccionar-", "Medicina General", "Obstetricia", "Otorrinolaringologia", "Pediatria", "Psicologia", "Radiologia", "Traumatologia" }));
+
         jmAyuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ayuda.png"))); // NOI18N
         jmAyuda.setText("Ayuda");
 
@@ -151,14 +156,7 @@ public class Logueo extends javax.swing.JFrame {
             .addGroup(nuevRegistroLayout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addGroup(nuevRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(nuevRegistroLayout.createSequentialGroup()
-                        .addComponent(btnRetornar)
-                        .addGap(42, 42, 42)
-                        .addComponent(btnRegistro)
-                        .addGap(45, 45, 45)
-                        .addComponent(btnSalir)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(nuevRegistroLayout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, nuevRegistroLayout.createSequentialGroup()
                         .addGroup(nuevRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel6)
                             .addComponent(jLabel12)
@@ -170,7 +168,7 @@ public class Logueo extends javax.swing.JFrame {
                         .addGroup(nuevRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(dtNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jcbTipoUser, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtDNI, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -179,7 +177,20 @@ public class Logueo extends javax.swing.JFrame {
                             .addComponent(btnSubirFoto)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, nuevRegistroLayout.createSequentialGroup()
                                 .addComponent(jLabel3)
-                                .addGap(10, 10, 10)))))
+                                .addGap(10, 10, 10))))
+                    .addGroup(nuevRegistroLayout.createSequentialGroup()
+                        .addGroup(nuevRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(nuevRegistroLayout.createSequentialGroup()
+                                .addComponent(btnRetornar)
+                                .addGap(42, 42, 42)
+                                .addComponent(btnRegistro)
+                                .addGap(45, 45, 45)
+                                .addComponent(btnSalir))
+                            .addGroup(nuevRegistroLayout.createSequentialGroup()
+                                .addComponent(jlEspecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jcbxEspecialidad1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(44, 44, 44))
         );
         nuevRegistroLayout.setVerticalGroup(
@@ -214,58 +225,22 @@ public class Logueo extends javax.swing.JFrame {
                                 .addComponent(jLabel16))
                             .addGroup(nuevRegistroLayout.createSequentialGroup()
                                 .addGap(18, 18, 18)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jcbTipoUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(txtDNI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(nuevRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jlEspecialidad)
+                    .addComponent(jcbxEspecialidad1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
                 .addGroup(nuevRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnRetornar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-        );
-
-        jfEspecialidad.setMinimumSize(new java.awt.Dimension(352, 142));
-
-        jLabel7.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(102, 0, 51));
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/tipodoc.png"))); // NOI18N
-        jLabel7.setText("Especialidad");
-
-        jcbxEspecialidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Seleccionar-", "Medicina General", "Odontologia" }));
-
-        btnAceptar.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
-        btnAceptar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Check.png"))); // NOI18N
-        btnAceptar.setText("Aceptar");
-
-        javax.swing.GroupLayout jfEspecialidadLayout = new javax.swing.GroupLayout(jfEspecialidad.getContentPane());
-        jfEspecialidad.getContentPane().setLayout(jfEspecialidadLayout);
-        jfEspecialidadLayout.setHorizontalGroup(
-            jfEspecialidadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jfEspecialidadLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37)
-                .addComponent(jcbxEspecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(47, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jfEspecialidadLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnAceptar)
-                .addGap(115, 115, 115))
-        );
-        jfEspecialidadLayout.setVerticalGroup(
-            jfEspecialidadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jfEspecialidadLayout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addGroup(jfEspecialidadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(jcbxEspecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
-                .addComponent(btnAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -410,15 +385,13 @@ public class Logueo extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnAcceder;
-    public javax.swing.JButton btnAceptar;
     public javax.swing.JButton btnLogout;
     public javax.swing.JButton btnRegistrar;
     public javax.swing.JButton btnRegistro;
     public javax.swing.JButton btnRetornar;
     public javax.swing.JButton btnSalir;
     private javax.swing.JButton btnSubirFoto;
-    private com.toedter.calendar.JDateChooser dtNacimiento;
-    private javax.swing.JComboBox<String> jComboBox1;
+    public com.toedter.calendar.JDateChooser dtNacimiento;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -431,11 +404,11 @@ public class Logueo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
-    public javax.swing.JComboBox<String> jcbxEspecialidad;
-    private javax.swing.JFrame jfEspecialidad;
+    public javax.swing.JComboBox<String> jcbTipoUser;
+    public javax.swing.JComboBox<String> jcbxEspecialidad1;
+    public javax.swing.JLabel jlEspecialidad;
     private javax.swing.JMenu jmAyuda;
     public javax.swing.JMenuItem jmiAyuda;
     public javax.swing.JMenuItem jmiForo;
@@ -443,10 +416,10 @@ public class Logueo extends javax.swing.JFrame {
     public javax.swing.JPasswordField jpssContra;
     public javax.swing.JTextField jtxtCorreo;
     public javax.swing.JFrame nuevRegistro;
-    private javax.swing.JTextField txtContraseña;
-    private javax.swing.JTextField txtCorreo;
-    private javax.swing.JTextField txtDNI;
-    private javax.swing.JTextField txtNombre;
+    public javax.swing.JTextField txtContraseña;
+    public javax.swing.JTextField txtCorreo;
+    public javax.swing.JTextField txtDNI;
+    public javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
 
 

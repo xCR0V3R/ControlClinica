@@ -2,21 +2,34 @@
 package modelo;
 //...
 //agree
-public abstract class Usuario1 {
+public abstract class Usuario {
   private String iptip; 
   private String fecha; 
   private String nombre; 
   private String correo; 
   private String pswd; 
+  private int dni;
 
-    public Usuario1() {
+    public Usuario(){
+        
     }
-    public Usuario1(String iptip, String fecha, String nombre, String correo, String pswd) {
+    public Usuario(String iptip, String fecha, String nombre, String correo, String pswd, int dni) {
         this.iptip = iptip;
         this.fecha = fecha;
         this.nombre = nombre;
         this.correo = correo;
         this.pswd = pswd;
+        this.dni = dni;
+    }
+
+  
+  
+    public int getDni() {
+        return dni;
+    }
+
+    public void setDni(int dni) {
+        this.dni = dni;
     }
 
     public String getIptip() {

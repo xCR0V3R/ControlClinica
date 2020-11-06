@@ -39,7 +39,7 @@ public class ctrlLogueo implements ActionListener{
         
          if(e.getSource()==log.btnRegistrar){
              log.setVisible(false);
-             mlog.inRegistro(log.nuevRegistro);
+             mlog.inRegistro(log.nuevRegistro,log);
         }
           if(e.getSource()==log.btnLogout){
            System.exit(0);
@@ -53,7 +53,23 @@ public class ctrlLogueo implements ActionListener{
         }
           //evento de Aceptar registro. Llamar a DAO
          if(e.getSource()==log.btnRegistro){
-             JOptionPane.showMessageDialog(null, "Registrado con exito");
+             
+             if(log.jcbTipoUser.getSelectedItem().toString().equals("Administrador")){
+                 mlog.regAdmi(log);
+                JOptionPane.showMessageDialog(null, "Registrado con exito, Admi"); 
+             }else{
+                 if(log.jcbxEspecialidad1.getSelectedItem().toString().equals("-Seleccionar-")){
+                     JOptionPane.showMessageDialog(null, "Ingrese su especialidad");
+                     log.jlEspecialidad.setVisible(true);
+                     log.jcbxEspecialidad1.setVisible(true);
+                  } else{
+                     JOptionPane.showMessageDialog(null, "Registrado con exito, Doc");
+                     
+                 }
+             }
+             
+               
+              
         }
          
          if(e.getSource()==log.jmiAyuda){

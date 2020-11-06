@@ -5,9 +5,13 @@ import vistaa.*;import controlador.*;
 import java.awt.Desktop;
 import java.net.URI;
 import javax.swing.*;
+import modelo.Administrador;import daos.*;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class mLog {
     private static final String URLIcono="/imagenes/iconoSistema.png";
+    DAOLog dao=new DAOLog();
     
     public void inicializarLog(Logueo log){
         log.setTitle("Sistema CliniMAX");
@@ -16,11 +20,13 @@ public class mLog {
         esIcono(log);
     }
     
-     public void inRegistro(JFrame loge){
+     public void inRegistro(JFrame loge, Logueo lo){
         loge.setTitle("Registro");
         loge.setLocationRelativeTo(null);
         loge.setVisible(true);        
         esIcono(loge);
+        lo.jlEspecialidad.setVisible(false);
+        lo.jcbxEspecialidad1.setVisible(false);
      }
      
      public void esIcono(JFrame loge){
@@ -40,4 +46,17 @@ public class mLog {
                }
            }
     }
+        
+        public void regAdmi(Logueo log){
+            String nom=log.txtNombre.getText();
+            SimpleDateFormat formato=new SimpleDateFormat("yyyy-MM-dd");
+            String nac=formato.format(log.dtNacimiento.getDate().toString());
+            System.out.println("ESTO ES NACIMIENTO: "+nac);
+            String tip="U001";
+            int DNI=Integer.parseInt(log.txtDNI.getText());
+            String correo=log.txtCorreo.getText();
+            String contra=log.txtContraseña.getText();
+            Administrador a=new Administrador(tip, nac, nom, correo, contra, DNI);
+            dao.addAdmi(a);
+        }
 }
