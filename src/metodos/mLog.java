@@ -50,12 +50,13 @@ public class mLog {
         
         public void regAdmi(Logueo log){
             String nom=log.txtNombre.getText();
-            String naci=(String)log.dateNacimiento.getDateFormatString();
+            SimpleDateFormat formato=new SimpleDateFormat("yyyy-MM-dd");
+            String nac=formato.format(log.dateNacimiento.getDate());
             String tip="U001";
             int DNI=Integer.parseInt(log.txtDNI.getText());
             String correo=log.txtCorreo.getText();
             String contra=log.txtContraseña.getText();
-            Administrador a=new Administrador(tip,naci, nom, correo, contra, DNI);
+            Administrador a=new Administrador(tip,nac, nom, correo, contra, DNI);
             dao.addAdmi(a);
         }
         
