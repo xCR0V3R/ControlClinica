@@ -5,7 +5,7 @@ import vistaa.*;import controlador.*;
 import java.awt.Desktop;
 import java.net.URI;
 import javax.swing.*;
-import modelo.Administrador;import daos.*;
+import modelo.*;import daos.*;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
@@ -59,4 +59,28 @@ public class mLog {
             Administrador a=new Administrador(tip, nac, nom, correo, contra, DNI);
             dao.addAdmi(a);
         }
+        
+       /* public String tipoEsp(String esp){
+            if(esp.equals("Medicina General")) return "E01";
+            if(esp.equals("Medicina General")) return "E02";
+            if(esp.equals("Medicina General")) return "E03";
+            if(esp.equals("Medicina General")) return "E01";
+            if(esp.equals("Medicina General")) return "E01";
+            if(esp.equals("Medicina General")) return "E01";
+            if(esp.equals("Medicina General")) return "E01";
+            if(esp.equals("Medicina General")) return "E01";
+        }*/
+        
+      /*  public void regMed(Logueo log){
+            String nom=log.txtNombre.getText();
+            SimpleDateFormat formato=new SimpleDateFormat("yyyy-MM-dd");
+            String nac=formato.format(log.dtNacimiento.getDate().toString());
+            System.out.println("ESTO ES NACIMIENTO: "+nac);
+            String tip="U001";
+            int DNI=Integer.parseInt(log.txtDNI.getText());
+            String correo=log.txtCorreo.getText();
+            String contra=log.txtContraseña.getText();
+            String esp=log.jcbxEspecialidad1.getSelectedItem().toString();
+            Medico md=new Medico(correo, correo, tip, esp, nom, correo, esp, DNI)
+        }*/
 }

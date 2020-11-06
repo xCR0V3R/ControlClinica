@@ -63,6 +63,7 @@ public class ctrlLogueo implements ActionListener{
                      log.jlEspecialidad.setVisible(true);
                      log.jcbxEspecialidad1.setVisible(true);
                   } else{
+                     
                      JOptionPane.showMessageDialog(null, "Registrado con exito, Doc");
                      
                  }
