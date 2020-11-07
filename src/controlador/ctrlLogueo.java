@@ -13,7 +13,7 @@ public class ctrlLogueo implements ActionListener{
     Logueo log;
     mLog mlog;
     DAOLog a=new DAOLog();
-    mLog mlog2=new mLog();    
+    Logueo log2=new Logueo();    
     public ctrlLogueo(Logueo log){
         this.log=log;  mlog=new mLog(this.log);
         mlog.inicializarLog();
@@ -60,7 +60,7 @@ public class ctrlLogueo implements ActionListener{
         }
           //evento de Aceptar registro. Llamar a DAO
          if(e.getSource()==log.btnRegistro){
-             int c=0;
+             //int c=0;
              try{
                     mlog.obtenerData();  
                     if(mlog.getdCorreo().equals("") || mlog.getdPswd().equals("") || mlog.getdTip().equals("U000")){
@@ -68,15 +68,20 @@ public class ctrlLogueo implements ActionListener{
                    }else{
                        if(mlog.getdTip()=="U001"){
                        mlog.regAdmi();
-                       JOptionPane.showMessageDialog(null, "Registrado con exito, Admi"); }
+                       JOptionPane.showMessageDialog(null, "Registrado con exito, Admi"); 
+                       log.setVisible(false);log.nuevRegistro.setVisible(false);
+                       ctrlLogueo ctLog=new ctrlLogueo(log2);
+                       }
                        if(mlog.getdTip()=="U002"&& mlog.getdEsp().equals("-Seleccionar-")){
                            JOptionPane.showMessageDialog(null, "Ingrese especialidad");
                            log.jlEspecialidad.setVisible(true);
                            log.jcbxEspecialidad1.setVisible(true);
-                           c=1;
+                          
                        }
                        //if(mlog.getdEsp().equals("-Seleccionar-"))c++;
-                       if(mlog.getdTip()=="U002"&&c==2){
+                       if(mlog.getdTip()=="U002"&& !mlog.getdEsp().equals("-Seleccionar-")){
+                           log.setVisible(false);log.nuevRegistro.setVisible(false);
+                       ctrlLogueo ctLog=new ctrlLogueo(log2);
                            JOptionPane.showMessageDialog(null, "Registrado con exito, Doc"); 
                        }
                    }

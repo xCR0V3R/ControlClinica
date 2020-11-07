@@ -72,12 +72,19 @@ public class mLog {
         if(tipo.equals("Medico")) dTip="U002";
         if(tipo.equals("Administrador")) dTip="U001";
         if(tipo.equals("-Seleccionar-")) dTip="U000";
-        
         if(dTip.equals("U002")){
             dEsp=log.jcbxEspecialidad1.getSelectedItem().toString();
         }
         }
         
+        public void cleanData(){
+            log.txtNombre.setText("");
+            log.dateNacimiento.setDate(null);
+            log.txtDNI.setText("");
+            log.txCorreo.setText("");
+            log.txContra.setText("");
+           // log.jcbTipoUser.
+        }
        
         public void regAdmi(){
             Administrador a=new Administrador(dTip,dNac, dNom, dCorreo, dPswd, dDNI);
