@@ -11,10 +11,11 @@ import modelo.*;import vistaa.*; import metodos.*;
 
 public class ctrlLogueo implements ActionListener{
     Logueo log;
-    mLog mlog=new mLog();
-    
+    mLog mlog;
+    mLog mlog2=new mLog();    
     public ctrlLogueo(Logueo log){
-        this.log=log; mlog.inicializarLog(this.log);
+        this.log=log;  mlog=new mLog(this.log);
+        mlog.inicializarLog();
         this.log.btnAcceder.addActionListener(this);
         this.log.btnLogout.addActionListener(this);
         this.log.btnRegistrar.addActionListener(this);
@@ -35,12 +36,11 @@ public class ctrlLogueo implements ActionListener{
         }
          if(e.getSource()==log.btnAcceder){
              JOptionPane.showMessageDialog(null, "Registrese 1ero"); 
-            
-        }
+         }
         
          if(e.getSource()==log.btnRegistrar){
              log.setVisible(false);
-             mlog.inRegistro(log.nuevRegistro,log);
+             mlog.inRegistro();
         }
           if(e.getSource()==log.btnLogout){
            System.exit(0);
@@ -50,29 +50,62 @@ public class ctrlLogueo implements ActionListener{
         }  
           if(e.getSource()==log.btnRetornar){
            log.nuevRegistro.setVisible(false);
-           mlog.inicializarLog(log);
+           mlog.inicializarLog();
         }
           //evento de Aceptar registro. Llamar a DAO
          if(e.getSource()==log.btnRegistro){
+             try{
+                 if(mlog.vacioData()!=0){
+                   mlog.obtenerData();  
+                   if(mlog.getdTip()=="U001"){
+                       mlog.regAdmi();
+                   }
+                 }
+              }catch (NullPointerException ex) {
+              JOptionPane.showMessageDialog(null, "¡Faltan datos por ingresar!\nError: "+ex); 
+             }catch(NumberFormatException exx){
+                     JOptionPane.showMessageDialog(null, "¡Inserte correctamente su DNI!\nError: "+exx.getMessage()); 
+                 }
+             
+             
+            /* 
+             if(mlog.getdTip()=="U001"){
+                 try{
+                     
+                     mlog.regAdmi();
+                     JOptionPane.showMessageDialog(null, "Registrado con exito, Admi"); 
+                 }catch (NullPointerException ex) {
+                     JOptionPane.showMessageDialog(null, "¡Faltan datos por ingresar!\nError: "+ex); 
+                 }
+             }
+            /* 
              
              if(log.jcbTipoUser.getSelectedItem().toString().equals("Administrador")){
-                 mlog.regAdmi(log);
-                JOptionPane.showMessageDialog(null, "Registrado con exito, Admi"); 
-             }else{
-                 if(log.jcbxEspecialidad1.getSelectedItem().toString().equals("-Seleccionar-")){
+                
+                 
+                 try{
+                     
+                     mlog.regAdmi();
+                     JOptionPane.showMessageDialog(null, "Registrado con exito, Admi"); 
+                 }catch (NullPointerException ex) {
+                     JOptionPane.showMessageDialog(null, "¡Faltan datos por ingresar!\nError: "+ex); 
+                 }catch(NumberFormatException exx){
+                     JOptionPane.showMessageDialog(null, "¡Inserte correctamente su DNI!\nError: "+exx.getMessage()); 
+                 }
+             
+             }
+             else if(log.jcbxEspecialidad1.getSelectedItem().toString().equals("Medico")){
                      JOptionPane.showMessageDialog(null, "Ingrese su especialidad");
                      log.jlEspecialidad.setVisible(true);
                      log.jcbxEspecialidad1.setVisible(true);
-                  } else{
-                     
-                     JOptionPane.showMessageDialog(null, "Registrado con exito, Doc");
-                     
-                 }
-             }
+             } else if(log.jcbxEspecialidad1.getSelectedItem().toString().equals("-Seleccionar-")){
+                   JOptionPane.showMessageDialog(null, "Seleccion tipo de usuario");
+                    
+             }*/
              
-               
+         }    
               
-        }
+        
          
          if(e.getSource()==log.jmiAyuda){
              mlog.support("https://www.clinicainternacional.com.pe/");

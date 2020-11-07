@@ -10,24 +10,38 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+
+
 public class mLog {
     private static final String URLIcono="/imagenes/iconoSistema.png";
     DAORegistro dao=new DAORegistro();
+    Logueo log;
+    String dNom; String dNac; private String dTip;int dDNI;String dCorreo;String dPswd;
+    String dEsp;
+    SimpleDateFormat formato=new SimpleDateFormat("yyyy-MM-dd");
     
-    public void inicializarLog(Logueo log){
+    public mLog(){}
+    
+    public mLog(Logueo log){
+        this.log=log;
+        
+    }
+    
+        
+    public void inicializarLog(){
         log.setTitle("Sistema CliniMAX");
         log.setLocationRelativeTo(null);
         log.setVisible(true);
         esIcono(log);
     }
     
-     public void inRegistro(JFrame loge, Logueo lo){
-        loge.setTitle("Registro");
-        loge.setLocationRelativeTo(null);
-        loge.setVisible(true);        
-        esIcono(loge);
-        lo.jlEspecialidad.setVisible(false);
-        lo.jcbxEspecialidad1.setVisible(false);
+     public void inRegistro(){
+        log.nuevRegistro.setTitle("Registro");
+        log.nuevRegistro.setLocationRelativeTo(null);
+        log.nuevRegistro.setVisible(true);        
+        esIcono(log.nuevRegistro);
+        log.jlEspecialidad.setVisible(false);
+        log.jcbxEspecialidad1.setVisible(false);
      }
      
      public void esIcono(JFrame loge){
@@ -48,17 +62,54 @@ public class mLog {
            }
     }
         
-        public void regAdmi(Logueo log){
-            String nom=log.txtNombre.getText();
-            SimpleDateFormat formato=new SimpleDateFormat("yyyy-MM-dd");
-            String nac=formato.format(log.dateNacimiento.getDate());
-            String tip="U001";
-            int DNI=Integer.parseInt(log.txtDNI.getText());
-            String correo=log.txtCorreo.getText();
-            String contra=log.txtContraseña.getText();
-            Administrador a=new Administrador(tip,nac, nom, correo, contra, DNI);
-            dao.addAdmi(a);
+        public void obtenerData(){
+        dNom=log.txtNombre.getText();
+        dNac=formato.format(this.log.dateNacimiento.getDate());
+        dDNI=Integer.parseInt(this.log.txtDNI.getText());
+        dCorreo=log.txtCorreo.getText();
+        dPswd=log.txtContraseña.getText();
+        String tipo="";
+        tipo=log.jcbTipoUser.getSelectedItem().toString();
+        if(tipo.equals("Medico")) dTip="U002";
+        if(tipo.equals("Administrador")) dTip="U001";
+        else dTip=null;
         }
+        
+        public int  vacioData(){
+            int c=0;
+            
+            if(dNom==null){
+               JOptionPane.showMessageDialog(null, "Falta ingresar nombres");c++;
+                return c;
+            }
+            if(dNac==null){
+                JOptionPane.showMessageDialog(null, "Falta ingresar fecha nacimiento");c++;
+                return c;
+            }
+            if(dDNI==0) {
+                JOptionPane.showMessageDialog(null, "Falta ingresar DNI");c++;
+                return c;
+            }
+            if(dCorreo==null) {
+                JOptionPane.showMessageDialog(null, "Falta ingresar correo");c++;
+                return c;
+            }
+            if(dPswd==null) {
+                JOptionPane.showMessageDialog(null, "Falta ingresar contraseña");c++;
+                return c;
+            }
+            if(dTip==null) {
+                JOptionPane.showMessageDialog(null, "Falta ingresar especialidad");c++;
+                return c;
+            }
+            //if(dNom==null) JOptionPane.showMessageDialog(null, "Falta ingresar nombres");
+            return c;
+        }
+        
+        public void regAdmi(){
+            Administrador a=new Administrador(dTip,dNac, dNom, dCorreo, dPswd, dDNI);
+            dao.addAdmi(a);
+         }
         
        /* public String tipoEsp(String esp){
             if(esp.equals("Medicina General")) return "E01";
@@ -83,4 +134,12 @@ public class mLog {
             String esp=log.jcbxEspecialidad1.getSelectedItem().toString();
             Medico md=new Medico(correo, correo, tip, esp, nom, correo, esp, DNI)
         }*/
+
+    public String getdTip() {
+        return dTip;
+    }
+
+    public void setdTip(String dTip) {
+        this.dTip = dTip;
+    }
 }
