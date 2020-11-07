@@ -68,7 +68,14 @@ public class DAORegistro {
             String sql = "Insert into Administrador values(?,?,?,?,?,?,?)";
             conn = MySQLConexion.getConexion();
             PreparedStatement st = conn.prepareStatement(sql);
-           
+           st.setString(1,genCodAdmi());
+            st.setString(2, a.getIptip());
+            st.setString(3, a.getFecha());
+            st.setString(4, a.getCorreo());
+            st.setString(5, a.getPswd());
+            st.setString(6, a.getNombre());
+            st.setInt(7, a.getDni());
+            resp = st.executeUpdate();
         } catch (Exception ex) {
             ex.printStackTrace();
         } finally {
@@ -105,6 +112,85 @@ public class DAORegistro {
             }
         }
         return cod;
+    }
+    
+    public List<Medico> lisMed() {
+        List<Medico> lis = new ArrayList<>();
+        Connection conn = null;
+
+        try {
+            conn = MySQLConexion.getConexion();
+            String sql = "select * from Medico";
+            PreparedStatement st = conn.prepareStatement(sql);
+            ResultSet rs = st.executeQuery();
+            
+            while (rs.next()) {
+                Medico a = new Medico();
+                a.setCodmed(rs.getString(1));
+                a.setCodes(rs.getString(2));
+                a.setIptip(rs.getString(3));
+                a.setFecha(rs.getString(4));
+                a.setCorreo(rs.getString(5));
+                a.setPswd(rs.getString(6));
+                a.setNombre(rs.getString(7));
+                a.setDni(rs.getInt(8));
+                lis.add(a);
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            try {
+
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (Exception e2) {
+            }
+        }
+
+        return lis;
+    }
+    
+    public String genCodMed() {
+        String cod;
+        if (lisMed().size() == 0) {
+            cod = "M001";
+        } else {
+            int fin = lisMed().size() - 1;
+            cod = lisMed().get(fin).getCodmed();
+            int nro = Integer.parseInt(cod.substring(1)) + 1;
+            DecimalFormat sd = new DecimalFormat("000");
+            cod = "M" + sd.format(nro);
+        }
+        return cod;
+    }
+    
+    public void addMed(Medico a) {
+        int resp = 0;           
+        Connection conn = null; 
+        try {
+            String sql = "Insert into Medico values(?,?,?,?,?,?,?,?)";
+            conn = MySQLConexion.getConexion();
+            PreparedStatement st = conn.prepareStatement(sql);
+            st.setString(1,genCodMed());
+            st.setString(2,a.getIptip());
+            st.setString(3, a.getIptip());
+            st.setString(4, a.getFecha());
+            st.setString(5, a.getCorreo());
+            st.setString(6, a.getPswd());
+            st.setString(7, a.getNombre());
+            st.setInt(8, a.getDni());
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            try {
+       if (conn != null) {
+                    conn.close();
+                }
+            } catch (Exception e2) {
+            }
+        }
+
     }
     
 }

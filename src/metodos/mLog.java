@@ -77,43 +77,16 @@ public class mLog {
         }
         }
         
-        public void cleanData(){
-            log.txtNombre.setText("");
-            log.dateNacimiento.setDate(null);
-            log.txtDNI.setText("");
-            log.txCorreo.setText("");
-            log.txContra.setText("");
-           // log.jcbTipoUser.
-        }
-       
         public void regAdmi(){
             Administrador a=new Administrador(dTip,dNac, dNom, dCorreo, dPswd, dDNI);
             dao.addAdmi(a);
          }
         
-       /* public String tipoEsp(String esp){
-            if(esp.equals("Medicina General")) return "E01";
-            if(esp.equals("Medicina General")) return "E02";
-            if(esp.equals("Medicina General")) return "E03";
-            if(esp.equals("Medicina General")) return "E01";
-            if(esp.equals("Medicina General")) return "E01";
-            if(esp.equals("Medicina General")) return "E01";
-            if(esp.equals("Medicina General")) return "E01";
-            if(esp.equals("Medicina General")) return "E01";
-        }*/
-        
-      /*  public void regMed(Logueo log){
-            String nom=log.txtNombre.getText();
-            SimpleDateFormat formato=new SimpleDateFormat("yyyy-MM-dd");
-            String nac=formato.format(log.dtNacimiento.getDate().toString());
-            System.out.println("ESTO ES NACIMIENTO: "+nac);
-            String tip="U001";
-            int DNI=Integer.parseInt(log.txtDNI.getText());
-            String correo=log.txtCorreo.getText();
-            String contra=log.txtContraseña.getText();
-            String esp=log.jcbxEspecialidad1.getSelectedItem().toString();
-            Medico md=new Medico(correo, correo, tip, esp, nom, correo, esp, DNI)
-        }*/
+      public void regMed(Logueo log){
+            String codes=dao.busCodEsp(dEsp);
+            Medico md=new Medico(codes, dTip, dNac,dNom, dCorreo, dPswd, dDNI);
+            dao.addMed(md);
+        }
 
     public String getdTip() {
         return dTip;
