@@ -16,8 +16,8 @@ public class mLog {
     private static final String URLIcono="/imagenes/iconoSistema.png";
     DAORegistro dao=new DAORegistro();
     Logueo log;
-    String dNom; String dNac; private String dTip;int dDNI;String dCorreo;String dPswd;
-    String dEsp;
+    String dNom; String dNac; private String dTip;int dDNI;private String dCorreo;private String dPswd;
+    private String dEsp;
     SimpleDateFormat formato=new SimpleDateFormat("yyyy-MM-dd");
     
     public mLog(){}
@@ -27,7 +27,6 @@ public class mLog {
         
     }
     
-        
     public void inicializarLog(){
         log.setTitle("Sistema CliniMAX");
         log.setLocationRelativeTo(null);
@@ -66,46 +65,20 @@ public class mLog {
         dNom=log.txtNombre.getText();
         dNac=formato.format(this.log.dateNacimiento.getDate());
         dDNI=Integer.parseInt(this.log.txtDNI.getText());
-        dCorreo=log.txtCorreo.getText();
-        dPswd=log.txtContraseña.getText();
+        dCorreo=log.txCorreo.getText();
+        dPswd=log.txContra.getText();
         String tipo="";
         tipo=log.jcbTipoUser.getSelectedItem().toString();
         if(tipo.equals("Medico")) dTip="U002";
         if(tipo.equals("Administrador")) dTip="U001";
-        else dTip=null;
+        if(tipo.equals("-Seleccionar-")) dTip="U000";
+        
+        if(dTip.equals("U002")){
+            dEsp=log.jcbxEspecialidad1.getSelectedItem().toString();
+        }
         }
         
-        public int  vacioData(){
-            int c=0;
-            
-            if(dNom==null){
-               JOptionPane.showMessageDialog(null, "Falta ingresar nombres");c++;
-                return c;
-            }
-            if(dNac==null){
-                JOptionPane.showMessageDialog(null, "Falta ingresar fecha nacimiento");c++;
-                return c;
-            }
-            if(dDNI==0) {
-                JOptionPane.showMessageDialog(null, "Falta ingresar DNI");c++;
-                return c;
-            }
-            if(dCorreo==null) {
-                JOptionPane.showMessageDialog(null, "Falta ingresar correo");c++;
-                return c;
-            }
-            if(dPswd==null) {
-                JOptionPane.showMessageDialog(null, "Falta ingresar contraseña");c++;
-                return c;
-            }
-            if(dTip==null) {
-                JOptionPane.showMessageDialog(null, "Falta ingresar especialidad");c++;
-                return c;
-            }
-            //if(dNom==null) JOptionPane.showMessageDialog(null, "Falta ingresar nombres");
-            return c;
-        }
-        
+       
         public void regAdmi(){
             Administrador a=new Administrador(dTip,dNac, dNom, dCorreo, dPswd, dDNI);
             dao.addAdmi(a);
@@ -141,5 +114,17 @@ public class mLog {
 
     public void setdTip(String dTip) {
         this.dTip = dTip;
+    }
+
+    public String getdCorreo() {
+        return dCorreo;
+    }
+
+    public String getdPswd() {
+        return dPswd;
+    }
+
+    public String getdEsp() {
+        return dEsp;
     }
 }

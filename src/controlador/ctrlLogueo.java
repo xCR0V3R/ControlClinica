@@ -54,54 +54,35 @@ public class ctrlLogueo implements ActionListener{
         }
           //evento de Aceptar registro. Llamar a DAO
          if(e.getSource()==log.btnRegistro){
+             int c=0;
              try{
-                 if(mlog.vacioData()!=0){
-                   mlog.obtenerData();  
-                   if(mlog.getdTip()=="U001"){
+                    mlog.obtenerData();  
+                    if(mlog.getdCorreo().equals("") || mlog.getdPswd().equals("") || mlog.getdTip().equals("U000")){
+                       JOptionPane.showMessageDialog(null, "¡Faltan datos por ingresar!");
+                   }else{
+                       if(mlog.getdTip()=="U001"){
                        mlog.regAdmi();
+                       JOptionPane.showMessageDialog(null, "Registrado con exito, Admi"); }
+                       if(mlog.getdTip()=="U002"&& mlog.getdEsp().equals("-Seleccionar-")){
+                           JOptionPane.showMessageDialog(null, "Ingrese especialidad");
+                           log.jlEspecialidad.setVisible(true);
+                           log.jcbxEspecialidad1.setVisible(true);
+                           c=1;
+                       }
+                       //if(mlog.getdEsp().equals("-Seleccionar-"))c++;
+                       if(mlog.getdTip()=="U002"&&c==2){
+                           JOptionPane.showMessageDialog(null, "Registrado con exito, Doc"); 
+                       }
                    }
-                 }
+                     
+                 
               }catch (NullPointerException ex) {
               JOptionPane.showMessageDialog(null, "¡Faltan datos por ingresar!\nError: "+ex); 
              }catch(NumberFormatException exx){
                      JOptionPane.showMessageDialog(null, "¡Inserte correctamente su DNI!\nError: "+exx.getMessage()); 
                  }
              
-             
-            /* 
-             if(mlog.getdTip()=="U001"){
-                 try{
-                     
-                     mlog.regAdmi();
-                     JOptionPane.showMessageDialog(null, "Registrado con exito, Admi"); 
-                 }catch (NullPointerException ex) {
-                     JOptionPane.showMessageDialog(null, "¡Faltan datos por ingresar!\nError: "+ex); 
-                 }
-             }
-            /* 
-             
-             if(log.jcbTipoUser.getSelectedItem().toString().equals("Administrador")){
-                
-                 
-                 try{
-                     
-                     mlog.regAdmi();
-                     JOptionPane.showMessageDialog(null, "Registrado con exito, Admi"); 
-                 }catch (NullPointerException ex) {
-                     JOptionPane.showMessageDialog(null, "¡Faltan datos por ingresar!\nError: "+ex); 
-                 }catch(NumberFormatException exx){
-                     JOptionPane.showMessageDialog(null, "¡Inserte correctamente su DNI!\nError: "+exx.getMessage()); 
-                 }
-             
-             }
-             else if(log.jcbxEspecialidad1.getSelectedItem().toString().equals("Medico")){
-                     JOptionPane.showMessageDialog(null, "Ingrese su especialidad");
-                     log.jlEspecialidad.setVisible(true);
-                     log.jcbxEspecialidad1.setVisible(true);
-             } else if(log.jcbxEspecialidad1.getSelectedItem().toString().equals("-Seleccionar-")){
-                   JOptionPane.showMessageDialog(null, "Seleccion tipo de usuario");
-                    
-             }*/
+          
              
          }    
               

@@ -68,14 +68,7 @@ public class DAORegistro {
             String sql = "Insert into Administrador values(?,?,?,?,?,?,?)";
             conn = MySQLConexion.getConexion();
             PreparedStatement st = conn.prepareStatement(sql);
-            st.setString(1,genCodAdmi());
-            st.setString(2, a.getIptip());
-            st.setString(3, a.getFecha());
-            st.setString(4, a.getCorreo());
-            st.setString(5, a.getPswd());
-            st.setString(6, a.getNombre());
-            st.setInt(7,a.getDni());
-            st.executeUpdate();
+           
         } catch (Exception ex) {
             ex.printStackTrace();
         } finally {
@@ -88,4 +81,30 @@ public class DAORegistro {
         }
 
     }
+    
+    public String busCodEsp(String nomes) {
+        String cod= "";           
+        Connection conn = null; 
+        try {
+            String sql = "Select codes where nombre=?";
+            conn = MySQLConexion.getConexion();
+            PreparedStatement st = conn.prepareStatement(sql);
+            st.setString(1, nomes);
+            ResultSet rs = st.executeQuery();
+           if (rs.next()) {
+               cod=rs.getString(1);
+           }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            try {
+       if (conn != null) {
+                    conn.close();
+                }
+            } catch (Exception e2) {
+            }
+        }
+        return cod;
+    }
+    
 }

@@ -40,8 +40,6 @@ public class Logueo extends javax.swing.JFrame {
         btnSubirFoto = new javax.swing.JButton();
         btnRegistro = new javax.swing.JButton();
         txtDNI = new javax.swing.JTextField();
-        txtCorreo = new javax.swing.JTextField();
-        txtContraseña = new javax.swing.JTextField();
         dateNacimiento = new com.toedter.calendar.JDateChooser();
         jLabel11 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -52,6 +50,8 @@ public class Logueo extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         jlEspecialidad = new javax.swing.JLabel();
         jcbxEspecialidad1 = new javax.swing.JComboBox<>();
+        txCorreo = new javax.swing.JTextField();
+        txContra = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         jmAyuda = new javax.swing.JMenu();
         jmiAyuda = new javax.swing.JMenuItem();
@@ -72,7 +72,7 @@ public class Logueo extends javax.swing.JFrame {
         nuevRegistro.setLocationByPlatform(true);
         nuevRegistro.setMinimumSize(new java.awt.Dimension(566, 500));
 
-        jcbTipoUser.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Seleccionar-", "Médico", "Administrador" }));
+        jcbTipoUser.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Seleccionar-", "Medico", "Administrador" }));
 
         btnRetornar.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
         btnRetornar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/volver.png"))); // NOI18N
@@ -164,13 +164,13 @@ public class Logueo extends javax.swing.JFrame {
                             .addComponent(jLabel15)
                             .addComponent(jLabel16))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
-                        .addGroup(nuevRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(dateNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jcbTipoUser, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtDNI, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(nuevRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(dateNacimiento, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
+                            .addComponent(txtNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
+                            .addComponent(jcbTipoUser, 0, 164, Short.MAX_VALUE)
+                            .addComponent(txtDNI, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
+                            .addComponent(txCorreo)
+                            .addComponent(txContra))
                         .addGap(61, 61, 61)
                         .addGroup(nuevRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnSubirFoto)
@@ -227,15 +227,15 @@ public class Logueo extends javax.swing.JFrame {
                                 .addComponent(jcbTipoUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(txtDNI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(25, 25, 25)
+                                .addComponent(txCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(txContra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(18, 18, 18)
                 .addGroup(nuevRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlEspecialidad)
                     .addComponent(jcbxEspecialidad1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
                 .addGroup(nuevRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnRetornar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -424,8 +424,8 @@ public class Logueo extends javax.swing.JFrame {
     public javax.swing.JPasswordField jpssContra;
     public javax.swing.JTextField jtxtCorreo;
     public javax.swing.JFrame nuevRegistro;
-    public javax.swing.JTextField txtContraseña;
-    public javax.swing.JTextField txtCorreo;
+    public javax.swing.JTextField txContra;
+    public javax.swing.JTextField txCorreo;
     public javax.swing.JTextField txtDNI;
     public javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
