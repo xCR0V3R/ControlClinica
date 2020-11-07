@@ -9,33 +9,35 @@ import modelo.*;
 import vistaa.*;
 
 public class DAOLog { 
-    Connection con = null;
     
-    public void validarUsuario(Medico m){ 
-        
-        Logueo buscar=new Logueo();
-        String pws=String.valueOf(buscar.jpssContra.getPassword());
+    
+    public void validarUsuario(String cr){ 
+        //Logueo buscar=new Logueo();
+        Connection con = null;
+        String SQL="select correo from Medico where correo=? ";
         int busqueda=0;
-        String cr=buscar.jtxtCorreo.getText(); 
-        String SQL="select from* Medico where correo='"+cr+"' and pswd='"+pws+"'";
-        
         try {
-            Statement st=con.createStatement(); 
-            ResultSet rs=st.executeQuery(SQL);
+            con = MySQLConexion.getConexion();
+            PreparedStatement st = con.prepareStatement(SQL);
+            st.setString(1, cr);
+            //st.setString(2, pws);
+            ResultSet rs = st.executeQuery();
             
             if(rs.next()){
+                //String nombre=rs.getString(1);
+                System.out.println("entro");
                 busqueda=1; 
                 if (busqueda==1){
                     JOptionPane.showMessageDialog(null, "Acceso Exitoso");
                     pMedico form=new pMedico(); 
-                    form.setVisible(true);    
+                    form.setVisible(true); 
                 } else {
                     JOptionPane.showMessageDialog(null, "Acceso Exitoso");
                     pAdmi form2=new pAdmi(); 
                     form2.setVisible(true);
                 }
             }
-            
+            System.out.println("check3");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error de Acceso: Usted no está registrado");
         }

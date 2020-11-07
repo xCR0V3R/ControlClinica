@@ -12,6 +12,7 @@ import modelo.*;import vistaa.*; import metodos.*;
 public class ctrlLogueo implements ActionListener{
     Logueo log;
     mLog mlog;
+    DAOLog a=new DAOLog();
     mLog mlog2=new mLog();    
     public ctrlLogueo(Logueo log){
         this.log=log;  mlog=new mLog(this.log);
@@ -35,7 +36,10 @@ public class ctrlLogueo implements ActionListener{
            System.exit(0);
         }
          if(e.getSource()==log.btnAcceder){
-             JOptionPane.showMessageDialog(null, "Registrese 1ero"); 
+             //JOptionPane.showMessageDialog(null, "Registrese 1ero");
+            // String pws=log.jpssContra.getText();
+        String cr=log.jtxtCorreo.getText(); 
+             a.validarUsuario(cr);
          }
         
          if(e.getSource()==log.btnRegistrar){
