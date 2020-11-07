@@ -93,7 +93,7 @@ public class DAORegistro {
         String cod= "";           
         Connection conn = null; 
         try {
-            String sql = "Select codes where nombre=?";
+            String sql = "Select codes from Especialidad where nombre=?";
             conn = MySQLConexion.getConexion();
             PreparedStatement st = conn.prepareStatement(sql);
             st.setString(1, nomes);
@@ -173,13 +173,14 @@ public class DAORegistro {
             conn = MySQLConexion.getConexion();
             PreparedStatement st = conn.prepareStatement(sql);
             st.setString(1,genCodMed());
-            st.setString(2,a.getIptip());
+            st.setString(2,a.getCodes());
             st.setString(3, a.getIptip());
             st.setString(4, a.getFecha());
             st.setString(5, a.getCorreo());
             st.setString(6, a.getPswd());
             st.setString(7, a.getNombre());
             st.setInt(8, a.getDni());
+            resp = st.executeUpdate();
         } catch (Exception ex) {
             ex.printStackTrace();
         } finally {

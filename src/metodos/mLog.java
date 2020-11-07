@@ -82,7 +82,7 @@ public class mLog {
             dao.addAdmi(a);
          }
         
-      public void regMed(Logueo log){
+      public void regMed(){
             String codes=dao.busCodEsp(dEsp);
             Medico md=new Medico(codes, dTip, dNac,dNom, dCorreo, dPswd, dDNI);
             dao.addMed(md);
@@ -90,10 +90,6 @@ public class mLog {
 
     public String getdTip() {
         return dTip;
-    }
-
-    public void setdTip(String dTip) {
-        this.dTip = dTip;
     }
 
     public String getdCorreo() {

@@ -80,6 +80,7 @@ public class ctrlLogueo implements ActionListener{
                        }
                        //if(mlog.getdEsp().equals("-Seleccionar-"))c++;
                        if(mlog.getdTip()=="U002"&& !mlog.getdEsp().equals("-Seleccionar-")){
+                           mlog.regMed();
                            log.setVisible(false);log.nuevRegistro.setVisible(false);
                        ctrlLogueo ctLog=new ctrlLogueo(log2);
                            JOptionPane.showMessageDialog(null, "Registrado con exito, Doc"); 
