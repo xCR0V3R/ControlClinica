@@ -13,7 +13,36 @@ public class ctrlAdmin implements ActionListener{
     pAdmi ad; 
     mAdmi ingresar=new mAdmi();
     mLog url=new mLog();
+    DAOLog dao1=new DAOLog();
+    Administrador admi;
+    //constructor con LOGUEO
+       public ctrlAdmin(pAdmi ad, Administrador admi){
+        this.ad = ad; this.admi=admi; 
+        this.ad.jLBienvenidoA.setText("Bienvenido, "+admi.getNombre().split(" ")[0].trim());
+        ingresar.inicializarAdmi(this.ad);
+        this.ad.btnConfigUser.addActionListener(this);
+        this.ad.btnLogout.addActionListener(this);
+        this.ad.btnSalir2.addActionListener(this);
+        this.ad.btnSalir3.addActionListener(this);
+        this.ad.btnReportes.addActionListener(this);
+        this.ad.btnNuevoP.addActionListener(this);
+        this.ad.jmiAyuda.addActionListener(this);
+        this.ad.btnRetornar1.addActionListener(this);
+        this.ad.btnRetornar2.addActionListener(this);
+        this.ad.btnRetornar3.addActionListener(this);
+        this.ad.jmiAyuda.addActionListener(this);
+        this.ad.jmiAyuda1.addActionListener(this);
+        this.ad.jmiAyuda2.addActionListener(this);
+        this.ad.jmiForo.addActionListener(this);
+        this.ad.jmiForo1.addActionListener(this);
+        this.ad.jmiForo2.addActionListener(this);
+        this.ad.jmiSitioWeb.addActionListener(this);
+        this.ad.jmiSitioWeb1.addActionListener(this);
+        this.ad.jmiSitioWeb2.addActionListener(this);
+    } 
     
+        
+    //constructor para prueba sin LOGUEO
     public ctrlAdmin(pAdmi ad){
         this.ad = ad;
         ingresar.inicializarAdmi(this.ad);
@@ -50,6 +79,10 @@ public class ctrlAdmin implements ActionListener{
            System.exit(0);
         }
         if(e.getSource()==ad.btnConfigUser){
+        ad.configNombre.setText(admi.getNombre());
+        ad.configCorreo.setText(admi.getCorreo());
+        ad.configNac.setDateFormatString(admi.getFecha());
+        ad.configPswd.setText(admi.getPswd());
         ad.setVisible(false); 
         ingresar.confUser(ad.jfConfigP); 
     }

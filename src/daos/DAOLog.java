@@ -29,12 +29,12 @@ public class DAOLog {
                 System.out.println("Entro a Medico");
                 cod=rs.getString(1);
                 if (busqueda==1){
+                    Medico med=busMed(cod);
                     log.setVisible(false);
                     JOptionPane.showMessageDialog(null, "Acceso Exitoso doc");
                     pMedico form=new pMedico(); 
-                    ctrlMedico ctrmed=new ctrlMedico(form);
-                    Medico med=busMed(cod);
-                    form.jLBienvenidoD.setText("Bienvenido, "+med.getNombre().split(" ")[0].trim()); 
+                    ctrlMedico ctrmed=new ctrlMedico(form,med);
+                   
                 }
                 return cod;
             } else if (busqueda==0){
@@ -51,12 +51,12 @@ public class DAOLog {
                     System.out.println("Entro a Administrador");
                     busqueda = 2;
                     if (busqueda == 2) {
+                        Administrador admi=busAdmi(cod);
                         log.setVisible(false);
                         JOptionPane.showMessageDialog(null, "Acceso Exitoso ad"); 
                         pAdmi form2 = new pAdmi();
-                        ctrlAdmin ctradm=new ctrlAdmin(form2);
-                        Administrador admi=busAdmi(cod);
-                        form2.jLBienvenidoA.setText("Bienvenido, "+admi.getNombre().split(" ")[0].trim());
+                        ctrlAdmin ctradm=new ctrlAdmin(form2,admi);
+                        
                     }
                     return cod;
                 }
