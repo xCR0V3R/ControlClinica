@@ -60,7 +60,7 @@ public class pMedico extends javax.swing.JFrame {
         rSLabelHora1 = new rojeru_san.RSLabelHora();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
+        jLBienvenidoD = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jmAyuda = new javax.swing.JMenu();
@@ -171,11 +171,11 @@ public class pMedico extends javax.swing.JFrame {
         );
 
         jfCitasMed.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        jfCitasMed.setMinimumSize(new java.awt.Dimension(500, 550));
-        jfCitasMed.setPreferredSize(new java.awt.Dimension(500, 550));
+        jfCitasMed.setMinimumSize(new java.awt.Dimension(555, 415));
 
         jLabel19.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 18)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(102, 0, 0));
+        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/reporte.png"))); // NOI18N
         jLabel19.setText("CITAS PENDIENTES");
 
         btnVolver1.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
@@ -250,13 +250,13 @@ public class pMedico extends javax.swing.JFrame {
             .addGroup(jfCitasMedLayout.createSequentialGroup()
                 .addGroup(jfCitasMedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jfCitasMedLayout.createSequentialGroup()
-                        .addGap(150, 150, 150)
+                        .addGap(165, 165, 165)
+                        .addComponent(jLabel19))
+                    .addGroup(jfCitasMedLayout.createSequentialGroup()
+                        .addGap(148, 148, 148)
                         .addComponent(btnVolver1)
                         .addGap(18, 18, 18)
-                        .addComponent(btnLogout1))
-                    .addGroup(jfCitasMedLayout.createSequentialGroup()
-                        .addGap(165, 165, 165)
-                        .addComponent(jLabel19)))
+                        .addComponent(btnLogout1)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jfCitasMedLayout.setVerticalGroup(
@@ -265,14 +265,14 @@ public class pMedico extends javax.swing.JFrame {
                 .addGap(27, 27, 27)
                 .addComponent(jLabel19)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 194, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnActualizar1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addGap(26, 26, 26)
                 .addGroup(jfCitasMedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnVolver1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnLogout1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(44, 44, 44))
+                .addContainerGap())
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -309,9 +309,9 @@ public class pMedico extends javax.swing.JFrame {
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/menuAd.png"))); // NOI18N
         jLabel12.setText("Acciones");
 
-        jLabel17.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(102, 0, 51));
-        jLabel17.setText("Bienvenido, Doctor");
+        jLBienvenidoD.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
+        jLBienvenidoD.setForeground(new java.awt.Color(102, 0, 51));
+        jLBienvenidoD.setText("Bienvenido, Doctor");
 
         jLabel18.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(102, 0, 51));
@@ -372,7 +372,7 @@ public class pMedico extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(42, 42, 42)
-                .addComponent(jLabel17)
+                .addComponent(jLBienvenidoD)
                 .addContainerGap(234, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -386,7 +386,7 @@ public class pMedico extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel17)
+                        .addComponent(jLBienvenidoD)
                         .addGap(45, 45, 45)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -477,6 +477,7 @@ public class pMedico extends javax.swing.JFrame {
     public javax.swing.JButton btnVolver1;
     private com.toedter.calendar.JDateChooser dtNacimiento1;
     private javax.swing.JButton jButton1;
+    public javax.swing.JLabel jLBienvenidoD;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -484,7 +485,6 @@ public class pMedico extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JMenuBar jMenuBar1;

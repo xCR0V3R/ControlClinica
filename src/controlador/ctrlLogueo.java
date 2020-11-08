@@ -39,7 +39,7 @@ public class ctrlLogueo implements ActionListener{
              //JOptionPane.showMessageDialog(null, "Registrese 1ero");
         String pws=log.jpssContra.getText();
         String cr=log.jtxtCorreo.getText(); 
-            if( a.validarUsuario(cr,pws)==0){
+            if(a.validarUsuario(cr,pws,log).equals("f")){
                 JOptionPane.showMessageDialog(null, "No está registrado \n Usuario-Contraseña incorrecta");
             }
          }

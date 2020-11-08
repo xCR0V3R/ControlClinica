@@ -93,7 +93,7 @@ public class pAdmi extends javax.swing.JFrame {
         rSLabelFecha1 = new rojeru_san.RSLabelFecha();
         rSLabelHora1 = new rojeru_san.RSLabelHora();
         jLabel25 = new javax.swing.JLabel();
-        jLabel26 = new javax.swing.JLabel();
+        jLBienvenidoA = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -103,7 +103,6 @@ public class pAdmi extends javax.swing.JFrame {
         jmiSitioWeb = new javax.swing.JMenuItem();
 
         jfConfigP.setMinimumSize(new java.awt.Dimension(432, 398));
-        jfConfigP.setPreferredSize(new java.awt.Dimension(432, 398));
 
         jButton2.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/actualizar.png"))); // NOI18N
@@ -204,7 +203,6 @@ public class pAdmi extends javax.swing.JFrame {
 
         jfReporteCitas.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         jfReporteCitas.setMinimumSize(new java.awt.Dimension(730, 541));
-        jfReporteCitas.setPreferredSize(new java.awt.Dimension(730, 541));
 
         jLabel5.setFont(new java.awt.Font("Russo One", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(51, 51, 51));
@@ -361,7 +359,6 @@ public class pAdmi extends javax.swing.JFrame {
 
         jfNuevaCita.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         jfNuevaCita.setMinimumSize(new java.awt.Dimension(678, 498));
-        jfNuevaCita.setPreferredSize(new java.awt.Dimension(678, 498));
 
         jLabel8.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(51, 51, 51));
@@ -589,9 +586,9 @@ public class pAdmi extends javax.swing.JFrame {
         jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/menuAd.png"))); // NOI18N
         jLabel25.setText("Acciones");
 
-        jLabel26.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
-        jLabel26.setForeground(new java.awt.Color(102, 0, 51));
-        jLabel26.setText("Bienvenido, Administrador");
+        jLBienvenidoA.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
+        jLBienvenidoA.setForeground(new java.awt.Color(102, 0, 51));
+        jLBienvenidoA.setText("Bienvenido, Administrador");
 
         jLabel27.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
         jLabel27.setForeground(new java.awt.Color(102, 0, 51));
@@ -630,7 +627,7 @@ public class pAdmi extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(28, 28, 28)
-                        .addComponent(jLabel26))
+                        .addComponent(jLBienvenidoA))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(btnReportes, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -673,7 +670,7 @@ public class pAdmi extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(57, 57, 57)
-                        .addComponent(jLabel26)
+                        .addComponent(jLBienvenidoA)
                         .addGap(36, 36, 36)
                         .addComponent(jLabel25))
                     .addGroup(layout.createSequentialGroup()
@@ -783,6 +780,7 @@ public class pAdmi extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton6;
+    public javax.swing.JLabel jLBienvenidoA;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -797,7 +795,6 @@ public class pAdmi extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel5;
