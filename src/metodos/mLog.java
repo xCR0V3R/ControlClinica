@@ -1,11 +1,13 @@
 
 
 package metodos;
+import entidades.Administrador;
+import entidades.Medico;
 import vistaa.*;import controlador.*;
 import java.awt.Desktop;
 import java.net.URI;
 import javax.swing.*;
-import modelo.*;import daos.*;
+import daos.*;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -17,7 +19,7 @@ public class mLog {
     DAORegistro dao=new DAORegistro();
     Logueo log;
     String dNom; String dNac; private String dTip;int dDNI;private String dCorreo;private String dPswd;
-    private String dEsp;
+    private String dEsp; private char dSexo;
     SimpleDateFormat formato=new SimpleDateFormat("yyyy-MM-dd");
     
     public mLog(){}
@@ -65,6 +67,9 @@ public class mLog {
         dNom=log.txtNombre.getText();
         dNac=formato.format(this.log.dateNacimiento.getDate());
         dDNI=Integer.parseInt(this.log.txtDNI.getText());
+        if(log.jrbMasculino.isSelected()) dSexo='M';
+        if(log.jrbFemenino.isSelected()) dSexo='F';
+        else dSexo='X';
         dCorreo=log.txCorreo.getText();
         dPswd=log.txContra.getText();
         String tipo="";
@@ -78,13 +83,13 @@ public class mLog {
         }
         
         public void regAdmi(){
-            Administrador a=new Administrador(dTip,dNac, dNom, dCorreo, dPswd, dDNI);
+            Administrador a=new Administrador(dTip,dNac, dNom, dSexo,dCorreo, dPswd, dDNI);
             dao.addAdmi(a);
          }
         
       public void regMed(){
             String codes=dao.busCodEsp(dEsp);
-            Medico md=new Medico(codes, dTip, dNac,dNom, dCorreo, dPswd, dDNI);
+            Medico md=new Medico(codes, dTip, dNac,dNom,dSexo, dCorreo, dPswd, dDNI);
             dao.addMed(md);
         }
 
@@ -102,5 +107,9 @@ public class mLog {
 
     public String getdEsp() {
         return dEsp;
+    }
+
+    public char getdSexo() {
+        return dSexo;
     }
 }

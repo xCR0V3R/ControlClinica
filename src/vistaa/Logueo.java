@@ -36,8 +36,6 @@ public class Logueo extends javax.swing.JFrame {
         txtNombre = new javax.swing.JTextField();
         btnRetornar = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
-        btnSubirFoto = new javax.swing.JButton();
         btnRegistro = new javax.swing.JButton();
         txtDNI = new javax.swing.JTextField();
         dateNacimiento = new com.toedter.calendar.JDateChooser();
@@ -52,11 +50,16 @@ public class Logueo extends javax.swing.JFrame {
         jcbxEspecialidad1 = new javax.swing.JComboBox<>();
         txCorreo = new javax.swing.JTextField();
         txContra = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jrbMasculino = new javax.swing.JRadioButton();
+        jrbFemenino = new javax.swing.JRadioButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jmAyuda = new javax.swing.JMenu();
         jmiAyuda = new javax.swing.JMenuItem();
         jmiForo = new javax.swing.JMenuItem();
         jmiSitioWeb = new javax.swing.JMenuItem();
+        groupSexo = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -70,7 +73,7 @@ public class Logueo extends javax.swing.JFrame {
 
         nuevRegistro.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         nuevRegistro.setLocationByPlatform(true);
-        nuevRegistro.setMinimumSize(new java.awt.Dimension(566, 500));
+        nuevRegistro.setMinimumSize(new java.awt.Dimension(490, 572));
 
         jcbTipoUser.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Seleccionar-", "Medico", "Administrador" }));
 
@@ -81,12 +84,6 @@ public class Logueo extends javax.swing.JFrame {
         btnSalir.setFont(new java.awt.Font("Quicksand", 0, 11)); // NOI18N
         btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/salir.png"))); // NOI18N
         btnSalir.setText("Salir");
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fotoAdmi.png"))); // NOI18N
-
-        btnSubirFoto.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
-        btnSubirFoto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/menu1.png"))); // NOI18N
-        btnSubirFoto.setText("Suba foto");
 
         btnRegistro.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
         btnRegistro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Registrar.png"))); // NOI18N
@@ -128,6 +125,39 @@ public class Logueo extends javax.swing.JFrame {
 
         jcbxEspecialidad1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Seleccionar-", "Medicina General", "Obstetricia", "Otorrinolaringologia", "Pediatria", "Psicologia", "Radiologia", "Traumatologia" }));
 
+        jLabel7.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(102, 0, 51));
+        jLabel7.setText("Sexo");
+
+        groupSexo.add(jrbMasculino);
+        jrbMasculino.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 12)); // NOI18N
+        jrbMasculino.setForeground(new java.awt.Color(102, 0, 51));
+        jrbMasculino.setText("Masculino");
+
+        groupSexo.add(jrbFemenino);
+        jrbFemenino.setFont(new java.awt.Font("Yu Gothic Light", 0, 12)); // NOI18N
+        jrbFemenino.setForeground(new java.awt.Color(102, 0, 51));
+        jrbFemenino.setText("Femenino");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addComponent(jrbFemenino)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                .addComponent(jrbMasculino))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jrbMasculino)
+                    .addComponent(jrbFemenino))
+                .addContainerGap())
+        );
+
         jmAyuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ayuda.png"))); // NOI18N
         jmAyuda.setText("Ayuda");
 
@@ -149,48 +179,50 @@ public class Logueo extends javax.swing.JFrame {
         nuevRegistroLayout.setHorizontalGroup(
             nuevRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(nuevRegistroLayout.createSequentialGroup()
-                .addGap(113, 113, 113)
-                .addComponent(jLabel11)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(nuevRegistroLayout.createSequentialGroup()
-                .addGap(40, 40, 40)
                 .addGroup(nuevRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, nuevRegistroLayout.createSequentialGroup()
-                        .addGroup(nuevRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel12)
-                            .addComponent(jLabel13)
-                            .addComponent(jLabel14)
-                            .addComponent(jLabel15)
-                            .addComponent(jLabel16))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
-                        .addGroup(nuevRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(dateNacimiento, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
-                            .addComponent(txtNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
-                            .addComponent(jcbTipoUser, 0, 164, Short.MAX_VALUE)
-                            .addComponent(txtDNI, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
-                            .addComponent(txCorreo)
-                            .addComponent(txContra))
-                        .addGap(61, 61, 61)
-                        .addGroup(nuevRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnSubirFoto)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, nuevRegistroLayout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addGap(10, 10, 10))))
                     .addGroup(nuevRegistroLayout.createSequentialGroup()
+                        .addGap(113, 113, 113)
+                        .addComponent(jLabel11))
+                    .addGroup(nuevRegistroLayout.createSequentialGroup()
+                        .addGap(40, 40, 40)
                         .addGroup(nuevRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(nuevRegistroLayout.createSequentialGroup()
-                                .addComponent(btnRetornar)
-                                .addGap(42, 42, 42)
-                                .addComponent(btnRegistro)
-                                .addGap(45, 45, 45)
-                                .addComponent(btnSalir))
                             .addGroup(nuevRegistroLayout.createSequentialGroup()
                                 .addComponent(jlEspecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jcbxEspecialidad1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(44, 44, 44))
+                                .addGap(18, 18, 18)
+                                .addComponent(jcbxEspecialidad1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel16)
+                            .addComponent(jLabel15)
+                            .addComponent(jLabel14)
+                            .addComponent(jLabel13)
+                            .addGroup(nuevRegistroLayout.createSequentialGroup()
+                                .addComponent(btnRetornar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnRegistro)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnSalir))
+                            .addComponent(jLabel6)
+                            .addGroup(nuevRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(nuevRegistroLayout.createSequentialGroup()
+                                    .addGroup(nuevRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(nuevRegistroLayout.createSequentialGroup()
+                                            .addComponent(jLabel7)
+                                            .addGap(93, 93, 93))
+                                        .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING))
+                                    .addGroup(nuevRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(nuevRegistroLayout.createSequentialGroup()
+                                            .addGap(18, 18, 18)
+                                            .addComponent(dateNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(nuevRegistroLayout.createSequentialGroup()
+                                            .addGap(14, 14, 14)
+                                            .addGroup(nuevRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addGroup(nuevRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jcbTipoUser, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txContra, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtDNI, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(172, Short.MAX_VALUE))
         );
         nuevRegistroLayout.setVerticalGroup(
             nuevRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -199,43 +231,40 @@ public class Logueo extends javax.swing.JFrame {
                 .addComponent(jLabel11)
                 .addGroup(nuevRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(nuevRegistroLayout.createSequentialGroup()
-                        .addGap(3, 3, 3)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(27, 27, 27)
-                        .addComponent(btnSubirFoto))
-                    .addGroup(nuevRegistroLayout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addGroup(nuevRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6))
-                        .addGap(18, 18, 18)
-                        .addGroup(nuevRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel12)
-                            .addComponent(dateNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(nuevRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(nuevRegistroLayout.createSequentialGroup()
-                                .addGap(22, 22, 22)
-                                .addComponent(jLabel13)
-                                .addGap(22, 22, 22)
-                                .addComponent(jLabel14)
-                                .addGap(22, 22, 22)
-                                .addComponent(jLabel15)
-                                .addGap(22, 22, 22)
-                                .addComponent(jLabel16))
-                            .addGroup(nuevRegistroLayout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(jcbTipoUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtDNI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(25, 25, 25)
-                                .addComponent(txCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(txContra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(32, 32, 32)
+                        .addComponent(jLabel6))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, nuevRegistroLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(nuevRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7))
+                .addGap(28, 28, 28)
+                .addGroup(nuevRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(dateNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel12))
+                .addGap(27, 27, 27)
+                .addGroup(nuevRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jcbTipoUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel13))
+                .addGap(18, 18, 18)
+                .addGroup(nuevRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtDNI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel14))
+                .addGap(18, 18, 18)
+                .addGroup(nuevRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(txCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(nuevRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel16)
+                    .addComponent(txContra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(nuevRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlEspecialidad)
                     .addComponent(jcbxEspecialidad1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addGroup(nuevRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnRetornar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -398,8 +427,8 @@ public class Logueo extends javax.swing.JFrame {
     public javax.swing.JButton btnRegistro;
     public javax.swing.JButton btnRetornar;
     public javax.swing.JButton btnSalir;
-    private javax.swing.JButton btnSubirFoto;
     public com.toedter.calendar.JDateChooser dateNacimiento;
+    public javax.swing.ButtonGroup groupSexo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -408,12 +437,13 @@ public class Logueo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     public javax.swing.JComboBox<String> jcbTipoUser;
     public javax.swing.JComboBox<String> jcbxEspecialidad1;
     public javax.swing.JLabel jlEspecialidad;
@@ -422,6 +452,8 @@ public class Logueo extends javax.swing.JFrame {
     public javax.swing.JMenuItem jmiForo;
     public javax.swing.JMenuItem jmiSitioWeb;
     public javax.swing.JPasswordField jpssContra;
+    public javax.swing.JRadioButton jrbFemenino;
+    public javax.swing.JRadioButton jrbMasculino;
     public javax.swing.JTextField jtxtCorreo;
     public javax.swing.JFrame nuevRegistro;
     public javax.swing.JTextField txContra;

@@ -1,11 +1,12 @@
 
 
 package daos;
+import entidades.Administrador;
+import entidades.Medico;
 import java.sql.*;
 import java.text.DecimalFormat;
 import java.util.*;
 import util.MySQLConexion;
-import modelo.*;
 
 
 public class DAORegistro {
@@ -24,11 +25,12 @@ public class DAORegistro {
                 Administrador a = new Administrador();
                 a.setCodad(rs.getString(1));
                 a.setIptip(rs.getString(2));
-                a.setFecha(rs.getString(3));
-                a.setCorreo(rs.getString(4));
-                a.setPswd(rs.getString(5));
-                a.setNombre(rs.getString(6));
-                a.setDni(rs.getInt(7));
+                a.setNombre(rs.getString(3));
+                a.setSexo(rs.getString(4).charAt(0));
+                a.setFecha(rs.getString(5));
+                a.setCorreo(rs.getString(6));
+                a.setPswd(rs.getString(7));
+                a.setDni(rs.getInt(8));
                 lis.add(a);
             }
         } catch (Exception ex) {
@@ -65,16 +67,17 @@ public class DAORegistro {
         int resp = 0;           
         Connection conn = null; 
         try {
-            String sql = "Insert into Administrador values(?,?,?,?,?,?,?)";
+            String sql = "Insert into Administrador values(?,?,?,?,?,?,?,?)";
             conn = MySQLConexion.getConexion();
             PreparedStatement st = conn.prepareStatement(sql);
            st.setString(1,genCodAdmi());
             st.setString(2, a.getIptip());
-            st.setString(3, a.getFecha());
-            st.setString(4, a.getCorreo());
-            st.setString(5, a.getPswd());
-            st.setString(6, a.getNombre());
-            st.setInt(7, a.getDni());
+            st.setString(3, a.getNombre());
+            st.setString(4, String.valueOf(a.getSexo()));
+            st.setString(5, a.getFecha());
+            st.setString(6, a.getCorreo());
+            st.setString(7, a.getPswd());
+            st.setInt(8, a.getDni());
             resp = st.executeUpdate();
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -129,11 +132,12 @@ public class DAORegistro {
                 a.setCodmed(rs.getString(1));
                 a.setCodes(rs.getString(2));
                 a.setIptip(rs.getString(3));
-                a.setFecha(rs.getString(4));
-                a.setCorreo(rs.getString(5));
-                a.setPswd(rs.getString(6));
-                a.setNombre(rs.getString(7));
-                a.setDni(rs.getInt(8));
+                a.setNombre(rs.getString(4));
+                a.setSexo(rs.getString(5).charAt(0));
+                a.setFecha(rs.getString(6));
+                a.setCorreo(rs.getString(7));
+                a.setPswd(rs.getString(8));
+                a.setDni(rs.getInt(9));
                 lis.add(a);
             }
         } catch (Exception ex) {
@@ -169,17 +173,18 @@ public class DAORegistro {
         int resp = 0;           
         Connection conn = null; 
         try {
-            String sql = "Insert into Medico values(?,?,?,?,?,?,?,?)";
+            String sql = "Insert into Medico values(?,?,?,?,?,?,?,?,?)";
             conn = MySQLConexion.getConexion();
             PreparedStatement st = conn.prepareStatement(sql);
             st.setString(1,genCodMed());
             st.setString(2,a.getCodes());
             st.setString(3, a.getIptip());
-            st.setString(4, a.getFecha());
-            st.setString(5, a.getCorreo());
-            st.setString(6, a.getPswd());
-            st.setString(7, a.getNombre());
-            st.setInt(8, a.getDni());
+            st.setString(4, a.getNombre());
+            st.setString(5,String.valueOf(a.getSexo()));
+            st.setString(6, a.getFecha());
+            st.setString(7, a.getCorreo());
+            st.setString(8, a.getPswd());
+            st.setInt(9, a.getDni());
             resp = st.executeUpdate();
         } catch (Exception ex) {
             ex.printStackTrace();

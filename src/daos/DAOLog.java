@@ -1,12 +1,13 @@
 
 package daos;
+import entidades.Administrador;
+import entidades.Medico;
 import controlador.*;
 import java.sql.*;
 import java.text.DecimalFormat;
 import java.util.*;
 import javax.swing.JOptionPane;
 import util.MySQLConexion;
-import modelo.*;
 import vistaa.*;
 
 public class DAOLog { 
@@ -82,11 +83,12 @@ public class DAOLog {
                 a=new Administrador();
                 a.setCodad(rs.getString(1));
                 a.setIptip(rs.getString(2));
-                a.setFecha(rs.getString(3));
-                a.setCorreo(rs.getString(4));
-                a.setPswd(rs.getString(5));
-                a.setNombre(rs.getString(6));
-                a.setDni(rs.getInt(7));
+                a.setNombre(rs.getString(3));
+                a.setSexo(rs.getString(4).charAt(0));
+                a.setFecha(rs.getString(5));
+                a.setCorreo(rs.getString(6));
+                a.setPswd(rs.getString(6));
+                a.setDni(rs.getInt(8));
             }
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -120,11 +122,12 @@ public class DAOLog {
                 m.setCodmed(rs.getString(1));
                 m.setCodes(rs.getString(2));
                 m.setIptip(rs.getString(3));
-                m.setFecha(rs.getString(4));
-                m.setCorreo(rs.getString(5));
-                m.setPswd(rs.getString(6));
-                m.setNombre(rs.getString(7));
-                m.setDni(rs.getInt(8));
+                m.setNombre(rs.getString(4));
+                m.setSexo(rs.getString(5).charAt(0));
+                m.setFecha(rs.getString(6));
+                m.setCorreo(rs.getString(7));
+                m.setPswd(rs.getString(8));
+                m.setDni(rs.getInt(9));
             }
         } catch (Exception ex) {
             ex.printStackTrace();

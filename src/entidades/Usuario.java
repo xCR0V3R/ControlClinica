@@ -1,5 +1,5 @@
 
-package modelo;
+package entidades;
 //...
 //agree
 public abstract class Usuario {
@@ -9,17 +9,15 @@ public abstract class Usuario {
   private String correo; 
   private String pswd; 
   private int dni;
-
+  private char sexo;
+  
     public Usuario(){
         
     }
-    public Usuario(String iptip, String fecha, String nombre, String correo, String pswd, int dni) {
-        this.iptip = iptip;
-        this.fecha = fecha;
-        this.nombre = nombre;
-        this.correo = correo;
-        this.pswd = pswd;
-        this.dni = dni;
+    public Usuario(String iptip, String fecha, String nombre,char sexo, String correo, String pswd, int dni) {
+        this.iptip = iptip; this.fecha = fecha;
+        this.nombre = nombre;this.correo = correo;
+        this.pswd = pswd; this.dni = dni; this.sexo=sexo;
     }
 
   
@@ -70,6 +68,14 @@ public abstract class Usuario {
 
     public void setPswd(String pswd) {
         this.pswd = pswd;
+    }
+
+    public char getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(char sexo) {
+        this.sexo = sexo;
     }
   
   

@@ -1,5 +1,5 @@
 
-package modelo;
+package entidades;
 
 public class Cita {
     private String idCita;

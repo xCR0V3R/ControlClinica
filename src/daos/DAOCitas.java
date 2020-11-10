@@ -1,12 +1,12 @@
 
 package daos;
+import entidades.Cita;
 import controlador.*;
 import java.sql.*;
 import java.text.DecimalFormat;
 import java.util.*;
 import javax.swing.JOptionPane;
 import util.MySQLConexion;
-import modelo.*;
 import vistaa.*;
 
 public class DAOCitas {

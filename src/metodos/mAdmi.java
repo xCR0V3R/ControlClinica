@@ -1,11 +1,12 @@
 
 
 package metodos;
+import entidades.Administrador;
 import vistaa.*;import controlador.*;
 import java.awt.Desktop;
 import java.net.URI;
 import javax.swing.*;
-import modelo.*;import daos.*;
+import daos.*;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -48,6 +49,19 @@ public class mAdmi {
          ad.setVisible(true);
          ad.setLocationRelativeTo(null);
         log.esIcono(ad);
+    }
+    
+    public void welcome(pAdmi ad, Administrador admi){
+       String inicio="";
+        if(admi.getSexo()=='F') {
+            inicio="Bienvenida, ";
+            ad.btnImagen.setIcon(new ImageIcon(getClass().getResource("/imagenes/admiF.png")));
+        }
+        if(admi.getSexo()=='M') {
+            inicio="Bienvenido, ";
+            ad.btnImagen.setIcon(new ImageIcon(getClass().getResource("/imagenes/admiM.png")));
+        }   
+        ad.jLBienvenidoA.setText(inicio+admi.getNombre().split(" ")[0].trim());
     }
     /*
     public void obtenerData(){

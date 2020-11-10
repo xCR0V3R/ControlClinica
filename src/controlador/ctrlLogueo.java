@@ -6,7 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import daos.*;import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import modelo.*;import vistaa.*; import metodos.*;
+import vistaa.*; import metodos.*;
 
 
 public class ctrlLogueo implements ActionListener{
@@ -63,7 +63,7 @@ public class ctrlLogueo implements ActionListener{
              //int c=0;
              try{
                     mlog.obtenerData();  
-                    if(mlog.getdCorreo().equals("") || mlog.getdPswd().equals("") || mlog.getdTip().equals("U000")){
+                    if(mlog.getdCorreo().equals("") || mlog.getdPswd().equals("") || mlog.getdTip().equals("U000")|| mlog.getdSexo()=='X'){
                        JOptionPane.showMessageDialog(null, "¡Faltan datos por ingresar!");
                    }else{
                        if(mlog.getdTip()=="U001"){

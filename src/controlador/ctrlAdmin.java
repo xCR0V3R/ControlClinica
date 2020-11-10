@@ -1,10 +1,11 @@
 
 package controlador;
+import entidades.Administrador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import daos.*;import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import modelo.*;import vistaa.*; import metodos.*;
+import vistaa.*; import metodos.*;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.text.SimpleDateFormat;
@@ -20,7 +21,8 @@ public class ctrlAdmin implements ActionListener{
     //constructor con LOGUEO
        public ctrlAdmin(pAdmi ad, Administrador admi){
         this.ad = ad; this.admi=admi; 
-        this.ad.jLBienvenidoA.setText("Bienvenido, "+admi.getNombre().split(" ")[0].trim());
+        ingresar.welcome(this.ad, this.admi);
+        //this.ad.jLBienvenidoA.setText("Bienvenido, "+admi.getNombre().split(" ")[0].trim());
         ingresar.inicializarAdmi(this.ad);
         this.ad.btnConfigUser.addActionListener(this);
         this.ad.btnLogout.addActionListener(this);

@@ -2,10 +2,10 @@
 
 package testeoSecu;
 
+import entidades.Medico;
 import daos.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import modelo.*;
 public class prueba {
     public static void main(String[] args) {
         SimpleDateFormat formato=new SimpleDateFormat("yyyy-MM-dd");   

@@ -2,6 +2,8 @@
 package metodos;
 import vistaa.*;
 import controlador.*;
+import entidades.Medico;
+import java.awt.Image;
 import javax.swing.*;
 
 public class mMedico {
@@ -27,4 +29,19 @@ public class mMedico {
          med.setLocationRelativeTo(null);
         log.esIcono(med);
     }
+    
+      public void welcome(pMedico vmed,Medico med){
+       String inicio="";
+        if(med.getSexo()=='F'){
+            inicio="Bienvenida, ";
+            vmed.btnImagen.setIcon(new ImageIcon(getClass().getResource("/imagenes/docF.png")));
+        }
+        if(med.getSexo()=='M'){
+            inicio="Bienvenido, ";
+            vmed.btnImagen.setIcon(new ImageIcon(getClass().getResource("/imagenes/docM.png")));
+        }   
+        vmed.jLBienvenidoD.setText(inicio+med.getNombre().split(" ")[0].trim());
+    }
+      
+      
 }

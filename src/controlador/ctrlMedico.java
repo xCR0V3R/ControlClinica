@@ -1,12 +1,13 @@
 
 package controlador;
+import entidades.Medico;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import daos.*;import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import modelo.*;import vistaa.*; import metodos.*;
+import vistaa.*; import metodos.*;
 
 public class ctrlMedico implements ActionListener {
     pMedico vmed; 
@@ -17,7 +18,8 @@ public class ctrlMedico implements ActionListener {
     //Constructor para LOGUEO
      public ctrlMedico(pMedico vmed,Medico med){
         this.vmed = vmed; this.med=med;
-        this.vmed.jLBienvenidoD.setText("Bienvenido, "+med.getNombre().split(" ")[0].trim()); 
+        ingresar.welcome(this.vmed, this.med);
+        //this.vmed.jLBienvenidoD.setText("Bienvenido, "+med.getNombre().split(" ")[0].trim()); 
         ingresar.inicializarMed(this.vmed);
         this.vmed.btnConfigUser.addActionListener(this);
         this.vmed.btnLogout.addActionListener(this);
