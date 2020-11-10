@@ -7,6 +7,8 @@ import javax.swing.JOptionPane;
 import modelo.*;import vistaa.*; import metodos.*;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class ctrlAdmin implements ActionListener{
 
@@ -79,9 +81,18 @@ public class ctrlAdmin implements ActionListener{
            System.exit(0);
         }
         if(e.getSource()==ad.btnConfigUser){
+        SimpleDateFormat formato=new SimpleDateFormat("yyyy-MM-dd");   
+        SimpleDateFormat formato2=new SimpleDateFormat("dd/MM/yyyy"); 
+        Date fechaconv=null;            
         ad.configNombre.setText(admi.getNombre());
         ad.configCorreo.setText(admi.getCorreo());
-        ad.configNac.setDateFormatString(admi.getFecha());
+         try {
+                fechaconv=formato.parse(admi.getFecha());
+                ad.configNac.setDate(fechaconv);
+            } catch (Exception ex) {
+                System.out.println("F");
+            }
+       
         ad.configPswd.setText(admi.getPswd());
         ad.setVisible(false); 
         ingresar.confUser(ad.jfConfigP); 

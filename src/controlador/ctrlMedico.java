@@ -69,7 +69,7 @@ public class ctrlMedico implements ActionListener {
         
             try {
                 fechaconv=formato.parse(med.getFecha());
-                vmed.configNac.setDateFormatString(formato2.format(fechaconv));
+                vmed.configNac.setDate(fechaconv);
             } catch (Exception ex) {
                 System.out.println("F");
             }
