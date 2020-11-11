@@ -36,8 +36,8 @@ public class prueba2 extends javax.swing.JFrame {
         jrbFemenino = new javax.swing.JRadioButton();
         txtSexo = new javax.swing.JTextField();
         btnSexo = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jFormattedTextField1 = new javax.swing.JFormattedTextField();
+        jcbxEsp = new javax.swing.JComboBox<>();
+        jcbxDocs = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -83,7 +83,12 @@ public class prueba2 extends javax.swing.JFrame {
             }
         });
 
-        jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getTimeInstance(java.text.DateFormat.SHORT))));
+        jcbxEsp.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Seleccionar-", "MedicinaG", "Radiografia" }));
+        jcbxEsp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcbxEspActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -100,9 +105,6 @@ public class prueba2 extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jdcNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(111, 111, 111)
-                        .addComponent(txtSexo, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(32, 32, 32)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -111,9 +113,10 @@ public class prueba2 extends javax.swing.JFrame {
                         .addComponent(btnSexo))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(111, 111, 111)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jcbxEsp, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtSexo, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jcbxDocs, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(11, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -132,11 +135,11 @@ public class prueba2 extends javax.swing.JFrame {
                     .addComponent(btnSexo))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(77, 77, 77)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(188, Short.MAX_VALUE))
+                .addGap(38, 38, 38)
+                .addComponent(jcbxEsp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(45, 45, 45)
+                .addComponent(jcbxDocs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(200, Short.MAX_VALUE))
         );
 
         pack();
@@ -164,6 +167,17 @@ public class prueba2 extends javax.swing.JFrame {
        if(jrbFemenino.isSelected())txtSexo.setText("F");
        if(jrbMasculino.isSelected())txtSexo.setText("M");
     }//GEN-LAST:event_btnSexoActionPerformed
+
+    private void jcbxEspActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbxEspActionPerformed
+        if(jcbxEsp.getSelectedItem().toString().equals("MedicinaG")) {
+            jcbxDocs.removeAllItems();jcbxDocs.addItem("-Seleccionar-");
+            jcbxDocs.addItem("Jose");jcbxDocs.addItem("Marco");
+        }
+        if(jcbxEsp.getSelectedItem().toString().equals("Radiografia")) {
+            jcbxDocs.removeAllItems();jcbxDocs.addItem("-Seleccionar-");
+            jcbxDocs.addItem("MARIA");jcbxDocs.addItem("LUPE");
+        }
+    }//GEN-LAST:event_jcbxEspActionPerformed
 
     /**
      * @param args the command line arguments
@@ -204,11 +218,11 @@ public class prueba2 extends javax.swing.JFrame {
     private javax.swing.ButtonGroup GroupSexo;
     private javax.swing.JButton btnMostrar;
     private javax.swing.JButton btnSexo;
-    private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JComboBox<String> jcbxDocs;
+    private javax.swing.JComboBox<String> jcbxEsp;
     private com.toedter.calendar.JDateChooser jdcNacimiento;
     private javax.swing.JRadioButton jrbFemenino;
     private javax.swing.JRadioButton jrbMasculino;
