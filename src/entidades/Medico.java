@@ -15,7 +15,6 @@ public class Medico extends Usuario {
     }
     
   
-    
 
     public String getCodes() {
         return codes;
