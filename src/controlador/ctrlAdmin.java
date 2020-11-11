@@ -136,6 +136,7 @@ public class ctrlAdmin implements ActionListener{
             if(cEsp.equals("E01")){
                 ad.cbDoctor1.removeAllItems();
                 //ad.cbDoctor1.addItemListener(dao2.lisMedEs(cEsp));
+                //Aún no terminado
             }
         }
         
