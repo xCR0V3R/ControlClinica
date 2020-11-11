@@ -1,6 +1,6 @@
 
 package daos;
-import entidades.Cita;
+import entidades.*;
 import controlador.*;
 import java.sql.*;
 import java.text.DecimalFormat;
@@ -19,7 +19,7 @@ public class DAOCitas {
 
         try {
             conn = MySQLConexion.getConexion();
-            String sql = "select id, feccit, hora, nomp, estado from Citas";
+            String sql = "select id, feccit, hora, nomp, estado from citas";
             PreparedStatement st = conn.prepareStatement(sql);
             ResultSet rs = st.executeQuery();
             
@@ -66,7 +66,7 @@ public class DAOCitas {
         int resp = 0;           
         Connection conn = null; 
         try {
-            String sql = "Insert into Cita values(?,?,?,?,?,?,?)";
+            String sql = "Insert into citas values(?,?,?,?,?,?,?)";
             conn = MySQLConexion.getConexion();
             PreparedStatement st = conn.prepareStatement(sql);
             st.setString(1,c.getCodmed());
@@ -89,4 +89,34 @@ public class DAOCitas {
         }
 
     }
+    
+    public List<Medico> lisMedEs(String id) {
+        List<Medico> lis = new ArrayList<>();
+        Connection conn = null;
+
+        try {
+            conn = MySQLConexion.getConexion();
+            String sql = "select nombre from medico when id=?";
+            PreparedStatement st = conn.prepareStatement(sql);
+            st.setString(1, id);
+            ResultSet rs = st.executeQuery();
+            while (rs.next()) {
+                Medico m = new Medico();
+                m.setNombre(rs.getString(1));
+                lis.add(m);
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            try {
+
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (Exception e2) {
+            }
+        }
+        return lis;
+    }
+    
 }

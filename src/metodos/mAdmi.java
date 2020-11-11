@@ -14,14 +14,23 @@ import java.util.Date;
 
 
 public class mAdmi {
-    /*
-    String cNom; String cFec; private String dTip;int cDNI;private String dCorreo;private String dPswd;
-    private String dEsp;
+    
+    private String cNom; private String cFec; private int cDNI;
+    private String cEsp; private String cDoc; private String cHor;
+    
+    pAdmi admi;
     
     SimpleDateFormat fordia=new SimpleDateFormat("yyyy-MM-dd");
-    SimpleDateFormat forhora=new SimpleDateFormat("yyyy-MM-dd");*/
+    SimpleDateFormat forhora=new SimpleDateFormat("hh:mm:ss");
     
-    mLog log=new mLog();
+    private mLog log=new mLog();
+    
+    public mAdmi(){}
+    
+    public mAdmi(pAdmi admi){
+        this.admi=admi;
+        
+    }
     
     
     public void inicializarAdmi(pAdmi ad){ 
@@ -63,21 +72,68 @@ public class mAdmi {
         }   
         ad.jLBienvenidoA.setText(inicio+admi.getNombre().split(" ")[0].trim());
     }
-    /*
+    
     public void obtenerData(){
-        cNom=log.txtNombr.getText();
-        cFec=formato.format(this.log.dateNacimiento.getDate());
-        cDNI=Integer.parseInt(this.log.txtDNI.getText());
-        dCorreo=log.txCorreo.getText();
-        dPswd=log.txContra.getText();
-        String tipo="";
-        tipo=log.jcbTipoUser.getSelectedItem().toString();
-        if(tipo.equals("Medico")) dTip="U002";
-        if(tipo.equals("Administrador")) dTip="U001";
-        if(tipo.equals("-Seleccionar-")) dTip="U000";
-        if(dTip.equals("U002")){
-            dEsp=log.jcbxEspecialidad1.getSelectedItem().toString();
+        cNom=admi.txtNombre.getText();
+        cFec=fordia.format(this.admi.dtCita.getDate());
+        cHor=forhora.format(this.admi.txtHora.getText());
+        cDNI=Integer.parseInt(this.admi.txtDNI.getText());
+        cEsp=admi.jcbArea1.getSelectedItem().toString();
+        cDoc=admi.cbDoctor1.getSelectedItem().toString();
         }
-        }*/
+
+    public String getcNom() {
+        return cNom;
+    }
+
+    public void setcNom(String cNom) {
+        this.cNom = cNom;
+    }
+
+    public String getcFec() {
+        return cFec;
+    }
+
+    public void setcFec(String cFec) {
+        this.cFec = cFec;
+    }
+
+    public int getcDNI() {
+        return cDNI;
+    }
+
+    public void setcDNI(int cDNI) {
+        this.cDNI = cDNI;
+    }
+
+    public String getcEsp() {
+        return cEsp;
+    }
+
+    public void setcEsp(String cEsp) {
+        this.cEsp = cEsp;
+    }
+
+    public String getcDoc() {
+        return cDoc;
+    }
+
+    public void setcDoc(String cDoc) {
+        this.cDoc = cDoc;
+    }
+
+    public String getcHor() {
+        return cHor;
+    }
+
+    public void setcHor(String cHor) {
+        this.cHor = cHor;
+    }
     
 }
+
+/*Nuevas credenciales al entrar a http://www.phpmyadmin.co/ 
+Username: a6a425_sistema
+Password: sistema123
+Server:mysql5031.site4now.net
+NombreDataBase: db_a6a425_sistema*/

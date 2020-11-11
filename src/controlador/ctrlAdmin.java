@@ -3,13 +3,14 @@ package controlador;
 import entidades.Administrador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import daos.*;import javax.swing.JFrame;
+import daos.*;import entidades.Medico;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import vistaa.*; import metodos.*;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.*;
 
 public class ctrlAdmin implements ActionListener{
 
@@ -17,6 +18,7 @@ public class ctrlAdmin implements ActionListener{
     mAdmi ingresar=new mAdmi();
     mLog url=new mLog();
     DAOLog dao1=new DAOLog();
+    DAOCitas dao2=new DAOCitas();
     Administrador admi;
     //constructor con LOGUEO
        public ctrlAdmin(pAdmi ad, Administrador admi){
@@ -69,6 +71,7 @@ public class ctrlAdmin implements ActionListener{
         this.ad.jmiSitioWeb.addActionListener(this);
         this.ad.jmiSitioWeb1.addActionListener(this);
         this.ad.jmiSitioWeb2.addActionListener(this);
+        this.ad.btnBuscar1.addActionListener(this);
     } 
     
     @Override
@@ -121,6 +124,21 @@ public class ctrlAdmin implements ActionListener{
             ad.setVisible(true);
             ad.jfNuevaCita.setVisible(false);
         }
+        
+        if(e.getSource()==ad.btnBuscar1){
+            String tipo="";
+            String cEsp="";
+            tipo=ad.jcbArea1.getSelectedItem().toString();
+            if(tipo.equals("Medicina General")) cEsp="E01";
+            if(tipo.equals("Obstetricia")) cEsp="E02";
+            if(tipo.equals("Odontologia")) cEsp="E03";
+            if(tipo.equals("Oftolmologia")) cEsp="E04";
+            if(cEsp.equals("E01")){
+                ad.cbDoctor1.removeAllItems();
+                //ad.cbDoctor1.addItemListener(dao2.lisMedEs(cEsp));
+            }
+        }
+        
         if(e.getSource()==ad.jmiAyuda){
              url.support("https://www.clinicainternacional.com.pe/");
         }

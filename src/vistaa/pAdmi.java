@@ -62,7 +62,7 @@ public class pAdmi extends javax.swing.JFrame {
         jfNuevaCita = new javax.swing.JFrame();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtNombre = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
         txtDNI = new javax.swing.JTextField();
         btnRegistrar = new javax.swing.JButton();
@@ -70,7 +70,7 @@ public class pAdmi extends javax.swing.JFrame {
         btnSalir3 = new javax.swing.JButton();
         dtCita = new com.toedter.calendar.JDateChooser();
         jLabel18 = new javax.swing.JLabel();
-        cbSexo1 = new javax.swing.JComboBox<>();
+        cbDoctor1 = new javax.swing.JComboBox<>();
         btnBuscar1 = new javax.swing.JButton();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
@@ -79,7 +79,7 @@ public class pAdmi extends javax.swing.JFrame {
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        txtHora = new javax.swing.JTextField();
         jMenuBar3 = new javax.swing.JMenuBar();
         jmAyuda2 = new javax.swing.JMenu();
         jmiAyuda2 = new javax.swing.JMenuItem();
@@ -397,7 +397,7 @@ public class pAdmi extends javax.swing.JFrame {
         jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/doc.png"))); // NOI18N
         jLabel18.setText("Doctor");
 
-        cbSexo1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Seleccione-", "Juan..." }));
+        cbDoctor1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Seleccione-", "Juan..." }));
 
         btnBuscar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/buscar.png"))); // NOI18N
 
@@ -461,7 +461,7 @@ public class pAdmi extends javax.swing.JFrame {
                             .addGroup(jfNuevaCitaLayout.createSequentialGroup()
                                 .addComponent(jLabel9)
                                 .addGap(25, 25, 25)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel19))
                         .addGap(42, 42, 42)
                         .addGroup(jfNuevaCitaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -472,7 +472,7 @@ public class pAdmi extends javax.swing.JFrame {
                                     .addComponent(jLabel18))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jfNuevaCitaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(cbSexo1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cbDoctor1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jfNuevaCitaLayout.createSequentialGroup()
                                         .addComponent(jcbArea1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -504,7 +504,7 @@ public class pAdmi extends javax.swing.JFrame {
                         .addGroup(jfNuevaCitaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(dtCita, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jfNuevaCitaLayout.createSequentialGroup()
-                                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtHora, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(86, 86, 86)
                                 .addComponent(btnSalir3)))))
                 .addContainerGap(124, Short.MAX_VALUE))
@@ -523,7 +523,7 @@ public class pAdmi extends javax.swing.JFrame {
                     .addComponent(btnBuscar1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jfNuevaCitaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel21)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel9)
                         .addComponent(jcbArea1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(21, 21, 21)
@@ -531,7 +531,7 @@ public class pAdmi extends javax.swing.JFrame {
                     .addComponent(jLabel17)
                     .addComponent(txtDNI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel18)
-                    .addComponent(cbSexo1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbDoctor1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(34, 34, 34)
                 .addComponent(jLabel22)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -543,7 +543,7 @@ public class pAdmi extends javax.swing.JFrame {
                         .addGap(22, 22, 22)
                         .addGroup(jfNuevaCitaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel24)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtHora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(135, 135, 135))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jfNuevaCitaLayout.createSequentialGroup()
                         .addGroup(jfNuevaCitaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -764,19 +764,19 @@ public class pAdmi extends javax.swing.JFrame {
     public javax.swing.JButton btnImagen;
     public javax.swing.JButton btnLogout;
     public javax.swing.JButton btnNuevoP;
-    private javax.swing.JButton btnRegistrar;
+    public javax.swing.JButton btnRegistrar;
     public javax.swing.JButton btnReportes;
     public javax.swing.JButton btnRetornar1;
     public javax.swing.JButton btnRetornar2;
     public javax.swing.JButton btnRetornar3;
     public javax.swing.JButton btnSalir2;
     public javax.swing.JButton btnSalir3;
-    private javax.swing.JComboBox<String> cbSexo1;
+    public javax.swing.JComboBox<String> cbDoctor1;
     public javax.swing.JTextField configCorreo;
     public com.toedter.calendar.JDateChooser configNac;
     public javax.swing.JTextField configNombre;
     public javax.swing.JTextField configPswd;
-    private com.toedter.calendar.JDateChooser dtCita;
+    public com.toedter.calendar.JDateChooser dtCita;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton6;
     public javax.swing.JLabel jLBienvenidoA;
@@ -807,8 +807,6 @@ public class pAdmi extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField3;
     public javax.swing.JComboBox<String> jcbArea;
     public javax.swing.JComboBox<String> jcbArea1;
     public javax.swing.JComboBox<String> jcbMedicos;
@@ -833,6 +831,8 @@ public class pAdmi extends javax.swing.JFrame {
     public javax.swing.JMenuItem jmiSitioWeb2;
     private rojeru_san.RSLabelFecha rSLabelFecha1;
     private rojeru_san.RSLabelHora rSLabelHora1;
-    private javax.swing.JTextField txtDNI;
+    public javax.swing.JTextField txtDNI;
+    public javax.swing.JTextField txtHora;
+    public javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
 }

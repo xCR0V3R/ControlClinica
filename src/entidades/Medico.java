@@ -32,9 +32,6 @@ public class Medico extends Usuario {
         this.codmed = codmed;
     }
 
-  
-
- 
     
     
     
