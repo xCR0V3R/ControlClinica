@@ -135,8 +135,11 @@ public class ctrlAdmin implements ActionListener{
             if(tipo.equals("Odontologia")) cEsp="E03";
             if(tipo.equals("Oftolmologia")) cEsp="E04";
             ad.cbDoctor1.removeAllItems();
-            for (int i = 1; i <= dao2.lisMedEs(cEsp).size(); i++) {
-                ad.cbDoctor1.addItem(dao2.lisMedEs(cEsp).get(i).toString());
+            ad.cbDoctor1.addItem("-Seleccionar-");
+            List<Medico> listaM=dao2.lisMedEs(cEsp);
+            int max=listaM.size();
+            for (int i = 0; i < max ; i++) {
+                ad.cbDoctor1.addItem(dao2.lisMedEs(cEsp).get(i).getNombre());
             }
         }
         
