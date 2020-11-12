@@ -89,8 +89,8 @@ public class mLog {
         
       public void regMed(){
             String codes=dao.busCodEsp(dEsp);
-            Medico md=new Medico(codes, dTip, dNac,dNom,dSexo, dCorreo, dPswd, dDNI);
-            dao.addMed(md);
+           // Medico md=new Medico(codes, dTip, dNac,dNom,dSexo, dCorreo, dPswd, dDNI);
+           // dao.addMed(md);
         }
 
     public String getdTip() {

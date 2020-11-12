@@ -138,8 +138,11 @@ public class DAORegistro {
                 a.setCorreo(rs.getString(7));
                 a.setPswd(rs.getString(8));
                 a.setDni(rs.getInt(9));
+                a.setIdhorario(rs.getString(10));
+                a.setAsistencia(rs.getString(11));
                 lis.add(a);
             }
+            System.out.println("PASO MEDICOS");
         } catch (Exception ex) {
             ex.printStackTrace();
         } finally {
