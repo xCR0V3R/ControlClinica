@@ -146,8 +146,8 @@ public class ctrlAdmin implements ActionListener{
         if(e.getSource()==ad.btnRegistrar){
             //try{
             ingresar.obtenerData();
-            Cita c= new Cita(ingresar.getcNom(), ingresar.getcFec(), ingresar.getcHor(), ingresar.getcEsp(), ingresar.getcDNI(), ingresar.getcDoc());
-            dao2.addCita(c);
+            //Cita c= new Cita(ingresar.getcNom(), ingresar.getcFec(), ingresar.getcHor(), ingresar.getcEsp(), ingresar.getcDNI(), ingresar.getcDoc());
+            //dao2.addCita(c);
                 JOptionPane.showMessageDialog(null, "Datos ingresados correctamente");
             /*}catch (NullPointerException ex) {
               JOptionPane.showMessageDialog(null, "¡Faltan datos por ingresar!\nError: "+ex); 
