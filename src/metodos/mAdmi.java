@@ -21,7 +21,7 @@ public class mAdmi {
     pAdmi admi;
     
     SimpleDateFormat fordia=new SimpleDateFormat("yyyy-MM-dd");
-    SimpleDateFormat forhora=new SimpleDateFormat("hh:mm:ss");
+    //SimpleDateFormat forhora=new SimpleDateFormat("hh:mm:ss");
     
     private mLog log=new mLog();
     
@@ -76,7 +76,7 @@ public class mAdmi {
     public void obtenerData(){
         cNom=admi.txtNombre.getText();
         cFec=fordia.format(this.admi.dtCita.getDate());
-        cHor=forhora.format(this.admi.txtHora.getText());
+        cHor=this.admi.txtHora.getText();
         cDNI=Integer.parseInt(this.admi.txtDNI.getText());
         cEsp=admi.jcbArea1.getSelectedItem().toString();
         cDoc=admi.cbDoctor1.getSelectedItem().toString();
