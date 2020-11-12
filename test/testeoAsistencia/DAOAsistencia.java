@@ -10,7 +10,7 @@ import util.MySQLConexion;
 
 /**
  *
- * @author chris
+ *
  */
 public class DAOAsistencia {
      public void actualizarAsistencia(String cod,String asis){
