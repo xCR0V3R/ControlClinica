@@ -12,7 +12,7 @@ public class Cita {
     private String nomed;
     private String esp;
     private String telefono;
-//fx
+
     public Cita(String nompac, String diacit, String horacit, String esp, int dnipac, String nomed, String telefono) {
         this.nompac = nompac;
         this.diacit = diacit;
