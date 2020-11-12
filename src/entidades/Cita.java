@@ -11,18 +11,29 @@ public class Cita {
     private String codmed;
     private String nomed;
     private String esp;
+    private String telefono;
 
-    public Cita(String nompac, String diacit, String horacit, String esp, int dnipac, String nomed) {
+    public Cita(String nompac, String diacit, String horacit, String esp, int dnipac, String nomed, String telefono) {
         this.nompac = nompac;
         this.diacit = diacit;
         this.horacit = horacit;
         this.esp = esp;
         this.dnipac = dnipac;
         this.nomed = nomed;
+        this.telefono=telefono;
     }
 
     public Cita() {
     }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+    
     
     public String getIdCita() {
         return idCita;
