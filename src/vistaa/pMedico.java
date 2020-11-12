@@ -34,12 +34,12 @@ public class pMedico extends javax.swing.JFrame {
         configCorreo = new javax.swing.JTextField();
         btnVolver = new javax.swing.JButton();
         configNac = new com.toedter.calendar.JDateChooser();
-        jLabel13 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         configPswd = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
         jfCitasMed = new javax.swing.JFrame();
         jLabel19 = new javax.swing.JLabel();
         btnVolver1 = new javax.swing.JButton();
@@ -62,7 +62,6 @@ public class pMedico extends javax.swing.JFrame {
         jLBienvenidoD = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         btnImagen = new javax.swing.JButton();
-        jCheckBox1 = new javax.swing.JCheckBox();
         jMenuBar1 = new javax.swing.JMenuBar();
         jmAyuda = new javax.swing.JMenu();
         jmiAyuda = new javax.swing.JMenuItem();
@@ -80,11 +79,6 @@ public class pMedico extends javax.swing.JFrame {
         btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/volver.png"))); // NOI18N
         btnVolver.setText("Volver");
 
-        jLabel13.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 18)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(102, 0, 0));
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/AcUsuario.png"))); // NOI18N
-        jLabel13.setText("CONFIGURAR PERFIL");
-
         jLabel10.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(102, 0, 51));
         jLabel10.setText("Nombre");
@@ -100,6 +94,11 @@ public class pMedico extends javax.swing.JFrame {
         jLabel16.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(102, 0, 51));
         jLabel16.setText("Contraseña");
+
+        jLabel17.setFont(new java.awt.Font("Russo One", 0, 18)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(102, 0, 0));
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/AcUsuario.png"))); // NOI18N
+        jLabel17.setText("CONFIGURAR PERFIL");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -127,16 +126,16 @@ public class pMedico extends javax.swing.JFrame {
                         .addGap(33, 33, 33)
                         .addComponent(btnActualizar))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(63, 63, 63)
-                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(56, 56, 56)
+                        .addComponent(jLabel17)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel13)
-                .addGap(41, 41, 41)
+                .addGap(24, 24, 24)
+                .addComponent(jLabel17)
+                .addGap(28, 28, 28)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(configNom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10))
@@ -175,7 +174,7 @@ public class pMedico extends javax.swing.JFrame {
         jfCitasMed.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         jfCitasMed.setMinimumSize(new java.awt.Dimension(555, 415));
 
-        jLabel19.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 18)); // NOI18N
+        jLabel19.setFont(new java.awt.Font("Russo One", 0, 18)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(102, 0, 0));
         jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/reporte.png"))); // NOI18N
         jLabel19.setText("CITAS PENDIENTES");
@@ -317,10 +316,6 @@ public class pMedico extends javax.swing.JFrame {
         jLabel18.setForeground(new java.awt.Color(102, 0, 51));
         jLabel18.setText("Hora en sistema");
 
-        jCheckBox1.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
-        jCheckBox1.setForeground(new java.awt.Color(102, 0, 51));
-        jCheckBox1.setText("Marcar asistencia");
-
         jmAyuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ayuda.png"))); // NOI18N
         jmAyuda.setText("Ayuda");
 
@@ -347,51 +342,47 @@ public class pMedico extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnReportes, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnConfigUser)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jCheckBox1)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLBienvenidoD)
-                                .addComponent(jLabel12)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnReportes, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnConfigUser)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(32, 32, 32)
+                                .addComponent(jLabel12))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(jLBienvenidoD)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(btnImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(24, 24, 24))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(rSLabelFecha1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel11)
-                            .addGap(33, 33, 33))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(18, 18, 18)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(rSLabelHora1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel18)
-                                .addComponent(btnLogout)))))
-                .addGap(23, 23, 23))
+                        .addGap(72, 72, 72))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnLogout)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(rSLabelFecha1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel11)
+                                    .addGap(33, 33, 33))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(18, 18, 18)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(rSLabelHora1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel18)))))
+                        .addGap(53, 53, 53))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(24, 24, 24)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addComponent(btnImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(42, 42, 42)
-                        .addComponent(jLBienvenidoD)
-                        .addGap(26, 26, 26)
-                        .addComponent(jCheckBox1)))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addComponent(jLabel11)
                         .addGap(10, 10, 10)
                         .addComponent(rSLabelFecha1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -400,12 +391,14 @@ public class pMedico extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(rSLabelHora1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLBienvenidoD)
+                        .addGap(58, 58, 58)
                         .addComponent(jLabel12)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnReportes, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnConfigUser, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -479,15 +472,14 @@ public class pMedico extends javax.swing.JFrame {
     public com.toedter.calendar.JDateChooser configNac;
     public javax.swing.JTextField configNom;
     public javax.swing.JTextField configPswd;
-    private javax.swing.JCheckBox jCheckBox1;
     public javax.swing.JLabel jLBienvenidoD;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JMenuBar jMenuBar1;
@@ -497,7 +489,7 @@ public class pMedico extends javax.swing.JFrame {
     private javax.swing.JTable jTable1;
     public javax.swing.JFrame jfCitasMed;
     public javax.swing.JFrame jfConfigP;
-    private javax.swing.JMenu jmAyuda;
+    public javax.swing.JMenu jmAyuda;
     public javax.swing.JMenu jmAyuda2;
     public javax.swing.JMenuItem jmiAyuda;
     public javax.swing.JMenuItem jmiAyuda1;

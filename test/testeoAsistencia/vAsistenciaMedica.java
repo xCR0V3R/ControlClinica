@@ -3,6 +3,7 @@
 package testeoAsistencia;
 import daos.*;
 import entidades.*;import java.util.*;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
 
@@ -53,6 +54,7 @@ public class vAsistenciaMedica extends javax.swing.JFrame {
         txtCod = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTAsistencia = new javax.swing.JTable();
+        btnResetASIS = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -86,6 +88,13 @@ public class vAsistenciaMedica extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTAsistencia);
 
+        btnResetASIS.setText("ReiniciarASIS");
+        btnResetASIS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnResetASISActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -99,7 +108,9 @@ public class vAsistenciaMedica extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(txtCod, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnAsistir)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnResetASIS)
+                            .addComponent(btnAsistir))
                         .addGap(110, 110, 110))))
         );
         layout.setVerticalGroup(
@@ -109,7 +120,9 @@ public class vAsistenciaMedica extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAsistir)
                     .addComponent(txtCod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnResetASIS)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28))
         );
@@ -119,12 +132,26 @@ public class vAsistenciaMedica extends javax.swing.JFrame {
 
     private void btnAsistirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAsistirActionPerformed
        String codm=txtCod.getText();
-       String asis="NO";
+       String asis="SI";
        dao2.actualizarAsistencia(codm, asis);
         acTabla();
        borrarTabla();
       
     }//GEN-LAST:event_btnAsistirActionPerformed
+
+    private void btnResetASISActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetASISActionPerformed
+      // String codm=txtCod.getText();
+       String asist="NO";
+       List<Medico> med=dao.lisMed();int max=med.size();
+       for(int i=0;i<max;i++){
+           dao2.actualizarAsistencia(med.get(i).getCodmed(), asist);
+       }
+        JOptionPane.showMessageDialog(null, "AsistenciaReiniciada");
+       acTabla();
+       borrarTabla();
+        
+        
+    }//GEN-LAST:event_btnResetASISActionPerformed
 
     /**
      * @param args the command line arguments
@@ -163,6 +190,7 @@ public class vAsistenciaMedica extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAsistir;
+    private javax.swing.JButton btnResetASIS;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTAsistencia;
     private javax.swing.JTextField txtCod;

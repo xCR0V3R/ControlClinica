@@ -7,9 +7,13 @@ import java.awt.Desktop;
 import java.net.URI;
 import javax.swing.*;
 import daos.*;
+import entidades.Medico;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumn;
 
 
 
@@ -17,10 +21,12 @@ public class mAdmi {
     
     private String cNom; private String cFec; private int cDNI;
     private String cEsp; private String cDoc; private String cHor;
-    
     pAdmi admi;
-    
+    String[] cab1={"Codigo","Medic@","CodEsp","Asistio"};
+    String[][] data1={};
+    DefaultTableModel tablaFE; 
     SimpleDateFormat fordia=new SimpleDateFormat("yyyy-MM-dd");
+    DAORegistro dao=new DAORegistro(); DAOLog dao2=new DAOLog();
     //SimpleDateFormat forhora=new SimpleDateFormat("hh:mm:ss");
     
     private mLog log=new mLog();
@@ -31,7 +37,6 @@ public class mAdmi {
         this.admi=admi;
         
     }
-    
     
     public void inicializarAdmi(pAdmi ad){ 
          ad.setTitle("ADMINISTRADOR");
@@ -58,6 +63,46 @@ public class mAdmi {
          ad.setVisible(true);
          ad.setLocationRelativeTo(null);
         log.esIcono(ad);
+    }
+    public void asistencia(JFrame ad){
+         ad.setTitle("Asistencia");
+         ad.setVisible(true);
+         ad.setLocationRelativeTo(null);
+        log.esIcono(ad);
+    }
+    
+    public void inTabla(pAdmi vadmi){
+        tablaFE=new DefaultTableModel(data1,cab1);
+        vadmi.jTAsistencia.setModel(tablaFE);
+        TableColumn columna;
+        columna=vadmi.jTAsistencia.getColumnModel().getColumn(1);
+        columna.setPreferredWidth(150);
+        acTabla();
+    }
+    
+    public void acTabla(){
+        List<Medico> med=dao.lisMed(); int max=med.size();
+        for(int i=0;i<max;i++){
+            String[] fila={med.get(i).getCodmed(),med.get(i).getNombre(),med.get(i).getCodes(),med.get(i).getAsistencia()};
+            tablaFE.addRow(fila);
+        }
+    }
+    public void borrarTabla(){
+        List<Medico> med=dao.lisMed(); int max=med.size();
+        for(int i=0;i<max;i++){
+             tablaFE.removeRow(i);
+        }
+    }
+    
+    public void resetAsis(){
+        String asist="NO";
+       List<Medico> med=dao.lisMed();int max=med.size();
+       for(int i=0;i<max;i++){
+           dao2.actAsis(med.get(i).getCodmed(), asist);
+       }
+       JOptionPane.showMessageDialog(null, "Asistencia Reiniciada");
+       acTabla();
+       borrarTabla();
     }
     
     public void welcome(pAdmi ad, Administrador admi){

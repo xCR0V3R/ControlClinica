@@ -12,7 +12,7 @@ import java.net.URISyntaxException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-public class ctrlAdmin implements ActionListener{
+public class ctrlAdmin implements ActionListener {
 
     pAdmi ad; 
     mAdmi ingresar=new mAdmi();
@@ -24,7 +24,6 @@ public class ctrlAdmin implements ActionListener{
        public ctrlAdmin(pAdmi ad, Administrador admi){
         this.ad = ad; this.admi=admi; 
         ingresar.welcome(this.ad, this.admi);
-        //this.ad.jLBienvenidoA.setText("Bienvenido, "+admi.getNombre().split(" ")[0].trim());
         ingresar.inicializarAdmi(this.ad);
         this.ad.btnConfigUser.addActionListener(this);
         this.ad.btnLogout.addActionListener(this);
@@ -32,11 +31,14 @@ public class ctrlAdmin implements ActionListener{
         this.ad.btnSalir3.addActionListener(this);
         this.ad.btnReportes.addActionListener(this);
         this.ad.btnNuevoP.addActionListener(this);
-        this.ad.jmiAyuda.addActionListener(this);
         this.ad.btnRetornar1.addActionListener(this);
         this.ad.btnRetornar2.addActionListener(this);
+        this.ad.btnRetornar5.addActionListener(this);
         this.ad.btnRetornar3.addActionListener(this);
-        this.ad.jmiAyuda.addActionListener(this);
+        this.ad.btnAsistenciaM.addActionListener(this);
+        this.ad.btnReiniciar.addActionListener(this);
+        
+        //VALOR EXTRA - AYUDA
         this.ad.jmiAyuda1.addActionListener(this);
         this.ad.jmiAyuda2.addActionListener(this);
         this.ad.jmiForo.addActionListener(this);
@@ -58,12 +60,17 @@ public class ctrlAdmin implements ActionListener{
         this.ad.btnSalir3.addActionListener(this);
         this.ad.btnReportes.addActionListener(this);
         this.ad.btnNuevoP.addActionListener(this);
-        this.ad.jmiAyuda.addActionListener(this);
-        this.ad.btnRetornar1.addActionListener(this);
+         this.ad.btnRetornar1.addActionListener(this);
         this.ad.btnRetornar2.addActionListener(this);
         this.ad.btnRetornar3.addActionListener(this);
-        this.ad.jmiAyuda.addActionListener(this);
-        this.ad.jmiAyuda1.addActionListener(this);
+        this.ad.btnRetornar5.addActionListener(this);
+        this.ad.btnBuscar1.addActionListener(this);
+        this.ad.btnRegistrar.addActionListener(this);
+        this.ad.btnAsistenciaM.addActionListener(this);
+        this.ad.btnReiniciar.addActionListener(this);
+        
+         //VALOR EXTRA - AYUDA
+         this.ad.jmiAyuda1.addActionListener(this);
         this.ad.jmiAyuda2.addActionListener(this);
         this.ad.jmiForo.addActionListener(this);
         this.ad.jmiForo1.addActionListener(this);
@@ -71,8 +78,7 @@ public class ctrlAdmin implements ActionListener{
         this.ad.jmiSitioWeb.addActionListener(this);
         this.ad.jmiSitioWeb1.addActionListener(this);
         this.ad.jmiSitioWeb2.addActionListener(this);
-        this.ad.btnBuscar1.addActionListener(this);
-        this.ad.btnRegistrar.addActionListener(this);
+        
     } 
     
     @Override
@@ -121,6 +127,11 @@ public class ctrlAdmin implements ActionListener{
             ad.jfReporteCitas.setVisible(false);
         }
         
+        if(e.getSource()==ad.btnRetornar5){
+            ad.setVisible(true);
+            ad.jfAsisMedica.setVisible(false);
+        }
+        
         if(e.getSource()==ad.btnRetornar3){
             ad.setVisible(true);
             ad.jfNuevaCita.setVisible(false);
@@ -156,9 +167,17 @@ public class ctrlAdmin implements ActionListener{
                  }*/
         }
         
-        if(e.getSource()==ad.jmiAyuda){
-             url.support("https://www.clinicainternacional.com.pe/");
+        if(e.getSource()==ad.btnAsistenciaM){
+        ad.setVisible(false);
+        ingresar.asistencia(ad.jfAsisMedica);
+        ingresar.inTabla(ad);
         }
+        
+        if(e.getSource()==ad.btnReiniciar){
+            ingresar.resetAsis();
+        }
+        
+        //VALOR EXTRA-SUPPORT
         if(e.getSource()==ad.jmiAyuda1){
              url.support("https://www.clinicainternacional.com.pe/");
         }

@@ -142,7 +142,7 @@ public class DAORegistro {
                 a.setAsistencia(rs.getString(11));
                 lis.add(a);
             }
-            System.out.println("PASO MEDICOS");
+            //System.out.println("PASO MEDICOS");
         } catch (Exception ex) {
             ex.printStackTrace();
         } finally {

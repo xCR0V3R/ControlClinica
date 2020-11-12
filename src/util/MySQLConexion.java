@@ -8,7 +8,7 @@ public class MySQLConexion {
 		String usr = "a6a425_sistema";
 		String psw = "sistema123"; 
 		con = DriverManager.getConnection(url,usr,psw); 
-		System.out.println("conexion ok");
+		//System.out.println("conexion ok");
 		} catch (ClassNotFoundException ex)
 		{ System.out.println("No hay Driver!!"); } 
 		catch (SQLException ex) { System.out.println("Error con la BD "); }

@@ -145,7 +145,30 @@ public class DAOLog {
 
     }
     
-    
+    public void actAsis(String cod,String asis){
+         
+         Connection conn = null;
+	 try{
+             String sql = "Update medico set asis=? where codmed=?";
+             conn = MySQLConexion.getConexion();
+             
+             PreparedStatement st = conn.prepareStatement(sql);
+             
+             st.setString(1, asis);
+             st.setString(2, cod);
+             st.executeUpdate();
+	
+	 }catch(Exception ex){
+		 ex.printStackTrace();
+	 }finally{
+			try {
+			
+				if(conn!= null) conn.close();
+			} catch (Exception e2) {}
+		}
+
+		
+	}
     
     
 }

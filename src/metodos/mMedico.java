@@ -1,6 +1,6 @@
 
 package metodos;
-import vistaa.*;
+import vistaa.*;import daos.*;
 import controlador.*;
 import entidades.Medico;
 import java.awt.Image;
@@ -8,7 +8,7 @@ import javax.swing.*;
 
 public class mMedico {
     mLog log=new mLog();
-    
+    DAOLog dao=new DAOLog();
     public void inicializarMed(pMedico med){ 
         med.setTitle("MEDICO");
         med.setLocationRelativeTo(null);
@@ -31,6 +31,7 @@ public class mMedico {
     }
     
       public void welcome(pMedico vmed,Medico med){
+        dao.actAsis(med.getCodmed(), "SI");
        String inicio="";
         if(med.getSexo()=='F'){
             inicio="Bienvenida, ";
