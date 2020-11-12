@@ -7,8 +7,19 @@ public class Cita {
     private String diacit;
     private String horacit;
     private String estadopac;
-    private String dnipac;
+    private int dnipac;
     private String codmed;
+    private String nomed;
+    private String esp;
+
+    public Cita(String nompac, String diacit, String horacit, String esp, int dnipac, String nomed) {
+        this.nompac = nompac;
+        this.diacit = diacit;
+        this.horacit = horacit;
+        this.esp = esp;
+        this.dnipac = dnipac;
+        this.nomed = nomed;
+    }
 
     public Cita() {
     }
@@ -53,11 +64,11 @@ public class Cita {
         this.estadopac = estadopac;
     }
 
-    public String getDnipac() {
+    public int getDnipac() {
         return dnipac;
     }
 
-    public void setDnipac(String dnipac) {
+    public void setDnipac(int dnipac) {
         this.dnipac = dnipac;
     }
 
@@ -67,6 +78,22 @@ public class Cita {
 
     public void setCodmed(String codmed) {
         this.codmed = codmed;
+    }
+
+    public String getNomed() {
+        return nomed;
+    }
+
+    public void setNomed(String nomed) {
+        this.nomed = nomed;
+    }
+
+    public String getEsp() {
+        return esp;
+    }
+
+    public void setEsp(String esp) {
+        this.esp = esp;
     }
     
     
