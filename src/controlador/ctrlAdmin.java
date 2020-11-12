@@ -3,7 +3,7 @@ package controlador;
 import entidades.Administrador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import daos.*;import entidades.Medico;
+import daos.*;import entidades.*;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import vistaa.*; import metodos.*;
@@ -72,6 +72,7 @@ public class ctrlAdmin implements ActionListener{
         this.ad.jmiSitioWeb1.addActionListener(this);
         this.ad.jmiSitioWeb2.addActionListener(this);
         this.ad.btnBuscar1.addActionListener(this);
+        this.ad.btnRegistrar.addActionListener(this);
     } 
     
     @Override
@@ -133,11 +134,23 @@ public class ctrlAdmin implements ActionListener{
             if(tipo.equals("Obstetricia")) cEsp="E02";
             if(tipo.equals("Odontologia")) cEsp="E03";
             if(tipo.equals("Oftolmologia")) cEsp="E04";
-            if(cEsp.equals("E01")){
-                ad.cbDoctor1.removeAllItems();
-                //ad.cbDoctor1.addItemListener(dao2.lisMedEs(cEsp));
-                //Aún no terminado
+            ad.cbDoctor1.removeAllItems();
+            for (int i = 1; i <= dao2.lisMedEs(cEsp).size(); i++) {
+                ad.cbDoctor1.addItem(dao2.lisMedEs(cEsp).get(i).toString());
             }
+        }
+        
+        if(e.getSource()==ad.btnRegistrar){
+            //try{
+            ingresar.obtenerData();
+            Cita c= new Cita(ingresar.getcNom(), ingresar.getcFec(), ingresar.getcHor(), ingresar.getcEsp(), ingresar.getcDNI(), ingresar.getcDoc());
+            dao2.addCita(c);
+                JOptionPane.showMessageDialog(null, "Datos ingresados correctamente");
+            /*}catch (NullPointerException ex) {
+              JOptionPane.showMessageDialog(null, "¡Faltan datos por ingresar!\nError: "+ex); 
+             }catch(NumberFormatException exx){
+                     JOptionPane.showMessageDialog(null, "¡Inserte correctamente su DNI!\nError: "+exx.getMessage()); 
+                 }*/
         }
         
         if(e.getSource()==ad.jmiAyuda){

@@ -70,7 +70,7 @@ public class DAOCitas {
             conn = MySQLConexion.getConexion();
             PreparedStatement st = conn.prepareStatement(sql);
             st.setString(1,c.getCodmed());
-            st.setString(2, c.getDnipac());
+            st.setInt(2, c.getDnipac());
             st.setString(3, c.getEstadopac());
             st.setString(4, c.getDiacit());
             st.setString(5, c.getHoracit());
@@ -90,13 +90,15 @@ public class DAOCitas {
 
     }
     
+    //public List<Med>
+    
     public List<Medico> lisMedEs(String id) {
         List<Medico> lis = new ArrayList<>();
         Connection conn = null;
 
         try {
             conn = MySQLConexion.getConexion();
-            String sql = "select nombre from medico when id=?";
+            String sql = "select nombre from medico where codes=?";
             PreparedStatement st = conn.prepareStatement(sql);
             st.setString(1, id);
             ResultSet rs = st.executeQuery();
