@@ -17,7 +17,7 @@ public class DAOCitas2 {
         Connection conn = null; 
         try {
             conn = MySQLConexion.getConexion();
-            String sql = "select id, feccit, hora, nomp, estado from citas where idmed=?";
+            String sql = "select id, dnip, feccit, estado, hora from citas where codmed=?";
             PreparedStatement st = conn.prepareStatement(sql);
             ResultSet rs = st.executeQuery();
             
@@ -28,6 +28,7 @@ public class DAOCitas2 {
                 c.setHoracit(rs.getString(3));
                 c.setNompac(rs.getString(4));
                 c.setEstadopac(rs.getString(5));
+                
                 lis.add(c);
             }
         } catch (Exception ex) {

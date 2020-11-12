@@ -5,6 +5,13 @@
  */
 package testC;
 
+
+import entidades.Cita;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumn;
+
 /**
  *
  * @author Mishi
@@ -28,12 +35,12 @@ public class prueba4 extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tabla = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -52,7 +59,7 @@ public class prueba4 extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tabla);
 
         jButton1.setText("Listar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -88,7 +95,20 @@ public class prueba4 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here: 
+        // TODO add your handling code here:
+        DAOCitas2 dao=new DAOCitas2();
+         List<Cita> calc=new ArrayList(); 
+        DefaultTableModel tabl;
+    String[] cab1={"ID","Fecha","Hora","Nombre Paciente","Estado"};
+    String[][] data1={}; 
+    tabl=new DefaultTableModel(data1,cab1);
+        calc=dao.lisCita();  
+      for(Cita x:calc){
+          Object[] fila={x.getIdCita(),x.getDiacit(),x.getHoracit(),x.getNompac(),x.getEstadopac()};
+                        
+      } 
+      TableColumn columna;
+      
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -130,6 +150,6 @@ public class prueba4 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tabla;
     // End of variables declaration//GEN-END:variables
 }
