@@ -121,4 +121,31 @@ public class DAOCitas {
         return lis;
     }
     
+    public String busPac(String id){
+        String est="";
+        Cita c=null;
+        Connection conn = null;
+        try {
+            conn = MySQLConexion.getConexion();
+            String sql = "select dnip from paciente where dnip=?";
+            PreparedStatement st = conn.prepareStatement(sql);
+            st.setString(1, id);
+            ResultSet rs = st.executeQuery();
+            if (rs.next()) {
+                est="Encontrado";
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            try {
+
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (Exception e2) {
+            }
+        }
+        return est;
+    }
+    
 }

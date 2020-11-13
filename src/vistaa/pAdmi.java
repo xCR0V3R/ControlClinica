@@ -630,7 +630,7 @@ public class pAdmi extends javax.swing.JFrame {
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/doc.png"))); // NOI18N
         jLabel8.setText("ASISTENCIA MÉDICA");
         jfAsisMedica.getContentPane().add(jLabel8);
-        jLabel8.setBounds(74, 11, 225, 32);
+        jLabel8.setBounds(74, 11, 213, 32);
 
         jLabel31.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
         jLabel31.setForeground(new java.awt.Color(102, 0, 51));

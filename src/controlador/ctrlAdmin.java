@@ -68,6 +68,7 @@ public class ctrlAdmin implements ActionListener {
         this.ad.btnRegistrar.addActionListener(this);
         this.ad.btnAsistenciaM.addActionListener(this);
         this.ad.btnReiniciar.addActionListener(this);
+        this.ad.jcbArea1.addActionListener(this);
         
          //VALOR EXTRA - AYUDA
          this.ad.jmiAyuda1.addActionListener(this);
@@ -137,7 +138,7 @@ public class ctrlAdmin implements ActionListener {
             ad.jfNuevaCita.setVisible(false);
         }
         
-        if(e.getSource()==ad.btnBuscar1){
+        if(e.getSource()==ad.jcbArea1){
             String tipo="";
             String cEsp="";
             tipo=ad.jcbArea1.getSelectedItem().toString();
@@ -152,6 +153,12 @@ public class ctrlAdmin implements ActionListener {
             for (int i = 0; i < max ; i++) {
                 ad.cbDoctor1.addItem(dao2.lisMedEs(cEsp).get(i).getNombre());
             }
+        }
+        
+        if(e.getSource()==ad.btnBuscar1){
+            String dnit;
+            dnit=ad.txtDNI.getText();
+            
         }
         
         if(e.getSource()==ad.btnRegistrar){
