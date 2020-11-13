@@ -2,11 +2,18 @@
 package metodos;
 import vistaa.*;import daos.*;
 import controlador.*;
+import entidades.Cita;
 import entidades.Medico;
 import java.awt.Image;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 
 public class mMedico {
+     DAOCitas dao2=new DAOCitas();
+     List<Cita> calc=new ArrayList(); 
+     DefaultTableModel tabl; 
     mLog log=new mLog();
     DAOLog dao=new DAOLog();
     public void inicializarMed(pMedico med){ 
@@ -44,5 +51,16 @@ public class mMedico {
         vmed.jLBienvenidoD.setText(inicio+med.getNombre().split(" ")[0].trim());
     }
       
-      
+    public void visualizarReportCita(JTable tabla,String cod){
+        String[] cab1={"ID","Fecha","Hora","Nombre Paciente","Estado"};
+    String[][] data1={}; 
+    tabl=new DefaultTableModel(data1,cab1);
+    tabla.setModel(tabl);
+        calc=dao2.lisReportCita(cod);  
+      for(Cita x:calc){
+          String[] fila={x.getIdCita(),x.getDiacit(),x.getHoracit(),x.getNompac(),x.getEstadopac()}; 
+          tabl.addRow(fila);
+          
+      } 
+    }  
 }

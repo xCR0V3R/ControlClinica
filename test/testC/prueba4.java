@@ -17,12 +17,15 @@ import javax.swing.table.TableColumn;
  * @author Mishi
  */
 public class prueba4 extends javax.swing.JFrame {
-
+         DAOCitas2 dao=new DAOCitas2();
+         List<Cita> calc=new ArrayList(); 
+        DefaultTableModel tabl; 
     /**
      * Creates new form prueba
      */
     public prueba4() {
         initComponents();
+        //tabla.setTableHeader(jth);
     }
 
     /**
@@ -52,7 +55,7 @@ public class prueba4 extends javax.swing.JFrame {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -95,19 +98,19 @@ public class prueba4 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        DAOCitas2 dao=new DAOCitas2();
-         List<Cita> calc=new ArrayList(); 
-        DefaultTableModel tabl;
+        // TODO add your handling code here:   
+        //DAOCitas2 e;
     String[] cab1={"ID","Fecha","Hora","Nombre Paciente","Estado"};
     String[][] data1={}; 
     tabl=new DefaultTableModel(data1,cab1);
-        calc=dao.lisCita();  
+    tabla.setModel(tabl);
+        calc=dao.lisReportCita("M001");  
       for(Cita x:calc){
-          Object[] fila={x.getIdCita(),x.getDiacit(),x.getHoracit(),x.getNompac(),x.getEstadopac()};
-                        
+          String[] fila={x.getIdCita(),x.getDiacit(),x.getHoracit(),x.getNompac(),x.getEstadopac()}; 
+          tabl.addRow(fila);
+          
       } 
-      TableColumn columna;
+     
       
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -150,6 +153,6 @@ public class prueba4 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tabla;
+    public javax.swing.JTable tabla;
     // End of variables declaration//GEN-END:variables
 }

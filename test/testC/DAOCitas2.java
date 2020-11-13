@@ -12,22 +12,23 @@ import vistaa.*;
 
 public class DAOCitas2 {
    
-    public List<Cita> lisCita() {
+    public List<Cita> lisReportCita(String cod) {
         List<Cita> lis = new ArrayList<>();
         Connection conn = null; 
-        try {
+        try { 
             conn = MySQLConexion.getConexion();
-            String sql = "select id, dnip, feccit, estado, hora from citas where codmed=?";
+            String sql = "select id, paciente.nomp, feccit, estado, hora from citas INNER JOIN paciente ON citas.dnip=paciente.dnip where codmed=?";
             PreparedStatement st = conn.prepareStatement(sql);
+            st.setString(1, cod); 
             ResultSet rs = st.executeQuery();
             
             while (rs.next()) {
                 Cita c = new Cita();
                 c.setIdCita(rs.getString(1));
-                c.setDiacit(rs.getString(2));
-                c.setHoracit(rs.getString(3));
-                c.setNompac(rs.getString(4));
-                c.setEstadopac(rs.getString(5));
+                c.setNompac(rs.getString(2));
+                c.setDiacit(rs.getString(3));
+                c.setEstadopac(rs.getString(4));
+                c.setHoracit(rs.getString(5)); 
                 
                 lis.add(c);
             }

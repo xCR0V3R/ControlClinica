@@ -43,10 +43,9 @@ public class pAdmi extends javax.swing.JFrame {
         jcbArea = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        btnBuscar = new javax.swing.JButton();
         jcbMedicos = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTReportCitaA = new javax.swing.JTable();
         btnRetornar2 = new javax.swing.JButton();
         btnSalir2 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
@@ -196,7 +195,7 @@ public class pAdmi extends javax.swing.JFrame {
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/AcUsuario.png"))); // NOI18N
         jLabel15.setText("CONFIGURAR PERFIL");
         jPanel2.add(jLabel15);
-        jLabel15.setBounds(36, 25, 270, 72);
+        jLabel15.setBounds(36, 25, 262, 72);
 
         javax.swing.GroupLayout jfConfigPLayout = new javax.swing.GroupLayout(jfConfigP.getContentPane());
         jfConfigP.getContentPane().setLayout(jfConfigPLayout);
@@ -233,30 +232,28 @@ public class pAdmi extends javax.swing.JFrame {
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/doc.png"))); // NOI18N
         jLabel7.setText("Médicos");
 
-        btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/buscar.png"))); // NOI18N
-
         jcbMedicos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Seleccionar-" }));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTReportCitaA.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Nro Cita", "Fecha Creacion", "Fecha Cita", "Nombre Paciente", "Estado"
+                "Nro Cita", "Hora", "Fecha Cita", "Nombre Paciente", "DNI", "Estado"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(jTReportCitaA);
 
         btnRetornar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/volver.png"))); // NOI18N
         btnRetornar2.setText("Retornar");
@@ -313,32 +310,29 @@ public class pAdmi extends javax.swing.JFrame {
         jfReporteCitasLayout.setHorizontalGroup(
             jfReporteCitasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jfReporteCitasLayout.createSequentialGroup()
-                .addGroup(jfReporteCitasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jfReporteCitasLayout.createSequentialGroup()
-                        .addGap(57, 57, 57)
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jcbArea, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(14, 14, 14)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jcbMedicos, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jfReporteCitasLayout.createSequentialGroup()
-                        .addGap(225, 225, 225)
-                        .addComponent(btnRetornar2)
-                        .addGap(44, 44, 44)
-                        .addComponent(btnSalir2))
-                    .addGroup(jfReporteCitasLayout.createSequentialGroup()
-                        .addGap(89, 89, 89)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 493, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jfReporteCitasLayout.createSequentialGroup()
-                        .addGap(278, 278, 278)
-                        .addComponent(jButton6))
-                    .addGroup(jfReporteCitasLayout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addComponent(jLabel5)))
+                .addGroup(jfReporteCitasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 585, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jfReporteCitasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jfReporteCitasLayout.createSequentialGroup()
+                            .addGap(57, 57, 57)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jcbArea, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(60, 60, 60)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jcbMedicos, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jfReporteCitasLayout.createSequentialGroup()
+                            .addGap(225, 225, 225)
+                            .addComponent(btnRetornar2)
+                            .addGap(44, 44, 44)
+                            .addComponent(btnSalir2))
+                        .addGroup(jfReporteCitasLayout.createSequentialGroup()
+                            .addGap(278, 278, 278)
+                            .addComponent(jButton6))
+                        .addGroup(jfReporteCitasLayout.createSequentialGroup()
+                            .addGap(34, 34, 34)
+                            .addComponent(jLabel5))))
                 .addContainerGap(43, Short.MAX_VALUE))
         );
         jfReporteCitasLayout.setVerticalGroup(
@@ -351,9 +345,7 @@ public class pAdmi extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jfReporteCitasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel6)
-                            .addGroup(jfReporteCitasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jcbArea, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(btnBuscar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jcbArea, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jfReporteCitasLayout.createSequentialGroup()
                         .addGap(47, 47, 47)
                         .addGroup(jfReporteCitasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -626,7 +618,7 @@ public class pAdmi extends javax.swing.JFrame {
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/doc.png"))); // NOI18N
         jLabel8.setText("ASISTENCIA MÉDICA");
         jfAsisMedica.getContentPane().add(jLabel8);
-        jLabel8.setBounds(74, 11, 225, 32);
+        jLabel8.setBounds(74, 11, 213, 32);
 
         jLabel31.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
         jLabel31.setForeground(new java.awt.Color(102, 0, 51));
@@ -1111,7 +1103,6 @@ public class pAdmi extends javax.swing.JFrame {
     private javax.swing.JButton btnActHorarios;
     public javax.swing.JButton btnAddHorario;
     public javax.swing.JButton btnAsistenciaM;
-    public javax.swing.JButton btnBuscar;
     public javax.swing.JButton btnBuscar1;
     public javax.swing.JButton btnConfigUser;
     public javax.swing.JButton btnHorarioCostos;
@@ -1184,7 +1175,7 @@ public class pAdmi extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     public javax.swing.JTable jTAsistencia;
     public javax.swing.JTable jTHorarios;
-    public javax.swing.JTable jTable1;
+    public javax.swing.JTable jTReportCitaA;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;

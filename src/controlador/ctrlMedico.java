@@ -81,6 +81,7 @@ public class ctrlMedico implements ActionListener {
         ingresar.inicializarConfUser(vmed.jfConfigP); 
     }
         if(e.getSource()==vmed.btnReportes){
+            ingresar.visualizarReportCita(vmed.tablaReporte, med.getCodmed());
             vmed.setVisible(false);
             ingresar.inicializarCitas(vmed.jfCitasMed);
         }

@@ -45,7 +45,7 @@ public class pMedico extends javax.swing.JFrame {
         btnVolver1 = new javax.swing.JButton();
         btnLogout1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tablaReporte = new javax.swing.JTable();
         btnActualizar1 = new javax.swing.JButton();
         jMenuBar3 = new javax.swing.JMenuBar();
         jmAyuda2 = new javax.swing.JMenu();
@@ -192,7 +192,7 @@ public class pMedico extends javax.swing.JFrame {
         btnLogout1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/salir.png"))); // NOI18N
         btnLogout1.setText("Salir");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tablaReporte.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -211,7 +211,7 @@ public class pMedico extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tablaReporte);
 
         btnActualizar1.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
         btnActualizar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/actualizar.png"))); // NOI18N
@@ -486,7 +486,6 @@ public class pMedico extends javax.swing.JFrame {
     public javax.swing.JMenuBar jMenuBar3;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     public javax.swing.JFrame jfCitasMed;
     public javax.swing.JFrame jfConfigP;
     public javax.swing.JMenu jmAyuda;
@@ -499,5 +498,6 @@ public class pMedico extends javax.swing.JFrame {
     public javax.swing.JMenuItem jmiSitioWeb1;
     private rojeru_san.RSLabelFecha rSLabelFecha1;
     private rojeru_san.RSLabelHora rSLabelHora1;
+    public javax.swing.JTable tablaReporte;
     // End of variables declaration//GEN-END:variables
 }
