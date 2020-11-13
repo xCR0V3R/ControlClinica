@@ -45,8 +45,10 @@ public class ctrlLogueo implements ActionListener{
          }
         
          if(e.getSource()==log.btnRegistrar){
+              mlog.mostrarEsp(log.jcbxEspecialidad1);
              log.setVisible(false);
              mlog.inRegistro();
+              
         }
           if(e.getSource()==log.btnLogout){
            System.exit(0);
@@ -62,9 +64,14 @@ public class ctrlLogueo implements ActionListener{
          if(e.getSource()==log.btnRegistro){
              //int c=0;
              try{
+                    
                     mlog.obtenerData();  
-                    if(mlog.getdCorreo().equals("") || mlog.getdPswd().equals("") || mlog.getdTip().equals("U000")|| mlog.getdSexo()=='X'){
-                       JOptionPane.showMessageDialog(null, "¡Faltan datos por ingresar!");
+                    if(mlog.getdCorreo().equals("") || mlog.getdPswd().equals("") || mlog.getdTip().equals("U000") || mlog.getdSexo()=='X'){
+                       JOptionPane.showMessageDialog(null, "¡Faltan datos por ingresar!!");
+                       if(mlog.getdCorreo().equals("")) System.out.println("CORREO VACIO");
+                       if(mlog.getdPswd().equals("")) System.out.println("PSWD VACIO");
+                       if(mlog.getdTip().equals("U000")) System.out.println("TIPO USER VACIO");
+                       if(mlog.getdSexo()=='X') System.out.println("SEXO VACIO");
                    }else{
                        if(mlog.getdTip()=="U001"){
                        mlog.regAdmi();
@@ -72,14 +79,15 @@ public class ctrlLogueo implements ActionListener{
                        log.setVisible(false);log.nuevRegistro.setVisible(false);
                        ctrlLogueo ctLog=new ctrlLogueo(log2);
                        }
-                       if(mlog.getdTip()=="U002"&& mlog.getdEsp().equals("-Seleccionar-")){
+                       
+                       if(mlog.getdTip()=="U002"&& log.jcbxEspecialidad1.getSelectedIndex()==0){
                            JOptionPane.showMessageDialog(null, "Ingrese especialidad");
                            log.jlEspecialidad.setVisible(true);
                            log.jcbxEspecialidad1.setVisible(true);
                           
                        }
                        //if(mlog.getdEsp().equals("-Seleccionar-"))c++;
-                       if(mlog.getdTip()=="U002"&& !mlog.getdEsp().equals("-Seleccionar-")){
+                       if(mlog.getdTip()=="U002"&& log.jcbxEspecialidad1.getSelectedIndex()!=0){
                            mlog.regMed();
                            log.setVisible(false);log.nuevRegistro.setVisible(false);
                        ctrlLogueo ctLog=new ctrlLogueo(log2);

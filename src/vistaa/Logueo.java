@@ -123,7 +123,7 @@ public class Logueo extends javax.swing.JFrame {
         jlEspecialidad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/tipodoc.png"))); // NOI18N
         jlEspecialidad.setText("Especialidad");
 
-        jcbxEspecialidad1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Seleccionar-", "Medicina General", "Obstetricia", "Otorrinolaringologia", "Pediatria", "Psicologia", "Radiologia", "Traumatologia" }));
+        jcbxEspecialidad1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "." }));
 
         jLabel7.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(102, 0, 51));

@@ -6,11 +6,10 @@ import entidades.Medico;
 import vistaa.*;import controlador.*;
 import java.awt.Desktop;
 import java.net.URI;
-import javax.swing.*;
+import javax.swing.*;import java.util.*;
 import daos.*;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
+
 
 
 
@@ -67,9 +66,11 @@ public class mLog {
         dNom=log.txtNombre.getText();
         dNac=formato.format(this.log.dateNacimiento.getDate());
         dDNI=Integer.parseInt(this.log.txtDNI.getText());
-        if(log.jrbMasculino.isSelected()) dSexo='M';
-        if(log.jrbFemenino.isSelected()) dSexo='F';
-        else dSexo='X';
+        if(log.jrbMasculino.isSelected()) {
+            dSexo='M';
+        } else if(log.jrbFemenino.isSelected()) {
+            dSexo='F';
+        } else dSexo='X';
         dCorreo=log.txCorreo.getText();
         dPswd=log.txContra.getText();
         String tipo="";
@@ -87,10 +88,22 @@ public class mLog {
             dao.addAdmi(a);
          }
         
+        public void mostrarEsp(JComboBox jcb){
+             jcb.removeAllItems();
+            jcb.addItem("-Seleccionar-");
+             List<String> lisEsp=dao.lisNomEsp();
+             int max=lisEsp.size();
+             for(int i=0;i<max;i++){
+                 jcb.addItem(lisEsp.get(i));
+             }
+        }
+        
       public void regMed(){
             String codes=dao.busCodEsp(dEsp);
-           // Medico md=new Medico(codes, dTip, dNac,dNom,dSexo, dCorreo, dPswd, dDNI);
-           // dao.addMed(md);
+            String idhorario=null;
+            Medico md=new Medico(codes, dTip, dNac,dNom,dSexo, dCorreo, dPswd, dDNI,idhorario,"NO");
+            dao.addMed(md);
+           //System.out.println("AGREGANDO MEDICO");
         }
 
     public String getdTip() {

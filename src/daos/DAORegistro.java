@@ -176,7 +176,7 @@ public class DAORegistro {
         int resp = 0;           
         Connection conn = null; 
         try {
-            String sql = "Insert into Medico values(?,?,?,?,?,?,?,?,?)";
+            String sql = "Insert into Medico values(?,?,?,?,?,?,?,?,?,?,?)";
             conn = MySQLConexion.getConexion();
             PreparedStatement st = conn.prepareStatement(sql);
             st.setString(1,genCodMed());
@@ -188,6 +188,8 @@ public class DAORegistro {
             st.setString(7, a.getCorreo());
             st.setString(8, a.getPswd());
             st.setInt(9, a.getDni());
+            st.setString(10,a.getIdhorario());
+            st.setString(11, a.getAsistencia());
             resp = st.executeUpdate();
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -201,5 +203,36 @@ public class DAORegistro {
         }
 
     }
+    
+    public List<String> lisNomEsp() {
+        List<String> lis = new ArrayList<>();
+        Connection conn = null;
+
+        try {
+            conn = MySQLConexion.getConexion();
+            String sql = "select nombre from especialidad";
+            PreparedStatement st = conn.prepareStatement(sql);
+            ResultSet rs = st.executeQuery();
+            
+            while (rs.next()) {
+                lis.add(rs.getString(1));
+            }
+            //System.out.println("PASO MEDICOS");
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            try {
+
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (Exception e2) {
+            }
+        }
+
+        return lis;
+    }
+    
+    
     
 }

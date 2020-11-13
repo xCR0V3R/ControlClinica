@@ -34,9 +34,11 @@ public class ctrlAdmin implements ActionListener {
         this.ad.btnRetornar1.addActionListener(this);
         this.ad.btnRetornar2.addActionListener(this);
         this.ad.btnRetornar5.addActionListener(this);
+        this.ad.btnRetornar6.addActionListener(this);
         this.ad.btnRetornar3.addActionListener(this);
         this.ad.btnAsistenciaM.addActionListener(this);
         this.ad.btnReiniciar.addActionListener(this);
+        this.ad.btnHorarioCostos.addActionListener(this);
         
         //VALOR EXTRA - AYUDA
         this.ad.jmiAyuda1.addActionListener(this);
@@ -64,11 +66,13 @@ public class ctrlAdmin implements ActionListener {
         this.ad.btnRetornar2.addActionListener(this);
         this.ad.btnRetornar3.addActionListener(this);
         this.ad.btnRetornar5.addActionListener(this);
+        this.ad.btnRetornar6.addActionListener(this);
         this.ad.btnBuscar1.addActionListener(this);
         this.ad.btnRegistrar.addActionListener(this);
         this.ad.btnAsistenciaM.addActionListener(this);
         this.ad.btnReiniciar.addActionListener(this);
         this.ad.jcbArea1.addActionListener(this);
+        this.ad.btnHorarioCostos.addActionListener(this);
         
          //VALOR EXTRA - AYUDA
          this.ad.jmiAyuda1.addActionListener(this);
@@ -108,21 +112,23 @@ public class ctrlAdmin implements ActionListener {
        
         ad.configPswd.setText(admi.getPswd());
         ad.setVisible(false); 
-        ingresar.confUser(ad.jfConfigP); 
+        ingresar.inVentanasExtra(ad.jfConfigP, "Configurar Usuario");
+        
     }
         if(e.getSource()==ad.btnReportes){
             ad.setVisible(false);
-            ingresar.reporteCitas(ad.jfReporteCitas);
-        }
+            ingresar.inVentanasExtra(ad.jfReporteCitas, "Citas");
+          }
         if(e.getSource()==ad.btnNuevoP){
             ad.setVisible(false);
-            ingresar.nuevaCitas(ad.jfNuevaCita);
+            ingresar.inVentanasExtra(ad.jfNuevaCita, "Citas");
         }
+        
+        //BotonesRetornar
         if(e.getSource()==ad.btnRetornar1){
             ad.setVisible(true);
             ad.jfConfigP.setVisible(false);
-        }
-        
+        }        
         if(e.getSource()==ad.btnRetornar2){
             ad.setVisible(true);
             ad.jfReporteCitas.setVisible(false);
@@ -131,11 +137,14 @@ public class ctrlAdmin implements ActionListener {
         if(e.getSource()==ad.btnRetornar5){
             ad.setVisible(true);
             ad.jfAsisMedica.setVisible(false);
-        }
-        
+        }        
         if(e.getSource()==ad.btnRetornar3){
             ad.setVisible(true);
             ad.jfNuevaCita.setVisible(false);
+        }
+        if(e.getSource()==ad.btnRetornar6){
+            ad.setVisible(true);
+            ad.jfModHoraCoste.setVisible(false);
         }
         
         if(e.getSource()==ad.jcbArea1){
@@ -176,12 +185,16 @@ public class ctrlAdmin implements ActionListener {
         
         if(e.getSource()==ad.btnAsistenciaM){
         ad.setVisible(false);
-        ingresar.asistencia(ad.jfAsisMedica);
+        ingresar.inVentanasExtra(ad.jfAsisMedica,"Asistencia");
         ingresar.inTabla(ad);
         }
         
         if(e.getSource()==ad.btnReiniciar){
             ingresar.resetAsis();
+        }
+        
+        if(e.getSource()==ad.btnHorarioCostos){
+            ingresar.inVentanasExtra(ad.jfModHoraCoste, "Horarios & Costos");
         }
         
         //VALOR EXTRA-SUPPORT

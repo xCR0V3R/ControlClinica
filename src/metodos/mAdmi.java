@@ -45,27 +45,9 @@ public class mAdmi {
         log.esIcono(ad);
     }
 
-    public void confUser(JFrame ad){
-        ad.setTitle("Configurar Usuario");
-        ad.setVisible(true);
-        ad.setLocationRelativeTo(null);
-        log.esIcono(ad);
-    }
     
-    public void reporteCitas(JFrame ad){
-         ad.setTitle("Citas");
-         ad.setVisible(true);
-         ad.setLocationRelativeTo(null);
-        log.esIcono(ad);
-    }
-    public void nuevaCitas(JFrame ad){
-         ad.setTitle("Citas");
-         ad.setVisible(true);
-         ad.setLocationRelativeTo(null);
-        log.esIcono(ad);
-    }
-    public void asistencia(JFrame ad){
-         ad.setTitle("Asistencia");
+    public void inVentanasExtra(JFrame ad,String cad){
+         ad.setTitle(cad);
          ad.setVisible(true);
          ad.setLocationRelativeTo(null);
         log.esIcono(ad);
