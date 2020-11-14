@@ -68,12 +68,12 @@ public class pAdmi extends javax.swing.JFrame {
         btnSalir3 = new javax.swing.JButton();
         dtCita = new com.toedter.calendar.JDateChooser();
         jLabel18 = new javax.swing.JLabel();
-        cbDoctor1 = new javax.swing.JComboBox<>();
+        jcbxDoctorNC = new javax.swing.JComboBox<>();
         btnBuscar1 = new javax.swing.JButton();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
-        jcbArea1 = new javax.swing.JComboBox<>();
+        jcbxEspecialidadNC = new javax.swing.JComboBox<>();
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
@@ -153,9 +153,9 @@ public class pAdmi extends javax.swing.JFrame {
         jPanel2.add(jButton2);
         jButton2.setBounds(190, 340, 130, 28);
         jPanel2.add(configNombre);
-        configNombre.setBounds(162, 134, 223, 22);
+        configNombre.setBounds(162, 134, 223, 20);
         jPanel2.add(configCorreo);
-        configCorreo.setBounds(162, 227, 176, 22);
+        configCorreo.setBounds(162, 227, 176, 20);
 
         btnRetornar1.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
         btnRetornar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/volver.png"))); // NOI18N
@@ -163,7 +163,7 @@ public class pAdmi extends javax.swing.JFrame {
         jPanel2.add(btnRetornar1);
         btnRetornar1.setBounds(50, 340, 110, 28);
         jPanel2.add(configNac);
-        configNac.setBounds(162, 182, 176, 22);
+        configNac.setBounds(162, 182, 176, 20);
 
         jLabel10.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(102, 0, 51));
@@ -189,14 +189,14 @@ public class pAdmi extends javax.swing.JFrame {
         jPanel2.add(jLabel14);
         jLabel14.setBounds(24, 272, 67, 16);
         jPanel2.add(configPswd);
-        configPswd.setBounds(162, 271, 176, 22);
+        configPswd.setBounds(162, 271, 176, 20);
 
         jLabel15.setFont(new java.awt.Font("Russo One", 0, 18)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(102, 0, 0));
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/AcUsuario.png"))); // NOI18N
         jLabel15.setText("CONFIGURAR PERFIL");
         jPanel2.add(jLabel15);
-        jLabel15.setBounds(36, 25, 262, 72);
+        jLabel15.setBounds(36, 25, 270, 72);
 
         javax.swing.GroupLayout jfConfigPLayout = new javax.swing.GroupLayout(jfConfigP.getContentPane());
         jfConfigP.getContentPane().setLayout(jfConfigPLayout);
@@ -397,7 +397,7 @@ public class pAdmi extends javax.swing.JFrame {
         jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/doc.png"))); // NOI18N
         jLabel18.setText("Doctor");
 
-        cbDoctor1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "." }));
+        jcbxDoctorNC.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "." }));
 
         btnBuscar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/buscar.png"))); // NOI18N
 
@@ -414,10 +414,10 @@ public class pAdmi extends javax.swing.JFrame {
         jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/tipodoc.png"))); // NOI18N
         jLabel21.setText("Especialidad");
 
-        jcbArea1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Seleccionar-", "Medicina General", "Obstetricia", "Odontologia", "Oftolmologia" }));
-        jcbArea1.addActionListener(new java.awt.event.ActionListener() {
+        jcbxEspecialidadNC.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Seleccionar-", "Medicina General", "Obstetricia", "Odontologia", "Oftolmologia" }));
+        jcbxEspecialidadNC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jcbArea1ActionPerformed(evt);
+                jcbxEspecialidadNCActionPerformed(evt);
             }
         });
 
@@ -543,8 +543,8 @@ public class pAdmi extends javax.swing.JFrame {
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                             .addGroup(jfNuevaCitaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                 .addGroup(jfNuevaCitaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addComponent(jcbArea1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(cbDoctor1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(jcbxEspecialidadNC, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(jcbxDoctorNC, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addComponent(btnHorario))
                                                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                                 .addGap(48, 48, 48))
@@ -565,11 +565,11 @@ public class pAdmi extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jfNuevaCitaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel21)
-                            .addComponent(jcbArea1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jcbxEspecialidadNC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jfNuevaCitaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel18)
-                            .addComponent(cbDoctor1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jcbxDoctorNC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnHorario)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -628,7 +628,7 @@ public class pAdmi extends javax.swing.JFrame {
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/doc.png"))); // NOI18N
         jLabel8.setText("ASISTENCIA MÉDICA");
         jfAsisMedica.getContentPane().add(jLabel8);
-        jLabel8.setBounds(74, 11, 213, 32);
+        jLabel8.setBounds(74, 11, 225, 32);
 
         jLabel31.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
         jLabel31.setForeground(new java.awt.Color(102, 0, 51));
@@ -1063,9 +1063,9 @@ public class pAdmi extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jmiAyuda1ActionPerformed
 
-    private void jcbArea1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbArea1ActionPerformed
+    private void jcbxEspecialidadNCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbxEspecialidadNCActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jcbArea1ActionPerformed
+    }//GEN-LAST:event_jcbxEspecialidadNCActionPerformed
 
     private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
         // TODO add your handling code here:
@@ -1130,7 +1130,6 @@ public class pAdmi extends javax.swing.JFrame {
     public javax.swing.JButton btnRetornar6;
     public javax.swing.JButton btnSalir2;
     public javax.swing.JButton btnSalir3;
-    public javax.swing.JComboBox<String> cbDoctor1;
     public javax.swing.JTextField configCorreo;
     public com.toedter.calendar.JDateChooser configNac;
     public javax.swing.JTextField configNombre;
@@ -1189,10 +1188,11 @@ public class pAdmi extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     public javax.swing.JComboBox<String> jcbArea;
-    public javax.swing.JComboBox<String> jcbArea1;
     public javax.swing.JComboBox<String> jcbMedicos;
+    public javax.swing.JComboBox<String> jcbxDoctorNC;
     private javax.swing.JComboBox<String> jcbxEspCosto;
     private javax.swing.JComboBox<String> jcbxEspHorarios;
+    public javax.swing.JComboBox<String> jcbxEspecialidadNC;
     public javax.swing.JFrame jfAsisMedica;
     public javax.swing.JFrame jfConfigP;
     public javax.swing.JFrame jfModHoraCoste;

@@ -72,8 +72,9 @@ public class ctrlAdmin implements ActionListener {
         this.ad.btnRegistrar.addActionListener(this);
         this.ad.btnAsistenciaM.addActionListener(this);
         this.ad.btnReiniciar.addActionListener(this);
-        this.ad.cbDoctor1.addActionListener(this);
-        this.ad.jcbArea1.addActionListener(this);
+        this.ad.jcbxEspecialidadNC.addActionListener(this);
+        this.ad.jcbxDoctorNC.addActionListener(this);
+        
         this.ad.btnHorario.addActionListener(this);
         this.ad.btnHorarioCostos.addActionListener(this);
         
@@ -150,37 +151,38 @@ public class ctrlAdmin implements ActionListener {
             ad.jfModHoraCoste.setVisible(false);
         }
         
-        if(e.getSource()==ad.jcbArea1){
+        if(e.getSource()==ad.jcbxEspecialidadNC){
             String tipo="";
             String cEsp="";
-            tipo=ad.jcbArea1.getSelectedItem().toString();
+            tipo=ad.jcbxEspecialidadNC.getSelectedItem().toString();
             if(tipo.equals("Medicina General")) cEsp="E01";
             if(tipo.equals("Obstetricia")) cEsp="E02";
             if(tipo.equals("Odontologia")) cEsp="E03";
             if(tipo.equals("Oftolmologia")) cEsp="E04";
-            ad.cbDoctor1.removeAllItems();
-            ad.cbDoctor1.addItem("-Seleccionar-");
+            ad.jcbxDoctorNC.removeAllItems();
+            ad.jcbxDoctorNC.addItem("-Seleccionar-");
             List<Medico> listaM=dao2.lisMedEs(cEsp);
             int max=listaM.size();
             for (int i = 0; i < max ; i++) {
-                ad.cbDoctor1.addItem(dao2.lisMedEs(cEsp).get(i).getNombre());
+                ad.jcbxDoctorNC.addItem(dao2.lisMedEs(cEsp).get(i).getNombre());
             }
         }
         
-        if(e.getSource()==ad.cbDoctor1){
-            String nomd=ad.cbDoctor1.getSelectedItem().toString();
+       /* if(e.getSource()==ad.jcbxDoctorNC){
+            if(ad.jcbxDoctorNC.getSelectedIndex()!=0){
+            String nomd=ad.jcbxDoctorNC.getSelectedItem().toString();
+            hor.setHinicio(dao2.busHoraIni(nomd));
+            hor.setHfin(dao2.busHoraFin(nomd));
+            ad.taHorario.setText(hor.getHinicio()+"-"+hor.getHfin());}
+        }*/
+        
+        
+        if(e.getSource()==ad.btnHorario){
+            String nomd=ad.jcbxDoctorNC.getSelectedItem().toString();
             hor.setHinicio(dao2.busHoraIni(nomd));
             hor.setHfin(dao2.busHoraFin(nomd));
             ad.taHorario.setText(hor.getHinicio()+"-"+hor.getHfin());
         }
-        
-        /*
-        if(e.getSource()==ad.btnHorario){
-            String nomd=ad.cbDoctor1.getSelectedItem().toString();
-            hor.setHinicio(dao2.busHoraIni(nomd));
-            hor.setHfin(dao2.busHoraFin(nomd));
-            ad.taHorario.setText(hor.getHinicio()+"-"+hor.getHfin());
-        }*/
         
         if(e.getSource()==ad.btnBuscar1){
             String dnit;

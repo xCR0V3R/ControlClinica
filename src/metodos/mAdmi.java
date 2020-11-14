@@ -105,8 +105,8 @@ public class mAdmi {
         cFec=fordia.format(this.admi.dtCita.getDate());
         cHor=this.admi.txtHora.getText();
         cDNI=Integer.parseInt(this.admi.txtNombre.getText());
-        cEsp=admi.jcbArea1.getSelectedItem().toString();
-        cDoc=admi.cbDoctor1.getSelectedItem().toString();
+        cEsp=admi.jcbxEspecialidadNC.getSelectedItem().toString();
+        cDoc=admi.jcbxDoctorNC.getSelectedItem().toString();
         }
 
     public String getcNom() {

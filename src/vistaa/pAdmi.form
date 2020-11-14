@@ -638,8 +638,8 @@
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                                      <Component id="jcbArea1" min="-2" pref="152" max="-2" attributes="0"/>
-                                                      <Component id="cbDoctor1" min="-2" pref="154" max="-2" attributes="0"/>
+                                                      <Component id="jcbxEspecialidadNC" min="-2" pref="152" max="-2" attributes="0"/>
+                                                      <Component id="jcbxDoctorNC" min="-2" pref="154" max="-2" attributes="0"/>
                                                       <Component id="btnHorario" alignment="1" min="-2" max="-2" attributes="0"/>
                                                   </Group>
                                                   <Component id="jScrollPane2" alignment="0" min="-2" pref="178" max="-2" attributes="0"/>
@@ -672,12 +672,12 @@
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel21" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jcbArea1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jcbxEspecialidadNC" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel18" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="cbDoctor1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jcbxDoctorNC" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="btnHorario" min="-2" max="-2" attributes="0"/>
@@ -848,7 +848,7 @@
             <Property name="text" type="java.lang.String" value="Doctor"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="cbDoctor1">
+        <Component class="javax.swing.JComboBox" name="jcbxDoctorNC">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="1">
@@ -907,7 +907,7 @@
             <Property name="text" type="java.lang.String" value="Especialidad"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jcbArea1">
+        <Component class="javax.swing.JComboBox" name="jcbxEspecialidadNC">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="5">
@@ -920,7 +920,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jcbArea1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jcbxEspecialidadNCActionPerformed"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
