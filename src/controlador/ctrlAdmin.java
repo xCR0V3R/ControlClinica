@@ -20,7 +20,7 @@ public class ctrlAdmin implements ActionListener {
     DAOLog dao1=new DAOLog();
     DAOCitas dao2=new DAOCitas();
     Administrador admi;
-    Horario hor;
+    Horario hor=new Horario();
     //constructor con LOGUEO
        public ctrlAdmin(pAdmi ad, Administrador admi){
         this.ad = ad; this.admi=admi; 
@@ -73,6 +73,8 @@ public class ctrlAdmin implements ActionListener {
         this.ad.btnAsistenciaM.addActionListener(this);
         this.ad.btnReiniciar.addActionListener(this);
         this.ad.cbDoctor1.addActionListener(this);
+        this.ad.jcbArea1.addActionListener(this);
+        this.ad.btnHorario.addActionListener(this);
         this.ad.btnHorarioCostos.addActionListener(this);
         
          //VALOR EXTRA - AYUDA
@@ -171,6 +173,14 @@ public class ctrlAdmin implements ActionListener {
             hor.setHfin(dao2.busHoraFin(nomd));
             ad.taHorario.setText(hor.getHinicio()+"-"+hor.getHfin());
         }
+        
+        /*
+        if(e.getSource()==ad.btnHorario){
+            String nomd=ad.cbDoctor1.getSelectedItem().toString();
+            hor.setHinicio(dao2.busHoraIni(nomd));
+            hor.setHfin(dao2.busHoraFin(nomd));
+            ad.taHorario.setText(hor.getHinicio()+"-"+hor.getHfin());
+        }*/
         
         if(e.getSource()==ad.btnBuscar1){
             String dnit;
