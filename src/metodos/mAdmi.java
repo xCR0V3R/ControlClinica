@@ -101,10 +101,10 @@ public class mAdmi {
     }
     
     public void obtenerData(){
-        cNom=admi.txtNombre.getText();
+        cNom=admi.txtDNI.getText();
         cFec=fordia.format(this.admi.dtCita.getDate());
         cHor=this.admi.txtHora.getText();
-        cDNI=Integer.parseInt(this.admi.txtDNI.getText());
+        cDNI=Integer.parseInt(this.admi.txtNombre.getText());
         cEsp=admi.jcbArea1.getSelectedItem().toString();
         cDoc=admi.cbDoctor1.getSelectedItem().toString();
         }

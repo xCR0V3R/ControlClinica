@@ -71,7 +71,7 @@ public class ctrlAdmin implements ActionListener {
         this.ad.btnRegistrar.addActionListener(this);
         this.ad.btnAsistenciaM.addActionListener(this);
         this.ad.btnReiniciar.addActionListener(this);
-        this.ad.jcbArea1.addActionListener(this);
+        this.ad.cbDoctor1.addActionListener(this);
         this.ad.btnHorarioCostos.addActionListener(this);
         
          //VALOR EXTRA - AYUDA
@@ -163,10 +163,31 @@ public class ctrlAdmin implements ActionListener {
                 ad.cbDoctor1.addItem(dao2.lisMedEs(cEsp).get(i).getNombre());
             }
         }
+        /*
+        if(e.getSource()==ad.cbDoctor1){
+            String nomd=ad.cbDoctor1.getSelectedItem().toString();
+            String horIn=dao2.busHoraIni(nomd);
+            String horFin=dao2.busHoraFin(nomd);
+            ad.taHorario.setText(horIn+"-"+horFin);
+        }*/
         
         if(e.getSource()==ad.btnBuscar1){
             String dnit;
             dnit=ad.txtDNI.getText();
+            String val= dao2.busPac(dnit);
+            if(val.equals("Encontrado")){
+                ad.txtNombre.setVisible(false);
+                ad.txtNumero.setVisible(false);
+                ad.lbNumero.setVisible(false);
+                ad.lbNombre.setVisible(false);
+                JOptionPane.showMessageDialog(null, "El paciente ya se encuentra Registrado");
+            }else{
+                ad.txtNombre.setVisible(true);
+                ad.txtNumero.setVisible(true);
+                ad.lbNumero.setVisible(true);
+                ad.lbNombre.setVisible(true);
+                JOptionPane.showMessageDialog(null, "El paciente no está registrado, inserte datos de nuevo paciente");
+            }
             
         }
         

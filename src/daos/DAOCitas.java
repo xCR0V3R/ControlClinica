@@ -121,6 +121,68 @@ public class DAOCitas {
         return lis;
     }
     
+    //lista para hora inicial
+    
+    public String busHoraIni(String nom) {
+        String horain="";
+        Connection conn = null;
+
+        try {
+            conn = MySQLConexion.getConexion();
+            String sql = "select hinicio\n" +
+                         "from horario h inner join medico m\n" +
+                         "on h.idhor=m.idhor where nombre=?";
+            PreparedStatement st = conn.prepareStatement(sql);
+            st.setString(1, nom);
+            ResultSet rs = st.executeQuery();
+            if (rs.next()) {
+                horain=rs.getString(1);
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            try {
+
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (Exception e2) {
+            }
+        }
+        return horain;
+    }
+    
+    //lista para hora final
+    
+    public String busHoraFin(String nom) {
+        String horafin="";
+        Connection conn = null;
+
+        try {
+            conn = MySQLConexion.getConexion();
+            String sql = "select hfin\n" +
+                         "from horario h inner join medico m\n" +
+                         "on h.idhor=m.idhor where nombre=?";
+            PreparedStatement st = conn.prepareStatement(sql);
+            st.setString(1, nom);
+            ResultSet rs = st.executeQuery();
+            if (rs.next()) {
+                horafin=rs.getString(1);
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            try {
+
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (Exception e2) {
+            }
+        }
+        return horafin;
+    }
+    
     public String busPac(String id){
         String est="";
         Cita c=null;
@@ -181,5 +243,6 @@ public class DAOCitas {
 
         return lis;
     }
+    
     
 }
