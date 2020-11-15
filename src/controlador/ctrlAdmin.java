@@ -21,6 +21,7 @@ public class ctrlAdmin implements ActionListener {
     DAOCitas dao2=new DAOCitas();
     Administrador admi;
     Horario hor=new Horario();
+    SimpleDateFormat fordia=new SimpleDateFormat("yyyy-MM-dd");
     //constructor con LOGUEO
        public ctrlAdmin(pAdmi ad, Administrador admi){
         this.ad = ad; this.admi=admi; 
@@ -179,9 +180,10 @@ public class ctrlAdmin implements ActionListener {
         
         if(e.getSource()==ad.btnHorario){
             String nomd=ad.jcbxDoctorNC.getSelectedItem().toString();
-            hor.setHinicio(dao2.busHoraIni(nomd));
-            hor.setHfin(dao2.busHoraFin(nomd));
-            ad.taHorario.setText(hor.getHinicio()+"-"+hor.getHfin());
+            hor.setDias(dao2.busHorario(nomd).get(0).getDias());
+            hor.setHfin(dao2.busHorario(nomd).get(0).getHfin());
+            hor.setHinicio(dao2.busHorario(nomd).get(0).getHinicio());
+            ad.taHorario.setText("Dias: "+hor.getDias()+"\n"+hor.getHinicio()+"-"+hor.getHfin());
         }
         
         if(e.getSource()==ad.btnBuscar1){
@@ -205,16 +207,31 @@ public class ctrlAdmin implements ActionListener {
         }
         
         if(e.getSource()==ad.btnRegistrar){
+            dao2.lisCita();
+            Cita c= new Cita();
+            Paciente p= new Paciente();
+            c.setCodmed(dao2.codMedNom(this.ad.jcbxDoctorNC.getSelectedItem().toString()));
+            c.setDnipac(Integer.parseInt(this.ad.txtDNI.getText()));
+            c.setDiacit(fordia.format(this.ad.dtCita.getDate()));
+            c.setHoracit(this.ad.txtHora.getText());
+            //c.setIdCita(dao2.generaCod());
+            //----------------
+            p.setDni(Integer.parseInt(this.ad.txtDNI.getText()));
+            p.setIdtip("U003");
+            p.setNomp(this.ad.txtNombre.getText());
+            p.setNumero(Integer.parseInt(this.ad.txtNumero.getText()));
             //try{
-            ingresar.obtenerData();
-            //Cita c= new Cita(ingresar.getcNom(), ingresar.getcFec(), ingresar.getcHor(), ingresar.getcEsp(), ingresar.getcDNI(), ingresar.getcDoc());
-            //dao2.addCita(c);
+            /*ingresar.obtenerData();
+            Cita c= new Cita(ingresar.getcCodDoc(), ingresar.getcDNI(), "Pendiente", ingresar.getcFec(), ingresar.getcHor(), ingresar.getcCita(), ingresar.getcNom(), ingresar.getcEsp());
+            Paciente p= new Paciente(ingresar.getcDNI(), "U003", ingresar.getcNom(), ingresar.getcNumero());*/
+            dao2.addCita(c);
+            dao2.addPaci(p);
                 JOptionPane.showMessageDialog(null, "Datos ingresados correctamente");
-            /*}catch (NullPointerException ex) {
-              JOptionPane.showMessageDialog(null, "¡Faltan datos por ingresar!\nError: "+ex); 
-             }catch(NumberFormatException exx){
-                     JOptionPane.showMessageDialog(null, "¡Inserte correctamente su DNI!\nError: "+exx.getMessage()); 
-                 }*/
+            //}catch (NullPointerException ex) {
+            //  JOptionPane.showMessageDialog(null, "¡Faltan datos por ingresar!\nError: "+ex); 
+            // }catch(NumberFormatException exx){
+            //         JOptionPane.showMessageDialog(null, "¡Inserte correctamente su DNI!\nError: "+exx.getMessage()); 
+            //     }
         }
         
         if(e.getSource()==ad.btnAsistenciaM){

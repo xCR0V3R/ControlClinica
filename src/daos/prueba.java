@@ -17,7 +17,7 @@ public class prueba {
         String ok="E02";
         JOptionPane.showMessageDialog(null, d.lisAdmi());*/
         
-        JOptionPane.showMessageDialog(null, d.busPac("42554789"));
+        JOptionPane.showMessageDialog(null, d.generaCod());
     }
     
 }

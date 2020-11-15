@@ -2,53 +2,51 @@
 package entidades;
 
 public class Cita {
-    private String idCita;
-    private String nompac;
+    private String codmed;
+    private int dnipac;
+    private String estadopac;
     private String diacit;
     private String horacit;
-    private String estadopac;
-    private int dnipac;
-    private String codmed;
-    private String nomed;
+    private String idCita;
+    private String nompac;
     private String esp;
-    private String telefono;
-
-    public Cita(String nompac, String diacit, String horacit, String esp, int dnipac, String nomed, String telefono) {
-        this.nompac = nompac;
-        this.diacit = diacit;
-        this.horacit = horacit;
-        this.esp = esp;
-        this.dnipac = dnipac;
-        this.nomed = nomed;
-        this.telefono=telefono;
-    }
 
     public Cita() {
     }
 
-    public String getTelefono() {
-        return telefono;
-    }
-
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
-    }
-    
-    
-    public String getIdCita() {
-        return idCita;
-    }
-
-    public void setIdCita(String idCita) {
+    public Cita(String codmed, int dnipac, String estadopac, String diacit, String horacit, String idCita, String nompac, String esp) {
+        this.codmed = codmed;
+        this.dnipac = dnipac;
+        this.estadopac = estadopac;
+        this.diacit = diacit;
+        this.horacit = horacit;
         this.idCita = idCita;
+        this.nompac=nompac;
+        this.esp=esp;
     }
 
-    public String getNompac() {
-        return nompac;
+    public String getCodmed() {
+        return codmed;
     }
 
-    public void setNompac(String nompac) {
-        this.nompac = nompac;
+    public void setCodmed(String codmed) {
+        this.codmed = codmed;
+    }
+
+    public int getDnipac() {
+        return dnipac;
+    }
+
+    public void setDnipac(int dnipac) {
+        this.dnipac = dnipac;
+    }
+
+    public String getEstadopac() {
+        return estadopac;
+    }
+
+    public void setEstadopac(String estadopac) {
+        this.estadopac = estadopac;
     }
 
     public String getDiacit() {
@@ -67,38 +65,22 @@ public class Cita {
         this.horacit = horacit;
     }
 
-    public String getEstadopac() {
-        return estadopac;
+    public String getIdCita() {
+        return idCita;
     }
 
-    public void setEstadopac(String estadopac) {
-        this.estadopac = estadopac;
+    public void setIdCita(String idCita) {
+        this.idCita = idCita;
     }
 
-    public int getDnipac() {
-        return dnipac;
+    public String getNompac() {
+        return nompac;
     }
 
-    public void setDnipac(int dnipac) {
-        this.dnipac = dnipac;
+    public void setNompac(String nompac) {
+        this.nompac = nompac;
     }
-
-    public String getCodmed() {
-        return codmed;
-    }
-
-    public void setCodmed(String codmed) {
-        this.codmed = codmed;
-    }
-
-    public String getNomed() {
-        return nomed;
-    }
-
-    public void setNomed(String nomed) {
-        this.nomed = nomed;
-    }
-
+    
     public String getEsp() {
         return esp;
     }
@@ -106,6 +88,4 @@ public class Cita {
     public void setEsp(String esp) {
         this.esp = esp;
     }
-    
-    
 }

@@ -3,16 +3,16 @@ package controlador;
 import entidades.Horario;
 import daos.DAOCitas;
 import javax.swing.JOptionPane;
+import vistaa.pAdmi;
 public class pruebas {
 
     public static void main(String[] args) {
         Horario hor= new Horario();
         DAOCitas dao2=new DAOCitas();
+        pAdmi ad; 
             String nomd="Miguel Lopez Ruca";
-            hor.setHinicio(dao2.busHoraIni(nomd));
-            hor.setHfin(dao2.busHoraFin(nomd));
-            JOptionPane.showMessageDialog(null, hor.getHinicio()+"-"+hor.getHfin());
-        
+            JOptionPane.showMessageDialog(null, dao2.codMedNom("Miguel Lopez Ruca"));
+        dao2.codMedNom("Miguel Lopez Ruca");
     }
     
 }

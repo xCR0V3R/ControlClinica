@@ -21,15 +21,31 @@ public class mAdmi {
     
     private String cNom; private String cFec; private int cDNI;
     private String cEsp; private String cDoc; private String cHor;
+    private int cNumero; private String cCodDoc; private String cCita;
     pAdmi admi;
     String[] cab1={"Codigo","Medic@","CodEsp","Asistio"};
     String[][] data1={};
     DefaultTableModel tablaFE; 
     SimpleDateFormat fordia=new SimpleDateFormat("yyyy-MM-dd");
     DAORegistro dao=new DAORegistro(); DAOLog dao2=new DAOLog();
+    DAOCitas dao3=new DAOCitas();
     //SimpleDateFormat forhora=new SimpleDateFormat("hh:mm:ss");
     
     private mLog log=new mLog();
+
+    public mAdmi(String cNom, String cFec, int cDNI, String cEsp, String cDoc, String cHor, int cNumero, String cCodDoc, String cCita) {
+        this.cNom = cNom;
+        this.cFec = cFec;
+        this.cDNI = cDNI;
+        this.cEsp = cEsp;
+        this.cDoc = cDoc;
+        this.cHor = cHor;
+        this.cNumero=cNumero;
+        this.cCodDoc=cCodDoc;
+        this.cCita=cCita;
+    }
+    
+    
     
     public mAdmi(){}
     
@@ -101,12 +117,15 @@ public class mAdmi {
     }
     
     public void obtenerData(){
-        cNom=admi.txtDNI.getText();
+        cCodDoc=dao3.codMedNom(cDoc);
+        cNom=this.admi.txtNombre.getText();
+        cNumero=Integer.parseInt(this.admi.txtNumero.getText());
         cFec=fordia.format(this.admi.dtCita.getDate());
         cHor=this.admi.txtHora.getText();
-        cDNI=Integer.parseInt(this.admi.txtNombre.getText());
-        cEsp=admi.jcbxEspecialidadNC.getSelectedItem().toString();
-        cDoc=admi.jcbxDoctorNC.getSelectedItem().toString();
+        cDNI=Integer.parseInt(this.admi.txtDNI.getText());
+        cEsp=this.admi.jcbxEspecialidadNC.getSelectedItem().toString();
+        cDoc=this.admi.jcbxDoctorNC.getSelectedItem().toString();
+        cCita=dao3.generaCod();
         }
 
     public String getcNom() {
@@ -157,6 +176,29 @@ public class mAdmi {
         this.cHor = cHor;
     }
     
+    public int getcNumero() {
+        return cNumero;
+    }
+
+    public void setNumero(int cNumero) {
+        this.cNumero = cNumero;
+    }
+    
+    public String getcCodDoc() {
+        return cCodDoc;
+    }
+
+    public void setcCodDoc(String cCodDoc) {
+        this.cCodDoc = cCodDoc;
+    }
+            
+    public String getcCita() {
+        return cCita;
+    }
+
+    public void setcCita(String cCita) {
+        this.cCita = cCita;
+    }
 }
 
 /*Nuevas credenciales al entrar a http://www.phpmyadmin.co/ 
