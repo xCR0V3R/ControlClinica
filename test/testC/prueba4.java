@@ -17,9 +17,10 @@ import javax.swing.table.TableColumn;
  * @author Mishi
  */
 public class prueba4 extends javax.swing.JFrame {
-         DAOCitas2 dao=new DAOCitas2();
+         DAOCitas3 dao=new DAOCitas3();
          List<Cita> calc=new ArrayList(); 
-        DefaultTableModel tabl; 
+        DefaultTableModel tabl;  
+        
     /**
      * Creates new form prueba
      */
@@ -100,13 +101,13 @@ public class prueba4 extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:   
         //DAOCitas2 e;
-    String[] cab1={"ID","Fecha","Hora","Nombre Paciente","Estado"};
+      String[] cab1={"Nro Cita","Hora","Fecha Cita","Nombre Paciente","Estado"};
     String[][] data1={}; 
     tabl=new DefaultTableModel(data1,cab1);
     tabla.setModel(tabl);
-        calc=dao.lisReportCita("M001");  
+        calc=dao.lisListarCita("Miguel Lopez Ruca");  
       for(Cita x:calc){
-          String[] fila={x.getIdCita(),x.getDiacit(),x.getHoracit(),x.getNompac(),x.getEstadopac()}; 
+          String[] fila={x.getIdCita(),x.getHoracit(),x.getDiacit(),x.getNompac(),x.getEstadopac()}; 
           tabl.addRow(fila);
           
       } 

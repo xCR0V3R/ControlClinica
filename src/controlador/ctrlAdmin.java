@@ -72,11 +72,13 @@ public class ctrlAdmin implements ActionListener {
         this.ad.btnRegistrar.addActionListener(this);
         this.ad.btnAsistenciaM.addActionListener(this);
         this.ad.btnReiniciar.addActionListener(this);
+        this.ad.btnMostrarCita.addActionListener(this);
         this.ad.jcbxEspecialidadNC.addActionListener(this);
         this.ad.jcbxDoctorNC.addActionListener(this);
-        
         this.ad.btnHorario.addActionListener(this);
         this.ad.btnHorarioCostos.addActionListener(this);
+        this.ad.jcbArea.addActionListener(this); 
+        this.ad.jcbMedicos.addActionListener(this);
         
          //VALOR EXTRA - AYUDA
          this.ad.jmiAyuda1.addActionListener(this);
@@ -86,7 +88,7 @@ public class ctrlAdmin implements ActionListener {
         this.ad.jmiForo2.addActionListener(this);
         this.ad.jmiSitioWeb.addActionListener(this);
         this.ad.jmiSitioWeb1.addActionListener(this);
-        this.ad.jmiSitioWeb2.addActionListener(this);
+        this.ad.jmiSitioWeb2.addActionListener(this); 
         
     } 
     
@@ -121,11 +123,32 @@ public class ctrlAdmin implements ActionListener {
     }
         if(e.getSource()==ad.btnReportes){
             ad.setVisible(false);
-            ingresar.inVentanasExtra(ad.jfReporteCitas, "Citas");
+            ingresar.inVentanasExtra(ad.jfReporteCitas, "Citas"); 
           }
         if(e.getSource()==ad.btnNuevoP){
             ad.setVisible(false);
             ingresar.inVentanasExtra(ad.jfNuevaCita, "Citas");
+        } 
+        
+        if(e.getSource()==ad.btnMostrarCita){
+            ingresar.visualizarListaCita(ad.jTReportCitaA, admi.getNombre());
+            ad.setVisible(false);
+            //ingresar.inVentanasExtra(ad.jfReporteCitas,admi.getNombre());
+        } 
+        if(e.getSource()==ad.jcbArea){
+            String es=" ", codEsp=" "; 
+            es=ad.jcbArea.getSelectedItem().toString(); 
+            if(es.equals("Medicina General")) codEsp="E01";
+            if(es.equals("Obstetricia")) codEsp="E02";
+            if(es.equals("Odontologia")) codEsp="E03";
+            if(es.equals("Oftalmologia")) codEsp="E04";
+            ad.jcbMedicos.removeAllItems();
+            ad.jcbMedicos.addItem("-Seleccionar-");
+            List<Medico> lista=dao2.lisMedEs(codEsp);
+            int max=lista.size();
+            for (int i = 0; i < max ; i++) {
+                ad.jcbMedicos.addItem(dao2.lisMedEs(codEsp).get(i).getNombre());
+            }
         }
         
         //BotonesRetornar
@@ -158,7 +181,7 @@ public class ctrlAdmin implements ActionListener {
             if(tipo.equals("Medicina General")) cEsp="E01";
             if(tipo.equals("Obstetricia")) cEsp="E02";
             if(tipo.equals("Odontologia")) cEsp="E03";
-            if(tipo.equals("Oftolmologia")) cEsp="E04";
+            if(tipo.equals("Oftalmologia")) cEsp="E04";
             ad.jcbxDoctorNC.removeAllItems();
             ad.jcbxDoctorNC.addItem("-Seleccionar-");
             List<Medico> listaM=dao2.lisMedEs(cEsp);

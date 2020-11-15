@@ -7,8 +7,10 @@ import java.awt.Desktop;
 import java.net.URI;
 import javax.swing.*;
 import daos.*;
+import entidades.Cita;
 import entidades.Medico;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -27,6 +29,9 @@ public class mAdmi {
     DefaultTableModel tablaFE; 
     SimpleDateFormat fordia=new SimpleDateFormat("yyyy-MM-dd");
     DAORegistro dao=new DAORegistro(); DAOLog dao2=new DAOLog();
+    DAOCitas dao3=new DAOCitas();
+     List<Cita> calc=new ArrayList(); 
+     DefaultTableModel tabl; 
     //SimpleDateFormat forhora=new SimpleDateFormat("hh:mm:ss");
     
     private mLog log=new mLog();
@@ -109,6 +114,18 @@ public class mAdmi {
         cDoc=admi.jcbxDoctorNC.getSelectedItem().toString();
         }
 
+    public void visualizarListaCita(JTable tabla,String nombre){
+        String[] cab1={"Nro Cita","Hora","Fecha Cita","Nombre Paciente","DNI","Estado"};
+    String[][] data1={}; 
+    tabl=new DefaultTableModel(data1,cab1);
+    tabla.setModel(tabl);
+        calc=dao3.lisListarCita(nombre);  
+      for(Cita x:calc){
+          String[] fila={x.getIdCita(),x.getHoracit(),x.getDiacit(),x.getNompac(),x.getEstadopac()}; 
+          tabl.addRow(fila);
+          
+      } 
+    }  
     public String getcNom() {
         return cNom;
     }
