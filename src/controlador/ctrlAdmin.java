@@ -53,7 +53,7 @@ public class ctrlAdmin implements ActionListener {
         this.ad.jmiSitioWeb2.addActionListener(this);
     } 
     
-        
+        //
     //constructor para prueba sin LOGUEO
     public ctrlAdmin(pAdmi ad){
         this.ad = ad;
