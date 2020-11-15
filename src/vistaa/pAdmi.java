@@ -48,7 +48,7 @@ public class pAdmi extends javax.swing.JFrame {
         jTReportCitaA = new javax.swing.JTable();
         btnRetornar2 = new javax.swing.JButton();
         btnSalir2 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        btnMostrarCita = new javax.swing.JButton();
         jMenuBar2 = new javax.swing.JMenuBar();
         jmArchivo = new javax.swing.JMenu();
         jmExportar = new javax.swing.JMenu();
@@ -196,7 +196,7 @@ public class pAdmi extends javax.swing.JFrame {
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/AcUsuario.png"))); // NOI18N
         jLabel15.setText("CONFIGURAR PERFIL");
         jPanel2.add(jLabel15);
-        jLabel15.setBounds(36, 25, 270, 72);
+        jLabel15.setBounds(36, 25, 262, 72);
 
         javax.swing.GroupLayout jfConfigPLayout = new javax.swing.GroupLayout(jfConfigP.getContentPane());
         jfConfigP.getContentPane().setLayout(jfConfigPLayout);
@@ -262,8 +262,8 @@ public class pAdmi extends javax.swing.JFrame {
         btnSalir2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/salir.png"))); // NOI18N
         btnSalir2.setText("Salir");
 
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mostrarIcono.png"))); // NOI18N
-        jButton6.setText("Mostrar");
+        btnMostrarCita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mostrarIcono.png"))); // NOI18N
+        btnMostrarCita.setText("Mostrar");
 
         jmArchivo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/menu1.png"))); // NOI18N
         jmArchivo.setText("Archivo");
@@ -330,7 +330,7 @@ public class pAdmi extends javax.swing.JFrame {
                             .addComponent(btnSalir2))
                         .addGroup(jfReporteCitasLayout.createSequentialGroup()
                             .addGap(278, 278, 278)
-                            .addComponent(jButton6))
+                            .addComponent(btnMostrarCita))
                         .addGroup(jfReporteCitasLayout.createSequentialGroup()
                             .addGap(34, 34, 34)
                             .addComponent(jLabel5))))
@@ -353,7 +353,7 @@ public class pAdmi extends javax.swing.JFrame {
                             .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jcbMedicos))))
                 .addGap(18, 18, 18)
-                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnMostrarCita, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(48, 48, 48)
@@ -628,7 +628,7 @@ public class pAdmi extends javax.swing.JFrame {
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/doc.png"))); // NOI18N
         jLabel8.setText("ASISTENCIA MÉDICA");
         jfAsisMedica.getContentPane().add(jLabel8);
-        jLabel8.setBounds(74, 11, 225, 32);
+        jLabel8.setBounds(74, 11, 213, 32);
 
         jLabel31.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
         jLabel31.setForeground(new java.awt.Color(102, 0, 51));
@@ -1119,6 +1119,7 @@ public class pAdmi extends javax.swing.JFrame {
     public javax.swing.JButton btnHorarioCostos;
     public javax.swing.JButton btnImagen;
     public javax.swing.JButton btnLogout;
+    public javax.swing.JButton btnMostrarCita;
     public javax.swing.JButton btnNuevoP;
     public javax.swing.JButton btnRegistrar;
     public javax.swing.JButton btnReiniciar;
@@ -1136,7 +1137,6 @@ public class pAdmi extends javax.swing.JFrame {
     public javax.swing.JTextField configPswd;
     public com.toedter.calendar.JDateChooser dtCita;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton6;
     public javax.swing.JLabel jLBienvenidoA;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
