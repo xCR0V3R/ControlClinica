@@ -8,8 +8,8 @@ import daos.*;
 //
 public class main {
     public static void main(String[] args) {
-       Logueo log=new Logueo();
-       ctrlLogueo cLog=new ctrlLogueo(log);
+       VLogueo log=new VLogueo();
+       CtrlLogueo cLog=new CtrlLogueo(log);
        
     }
 }

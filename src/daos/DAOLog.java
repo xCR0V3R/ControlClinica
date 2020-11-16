@@ -13,59 +13,60 @@ import vistaa.*;
 public class DAOLog { 
     
     
-    public String validarUsuario(String cr, String pws,Logueo log){ 
-        //Logueo buscar=new Logueo();
+    public String validarUsuario(String cr, String pws,VLogueo log){ 
+        //Logueo buscar=new VLogueo();
         Connection con = null;
-        String cod="f"; int busqueda=0;
+        String cod = "f";
+        int busqueda = 0;
         try {
-            String SQL="select codmed from Medico where correo=? and pswd=?";
+            String SQL = "select codmed from Medico where correo=? and pswd=?";
             con = MySQLConexion.getConexion();
             PreparedStatement st = con.prepareStatement(SQL);
             st.setString(1, cr.trim());
             st.setString(2, pws.trim());
             ResultSet rs = st.executeQuery();
-            
-            if(rs.next()){
-                busqueda=1;
+
+            if (rs.next()) {
+                busqueda = 1;
                 System.out.println("Entro a Medico");
-                cod=rs.getString(1);
-                if (busqueda==1){
-                    Medico med=busMed(cod);
+                cod = rs.getString(1);
+                if (busqueda == 1) {
+                    Medico med = busMed(cod);
+                    JOptionPane.showMessageDialog(null, "Acceso Exitoso Doc");
                     log.setVisible(false);
-                    JOptionPane.showMessageDialog(null, "Acceso Exitoso doc");
-                    pMedico form=new pMedico(); 
-                    ctrlMedico ctrmed=new ctrlMedico(form,med);
-                   
+                    VMedico form = new VMedico();
+                    CtrlMedico ctrmed = new CtrlMedico(form, med);
+                    
                 }
                 return cod;
-            } else if (busqueda==0){
-                
-                 String SQL2="select codad from Administrador where correo=? and pswd=?";
-                 //int busqueda2=1;
-                 PreparedStatement st2 = con.prepareStatement(SQL2);
-            st2.setString(1, cr.trim());
-            st2.setString(2, pws.trim());
-            ResultSet rs2 = st2.executeQuery();
+            } else if (busqueda == 0) {
+
+                String SQL2 = "select codad from Administrador where correo=? and pswd=?";
+                //int busqueda2=1;
+                PreparedStatement st2 = con.prepareStatement(SQL2);
+                st2.setString(1, cr.trim());
+                st2.setString(2, pws.trim());
+                ResultSet rs2 = st2.executeQuery();
                 if (rs2.next()) {
                     //String nombre=rs.getString(1);
-                    cod=rs2.getString(1);
+                    cod = rs2.getString(1);
                     System.out.println("Entro a Administrador");
                     busqueda = 2;
                     if (busqueda == 2) {
-                        Administrador admi=busAdmi(cod);
+                        Administrador admi = busAdmi(cod);
+                        JOptionPane.showMessageDialog(null, "Acceso Exitoso Admi");
                         log.setVisible(false);
-                        JOptionPane.showMessageDialog(null, "Acceso Exitoso ad"); 
-                        pAdmi form2 = new pAdmi();
-                        ctrlAdmin ctradm=new ctrlAdmin(form2,admi);
+                        VAdmi form2 = new VAdmi();
+                        CtrlAdmin ctradm = new CtrlAdmin(form2, admi);
                         
                     }
                     return cod;
                 }
-            } 
-            
+            }
+
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error de Conexion");
-        } 
+        }
         return cod;
     }
     

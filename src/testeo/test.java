@@ -7,14 +7,14 @@ import daos.*;
 public class test {
     
     public static void main(String[] args) {
-       /*Logueo log=new Logueo();
-       ctrlLogueo cLog=new ctrlLogueo(log); */
+       VLogueo log=new VLogueo();
+       CtrlLogueo cLog=new CtrlLogueo(log); 
         
-       /*pMedico med=new pMedico(); 
-       ctrlMedico cMed=new ctrlMedico(med);*/
+      /* VMedico med=new VMedico(); 
+       CtrlMedico cMed=new CtrlMedico(med);
        
-       pAdmi ad=new pAdmi();
-       ctrlAdmin cAd=new ctrlAdmin(ad);
+      /* VAdmi ad=new VAdmi();
+       CtrlAdmin cAd=new CtrlAdmin(ad);*/
        
     }
 }

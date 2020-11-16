@@ -50,18 +50,19 @@ public class DAOCitas {
     }
     
     //GENERAR CÓDIGO DE ALUMNO SIN STORE PROCEDURE
-    public String generaCod(){
-        String cod="CT0001";
+    public String genCodCita(){
+        String cod="";
         if(lisCita().size()==0){
-            return cod;
+            cod="CT0001";
         }else{
             int fin=lisCita().size()-1;//Definir en números cual es el último número del código
             cod=lisCita().get(fin).getIdCita();//Una vez definido el número, lo ubicas en el sistema de "A000?"
             int nro=Integer.parseInt(cod.substring(2))+1;//Aquí le aumentas el valor de 1 a la parte numérica
             DecimalFormat sd=new DecimalFormat("0000");//Aquí se define el formato del número "A000?"
             cod="CT"+sd.format(nro);//Se usa el formato "A000?" aumentándole el número que obtuvimos consecuente al último valor
-            return cod;
+            
         }
+        return cod;
     }
     
     public void addCita(Cita c) {
@@ -71,12 +72,13 @@ public class DAOCitas {
             String sql = "Insert into citas values(?,?,?,?,?,?)";
             conn = MySQLConexion.getConexion();
             PreparedStatement st = conn.prepareStatement(sql);
-            st.setString(1,c.getCodmed());
+            st.setString(1, genCodCita());
             st.setInt(2, c.getDnipac());
-            st.setString(3, "Pendiente");
+            st.setString(3,c.getCodmed());
             st.setString(4, c.getDiacit());
-            st.setString(5, c.getHoracit());
-            st.setString(6, generaCod());
+            st.setString(5, "Pendiente");
+            st.setString(6, c.getHoracit());
+            
             resp = st.executeUpdate();
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -149,8 +151,8 @@ public class DAOCitas {
     
     //lista para hora inicial
     
-    public List<Horario> busHorario(String nom) {
-        List<Horario> lis= new ArrayList<>();
+    public Horario busHorario(String nom) {
+        Horario h=null;
         Connection conn = null;
 
         try {
@@ -162,13 +164,13 @@ public class DAOCitas {
             st.setString(1, nom);
             ResultSet rs = st.executeQuery();
             if (rs.next()) {
-                Horario h= new Horario();
+                h= new Horario();
                 h.setCodes(rs.getString(1));
                 h.setDias(rs.getString(2));
                 h.setHfin(rs.getString(3));
                 h.setHinicio(rs.getString(4));
                 h.setIdhor(rs.getString(5));
-                lis.add(h);
+                
             }
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -181,7 +183,7 @@ public class DAOCitas {
             } catch (Exception e2) {
             }
         }
-        return lis;
+        return h;
     }
     
     public String busPac(String id){
@@ -286,11 +288,11 @@ public class DAOCitas {
             while (rs.next()) {
                 Cita c = new Cita();
                 c.setIdCita(rs.getString(1));
-                c.setHoracit(rs.getString(2));
-                c.setDiacit(rs.getString(3));
-                c.setNompac(rs.getString(4));
-                c.setDnipac(rs.getInt(5));
+                c.setDnipac(rs.getInt(2));
+                c.setNompac(rs.getString(3));
+                c.setDiacit(rs.getString(4));
                 c.setEstadopac(rs.getString(5));
+                c.setHoracit(rs.getString(6));
                 lis.add(c);
             }
         } catch (Exception ex) {

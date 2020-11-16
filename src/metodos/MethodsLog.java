@@ -13,26 +13,21 @@ import java.text.SimpleDateFormat;
 
 
 
-public class mLog {
-    private static final String URLIcono="/imagenes/iconoSistema.png";
-    DAORegistro dao=new DAORegistro();
-    Logueo log;
+public class MethodsLog extends MethodsMain{
+        
+    DAORegistro daoR=new DAORegistro();
+    VLogueo log;
+    
     String dNom; String dNac; private String dTip;int dDNI;private String dCorreo;private String dPswd;
     private String dEsp; private char dSexo;
+    
     SimpleDateFormat formato=new SimpleDateFormat("yyyy-MM-dd");
     
-    public mLog(){}
+    public MethodsLog(){}
     
-    public mLog(Logueo log){
+    public MethodsLog(VLogueo log){
         this.log=log;
         
-    }
-    
-    public void inicializarLog(){
-        log.setTitle("Sistema CliniMAX");
-        log.setLocationRelativeTo(null);
-        log.setVisible(true);
-        esIcono(log);
     }
     
      public void inRegistro(){
@@ -44,24 +39,7 @@ public class mLog {
         log.jcbxEspecialidad1.setVisible(false);
      }
      
-     public void esIcono(JFrame loge){
-         loge.setIconImage(new ImageIcon(getClass().getResource(URLIcono)).getImage());
-     }
-     
-        public void support(String direc){
-        if(Desktop.isDesktopSupported()){
-               Desktop desk=Desktop.getDesktop();
-               if(desk.isSupported(Desktop.Action.BROWSE)){
-                   try{
-                   URI uri=new URI(direc);
-                   desk.browse(uri);
-                   }catch (Exception ex) {
-                       
-                   }
-               }
-           }
-    }
-        
+      
         public void obtenerData(){
         dNom=log.txtNombre.getText();
         dNac=formato.format(this.log.dateNacimiento.getDate());
@@ -85,24 +63,24 @@ public class mLog {
         
         public void regAdmi(){
             Administrador a=new Administrador(dTip,dNac, dNom, dSexo,dCorreo, dPswd, dDNI);
-            dao.addAdmi(a);
+            daoR.addAdmi(a);
          }
         
-        public void mostrarEsp(JComboBox jcb){
-             jcb.removeAllItems();
+       /* public void mostrarEsp(JComboBox jcb){
+            jcb.removeAllItems();
             jcb.addItem("-Seleccionar-");
-             List<String> lisEsp=dao.lisNomEsp();
-             int max=lisEsp.size();
-             for(int i=0;i<max;i++){
-                 jcb.addItem(lisEsp.get(i));
-             }
-        }
+            List<String> lisEsp = daoR.lisNomEsp();
+            int max = lisEsp.size();
+            for (int i = 0; i < max; i++) {
+                jcb.addItem(lisEsp.get(i));
+            }
+        }*/
         
       public void regMed(){
-            String codes=dao.busCodEsp(dEsp);
+            String codes=daoR.busCodEsp(dEsp);
             String idhorario=null;
             Medico md=new Medico(codes, dTip, dNac,dNom,dSexo, dCorreo, dPswd, dDNI,idhorario,"NO");
-            dao.addMed(md);
+            daoR.addMed(md);
            //System.out.println("AGREGANDO MEDICO");
         }
 
@@ -125,4 +103,6 @@ public class mLog {
     public char getdSexo() {
         return dSexo;
     }
+
+   
 }
