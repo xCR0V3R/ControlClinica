@@ -128,7 +128,8 @@ public class MethodsAdmi extends MethodsMain{
         String[] cab1 = {"Nro Cita", "Hora", "Fecha Cita", "Nombre Paciente", "DNI", "Estado"};
         String[][] data1 = {};
         tabl = new DefaultTableModel(data1, cab1);
-        tabla.setModel(tabl); List<Cita> calc=new ArrayList(); 
+        tabla.setModel(tabl); 
+        List<Cita> calc=new ArrayList(); 
         calc = daoC.lisListarCita(nombre);
         for (Cita x : calc) {
             String[] fila = {x.getIdCita(), x.getHoracit(), x.getDiacit(), x.getNompac(), String.valueOf(x.getDnipac()), x.getEstadopac()};
