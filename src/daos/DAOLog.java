@@ -88,7 +88,7 @@ public class DAOLog {
                 a.setSexo(rs.getString(4).charAt(0));
                 a.setFecha(rs.getString(5));
                 a.setCorreo(rs.getString(6));
-                a.setPswd(rs.getString(6));
+                a.setPswd(rs.getString(7));
                 a.setDni(rs.getInt(8));
             }
         } catch (Exception ex) {

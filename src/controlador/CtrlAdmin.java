@@ -114,7 +114,7 @@ public class CtrlAdmin implements ActionListener {
            System.exit(0);
         }
         if(e.getSource()==vAdmi.btnConfigUser){
-            metAdmi.configUser(objAdmi, vAdmi.configNombre, vAdmi.configNac, vAdmi.configCorreo, vAdmi.configPswd);
+            metAdmi.configUser(objAdmi, vAdmi.configNombre, vAdmi.configNac, vAdmi.jtxtCorreoConfig, vAdmi.jtxtPswdCP);
             vAdmi.setVisible(false);
             metAdmi.openJFrame(vAdmi.jfConfigP, "Configurar Usuario");
         }

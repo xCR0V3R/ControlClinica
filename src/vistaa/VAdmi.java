@@ -29,15 +29,15 @@ public class VAdmi extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
         configNombre = new javax.swing.JTextField();
-        configCorreo = new javax.swing.JTextField();
         btnRetornar1 = new javax.swing.JButton();
         configNac = new com.toedter.calendar.JDateChooser();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        configPswd = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
+        jtxtCorreoConfig = new javax.swing.JTextField();
+        jtxtPswdCP = new javax.swing.JTextField();
         jfReporteCitas = new javax.swing.JFrame();
         jLabel5 = new javax.swing.JLabel();
         jcbArea = new javax.swing.JComboBox<>();
@@ -160,8 +160,6 @@ public class VAdmi extends javax.swing.JFrame {
         jButton2.setBounds(190, 340, 130, 28);
         jPanel2.add(configNombre);
         configNombre.setBounds(162, 134, 223, 20);
-        jPanel2.add(configCorreo);
-        configCorreo.setBounds(162, 227, 176, 20);
 
         btnRetornar1.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
         btnRetornar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/volver.png"))); // NOI18N
@@ -194,8 +192,6 @@ public class VAdmi extends javax.swing.JFrame {
         jLabel14.setText("Contraseña");
         jPanel2.add(jLabel14);
         jLabel14.setBounds(24, 272, 67, 16);
-        jPanel2.add(configPswd);
-        configPswd.setBounds(162, 271, 176, 20);
 
         jLabel15.setFont(new java.awt.Font("Russo One", 0, 18)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(102, 0, 0));
@@ -203,6 +199,10 @@ public class VAdmi extends javax.swing.JFrame {
         jLabel15.setText("CONFIGURAR PERFIL");
         jPanel2.add(jLabel15);
         jLabel15.setBounds(36, 25, 270, 72);
+        jPanel2.add(jtxtCorreoConfig);
+        jtxtCorreoConfig.setBounds(160, 230, 190, 20);
+        jPanel2.add(jtxtPswdCP);
+        jtxtPswdCP.setBounds(160, 270, 190, 20);
 
         javax.swing.GroupLayout jfConfigPLayout = new javax.swing.GroupLayout(jfConfigP.getContentPane());
         jfConfigP.getContentPane().setLayout(jfConfigPLayout);
@@ -1216,10 +1216,8 @@ public class VAdmi extends javax.swing.JFrame {
     public javax.swing.JButton btnRetornar6;
     public javax.swing.JButton btnSalir2;
     public javax.swing.JButton btnSalir3;
-    public javax.swing.JTextField configCorreo;
     public com.toedter.calendar.JDateChooser configNac;
     public javax.swing.JTextField configNombre;
-    public javax.swing.JTextField configPswd;
     public com.toedter.calendar.JDateChooser dtCita;
     private javax.swing.JButton jButton2;
     public javax.swing.JLabel jLBienvenidoA;
@@ -1305,7 +1303,9 @@ public class VAdmi extends javax.swing.JFrame {
     public javax.swing.JMenuItem jmiSitioWeb;
     public javax.swing.JMenuItem jmiSitioWeb1;
     public javax.swing.JMenuItem jmiSitioWeb2;
+    public javax.swing.JTextField jtxtCorreoConfig;
     public javax.swing.JTextField jtxtPrecioNC;
+    public javax.swing.JTextField jtxtPswdCP;
     public javax.swing.JLabel lbNombre;
     public javax.swing.JLabel lbNumero;
     private rojeru_san.RSLabelFecha rSLabelFecha1;
