@@ -211,6 +211,33 @@ public class DAOCitas {
             }
         }
         return est;
+    }  
+    
+    public Cita busCosto(String cod){
+        Cita cos=null;
+        Connection conn = null;
+        try {
+            conn = MySQLConexion.getConexion();
+            String sql = "select costo from especialidad where codes=?";
+            PreparedStatement st = conn.prepareStatement(sql);
+            st.setString(1, cod);
+            ResultSet rs = st.executeQuery();
+            while (rs.next()) {
+                cos = new Cita();
+                cos.setCosto(rs.getDouble(1));
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            try {
+
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (Exception e2) {
+            }
+        }
+        return cos;
     } 
     public List<Cita> lisReportCita(String cod) {
         List<Cita> lis = new ArrayList<>();

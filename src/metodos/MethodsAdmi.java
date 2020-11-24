@@ -33,7 +33,7 @@ public class MethodsAdmi extends MethodsMain{
         mostrarEsp(vAdmi.jcbxEspecialidadNC);
         mostrarEsp(vAdmi.jcbxEspCosto);
         mostrarEsp(vAdmi.jcbxEspHorarios);
-    }
+    } 
     
     public void jcbxLisMedicos(JComboBox jcbMed, JComboBox jcbEsp){
         String cod2=mostrarCodEsp(jcbEsp);
@@ -44,7 +44,16 @@ public class MethodsAdmi extends MethodsMain{
         for (int i = 0; i < max; i++) {
             jcbMed.addItem(lista.get(i).getNombre());
         }
-    }
+    } 
+   
+   public void mostrarCosto(JComboBox jcbEsp){
+       String cod2=mostrarCodEsp(jcbEsp); 
+        jcbEsp.removeAllItems();
+        jcbEsp.addItem("-Seleccionar-");  
+        String name = vAdmi.jcbxEspCosto.getSelectedItem().toString();
+        Cita cost=daoC.busCosto(name); 
+        vAdmi.jTextCosto.setText(cost.toString());
+   }
     
     public void mostrarHor(){
         String nomd = vAdmi.jcbxDoctorNC.getSelectedItem().toString();
@@ -135,8 +144,11 @@ public class MethodsAdmi extends MethodsMain{
             String[] fila = {x.getIdCita(), x.getHoracit(), x.getDiacit(), x.getNompac(), String.valueOf(x.getDnipac()), x.getEstadopac()};
             tabl.addRow(fila);
 
-        }
+        } 
     }  
+   public void costoEsp(){
+       
+   }
     
 }
 

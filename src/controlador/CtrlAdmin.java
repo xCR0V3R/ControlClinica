@@ -88,7 +88,7 @@ public class CtrlAdmin implements ActionListener {
         this.vAdmi.btnHorarioCostos.addActionListener(this);
         this.vAdmi.jcbArea.addActionListener(this); 
         this.vAdmi.jcbMedicos.addActionListener(this);
-        
+        this.vAdmi.jcbxEspCosto.addActionListener(this);
          //VALOR EXTRA - AYUDA
          this.vAdmi.jmiAyuda1.addActionListener(this);
         this.vAdmi.jmiAyuda2.addActionListener(this);
@@ -142,7 +142,9 @@ public class CtrlAdmin implements ActionListener {
         if(e.getSource()==vAdmi.jcbxEspecialidadNC){
             metAdmi.jcbxLisMedicos(vAdmi.jcbxDoctorNC,vAdmi.jcbxEspecialidadNC);
          }
-        
+        if(e.getSource()==vAdmi.jcbxEspCosto){
+           metAdmi.mostrarCosto(vAdmi.jcbxEspCosto);
+        }
        /* if(e.getSource()==ad.jcbxDoctorNC){
             if(ad.jcbxDoctorNC.getSelectedIndex()!=0){
             String nomd=ad.jcbxDoctorNC.getSelectedItem().toString();
@@ -177,6 +179,7 @@ public class CtrlAdmin implements ActionListener {
         if(e.getSource()==vAdmi.btnHorarioCostos){
             metAdmi.openJFrame(vAdmi.jfModHoraCoste, "Horarios & Costos");
         }
+        
         
          //BotonesRetornar
         if(e.getSource()==vAdmi.btnRetornar1){

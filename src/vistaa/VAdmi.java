@@ -107,7 +107,7 @@ public class VAdmi extends javax.swing.JFrame {
         jLabel32 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
         jcbxEspCosto = new javax.swing.JComboBox<>();
-        jTextField2 = new javax.swing.JTextField();
+        jTextCosto = new javax.swing.JTextField();
         jLabel34 = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
         btnRetornar6 = new javax.swing.JButton();
@@ -199,7 +199,7 @@ public class VAdmi extends javax.swing.JFrame {
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/AcUsuario.png"))); // NOI18N
         jLabel15.setText("CONFIGURAR PERFIL");
         jPanel2.add(jLabel15);
-        jLabel15.setBounds(36, 25, 270, 72);
+        jLabel15.setBounds(36, 25, 262, 72);
 
         javax.swing.GroupLayout jfConfigPLayout = new javax.swing.GroupLayout(jfConfigP.getContentPane());
         jfConfigP.getContentPane().setLayout(jfConfigPLayout);
@@ -692,7 +692,7 @@ public class VAdmi extends javax.swing.JFrame {
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/doc.png"))); // NOI18N
         jLabel8.setText("ASISTENCIA MÉDICA");
         jfAsisMedica.getContentPane().add(jLabel8);
-        jLabel8.setBounds(74, 11, 225, 32);
+        jLabel8.setBounds(74, 11, 213, 32);
 
         jLabel31.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
         jLabel31.setForeground(new java.awt.Color(102, 0, 51));
@@ -756,8 +756,6 @@ public class VAdmi extends javax.swing.JFrame {
         jLabel33.setForeground(new java.awt.Color(102, 0, 51));
         jLabel33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/tipodoc.png"))); // NOI18N
         jLabel33.setText("Especialidad");
-
-        jcbxEspCosto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "." }));
 
         jLabel34.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
         jLabel34.setForeground(new java.awt.Color(102, 0, 51));
@@ -894,7 +892,7 @@ public class VAdmi extends javax.swing.JFrame {
                                     .addGroup(jfModHoraCosteLayout.createSequentialGroup()
                                         .addComponent(jLabel34)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jTextCosto, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(28, 28, 28)
                                         .addComponent(btnActCosto))
                                     .addGroup(jfModHoraCosteLayout.createSequentialGroup()
@@ -949,7 +947,7 @@ public class VAdmi extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jfModHoraCosteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel35)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextCosto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel34)
                     .addComponent(btnActCosto))
                 .addGap(37, 37, 37)
@@ -1252,7 +1250,7 @@ public class VAdmi extends javax.swing.JFrame {
     public javax.swing.JTable jTAsistencia;
     public javax.swing.JTable jTHorarios;
     public javax.swing.JTable jTReportCitaA;
-    private javax.swing.JTextField jTextField2;
+    public javax.swing.JTextField jTextCosto;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     public javax.swing.JComboBox<String> jcbArea;
