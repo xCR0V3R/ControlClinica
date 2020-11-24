@@ -18,10 +18,9 @@ public class CtrlAdmin implements ActionListener {
     MethodsAdmi metAdmi;
     DAOCitas dao2=new DAOCitas();
     Administrador objAdmi;
-    
     SimpleDateFormat fordia=new SimpleDateFormat("yyyy-MM-dd");
     
-    //constructor con LOGUEO
+    
        public CtrlAdmin(VAdmi vAdmi, Administrador objAdmi){
         this.vAdmi = vAdmi; this.objAdmi=objAdmi; 
         metAdmi=new MethodsAdmi(this.vAdmi);
@@ -92,6 +91,8 @@ public class CtrlAdmin implements ActionListener {
             //Ocultar datos de más en caso el paciente ya esté registrado
             vAdmi.lbNombre.setVisible(false); vAdmi.lbNumero.setVisible(false);
             vAdmi.txtNombre.setVisible(false);vAdmi.txtNumero.setVisible(false);
+            vAdmi.jtxtPrecioNC.setEditable(false);
+            vAdmi.taHorario.setEditable(false);
             metAdmi.openJFrame(vAdmi.jfNuevaCita, "Citas");
         } 
         

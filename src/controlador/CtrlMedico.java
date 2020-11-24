@@ -15,8 +15,7 @@ public class CtrlMedico implements ActionListener {
     Medico objMed;
     DAOLog daoL = new DAOLog();
     
-    //Constructor con LOGUEO
-     public CtrlMedico(VMedico vMed, Medico objMed){
+    public CtrlMedico(VMedico vMed, Medico objMed){
         this.vMed = vMed; this.objMed=objMed;
         //marcar ASIS
         daoL.actAsis(this.objMed.getCodmed(), "SI");
