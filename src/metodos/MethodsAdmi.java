@@ -150,9 +150,6 @@ public class MethodsAdmi extends MethodsMain{
 
         } 
     }  
-   public void costoEsp(){
-       
-   }
-    
+   
 }
 

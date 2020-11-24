@@ -27,7 +27,7 @@ public class VAdmi extends javax.swing.JFrame {
 
         jfConfigP = new javax.swing.JFrame();
         jPanel2 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
+        btnActPerfil = new javax.swing.JButton();
         configNombre = new javax.swing.JTextField();
         btnRetornar1 = new javax.swing.JButton();
         configNac = new com.toedter.calendar.JDateChooser();
@@ -36,8 +36,8 @@ public class VAdmi extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        jtxtCorreoConfig = new javax.swing.JTextField();
-        jtxtPswdCP = new javax.swing.JTextField();
+        configCorreo = new javax.swing.JTextField();
+        configPswd = new javax.swing.JTextField();
         jfReporteCitas = new javax.swing.JFrame();
         jLabel5 = new javax.swing.JLabel();
         jcbArea = new javax.swing.JComboBox<>();
@@ -153,11 +153,11 @@ public class VAdmi extends javax.swing.JFrame {
         jPanel2.setMinimumSize(new java.awt.Dimension(407, 472));
         jPanel2.setLayout(null);
 
-        jButton2.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/actualizar.png"))); // NOI18N
-        jButton2.setText("Actualizar");
-        jPanel2.add(jButton2);
-        jButton2.setBounds(190, 340, 130, 28);
+        btnActPerfil.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
+        btnActPerfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/actualizar.png"))); // NOI18N
+        btnActPerfil.setText("Actualizar");
+        jPanel2.add(btnActPerfil);
+        btnActPerfil.setBounds(190, 340, 130, 28);
         jPanel2.add(configNombre);
         configNombre.setBounds(162, 134, 223, 20);
 
@@ -199,10 +199,10 @@ public class VAdmi extends javax.swing.JFrame {
         jLabel15.setText("CONFIGURAR PERFIL");
         jPanel2.add(jLabel15);
         jLabel15.setBounds(36, 25, 270, 72);
-        jPanel2.add(jtxtCorreoConfig);
-        jtxtCorreoConfig.setBounds(160, 230, 190, 20);
-        jPanel2.add(jtxtPswdCP);
-        jtxtPswdCP.setBounds(160, 270, 190, 20);
+        jPanel2.add(configCorreo);
+        configCorreo.setBounds(160, 230, 190, 20);
+        jPanel2.add(configPswd);
+        configPswd.setBounds(160, 270, 190, 20);
 
         javax.swing.GroupLayout jfConfigPLayout = new javax.swing.GroupLayout(jfConfigP.getContentPane());
         jfConfigP.getContentPane().setLayout(jfConfigPLayout);
@@ -996,6 +996,11 @@ public class VAdmi extends javax.swing.JFrame {
         btnConfigUser.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
         btnConfigUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/configUser.png"))); // NOI18N
         btnConfigUser.setText("Configurar Perfil");
+        btnConfigUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConfigUserActionPerformed(evt);
+            }
+        });
 
         btnLogout.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
         btnLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/salir.png"))); // NOI18N
@@ -1155,6 +1160,10 @@ public class VAdmi extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNombreActionPerformed
 
+    private void btnConfigUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfigUserActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnConfigUserActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1196,6 +1205,7 @@ public class VAdmi extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnActCosto;
     private javax.swing.JButton btnActHorarios;
+    public javax.swing.JButton btnActPerfil;
     public javax.swing.JButton btnAddHorario;
     public javax.swing.JButton btnAsistenciaM;
     public javax.swing.JButton btnBusPaciente;
@@ -1216,10 +1226,11 @@ public class VAdmi extends javax.swing.JFrame {
     public javax.swing.JButton btnRetornar6;
     public javax.swing.JButton btnSalir2;
     public javax.swing.JButton btnSalir3;
+    public javax.swing.JTextField configCorreo;
     public com.toedter.calendar.JDateChooser configNac;
     public javax.swing.JTextField configNombre;
+    public javax.swing.JTextField configPswd;
     public com.toedter.calendar.JDateChooser dtCita;
-    private javax.swing.JButton jButton2;
     public javax.swing.JLabel jLBienvenidoA;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1303,9 +1314,7 @@ public class VAdmi extends javax.swing.JFrame {
     public javax.swing.JMenuItem jmiSitioWeb;
     public javax.swing.JMenuItem jmiSitioWeb1;
     public javax.swing.JMenuItem jmiSitioWeb2;
-    public javax.swing.JTextField jtxtCorreoConfig;
     public javax.swing.JTextField jtxtPrecioNC;
-    public javax.swing.JTextField jtxtPswdCP;
     public javax.swing.JLabel lbNombre;
     public javax.swing.JLabel lbNumero;
     private rojeru_san.RSLabelFecha rSLabelFecha1;

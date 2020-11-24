@@ -41,28 +41,7 @@ public class CtrlMedico implements ActionListener {
         this.vMed.jmiSitioWeb1.addActionListener(this);
     } 
                          
-    //Constructor SIN LOGUEO
-    public CtrlMedico(VMedico vMed){
-        this.vMed = vMed;
-        metMed.openJFrame(this.vMed, "MEDICO");
-        this.vMed.btnConfigUser.addActionListener(this);
-        this.vMed.btnLogout.addActionListener(this);
-        this.vMed.btnReportes.addActionListener(this);
-        this.vMed.btnVolver.addActionListener(this);
-        this.vMed.btnActPerfil.addActionListener(this);
-        this.vMed.btnLogout1.addActionListener(this);
-        this.vMed.btnVolver1.addActionListener(this);
-        this.vMed.btnActCitas.addActionListener(this);
-        
-        //SUPPORT, falta implementar
-        this.vMed.jmiAyuda.addActionListener(this);
-        this.vMed.jmiForo.addActionListener(this);
-        this.vMed.jmiSitioWeb.addActionListener(this);
-        this.vMed.jmiAyuda1.addActionListener(this);
-        this.vMed.jmiForo1.addActionListener(this);
-        this.vMed.jmiSitioWeb1.addActionListener(this);
-    } 
-    
+     
     @Override
     public void actionPerformed(ActionEvent e) {
         
@@ -87,7 +66,12 @@ public class CtrlMedico implements ActionListener {
             metMed.openJFrame(this.vMed, "MEDICO");
         }
         if (e.getSource() == vMed.btnActPerfil) {
-            JOptionPane.showMessageDialog(null, "Actualización exitosa");
+            metMed.actDatosUser(objMed, objMed.getCodmed(), 
+                    vMed.configNac, vMed.configNom.getText(), 
+                    vMed.configCorreo.getText(), vMed.configPswd.getText());
+            JOptionPane.showMessageDialog(null, "Datos actualizados");
+            vMed.jfConfigP.setVisible(false);
+            vMed.setVisible(true);
         }
 
         if (e.getSource() == vMed.btnLogout1) {

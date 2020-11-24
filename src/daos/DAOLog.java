@@ -1,7 +1,6 @@
 
 package daos;
-import entidades.Administrador;
-import entidades.Medico;
+import entidades.*;
 import controlador.*;
 import java.sql.*;
 import java.text.DecimalFormat;
@@ -171,21 +170,31 @@ public class DAOLog {
 		
 	}
     
-    
-    public void modMed(Medico m){
+    public Usuario modUser(Usuario user, String cod, String nom, String fec, String correo, String pswd){
+        
         
          Connection conn = null;
 	 try{
-             String sql = "Update medico set nombre=?, nac=?, correo=?, pswd=? where codmed=?";
+             String sql="";
+                if(user instanceof Medico ){
+                    //user=new Medico();
+                    sql = "Update medico set nombre=?, nac=?, correo=?, pswd=? where codmed=?";
+                }
+                if(user instanceof Administrador ){
+                   // user=new Administrador();
+                    sql = "Update administrador set nombre=?, nac=?, correo=?, pswd=? where codad=?";
+                    System.out.println("PASO PARA ADMI");
+                }
+             
              conn = MySQLConexion.getConexion();
-             
              PreparedStatement st = conn.prepareStatement(sql);
+             st.setString(1, nom);
+             st.setString(2, fec);
+             st.setString(3, correo);
+             st.setString(4, pswd);
+             st.setString(5, cod);
+             System.out.println("CODE: "+cod);
              
-             st.setString(1, m.getNombre());
-             st.setString(2, m.getFecha());
-             st.setString(3, m.getCorreo());
-             st.setString(4, m.getPswd());
-             st.setString(5, m.getCodmed());
              st.executeUpdate();
 	
 	 }catch(Exception ex){
@@ -196,38 +205,12 @@ public class DAOLog {
 				if(conn!= null) conn.close();
 			} catch (Exception e2) {}
 		}
-
-		
+            return user;
     }
     
     
-    public void modAdmi(Administrador a){
-        
-         Connection conn = null;
-	 try{
-             String sql = "Update administrador set nombre=?, nac=?, correo=?, pswd=? where codad=?";
-             conn = MySQLConexion.getConexion();
-             
-             PreparedStatement st = conn.prepareStatement(sql);
-             
-             st.setString(1, a.getNombre());
-             st.setString(2, a.getFecha());
-             st.setString(3, a.getCorreo());
-             st.setString(4, a.getPswd());
-             st.setString(5, a.getCodad());
-             st.executeUpdate();
-	
-	 }catch(Exception ex){
-		 ex.printStackTrace();
-	 }finally{
-			try {
-			
-				if(conn!= null) conn.close();
-			} catch (Exception e2) {}
-		}
-
-		
-    }
+    
+  
     
     
     public String codAdmi(String id){

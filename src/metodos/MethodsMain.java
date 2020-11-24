@@ -61,19 +61,30 @@ public class MethodsMain {
     }
     
     public void configUser(Usuario user,JTextField jtfNom ,JDateChooser jdcNac, JTextField jtfCorreo, JTextField jtfPswd){
+       String nom="",correo="",fecha="",pswd="";
+        if(user instanceof Medico){
+           Medico med=daoL.busMed(((Medico) user).getCodmed());
+           nom=med.getNombre(); correo=med.getCorreo(); fecha=med.getFecha(); pswd=med.getPswd();
+       }
+        if(user instanceof Administrador){
+          Administrador admi=daoL.busAdmi(((Administrador) user).getCodad());
+          nom=admi.getNombre(); correo=admi.getCorreo(); fecha=admi.getFecha(); pswd=admi.getPswd();
+       }
+        
         SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
         Date fechaconv = null;
-        jtfNom.setText(user.getNombre());
-        jtfCorreo.setText(user.getCorreo());
+        jtfNom.setText(nom);
+        jtfCorreo.setText(correo);
         try {
-                fechaconv = formato.parse(user.getFecha());
+                fechaconv = formato.parse(fecha);
                 jdcNac.setDate(fechaconv);
             } catch (Exception ex) {
                 System.out.println("F");
             }
-        jtfPswd.setText(user.getPswd());
+        jtfPswd.setText(pswd);
         
     }
+    
     
      public void mostrarEsp(JComboBox jcb){
             jcb.removeAllItems();
@@ -104,24 +115,9 @@ public class MethodsMain {
            }
     }
     
-     public Medico modObjUser(String cod, JTextField jtfNom ,JDateChooser jdcNac, JTextField jtfCorreo, JTextField jtfPswd){
-         Medico m= new Medico();
-         m.setCodmed(cod);
-         m.setNombre(jtfNom.getText());
-         m.setFecha(jtfNom.getText());
-         m.setCorreo(jtfNom.getText());
-         m.setPswd(jtfNom.getText());
-        return m;
+   public void actDatosUser(Usuario user, String cod, JDateChooser fac, String nom, String correo, String pswd){
+       SimpleDateFormat formato=new SimpleDateFormat("yyyy-MM-dd");
+       String nac=formato.format(fac.getDate());
+        daoL.modUser(user,cod,nom, nac,correo,pswd);
     }
-     
-     public Administrador modObjAd(String cod, JTextField jtfNom ,JDateChooser jdcNac, JTextField jtfCorreo, JTextField jtfPswd){
-         Administrador a= new Administrador();
-         a.setCodad(cod);
-         a.setNombre(jtfNom.getText());
-         a.setFecha(jtfNom.getText());
-         a.setCorreo(jtfNom.getText());
-         a.setPswd(jtfNom.getText());
-        return a;
-    }
-     //
 }

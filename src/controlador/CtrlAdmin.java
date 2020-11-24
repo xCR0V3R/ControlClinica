@@ -52,6 +52,7 @@ public class CtrlAdmin implements ActionListener {
         this.vAdmi.jcbArea.addActionListener(this); 
         this.vAdmi.jcbMedicos.addActionListener(this);
         this.vAdmi.jcbxEspCosto.addActionListener(this);
+        this.vAdmi.btnActPerfil.addActionListener(this);
         //VALOR EXTRA - AYUDA
         this.vAdmi.jmiAyuda1.addActionListener(this);
         this.vAdmi.jmiAyuda2.addActionListener(this);
@@ -63,45 +64,7 @@ public class CtrlAdmin implements ActionListener {
         this.vAdmi.jmiSitioWeb2.addActionListener(this);
     } 
     
-    //constructor para prueba sin LOGUEO
-    public CtrlAdmin(VAdmi vAdmi){
-        this.vAdmi = vAdmi;metAdmi=new MethodsAdmi(this.vAdmi);
-        metAdmi.openJFrame(this.vAdmi,"ADMINISTRADOR");
-        this.vAdmi.btnConfigUser.addActionListener(this);
-        this.vAdmi.btnLogout.addActionListener(this);
-        this.vAdmi.btnSalir2.addActionListener(this);
-        this.vAdmi.btnSalir3.addActionListener(this);
-        this.vAdmi.btnReportes.addActionListener(this);
-        this.vAdmi.btnNuevoP.addActionListener(this);
-         this.vAdmi.btnRetornar1.addActionListener(this);
-        this.vAdmi.btnRetornar2.addActionListener(this);
-        this.vAdmi.btnRetornar3.addActionListener(this);
-        this.vAdmi.btnRetornar5.addActionListener(this);
-        this.vAdmi.btnRetornar6.addActionListener(this);
-        this.vAdmi.btnBusPaciente.addActionListener(this);
-        this.vAdmi.btnRegistrar.addActionListener(this);
-        this.vAdmi.btnAsistenciaM.addActionListener(this);
-        this.vAdmi.btnReiniciar.addActionListener(this);
-        this.vAdmi.btnMostrarCita.addActionListener(this);
-        this.vAdmi.jcbxEspecialidadNC.addActionListener(this);
-        this.vAdmi.jcbxDoctorNC.addActionListener(this);
-        this.vAdmi.btnHorario.addActionListener(this);
-        this.vAdmi.btnHorarioCostos.addActionListener(this);
-        this.vAdmi.jcbArea.addActionListener(this); 
-        this.vAdmi.jcbMedicos.addActionListener(this);
-        this.vAdmi.jcbxEspCosto.addActionListener(this);
-         //VALOR EXTRA - AYUDA
-         this.vAdmi.jmiAyuda1.addActionListener(this);
-        this.vAdmi.jmiAyuda2.addActionListener(this);
-        this.vAdmi.jmiForo.addActionListener(this);
-        this.vAdmi.jmiForo1.addActionListener(this);
-        this.vAdmi.jmiForo2.addActionListener(this);
-        this.vAdmi.jmiSitioWeb.addActionListener(this);
-        this.vAdmi.jmiSitioWeb1.addActionListener(this);
-        this.vAdmi.jmiSitioWeb2.addActionListener(this); 
         
-    } 
-    
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==vAdmi.btnLogout){
@@ -114,7 +77,7 @@ public class CtrlAdmin implements ActionListener {
            System.exit(0);
         }
         if(e.getSource()==vAdmi.btnConfigUser){
-            metAdmi.configUser(objAdmi, vAdmi.configNombre, vAdmi.configNac, vAdmi.jtxtCorreoConfig, vAdmi.jtxtPswdCP);
+            metAdmi.configUser(objAdmi, vAdmi.configNombre, vAdmi.configNac, vAdmi.configCorreo, vAdmi.configPswd);
             vAdmi.setVisible(false);
             metAdmi.openJFrame(vAdmi.jfConfigP, "Configurar Usuario");
         }
@@ -204,6 +167,16 @@ public class CtrlAdmin implements ActionListener {
         if(e.getSource()==vAdmi.btnRetornar6){
             vAdmi.setVisible(true);
             vAdmi.jfModHoraCoste.setVisible(false);
+        }
+        
+        //Actualizar Perfil
+        if(e.getSource()==vAdmi.btnActPerfil){
+           metAdmi.actDatosUser(objAdmi,objAdmi.getCodad(),vAdmi.configNac,
+                                vAdmi.configNombre.getText(),vAdmi.configCorreo.getText(),
+                                vAdmi.configPswd.getText());
+            JOptionPane.showMessageDialog(null, "Datos actualizados");
+            vAdmi.jfConfigP.setVisible(false);
+            vAdmi.setVisible(true);
         }
         
         /*VALOR EXTRA-SUPPORT
