@@ -213,8 +213,8 @@ public class DAOCitas {
         return est;
     }  
     
-    public Cita busCosto(String cod){
-        Cita cos=null;
+    public int busCosto(String cod){
+        int cos=0;
         Connection conn = null;
         try {
             conn = MySQLConexion.getConexion();
@@ -223,8 +223,7 @@ public class DAOCitas {
             st.setString(1, cod);
             ResultSet rs = st.executeQuery();
             while (rs.next()) {
-                cos = new Cita();
-                cos.setCosto(rs.getDouble(1));
+               cos=rs.getInt(1);
             }
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -239,6 +238,7 @@ public class DAOCitas {
         }
         return cos;
     } 
+    
     public List<Cita> lisReportCita(String cod) {
         List<Cita> lis = new ArrayList<>();
         Connection conn = null; 

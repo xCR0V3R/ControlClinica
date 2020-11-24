@@ -46,13 +46,14 @@ public class MethodsAdmi extends MethodsMain{
         }
     } 
    
-   public void mostrarCosto(JComboBox jcbEsp){
-       String cod2=mostrarCodEsp(jcbEsp); 
-        jcbEsp.removeAllItems();
-        jcbEsp.addItem("-Seleccionar-");  
+   public void mostrarCosto(){
+      // String cod2=mostrarCodEsp(jcbEsp); 
+       // jcbEsp.removeAllItems();
+        //jcbEsp.addItem("-Seleccionar-");  
         String name = vAdmi.jcbxEspCosto.getSelectedItem().toString();
-        Cita cost=daoC.busCosto(name); 
-        vAdmi.jTextCosto.setText(cost.toString());
+        String cod=daoR.busCodEsp(name);
+        int cost=daoC.busCosto(cod); 
+        vAdmi.jTextCosto.setText(String.valueOf(cost));
    }
     
     public void mostrarHor(){
