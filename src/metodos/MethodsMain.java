@@ -123,4 +123,5 @@ public class MethodsMain {
          a.setPswd(jtfNom.getText());
         return a;
     }
+     //
 }
