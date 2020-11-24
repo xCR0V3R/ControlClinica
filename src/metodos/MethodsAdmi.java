@@ -46,14 +46,17 @@ public class MethodsAdmi extends MethodsMain{
         }
     } 
    
-   public void mostrarCosto(){
-      // String cod2=mostrarCodEsp(jcbEsp); 
-       // jcbEsp.removeAllItems();
-        //jcbEsp.addItem("-Seleccionar-");  
+   public void mostrarCosto(){ 
         String name = vAdmi.jcbxEspCosto.getSelectedItem().toString();
         String cod=daoR.busCodEsp(name);
         int cost=daoC.busCosto(cod); 
         vAdmi.jTextCosto.setText(String.valueOf(cost));
+   } 
+      public void mostrarCostoNC(){ 
+        String name = vAdmi.jcbxEspecialidadNC.getSelectedItem().toString();
+        String cod=daoR.busCodEsp(name);
+        int cost=daoC.busCosto(cod); 
+        vAdmi.jtxtPrecioNC.setText(String.valueOf(cost));
    }
     
     public void mostrarHor(){
