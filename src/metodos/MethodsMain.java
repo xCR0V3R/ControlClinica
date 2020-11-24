@@ -104,4 +104,23 @@ public class MethodsMain {
            }
     }
     
+     public Medico modObjUser(String cod, JTextField jtfNom ,JDateChooser jdcNac, JTextField jtfCorreo, JTextField jtfPswd){
+         Medico m= new Medico();
+         m.setCodmed(cod);
+         m.setNombre(jtfNom.getText());
+         m.setFecha(jtfNom.getText());
+         m.setCorreo(jtfNom.getText());
+         m.setPswd(jtfNom.getText());
+        return m;
+    }
+     
+     public Administrador modObjAd(String cod, JTextField jtfNom ,JDateChooser jdcNac, JTextField jtfCorreo, JTextField jtfPswd){
+         Administrador a= new Administrador();
+         a.setCodad(cod);
+         a.setNombre(jtfNom.getText());
+         a.setFecha(jtfNom.getText());
+         a.setCorreo(jtfNom.getText());
+         a.setPswd(jtfNom.getText());
+        return a;
+    }
 }

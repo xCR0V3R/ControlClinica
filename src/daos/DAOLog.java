@@ -172,4 +172,117 @@ public class DAOLog {
 	}
     
     
+    public void modMed(Medico m){
+        
+         Connection conn = null;
+	 try{
+             String sql = "Update medico set nombre=?, nac=?, correo=?, pswd=? where codmed=?";
+             conn = MySQLConexion.getConexion();
+             
+             PreparedStatement st = conn.prepareStatement(sql);
+             
+             st.setString(1, m.getNombre());
+             st.setString(2, m.getFecha());
+             st.setString(3, m.getCorreo());
+             st.setString(4, m.getPswd());
+             st.setString(5, m.getCodmed());
+             st.executeUpdate();
+	
+	 }catch(Exception ex){
+		 ex.printStackTrace();
+	 }finally{
+			try {
+			
+				if(conn!= null) conn.close();
+			} catch (Exception e2) {}
+		}
+
+		
+    }
+    
+    
+    public void modAdmi(Administrador a){
+        
+         Connection conn = null;
+	 try{
+             String sql = "Update administrador set nombre=?, nac=?, correo=?, pswd=? where codad=?";
+             conn = MySQLConexion.getConexion();
+             
+             PreparedStatement st = conn.prepareStatement(sql);
+             
+             st.setString(1, a.getNombre());
+             st.setString(2, a.getFecha());
+             st.setString(3, a.getCorreo());
+             st.setString(4, a.getPswd());
+             st.setString(5, a.getCodad());
+             st.executeUpdate();
+	
+	 }catch(Exception ex){
+		 ex.printStackTrace();
+	 }finally{
+			try {
+			
+				if(conn!= null) conn.close();
+			} catch (Exception e2) {}
+		}
+
+		
+    }
+    
+    
+    public String codAdmi(String id){
+        String est="";
+        Connection conn = null;
+        try {
+            conn = MySQLConexion.getConexion();
+            String sql = "SELECT codad\n" +
+                         "FROM administrador\n" +
+                         "WHERE correo=?";
+            PreparedStatement st = conn.prepareStatement(sql);
+            st.setString(1, id);
+            ResultSet rs = st.executeQuery();
+            if (rs.next()) {
+                est=rs.getString(1);
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            try {
+
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (Exception e2) {
+            }
+        }
+        return est;
+    }  
+    
+    public String codMed(String id){
+        String est="";
+        Connection conn = null;
+        try {
+            conn = MySQLConexion.getConexion();
+            String sql = "SELECT codmed\n" +
+                         "FROM medico\n" +
+                         "WHERE correo=?";
+            PreparedStatement st = conn.prepareStatement(sql);
+            st.setString(1, id);
+            ResultSet rs = st.executeQuery();
+            if (rs.next()) {
+                est=rs.getString(1);
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            try {
+
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (Exception e2) {
+            }
+        }
+        return est;
+    }  
 }
