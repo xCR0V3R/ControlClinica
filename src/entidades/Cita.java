@@ -10,12 +10,11 @@ public class Cita {
     private String idCita;
     private String nompac;
     private String esp;
-    private double costo;
 
     public Cita() {
     }
 
-    public Cita(String codmed, int dnipac, String estadopac, String diacit, String horacit, String idCita, String nompac, String esp,double costo) {
+    public Cita(String codmed, int dnipac, String estadopac, String diacit, String horacit, String idCita, String nompac, String esp) {
         this.codmed = codmed;
         this.dnipac = dnipac;
         this.estadopac = estadopac;
@@ -24,7 +23,6 @@ public class Cita {
         this.idCita = idCita;
         this.nompac=nompac;
         this.esp=esp; 
-        this.costo=costo;
     }
 
     public String getCodmed() {
@@ -57,14 +55,6 @@ public class Cita {
 
     public void setDiacit(String diacit) {
         this.diacit = diacit;
-    }
-
-    public double getCosto() {
-        return costo;
-    }
-
-    public void setCosto(double costo) {
-        this.costo = costo;
     }
 
     public String getHoracit() {

@@ -142,6 +142,7 @@ public class CtrlAdmin implements ActionListener {
 
         if(e.getSource()==vAdmi.jcbxEspecialidadNC){
             metAdmi.jcbxLisMedicos(vAdmi.jcbxDoctorNC,vAdmi.jcbxEspecialidadNC);
+            metAdmi.mostrarCostoNC();
          }
         if(e.getSource()==vAdmi.jcbxEspCosto){
            metAdmi.mostrarCosto();
