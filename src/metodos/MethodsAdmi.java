@@ -237,7 +237,8 @@ public class MethodsAdmi extends MethodsMain{
        f.taHorario.setText("");
        f.txtHora.setText("");
        f.dtCita.setCalendar(null); 
-       
+      f.jcbxEspecialidadNC.setSelectedIndex(0);
+      f.jcbxDoctorNC.setSelectedIndex(0);
        f.txtDNI.requestFocus();
        
    }
