@@ -312,7 +312,7 @@ public class DAOCitas {
              st.setDouble(1, costo);
              st.setString(2, nom);
              st.executeUpdate();
-             JOptionPane.showMessageDialog(null, "¡Horario Actualizado!");
+             //JOptionPane.showMessageDialog(null, "¡Costo Actualizado!");
 	 }catch(Exception ex){
 		 ex.printStackTrace();
 	 }finally{

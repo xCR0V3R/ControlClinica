@@ -63,6 +63,7 @@ public class CtrlAdmin implements ActionListener, MouseListener{
         this.vAdmi.btnAddHorario.addActionListener(this);
         this.vAdmi.btnActCosto.addActionListener(this);
         this.vAdmi.jTHorarios.addMouseListener(this);
+        this.vAdmi.btnCleanNC.addActionListener(this);
         
         //VALOR EXTRA - AYUDA
         this.vAdmi.jmiAyuda1.addActionListener(this);
@@ -189,6 +190,9 @@ public class CtrlAdmin implements ActionListener, MouseListener{
             metAdmi.f5EstadoCita(vAdmi.jTReportCitaA,5);
             metAdmi.visualizarListaCita(vAdmi.jTReportCitaA, vAdmi.jcbMedicos.getSelectedItem().toString());
             JOptionPane.showMessageDialog(null, "Actualización exitosa");
+        } 
+        if (e.getSource()== vAdmi.btnCleanNC){
+            metAdmi.limpiarNC(vAdmi);
         }
         
          //BotonesRetornar

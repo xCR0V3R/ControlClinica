@@ -93,6 +93,7 @@ public class VAdmi extends javax.swing.JFrame {
         jLabel42 = new javax.swing.JLabel();
         jtxtPrecioNC = new javax.swing.JTextField();
         jLabel43 = new javax.swing.JLabel();
+        btnCleanNC = new javax.swing.JButton();
         jMenuBar3 = new javax.swing.JMenuBar();
         jmAyuda2 = new javax.swing.JMenu();
         jmiAyuda2 = new javax.swing.JMenuItem();
@@ -203,7 +204,7 @@ public class VAdmi extends javax.swing.JFrame {
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/AcUsuario.png"))); // NOI18N
         jLabel15.setText("CONFIGURAR PERFIL");
         jPanel2.add(jLabel15);
-        jLabel15.setBounds(36, 25, 270, 72);
+        jLabel15.setBounds(36, 25, 262, 72);
         jPanel2.add(configCorreo);
         configCorreo.setBounds(160, 230, 190, 20);
         jPanel2.add(configPswd);
@@ -668,6 +669,13 @@ public class VAdmi extends javax.swing.JFrame {
                         .addGap(35, 35, 35))))
         );
 
+        btnCleanNC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/brocha.png"))); // NOI18N
+        btnCleanNC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCleanNCActionPerformed(evt);
+            }
+        });
+
         jmAyuda2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ayuda.png"))); // NOI18N
         jmAyuda2.setText("Ayuda");
 
@@ -716,7 +724,9 @@ public class VAdmi extends javax.swing.JFrame {
             .addGroup(jfNuevaCitaLayout.createSequentialGroup()
                 .addGap(276, 276, 276)
                 .addComponent(btnRegistrar)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnCleanNC, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(58, 58, 58))
         );
         jfNuevaCitaLayout.setVerticalGroup(
             jfNuevaCitaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -727,18 +737,23 @@ public class VAdmi extends javax.swing.JFrame {
                     .addGroup(jfNuevaCitaLayout.createSequentialGroup()
                         .addGroup(jfNuevaCitaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jfNuevaCitaLayout.createSequentialGroup()
-                                .addGap(28, 28, 28)
-                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jfNuevaCitaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jfNuevaCitaLayout.createSequentialGroup()
+                                        .addGap(28, 28, 28)
+                                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jfNuevaCitaLayout.createSequentialGroup()
+                                        .addGap(39, 39, 39)
+                                        .addComponent(btnBusPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(18, 18, 18)
+                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jfNuevaCitaLayout.createSequentialGroup()
-                                .addGap(39, 39, 39)
-                                .addComponent(btnBusPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(28, 28, 28)
+                                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                        .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jfNuevaCitaLayout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
-                .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnCleanNC)))
                 .addGap(18, 18, 18)
                 .addGroup(jfNuevaCitaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnRetornar3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -753,7 +768,7 @@ public class VAdmi extends javax.swing.JFrame {
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/doc.png"))); // NOI18N
         jLabel8.setText("ASISTENCIA MÉDICA");
         jfAsisMedica.getContentPane().add(jLabel8);
-        jLabel8.setBounds(74, 11, 225, 32);
+        jLabel8.setBounds(74, 11, 213, 32);
 
         jLabel31.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
         jLabel31.setForeground(new java.awt.Color(102, 0, 51));
@@ -1023,6 +1038,11 @@ public class VAdmi extends javax.swing.JFrame {
         );
 
         btnClean.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/brocha.png"))); // NOI18N
+        btnClean.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCleanActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jfModHoraCosteLayout = new javax.swing.GroupLayout(jfModHoraCoste.getContentPane());
         jfModHoraCoste.getContentPane().setLayout(jfModHoraCosteLayout);
@@ -1098,7 +1118,7 @@ public class VAdmi extends javax.swing.JFrame {
 
         btnNuevoP.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
         btnNuevoP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/nuevoPaciente.png"))); // NOI18N
-        btnNuevoP.setText("Nuevo Cita");
+        btnNuevoP.setText("Nueva Cita");
         btnNuevoP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNuevoPActionPerformed(evt);
@@ -1276,6 +1296,14 @@ public class VAdmi extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnConfigUserActionPerformed
 
+    private void btnCleanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCleanActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCleanActionPerformed
+
+    private void btnCleanNCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCleanNCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCleanNCActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1323,6 +1351,7 @@ public class VAdmi extends javax.swing.JFrame {
     public javax.swing.JButton btnAsistenciaM;
     public javax.swing.JButton btnBusPaciente;
     public javax.swing.JButton btnClean;
+    public javax.swing.JButton btnCleanNC;
     public javax.swing.JButton btnConfigUser;
     public javax.swing.JButton btnGenCod;
     public javax.swing.JButton btnHorario;

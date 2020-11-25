@@ -227,6 +227,19 @@ public class MethodsAdmi extends MethodsMain{
    public void actualizarH(){
        Horario h=dataH();
        daoH.actHorarios(h);
+   }  
+  
+   public void limpiarNC(VAdmi f){ 
+       f.txtDNI.setText("");
+       f.txtNombre.setText("");
+       f.txtNumero.setText("");
+       f.jtxtPrecioNC.setText("");
+       f.taHorario.setText("");
+       f.txtHora.setText("");
+       f.dtCita.setCalendar(null); 
+       
+       f.txtDNI.requestFocus();
+       
    }
    
 }
