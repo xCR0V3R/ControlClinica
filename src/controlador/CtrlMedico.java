@@ -82,6 +82,9 @@ public class CtrlMedico implements ActionListener {
             metMed.openJFrame(this.vMed, "MEDICO");
         }
         if (e.getSource() == vMed.btnActCitas) {
+            //indicar la posición de la columna de Estado de Cita
+            metMed.f5EstadoCita(vMed.tablaReporte,4);
+            metMed.visualizarReportCita(vMed.tablaReporte, objMed.getCodmed());
             JOptionPane.showMessageDialog(null, "Actualización exitosa");
         }
 

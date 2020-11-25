@@ -4,6 +4,8 @@ import entidades.Administrador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import daos.*;import entidades.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import vistaa.*; import metodos.*;
@@ -11,12 +13,13 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import javax.swing.*;
 
-public class CtrlAdmin implements ActionListener {
+public class CtrlAdmin implements ActionListener, MouseListener{
 
     VAdmi vAdmi; 
     MethodsAdmi metAdmi;
-    DAOCitas dao2=new DAOCitas();
+    DAOHorario daoH=new DAOHorario();
     Administrador objAdmi;
     SimpleDateFormat fordia=new SimpleDateFormat("yyyy-MM-dd");
     
@@ -52,6 +55,15 @@ public class CtrlAdmin implements ActionListener {
         this.vAdmi.jcbMedicos.addActionListener(this);
         this.vAdmi.jcbxEspCosto.addActionListener(this);
         this.vAdmi.btnActPerfil.addActionListener(this);
+        this.vAdmi.btnActReportes.addActionListener(this);
+        this.vAdmi.jcbxEspHorarios.addActionListener(this);
+        this.vAdmi.btnActHorarios.addActionListener(this);
+        this.vAdmi.btnClean.addActionListener(this);
+        this.vAdmi.btnGenCod.addActionListener(this);
+        this.vAdmi.btnAddHorario.addActionListener(this);
+        this.vAdmi.btnActCosto.addActionListener(this);
+        this.vAdmi.jTHorarios.addMouseListener(this);
+        
         //VALOR EXTRA - AYUDA
         this.vAdmi.jmiAyuda1.addActionListener(this);
         this.vAdmi.jmiAyuda2.addActionListener(this);
@@ -86,6 +98,19 @@ public class CtrlAdmin implements ActionListener {
             metAdmi.openJFrame(vAdmi.jfReporteCitas, "Citas"); 
           }
         
+        if(e.getSource()==vAdmi.btnClean){
+            vAdmi.jtxtIdHorario.setText("");
+            vAdmi.jtxtDiasH.setText("");
+            vAdmi.jtxtHoraEntrada.setText("");
+            vAdmi.jtxtHoraSalida.setText("");
+          }
+        
+              
+         if(e.getSource()== vAdmi.btnAddHorario){
+           metAdmi.addHorarioN();
+           metAdmi.tablaHorarios(vAdmi.jTHorarios, vAdmi.jcbxEspHorarios.getSelectedItem().toString());
+          }       
+        
         if(e.getSource()==vAdmi.btnNuevoP){
             vAdmi.setVisible(false);
             //Ocultar datos de más en caso el paciente ya esté registrado
@@ -111,16 +136,24 @@ public class CtrlAdmin implements ActionListener {
         if(e.getSource()==vAdmi.jcbxEspCosto){
            metAdmi.mostrarCosto();
         }
-       /* if(e.getSource()==ad.jcbxDoctorNC){
-            if(ad.jcbxDoctorNC.getSelectedIndex()!=0){
-            String nomd=ad.jcbxDoctorNC.getSelectedItem().toString();
-            hor.setHinicio(dao2.busHoraIni(nomd));
-            hor.setHfin(dao2.busHoraFin(nomd));
-            ad.taHorario.setText(hor.getHinicio()+"-"+hor.getHfin());}
-        }*/
+       
+        if(e.getSource()==vAdmi.btnGenCod){
+           vAdmi.jtxtIdHorario.setText(daoH.genCodHor());
+            //metAdmi.mostrarCosto();
+        }
         
         if(e.getSource()==vAdmi.btnHorario){
             metAdmi.mostrarHor();
+        }
+        
+        if(e.getSource()==vAdmi.btnActHorarios){
+            metAdmi.actualizarH();
+             metAdmi.tablaHorarios(vAdmi.jTHorarios, vAdmi.jcbxEspHorarios.getSelectedItem().toString());
+        }
+        
+        if(e.getSource()==vAdmi.jcbxEspHorarios){
+            metAdmi.tablaHorarios(vAdmi.jTHorarios, vAdmi.jcbxEspHorarios.getSelectedItem().toString());
+            //IMPLEMENTAR LA LISTA 
         }
         
         if (e.getSource() == vAdmi.btnBusPaciente) {
@@ -144,8 +177,19 @@ public class CtrlAdmin implements ActionListener {
         
         if(e.getSource()==vAdmi.btnHorarioCostos){
             metAdmi.openJFrame(vAdmi.jfModHoraCoste, "Horarios & Costos");
+            vAdmi.jtxtIdHorario.setEditable(false);
         }
         
+        if(e.getSource()==vAdmi.btnActCosto){
+            double c=metAdmi.actualizarCosto();
+            vAdmi.jTextCosto.setText(String.valueOf(c));
+        }
+       
+        if(e.getSource()== vAdmi.btnActReportes){
+            metAdmi.f5EstadoCita(vAdmi.jTReportCitaA,5);
+            metAdmi.visualizarListaCita(vAdmi.jTReportCitaA, vAdmi.jcbMedicos.getSelectedItem().toString());
+            JOptionPane.showMessageDialog(null, "Actualización exitosa");
+        }
         
          //BotonesRetornar
         if(e.getSource()==vAdmi.btnRetornar1){
@@ -206,6 +250,67 @@ public class CtrlAdmin implements ActionListener {
         if(e.getSource()==ad.jmiSitioWeb2){
              url.support("https://www.clinicainternacional.com.pe/");
         }*/
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        JTable jt=vAdmi.jTHorarios;
+       if(e.getSource()==jt){
+           int column=jt.getColumnModel().getColumnIndexAtX(e.getX());
+           int row=e.getY()/jt.getRowHeight();
+           if(column<=jt.getColumnCount() && column>=0 && row<=jt.getRowCount() && row >=0){
+               Object ob=jt.getValueAt(row, column); 
+               if(ob instanceof JButton){
+                   ((JButton)ob).doClick();
+                   JButton botones=(JButton)ob;
+                   if(botones.getName().equals("btnMod")){
+                       String cod=String.valueOf(jt.getValueAt(row, 0));
+                       metAdmi.modHorario(cod);
+                       //JOptionPane.showMessageDialog(null, "MODIFICAR\nCODIGO:"+cod);
+                   }
+                   if(botones.getName().equals("btnDel")){
+                       String cod=String.valueOf(jt.getValueAt(row, 0));
+                       int op=0;
+                       try{
+                            op=Integer.parseInt(JOptionPane.showInputDialog("¿Está seguro que eliminará el horario de código: "+cod
+                               +"?\n1.SÍ\n2.NO"));
+                            if(op==1) {
+                                metAdmi.deleteHorario(cod);
+                                metAdmi.tablaHorarios(vAdmi.jTHorarios, vAdmi.jcbxEspHorarios.getSelectedItem().toString());
+                                
+                            }
+                            if(op==2) JOptionPane.showMessageDialog(null, "ASAAA CASI WE :V");
+                       }catch (Exception ex) {
+                           JOptionPane.showMessageDialog(null, "¡ERROR! \nDetalle: "+ex);
+                       }
+                      
+                      
+                       
+                       //JOptionPane.showMessageDialog(null, "ELIMINADO");
+                   }
+               }
+           }
+           
+       }
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+        //
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        //
+    }
+    @Override
+    public void mouseEntered(MouseEvent e) {
+        //
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+        //
     }
     
 }

@@ -200,6 +200,24 @@ public class VMedico extends javax.swing.JFrame {
         btnLogout1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/salir.png"))); // NOI18N
         btnLogout1.setText("Salir");
 
+        tablaReporte = new javax.swing.JTable(){
+            public boolean isCellEditable(int rowIndex, int colIndex) {
+
+                if(colIndex==0){
+                    return false;
+                }
+                if(colIndex==1){
+                    return false;
+                }
+                if(colIndex==2){
+                    return false;
+                }
+                if(colIndex==3){
+                    return false;
+                }
+                return true; //Disallow the editing of any cell
+            }
+        };
         tablaReporte.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -219,6 +237,8 @@ public class VMedico extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
+        tablaReporte.getTableHeader().setResizingAllowed(false);
+        tablaReporte.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tablaReporte);
 
         btnActCitas.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
@@ -405,7 +425,7 @@ public class VMedico extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(rSLabelFecha1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(rSLabelFecha1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                         .addGap(0, 10, Short.MAX_VALUE)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

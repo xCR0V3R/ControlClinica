@@ -49,6 +49,7 @@ public class VAdmi extends javax.swing.JFrame {
         btnRetornar2 = new javax.swing.JButton();
         btnSalir2 = new javax.swing.JButton();
         btnMostrarCita = new javax.swing.JButton();
+        btnActReportes = new javax.swing.JButton();
         jMenuBar2 = new javax.swing.JMenuBar();
         jmArchivo = new javax.swing.JMenu();
         jmExportar = new javax.swing.JMenu();
@@ -108,28 +109,32 @@ public class VAdmi extends javax.swing.JFrame {
         jfModHoraCoste = new javax.swing.JFrame();
         jLabel16 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
-        jLabel33 = new javax.swing.JLabel();
-        jcbxEspCosto = new javax.swing.JComboBox<>();
-        jTextCosto = new javax.swing.JTextField();
-        jLabel34 = new javax.swing.JLabel();
-        jLabel35 = new javax.swing.JLabel();
         btnRetornar6 = new javax.swing.JButton();
-        btnActCosto = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTHorarios = new javax.swing.JTable();
         jLabel36 = new javax.swing.JLabel();
         jcbxEspHorarios = new javax.swing.JComboBox<>();
-        jLabel37 = new javax.swing.JLabel();
-        jLabel38 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jLabel39 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jLabel40 = new javax.swing.JLabel();
-        jLabel41 = new javax.swing.JLabel();
-        jftfEntrada = new javax.swing.JFormattedTextField();
-        jftfEntrada1 = new javax.swing.JFormattedTextField();
-        btnActHorarios = new javax.swing.JButton();
+        jPanel5 = new javax.swing.JPanel();
+        btnActCosto = new javax.swing.JButton();
+        jTextCosto = new javax.swing.JTextField();
+        jLabel34 = new javax.swing.JLabel();
+        jcbxEspCosto = new javax.swing.JComboBox<>();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jPanel6 = new javax.swing.JPanel();
         btnAddHorario = new javax.swing.JButton();
+        btnGenCod = new javax.swing.JButton();
+        jtxtHoraSalida = new javax.swing.JFormattedTextField();
+        jLabel41 = new javax.swing.JLabel();
+        jtxtHoraEntrada = new javax.swing.JFormattedTextField();
+        jLabel40 = new javax.swing.JLabel();
+        btnActHorarios = new javax.swing.JButton();
+        jtxtDiasH = new javax.swing.JTextField();
+        jtxtIdHorario = new javax.swing.JTextField();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        btnClean = new javax.swing.JButton();
         btnReportes = new javax.swing.JButton();
         btnNuevoP = new javax.swing.JButton();
         btnConfigUser = new javax.swing.JButton();
@@ -241,6 +246,27 @@ public class VAdmi extends javax.swing.JFrame {
 
         jcbMedicos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Seleccionar-" }));
 
+        jTReportCitaA = new javax.swing.JTable(){
+            public boolean isCellEditable(int rowIndex, int colIndex) {
+
+                if(colIndex==0){
+                    return false;
+                }
+                if(colIndex==1){
+                    return false;
+                }
+                if(colIndex==2){
+                    return false;
+                }
+                if(colIndex==3){
+                    return false;
+                }
+                if(colIndex==4){
+                    return false;
+                }
+                return true; //Disallow the editing of any cell
+            }
+        };
         jTReportCitaA.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
@@ -260,16 +286,24 @@ public class VAdmi extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
+        jTReportCitaA.getTableHeader().setResizingAllowed(false);
+        jTReportCitaA.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(jTReportCitaA);
 
+        btnRetornar2.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
         btnRetornar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/volver.png"))); // NOI18N
         btnRetornar2.setText("Retornar");
 
+        btnSalir2.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
         btnSalir2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/salir.png"))); // NOI18N
         btnSalir2.setText("Salir");
 
         btnMostrarCita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mostrarIcono.png"))); // NOI18N
         btnMostrarCita.setText("Mostrar");
+
+        btnActReportes.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
+        btnActReportes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/actualizar.png"))); // NOI18N
+        btnActReportes.setText("Actualizar");
 
         jmArchivo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/menu1.png"))); // NOI18N
         jmArchivo.setText("Archivo");
@@ -344,7 +378,10 @@ public class VAdmi extends javax.swing.JFrame {
                         .addGroup(jfReporteCitasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jcbMedicos, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 585, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(43, 43, 43))))
+                        .addGap(43, 43, 43))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jfReporteCitasLayout.createSequentialGroup()
+                        .addComponent(btnActReportes)
+                        .addGap(121, 121, 121))))
         );
         jfReporteCitasLayout.setVerticalGroup(
             jfReporteCitasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -360,8 +397,10 @@ public class VAdmi extends javax.swing.JFrame {
                         .addComponent(jcbMedicos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnMostrarCita, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(btnActReportes)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                 .addGroup(jfReporteCitasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnRetornar2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -762,7 +801,7 @@ public class VAdmi extends javax.swing.JFrame {
         jfAsisMedica.getContentPane().add(jScrollPane3);
         jScrollPane3.setBounds(26, 108, 410, 200);
 
-        jfModHoraCoste.setMinimumSize(new java.awt.Dimension(442, 650));
+        jfModHoraCoste.setMinimumSize(new java.awt.Dimension(695, 675));
 
         jLabel16.setFont(new java.awt.Font("Russo One", 0, 18)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(102, 0, 0));
@@ -774,47 +813,37 @@ public class VAdmi extends javax.swing.JFrame {
         jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/costos2.png"))); // NOI18N
         jLabel32.setText("COSTOS");
 
-        jLabel33.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
-        jLabel33.setForeground(new java.awt.Color(102, 0, 51));
-        jLabel33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/tipodoc.png"))); // NOI18N
-        jLabel33.setText("Especialidad");
-
-        jLabel34.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
-        jLabel34.setForeground(new java.awt.Color(102, 0, 51));
-        jLabel34.setText("s/");
-
-        jLabel35.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
-        jLabel35.setForeground(new java.awt.Color(102, 0, 51));
-        jLabel35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/bagmoney.png"))); // NOI18N
-        jLabel35.setText("Costo");
-
         btnRetornar6.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
         btnRetornar6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/volver.png"))); // NOI18N
         btnRetornar6.setText("Volver");
 
-        btnActCosto.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
-        btnActCosto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/actualizar.png"))); // NOI18N
-        btnActCosto.setText("Modificar");
+        jTHorarios = new javax.swing.JTable(){
+            public boolean isCellEditable(int rowIndex, int colIndex) {
 
+                return false; //Disallow the editing of any cell
+            }
+        };
         jTHorarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "ID", "Dias", "Horario"
+                "ID", "Dias", "Horario", "Accion 1", "Accion 2"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
         });
+        jTHorarios.getTableHeader().setResizingAllowed(false);
+        jTHorarios.getTableHeader().setReorderingAllowed(false);
         jScrollPane4.setViewportView(jTHorarios);
 
         jLabel36.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
@@ -824,9 +853,97 @@ public class VAdmi extends javax.swing.JFrame {
 
         jcbxEspHorarios.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "." }));
 
-        jLabel37.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
-        jLabel37.setForeground(new java.awt.Color(102, 0, 0));
-        jLabel37.setText("Datos de horario");
+        btnActCosto.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
+        btnActCosto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/actualizar.png"))); // NOI18N
+        btnActCosto.setText("Modificar");
+
+        jLabel34.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
+        jLabel34.setForeground(new java.awt.Color(102, 0, 51));
+        jLabel34.setText("s/");
+
+        jLabel33.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
+        jLabel33.setForeground(new java.awt.Color(102, 0, 51));
+        jLabel33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/tipodoc.png"))); // NOI18N
+        jLabel33.setText("Especialidad");
+
+        jLabel35.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
+        jLabel35.setForeground(new java.awt.Color(102, 0, 51));
+        jLabel35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/bagmoney.png"))); // NOI18N
+        jLabel35.setText("Costo");
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                        .addComponent(jLabel35)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel34)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextCosto, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(23, 23, 23)
+                        .addComponent(btnActCosto))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                        .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jcbxEspCosto, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(67, 67, 67))))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jcbxEspCosto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel33))
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnActCosto)
+                        .addContainerGap())
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel35)
+                            .addComponent(jLabel34)
+                            .addComponent(jTextCosto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(32, Short.MAX_VALUE))))
+        );
+
+        btnAddHorario.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
+        btnAddHorario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/addd.png"))); // NOI18N
+        btnAddHorario.setText("Añadir");
+
+        btnGenCod.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
+        btnGenCod.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/id.png"))); // NOI18N
+        btnGenCod.setText("Generar ID");
+
+        try {
+            jtxtHoraSalida.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##:##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
+        jLabel41.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
+        jLabel41.setForeground(new java.awt.Color(102, 0, 51));
+        jLabel41.setText("HSalida");
+
+        try {
+            jtxtHoraEntrada.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##:##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
+        jLabel40.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
+        jLabel40.setForeground(new java.awt.Color(102, 0, 51));
+        jLabel40.setText("HInicio");
+
+        btnActHorarios.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
+        btnActHorarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/actualizar.png"))); // NOI18N
+        btnActHorarios.setText("Actualizar");
 
         jLabel38.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
         jLabel38.setForeground(new java.awt.Color(102, 0, 51));
@@ -836,33 +953,76 @@ public class VAdmi extends javax.swing.JFrame {
         jLabel39.setForeground(new java.awt.Color(102, 0, 51));
         jLabel39.setText("Dias");
 
-        jLabel40.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
-        jLabel40.setForeground(new java.awt.Color(102, 0, 51));
-        jLabel40.setText("HInicio");
+        jLabel37.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
+        jLabel37.setForeground(new java.awt.Color(102, 0, 0));
+        jLabel37.setText("Datos de horario");
 
-        jLabel41.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
-        jLabel41.setForeground(new java.awt.Color(102, 0, 51));
-        jLabel41.setText("HSalida");
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel39)
+                            .addComponent(jLabel38))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                                .addComponent(btnActHorarios)
+                                .addGap(236, 236, 236))
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jtxtDiasH, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jtxtIdHorario, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel6Layout.createSequentialGroup()
+                                        .addComponent(jLabel41)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jtxtHoraSalida, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(btnAddHorario))
+                                    .addGroup(jPanel6Layout.createSequentialGroup()
+                                        .addComponent(jLabel40)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jtxtHoraEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+                                        .addComponent(btnGenCod))))))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(jLabel37)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(btnGenCod, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnAddHorario, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addComponent(jLabel37)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jtxtIdHorario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel38)
+                    .addComponent(jLabel40)
+                    .addComponent(jtxtHoraEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jtxtDiasH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel39)
+                    .addComponent(jLabel41)
+                    .addComponent(jtxtHoraSalida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnActHorarios))
+        );
 
-        try {
-            jftfEntrada.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##:##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-
-        try {
-            jftfEntrada1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##:##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-
-        btnActHorarios.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
-        btnActHorarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/actualizar.png"))); // NOI18N
-        btnActHorarios.setText("Actualizar");
-
-        btnAddHorario.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
-        btnAddHorario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/addd.png"))); // NOI18N
-        btnAddHorario.setText("Añadir");
+        btnClean.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/brocha.png"))); // NOI18N
 
         javax.swing.GroupLayout jfModHoraCosteLayout = new javax.swing.GroupLayout(jfModHoraCoste.getContentPane());
         jfModHoraCoste.getContentPane().setLayout(jfModHoraCosteLayout);
@@ -871,65 +1031,35 @@ public class VAdmi extends javax.swing.JFrame {
             .addGroup(jfModHoraCosteLayout.createSequentialGroup()
                 .addGroup(jfModHoraCosteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jfModHoraCosteLayout.createSequentialGroup()
-                        .addGap(59, 59, 59)
+                        .addGap(48, 48, 48)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 553, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jfModHoraCosteLayout.createSequentialGroup()
+                        .addGap(183, 183, 183)
                         .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(jcbxEspHorarios, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jfModHoraCosteLayout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addGroup(jfModHoraCosteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jfModHoraCosteLayout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addGroup(jfModHoraCosteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel37)
-                                    .addGroup(jfModHoraCosteLayout.createSequentialGroup()
-                                        .addGroup(jfModHoraCosteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel38)
-                                            .addComponent(jLabel39))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addGroup(jfModHoraCosteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(27, 27, 27)
-                                        .addGroup(jfModHoraCosteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addGroup(jfModHoraCosteLayout.createSequentialGroup()
-                                                .addComponent(jLabel41)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(jftfEntrada1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(jfModHoraCosteLayout.createSequentialGroup()
-                                                .addComponent(jLabel40)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jftfEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jfModHoraCosteLayout.createSequentialGroup()
-                                        .addComponent(btnActHorarios)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btnAddHorario)
-                                        .addGap(65, 65, 65))))
-                            .addComponent(jLabel35)
-                            .addGroup(jfModHoraCosteLayout.createSequentialGroup()
-                                .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jfModHoraCosteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jfModHoraCosteLayout.createSequentialGroup()
-                                        .addComponent(jLabel34)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jTextCosto, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(28, 28, 28)
-                                        .addComponent(btnActCosto))
-                                    .addGroup(jfModHoraCosteLayout.createSequentialGroup()
-                                        .addGap(21, 21, 21)
-                                        .addComponent(jcbxEspCosto, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                    .addGroup(jfModHoraCosteLayout.createSequentialGroup()
-                        .addGap(156, 156, 156)
-                        .addComponent(btnRetornar6))
-                    .addGroup(jfModHoraCosteLayout.createSequentialGroup()
-                        .addGap(153, 153, 153)
-                        .addComponent(jLabel32))
-                    .addGroup(jfModHoraCosteLayout.createSequentialGroup()
-                        .addGap(143, 143, 143)
-                        .addComponent(jLabel16)))
-                .addContainerGap(25, Short.MAX_VALUE))
+                        .addGap(236, 236, 236)
+                        .addComponent(jLabel16))
+                    .addGroup(jfModHoraCosteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jfModHoraCosteLayout.createSequentialGroup()
+                            .addGap(239, 239, 239)
+                            .addComponent(jLabel32))
+                        .addGroup(jfModHoraCosteLayout.createSequentialGroup()
+                            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(107, 107, 107))))
+                .addContainerGap(45, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jfModHoraCosteLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnRetornar6)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jfModHoraCosteLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(btnClean, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(56, 56, 56))
         );
         jfModHoraCosteLayout.setVerticalGroup(
             jfModHoraCosteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -940,41 +1070,23 @@ public class VAdmi extends javax.swing.JFrame {
                 .addGroup(jfModHoraCosteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel36)
                     .addComponent(jcbxEspHorarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel37)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jfModHoraCosteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel38)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel40)
-                    .addComponent(jftfEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jfModHoraCosteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel39)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel41)
-                    .addComponent(jftfEntrada1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jfModHoraCosteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnActHorarios)
-                    .addComponent(btnAddHorario, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                .addGroup(jfModHoraCosteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jfModHoraCosteLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18))
+                    .addGroup(jfModHoraCosteLayout.createSequentialGroup()
+                        .addGap(170, 170, 170)
+                        .addComponent(btnClean)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(jLabel32)
-                .addGap(18, 18, 18)
-                .addGroup(jfModHoraCosteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jcbxEspCosto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel33))
-                .addGap(18, 18, 18)
-                .addGroup(jfModHoraCosteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel35)
-                    .addComponent(jTextCosto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel34)
-                    .addComponent(btnActCosto))
-                .addGap(37, 37, 37)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnRetornar6, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(25, 25, 25))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -1203,13 +1315,16 @@ public class VAdmi extends javax.swing.JFrame {
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnActCosto;
-    private javax.swing.JButton btnActHorarios;
+    public javax.swing.JButton btnActCosto;
+    public javax.swing.JButton btnActHorarios;
     public javax.swing.JButton btnActPerfil;
+    public javax.swing.JButton btnActReportes;
     public javax.swing.JButton btnAddHorario;
     public javax.swing.JButton btnAsistenciaM;
     public javax.swing.JButton btnBusPaciente;
+    public javax.swing.JButton btnClean;
     public javax.swing.JButton btnConfigUser;
+    public javax.swing.JButton btnGenCod;
     public javax.swing.JButton btnHorario;
     public javax.swing.JButton btnHorarioCostos;
     public javax.swing.JButton btnImagen;
@@ -1276,6 +1391,8 @@ public class VAdmi extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -1284,8 +1401,6 @@ public class VAdmi extends javax.swing.JFrame {
     public javax.swing.JTable jTHorarios;
     public javax.swing.JTable jTReportCitaA;
     public javax.swing.JTextField jTextCosto;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     public javax.swing.JComboBox<String> jcbArea;
     public javax.swing.JComboBox<String> jcbMedicos;
     public javax.swing.JComboBox<String> jcbxDoctorNC;
@@ -1297,8 +1412,6 @@ public class VAdmi extends javax.swing.JFrame {
     public javax.swing.JFrame jfModHoraCoste;
     public javax.swing.JFrame jfNuevaCita;
     public javax.swing.JFrame jfReporteCitas;
-    private javax.swing.JFormattedTextField jftfEntrada;
-    private javax.swing.JFormattedTextField jftfEntrada1;
     public javax.swing.JMenu jmArchivo;
     public javax.swing.JMenu jmAyuda;
     public javax.swing.JMenu jmAyuda1;
@@ -1314,6 +1427,10 @@ public class VAdmi extends javax.swing.JFrame {
     public javax.swing.JMenuItem jmiSitioWeb;
     public javax.swing.JMenuItem jmiSitioWeb1;
     public javax.swing.JMenuItem jmiSitioWeb2;
+    public javax.swing.JTextField jtxtDiasH;
+    public javax.swing.JFormattedTextField jtxtHoraEntrada;
+    public javax.swing.JFormattedTextField jtxtHoraSalida;
+    public javax.swing.JTextField jtxtIdHorario;
     public javax.swing.JTextField jtxtPrecioNC;
     public javax.swing.JLabel lbNombre;
     public javax.swing.JLabel lbNumero;

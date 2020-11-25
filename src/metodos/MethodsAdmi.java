@@ -9,10 +9,16 @@ import java.net.URI;
 import javax.swing.*;
 import daos.*;
 import entidades.*;
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableCellEditor;
 import javax.swing.table.TableColumn;
+
+
+
 
 public class MethodsAdmi extends MethodsMain{
     
@@ -21,6 +27,7 @@ public class MethodsAdmi extends MethodsMain{
     DAORegistro daoR=new DAORegistro(); 
     DAOLog daoL=new DAOLog();
     DAOCitas daoC=new DAOCitas();
+    DAOHorario daoH=new DAOHorario();
     DefaultTableModel tabl; 
     
     
@@ -49,19 +56,19 @@ public class MethodsAdmi extends MethodsMain{
    public void mostrarCosto(){ 
         String name = vAdmi.jcbxEspCosto.getSelectedItem().toString();
         String cod=daoR.busCodEsp(name);
-        int cost=daoC.busCosto(cod); 
+        double cost=daoC.busCosto(cod); 
         vAdmi.jTextCosto.setText(String.valueOf(cost));
    } 
       public void mostrarCostoNC(){ 
         String name = vAdmi.jcbxEspecialidadNC.getSelectedItem().toString();
         String cod=daoR.busCodEsp(name);
-        int cost=daoC.busCosto(cod); 
+        double cost=daoC.busCosto(cod); 
         vAdmi.jtxtPrecioNC.setText(String.valueOf(cost));
    }
     
     public void mostrarHor(){
         String nomd = vAdmi.jcbxDoctorNC.getSelectedItem().toString();
-        Horario hor=daoC.busHorario(nomd);
+        Horario hor=daoH.busHorario(nomd,1);
         vAdmi.taHorario.setText("Dias: " + hor.getDias() + "\n" + hor.getHinicio() + "-" + hor.getHfin());
     }
     
@@ -82,11 +89,9 @@ public class MethodsAdmi extends MethodsMain{
     public void inTabla(){
         String[] cab1={"Codigo","Medic@","CodEsp","Asistio"};
         String[][] data1={};
-        tablaFE=new DefaultTableModel(data1,cab1);
-        vAdmi.jTAsistencia.setModel(tablaFE);
-        TableColumn columna;
-        columna=vAdmi.jTAsistencia.getColumnModel().getColumn(1);
-        columna.setPreferredWidth(150);
+        tablaFE=new DefaultTableModel(data1,cab1); JTable jt=vAdmi.jTAsistencia;
+        jt.setModel(tablaFE);
+        ajustarColumns(jt, 1, 150);
         acTabla();
     }
     
@@ -147,9 +152,82 @@ public class MethodsAdmi extends MethodsMain{
         for (Cita x : calc) {
             String[] fila = {x.getIdCita(), x.getHoracit(), x.getDiacit(), x.getNompac(), String.valueOf(x.getDnipac()), x.getEstadopac()};
             tabl.addRow(fila);
-
         } 
-    }  
+        ajustarColumns(tabla, 3, 135);
+        ajustarColumns(tabla, 5, 80);
+        editarEstado(tabla, 5);
+    }
+   
+   public double actualizarCosto(){
+       String nombre=vAdmi.jcbxEspCosto.getSelectedItem().toString();
+       String codes=daoR.busCodEsp(nombre);
+       return daoC.actCosto(codes, Double.parseDouble(vAdmi.jTextCosto.getText()));
+   }
+   
+   public void tablaHorarios(JTable tabla,String nombre){
+       JButton btnMod=new JButton("");
+       btnMod.setName("btnMod");
+       JButton btnDel=new JButton("");
+       btnDel.setName("btnDel");
+       tabla.setDefaultRenderer(Object.class, new Render());
+       btnMod.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/modificarH.png")));
+       btnDel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/eliminar.png")));
+        String[] cab1 = {"ID", "Dias", "Horario","Modificar","Eliminar"};
+        String[][] data1 = {};
+        tabl = new DefaultTableModel(data1, cab1);
+        tabla.setModel(tabl); String codes=daoR.busCodEsp(nombre);
+        List<Horario> lisH=daoH.lisHorarios(codes);
+        
+        for (Horario x : lisH) {
+            Object[] fila = {x.getIdhor(), x.getDias(), x.getHinicio()+"-"+x.getHfin(),btnMod,btnDel};
+           
+            tabl.addRow(fila);
+        } 
+        ajustarColumns(tabla, 2, 80);
+       tabla.setRowHeight(30);
+    }
+   
+   public void modHorario(String id){
+       Horario h=daoH.busHorario(id, 2);
+       vAdmi.jtxtIdHorario.setText(h.getIdhor());
+       vAdmi.jtxtDiasH.setText(h.getDias());
+       vAdmi.jtxtHoraEntrada.setText(h.getHinicio());
+       vAdmi.jtxtHoraSalida.setText(h.getHfin());
+   }
+   
+    public Horario dataH() {
+        String codes = daoR.busCodEsp(vAdmi.jcbxEspHorarios.getSelectedItem().toString());
+        String id = vAdmi.jtxtIdHorario.getText();
+        String days = vAdmi.jtxtDiasH.getText();
+        String hi = vAdmi.jtxtHoraEntrada.getText();
+        String hf = vAdmi.jtxtHoraSalida.getText();
+        Horario h = new Horario(id, codes, days, hi, hf);
+        return h;
+    }
+   
+   public void addHorarioN(){
+            Horario h=dataH(); String id=h.getIdhor();String days=h.getDias();String hi=h.getHinicio();
+            String hf=h.getHfin();String codes=h.getCodes();
+            
+            if(id.equals("")){
+                JOptionPane.showMessageDialog(null, "¡Debe generar un código de cita!");
+            }
+            if(days.equals("") || hi.equals("  :  ") || hf.equals("  :  ") || codes.equals("")){
+                JOptionPane.showMessageDialog(null, "Faltan datos por ingresar");
+            }
+            if(!id.equals("") && !days.equals("") && !hi.equals("  :  ") && !hf.equals("  :  ") && !codes.equals("")){
+               daoH.addHorario(h); 
+            }
+   }
+   
+   public void deleteHorario(String id){
+       daoH.delHorario(id);
+   }
+   
+   public void actualizarH(){
+       Horario h=dataH();
+       daoH.actHorarios(h);
+   }
    
 }
 

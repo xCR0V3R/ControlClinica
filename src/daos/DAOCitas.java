@@ -149,42 +149,7 @@ public class DAOCitas {
         return lis;
     }
     
-    //lista para hora inicial
-    
-    public Horario busHorario(String nom) {
-        Horario h=null;
-        Connection conn = null;
-
-        try {
-            conn = MySQLConexion.getConexion();
-            String sql = "select h.codes, dias, hfin, hinicio, h.idhor\n" +
-                         "from horario h inner join medico m\n" +
-                         "on h.idhor=m.idhor where nombre=?";
-            PreparedStatement st = conn.prepareStatement(sql);
-            st.setString(1, nom);
-            ResultSet rs = st.executeQuery();
-            if (rs.next()) {
-                h= new Horario();
-                h.setCodes(rs.getString(1));
-                h.setDias(rs.getString(2));
-                h.setHfin(rs.getString(3));
-                h.setHinicio(rs.getString(4));
-                h.setIdhor(rs.getString(5));
-                
-            }
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        } finally {
-            try {
-
-                if (conn != null) {
-                    conn.close();
-                }
-            } catch (Exception e2) {
-            }
-        }
-        return h;
-    }
+   
     
     public String busPac(String id){
         String est="";
@@ -213,8 +178,8 @@ public class DAOCitas {
         return est;
     }  
     
-    public int busCosto(String cod){
-        int cos=0;
+    public double busCosto(String cod){
+        double cos=0;
         Connection conn = null;
         try {
             conn = MySQLConexion.getConexion();
@@ -223,7 +188,7 @@ public class DAOCitas {
             st.setString(1, cod);
             ResultSet rs = st.executeQuery();
             while (rs.next()) {
-               cos=rs.getInt(1);
+               cos=rs.getDouble(1);
             }
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -335,6 +300,68 @@ public class DAOCitas {
         }
 
         return lis;
-    }  
+    }
+  
+    public double actCosto(String nom, double costo){
+         
+         Connection conn = null;
+	 try{
+             String sql = "Update especialidad set costo=? where codes=?";
+             conn = MySQLConexion.getConexion();
+             PreparedStatement st = conn.prepareStatement(sql);
+             st.setDouble(1, costo);
+             st.setString(2, nom);
+             st.executeUpdate();
+             JOptionPane.showMessageDialog(null, "¡Horario Actualizado!");
+	 }catch(Exception ex){
+		 ex.printStackTrace();
+	 }finally{
+			try {
+			
+				if(conn!= null) conn.close();
+			} catch (Exception e2) {}
+		}
+         return costo;
+		
+	}
+
+     public void actEstadoCita(List<Cita> lis){
+         Cita cit=null;
+         Connection conn = null;
+	 try{
+             int siz=lis.size();
+             String sql="";
+             conn = MySQLConexion.getConexion();
+             for (int i = 0; i < siz; i++) {
+                 cit = lis.get(i);
+                 if(cit.getEstadopac().equals("Cancelado")){
+                     sql = "Delete from citas where id=?";
+                     PreparedStatement st = conn.prepareStatement(sql);
+                     st.setString(1, cit.getIdCita());
+                     st.executeUpdate();
+                 }
+                 else {
+                     sql = "Update citas set estado=? where id=?";
+                     PreparedStatement st = conn.prepareStatement(sql);
+                     st.setString(1, cit.getEstadopac());
+                     st.setString(2, cit.getIdCita());
+                     st.executeUpdate();
+                 }
+                
+             }
+         
+	 }catch(Exception ex){
+		 ex.printStackTrace();
+	 }finally{
+			try {
+			
+				if(conn!= null) conn.close();
+			} catch (Exception e2) {}
+		}
+
+		
+	}
+     
+    
     
 }
