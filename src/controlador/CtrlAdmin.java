@@ -66,14 +66,8 @@ public class CtrlAdmin implements ActionListener, MouseListener{
         this.vAdmi.btnCleanNC.addActionListener(this);
         
         //VALOR EXTRA - AYUDA
-        this.vAdmi.jmiAyuda1.addActionListener(this);
-        this.vAdmi.jmiAyuda2.addActionListener(this);
-        this.vAdmi.jmiForo.addActionListener(this);
-        this.vAdmi.jmiForo1.addActionListener(this);
-        this.vAdmi.jmiForo2.addActionListener(this);
-        this.vAdmi.jmiSitioWeb.addActionListener(this);
-        this.vAdmi.jmiSitioWeb1.addActionListener(this);
-        this.vAdmi.jmiSitioWeb2.addActionListener(this);
+        this.vAdmi.jmAyudaRC.addMouseListener(this);
+        this.vAdmi.jmAyudaNC.addMouseListener(this);
     } 
     
         
@@ -228,32 +222,6 @@ public class CtrlAdmin implements ActionListener, MouseListener{
             vAdmi.setVisible(true);
         }
         
-        /*VALOR EXTRA-SUPPORT
-        
-        if(e.getSource()==ad.jmiAyuda1){
-             url.support("https://www.clinicainternacional.com.pe/");
-        }
-        if(e.getSource()==ad.jmiAyuda2){
-             url.support("https://www.clinicainternacional.com.pe/");
-        }
-        if(e.getSource()==ad.jmiForo){
-             url.support("https://www.clinicainternacional.com.pe/");
-        }
-        if(e.getSource()==ad.jmiForo1){
-             url.support("https://www.clinicainternacional.com.pe/");
-        }
-        if(e.getSource()==ad.jmiForo2){
-             url.support("https://www.clinicainternacional.com.pe/");
-        }
-        if(e.getSource()==ad.jmiSitioWeb){
-             url.support("https://www.clinicainternacional.com.pe/");
-        }
-        if(e.getSource()==ad.jmiSitioWeb1){
-             url.support("https://www.clinicainternacional.com.pe/");
-        }
-        if(e.getSource()==ad.jmiSitioWeb2){
-             url.support("https://www.clinicainternacional.com.pe/");
-        }*/
     }
 
     @Override
@@ -296,6 +264,45 @@ public class CtrlAdmin implements ActionListener, MouseListener{
            }
            
        }
+       
+        if(e.getSource()==vAdmi.jmAyudaRC){
+            String mensaje= "-----------------------------Ayuda-----------------------------"
+                    + "\nCombo box: Seleccionador que tiene una pestaña desplegable en la que se "
+                    + "\npueden elegir entre distintas opciones"
+                    + "\nPasos para el uso de esta ventana:"
+                    + "\n1-. Seleccione el combo box de la especialidad a la que desea hacer la consulta de citas"
+                    + "\n2-. Al seleccionar la especialidad, se muestran los respectivos médicos en el combo box "
+                    + "\nde médicos según la especialidad que usted eligió, seleccione el médico al cual desearía"
+                    + "\nhacer la consulta de citas"
+                    + "\n3-.Al terminar de seleccionar sus opciones de preferencia en el combo box, debe hacerle "
+                    + "\n clic al botón 'Mostrar' para que se visualicen los datos en la tabla, en el caso de que"
+                    + "\n se haya modificado un dato de la tabla en ese instante, se debería dar clic en el botón"
+                    + "\n 'Actualizar' para mostrar los datos nuevos"
+                    + "\n4-. Si desea volver a la ventana anterior, de clic en el botón 'Retornar'"
+                    + "\n5-. En caso desee salir del programa, de clic en el botón 'Salir'";
+            JOptionPane.showMessageDialog(null, mensaje);
+        }
+        if(e.getSource()==vAdmi.jmAyudaNC){
+            String mensaje= "-----------------------------Ayuda-----------------------------"
+                    + "\nCombo box: Seleccionador que tiene una pestaña desplegable en la que se "
+                    + "\npueden elegir entre distintas opciones"
+                    + "\nPasos para el uso de esta ventana:"
+                    + "\n1-. Seleccione el combo box de la especialidad a la que desea hacer la agregación de citas"
+                    + "\n2-. Al seleccionar la especialidad, se muestran los respectivos médicos en el combo box "
+                    + "\nde médicos según la especialidad que usted eligió, seleccione el médico al cual desearía"
+                    + "\nhacer la agregación de una cita"
+                    + "\n3-.Al terminar de seleccionar sus opciones de preferencia en el combo box, debe hacerle "
+                    + "\nclic al botón con ícono de calendario para que se visualicen los horarios de cada médico"
+                    + "\n4-. Ingrese el DNI del paciente, y presione en el botón con forma de Lupa, este indicará "
+                    + "\nsi es que el paciente ya existe en la base de datos, en caso de que no exista entonces a"
+                    + "\nusted se le solicitará ingresar los demás datos del paciente nuevo, que son Nombre y Teléfono"
+                    + "\n5-. Luego de rellenar todos los campos, de clic en registrar"
+                    + "\n6-. El botón de brocha borra manualmente todos los datos dentro de los recuadros de texto cuando"
+                    + "\nusted lo requiera"
+                    + "\n7-. Si desea volver a la ventana anterior, de clic en el botón 'Retornar'"
+                    + "\n8-. En caso desee salir del programa, de clic en el botón 'Salir'";
+            JOptionPane.showMessageDialog(null, mensaje);
+        }
     }
 
     @Override

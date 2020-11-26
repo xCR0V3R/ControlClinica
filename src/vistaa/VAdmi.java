@@ -51,14 +51,7 @@ public class VAdmi extends javax.swing.JFrame {
         btnMostrarCita = new javax.swing.JButton();
         btnActReportes = new javax.swing.JButton();
         jMenuBar2 = new javax.swing.JMenuBar();
-        jmArchivo = new javax.swing.JMenu();
-        jmExportar = new javax.swing.JMenu();
-        jmiExcel = new javax.swing.JMenuItem();
-        jmiPDF = new javax.swing.JMenuItem();
-        jmAyuda1 = new javax.swing.JMenu();
-        jmiAyuda1 = new javax.swing.JMenuItem();
-        jmiForo1 = new javax.swing.JMenuItem();
-        jmiSitioWeb1 = new javax.swing.JMenuItem();
+        jmAyudaRC = new javax.swing.JMenu();
         jfNuevaCita = new javax.swing.JFrame();
         btnRegistrar = new javax.swing.JButton();
         btnRetornar3 = new javax.swing.JButton();
@@ -95,10 +88,7 @@ public class VAdmi extends javax.swing.JFrame {
         jLabel43 = new javax.swing.JLabel();
         btnCleanNC = new javax.swing.JButton();
         jMenuBar3 = new javax.swing.JMenuBar();
-        jmAyuda2 = new javax.swing.JMenu();
-        jmiAyuda2 = new javax.swing.JMenuItem();
-        jmiForo2 = new javax.swing.JMenuItem();
-        jmiSitioWeb2 = new javax.swing.JMenuItem();
+        jmAyudaNC = new javax.swing.JMenu();
         jfAsisMedica = new javax.swing.JFrame();
         jLabel8 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
@@ -136,6 +126,7 @@ public class VAdmi extends javax.swing.JFrame {
         jLabel39 = new javax.swing.JLabel();
         jLabel37 = new javax.swing.JLabel();
         btnClean = new javax.swing.JButton();
+        jMenuItem1 = new javax.swing.JMenuItem();
         btnReportes = new javax.swing.JButton();
         btnNuevoP = new javax.swing.JButton();
         btnConfigUser = new javax.swing.JButton();
@@ -165,7 +156,7 @@ public class VAdmi extends javax.swing.JFrame {
         jPanel2.add(btnActPerfil);
         btnActPerfil.setBounds(190, 340, 130, 28);
         jPanel2.add(configNombre);
-        configNombre.setBounds(162, 134, 223, 20);
+        configNombre.setBounds(162, 134, 223, 22);
 
         btnRetornar1.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
         btnRetornar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/volver.png"))); // NOI18N
@@ -173,7 +164,7 @@ public class VAdmi extends javax.swing.JFrame {
         jPanel2.add(btnRetornar1);
         btnRetornar1.setBounds(50, 340, 110, 28);
         jPanel2.add(configNac);
-        configNac.setBounds(162, 182, 176, 20);
+        configNac.setBounds(162, 182, 176, 22);
 
         jLabel10.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(102, 0, 51));
@@ -206,9 +197,9 @@ public class VAdmi extends javax.swing.JFrame {
         jPanel2.add(jLabel15);
         jLabel15.setBounds(36, 25, 262, 72);
         jPanel2.add(configCorreo);
-        configCorreo.setBounds(160, 230, 190, 20);
+        configCorreo.setBounds(160, 230, 190, 22);
         jPanel2.add(configPswd);
-        configPswd.setBounds(160, 270, 190, 20);
+        configPswd.setBounds(160, 270, 190, 22);
 
         javax.swing.GroupLayout jfConfigPLayout = new javax.swing.GroupLayout(jfConfigP.getContentPane());
         jfConfigP.getContentPane().setLayout(jfConfigPLayout);
@@ -306,44 +297,9 @@ public class VAdmi extends javax.swing.JFrame {
         btnActReportes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/actualizar.png"))); // NOI18N
         btnActReportes.setText("Actualizar");
 
-        jmArchivo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/menu1.png"))); // NOI18N
-        jmArchivo.setText("Archivo");
-
-        jmExportar.setText("Exportar como ...");
-
-        jmiExcel.setText("Excel");
-        jmExportar.add(jmiExcel);
-
-        jmiPDF.setText("PDF");
-        jmiPDF.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jmiPDFActionPerformed(evt);
-            }
-        });
-        jmExportar.add(jmiPDF);
-
-        jmArchivo.add(jmExportar);
-
-        jMenuBar2.add(jmArchivo);
-
-        jmAyuda1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ayuda.png"))); // NOI18N
-        jmAyuda1.setText("Ayuda");
-
-        jmiAyuda1.setText("Ayuda de CliniMax");
-        jmiAyuda1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jmiAyuda1ActionPerformed(evt);
-            }
-        });
-        jmAyuda1.add(jmiAyuda1);
-
-        jmiForo1.setText("Foro de soporte CliniMax");
-        jmAyuda1.add(jmiForo1);
-
-        jmiSitioWeb1.setText("Sitio web de CliniMax");
-        jmAyuda1.add(jmiSitioWeb1);
-
-        jMenuBar2.add(jmAyuda1);
+        jmAyudaRC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ayuda.png"))); // NOI18N
+        jmAyudaRC.setText("Ayuda");
+        jMenuBar2.add(jmAyudaRC);
 
         jfReporteCitas.setJMenuBar(jMenuBar2);
 
@@ -470,7 +426,7 @@ public class VAdmi extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(dtCita, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel22))
-                .addContainerGap(11, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -676,19 +632,9 @@ public class VAdmi extends javax.swing.JFrame {
             }
         });
 
-        jmAyuda2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ayuda.png"))); // NOI18N
-        jmAyuda2.setText("Ayuda");
-
-        jmiAyuda2.setText("Ayuda de CliniMax");
-        jmAyuda2.add(jmiAyuda2);
-
-        jmiForo2.setText("Foro de soporte CliniMax");
-        jmAyuda2.add(jmiForo2);
-
-        jmiSitioWeb2.setText("Sitio Web de CliniMax");
-        jmAyuda2.add(jmiSitioWeb2);
-
-        jMenuBar3.add(jmAyuda2);
+        jmAyudaNC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ayuda.png"))); // NOI18N
+        jmAyudaNC.setText("Ayuda");
+        jMenuBar3.add(jmAyudaNC);
 
         jfNuevaCita.setJMenuBar(jMenuBar3);
 
@@ -1109,6 +1055,8 @@ public class VAdmi extends javax.swing.JFrame {
                 .addGap(25, 25, 25))
         );
 
+        jMenuItem1.setText("jMenuItem1");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(412, 459));
 
@@ -1276,14 +1224,6 @@ public class VAdmi extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnNuevoPActionPerformed
 
-    private void jmiPDFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiPDFActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jmiPDFActionPerformed
-
-    private void jmiAyuda1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiAyuda1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jmiAyuda1ActionPerformed
-
     private void jcbxEspecialidadNCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbxEspecialidadNCActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jcbxEspecialidadNCActionPerformed
@@ -1416,6 +1356,7 @@ public class VAdmi extends javax.swing.JFrame {
     public javax.swing.JMenuBar jMenuBar1;
     public javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JMenuBar jMenuBar3;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -1441,21 +1382,11 @@ public class VAdmi extends javax.swing.JFrame {
     public javax.swing.JFrame jfModHoraCoste;
     public javax.swing.JFrame jfNuevaCita;
     public javax.swing.JFrame jfReporteCitas;
-    public javax.swing.JMenu jmArchivo;
     public javax.swing.JMenu jmAyuda;
-    public javax.swing.JMenu jmAyuda1;
-    private javax.swing.JMenu jmAyuda2;
-    public javax.swing.JMenu jmExportar;
-    public javax.swing.JMenuItem jmiAyuda1;
-    public javax.swing.JMenuItem jmiAyuda2;
-    public javax.swing.JMenuItem jmiExcel;
+    public javax.swing.JMenu jmAyudaNC;
+    public javax.swing.JMenu jmAyudaRC;
     public javax.swing.JMenuItem jmiForo;
-    public javax.swing.JMenuItem jmiForo1;
-    public javax.swing.JMenuItem jmiForo2;
-    public javax.swing.JMenuItem jmiPDF;
     public javax.swing.JMenuItem jmiSitioWeb;
-    public javax.swing.JMenuItem jmiSitioWeb1;
-    public javax.swing.JMenuItem jmiSitioWeb2;
     public javax.swing.JTextField jtxtDiasH;
     public javax.swing.JFormattedTextField jtxtHoraEntrada;
     public javax.swing.JFormattedTextField jtxtHoraSalida;

@@ -491,49 +491,7 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
           <SubComponents>
-            <Menu class="javax.swing.JMenu" name="jmArchivo">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/imagenes/menu1.png"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Archivo"/>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-              </AuxValues>
-              <SubComponents>
-                <Menu class="javax.swing.JMenu" name="jmExportar">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Exportar como ..."/>
-                  </Properties>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-                  </AuxValues>
-                  <SubComponents>
-                    <MenuItem class="javax.swing.JMenuItem" name="jmiExcel">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Excel"/>
-                      </Properties>
-                      <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-                      </AuxValues>
-                    </MenuItem>
-                    <MenuItem class="javax.swing.JMenuItem" name="jmiPDF">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="PDF"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jmiPDFActionPerformed"/>
-                      </Events>
-                      <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-                      </AuxValues>
-                    </MenuItem>
-                  </SubComponents>
-                </Menu>
-              </SubComponents>
-            </Menu>
-            <Menu class="javax.swing.JMenu" name="jmAyuda1">
+            <Menu class="javax.swing.JMenu" name="jmAyudaRC">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/imagenes/ayuda.png"/>
@@ -543,35 +501,6 @@
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
-              <SubComponents>
-                <MenuItem class="javax.swing.JMenuItem" name="jmiAyuda1">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Ayuda de CliniMax"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jmiAyuda1ActionPerformed"/>
-                  </Events>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-                  </AuxValues>
-                </MenuItem>
-                <MenuItem class="javax.swing.JMenuItem" name="jmiForo1">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Foro de soporte CliniMax"/>
-                  </Properties>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-                  </AuxValues>
-                </MenuItem>
-                <MenuItem class="javax.swing.JMenuItem" name="jmiSitioWeb1">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Sitio web de CliniMax"/>
-                  </Properties>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-                  </AuxValues>
-                </MenuItem>
-              </SubComponents>
             </Menu>
           </SubComponents>
         </Menu>
@@ -763,7 +692,7 @@
                           </Group>
                           <Component id="jLabel22" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="11" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1238,39 +1167,16 @@
         </Component>
         <Menu class="javax.swing.JMenuBar" name="jMenuBar3">
           <SubComponents>
-            <Menu class="javax.swing.JMenu" name="jmAyuda2">
+            <Menu class="javax.swing.JMenu" name="jmAyudaNC">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/imagenes/ayuda.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Ayuda"/>
               </Properties>
-              <SubComponents>
-                <MenuItem class="javax.swing.JMenuItem" name="jmiAyuda2">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Ayuda de CliniMax"/>
-                  </Properties>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-                  </AuxValues>
-                </MenuItem>
-                <MenuItem class="javax.swing.JMenuItem" name="jmiForo2">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Foro de soporte CliniMax"/>
-                  </Properties>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-                  </AuxValues>
-                </MenuItem>
-                <MenuItem class="javax.swing.JMenuItem" name="jmiSitioWeb2">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Sitio Web de CliniMax"/>
-                  </Properties>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-                  </AuxValues>
-                </MenuItem>
-              </SubComponents>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </Menu>
           </SubComponents>
         </Menu>
@@ -2008,6 +1914,11 @@
         </Component>
       </SubComponents>
     </Container>
+    <Component class="javax.swing.JMenuItem" name="jMenuItem1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jMenuItem1"/>
+      </Properties>
+    </Component>
     <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
