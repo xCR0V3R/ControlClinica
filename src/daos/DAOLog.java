@@ -64,7 +64,8 @@ public class DAOLog {
             }
 
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error de Conexion");
+            e.printStackTrace();
+           JOptionPane.showMessageDialog(null, "Error de Conexion");
         }
         return cod;
     }
@@ -171,17 +172,15 @@ public class DAOLog {
 	}
     
     public Usuario modUser(Usuario user, String cod, String nom, String fec, String correo, String pswd){
-        
-        
-         Connection conn = null;
+        Connection conn = null;
 	 try{
              String sql="";
                 if(user instanceof Medico ){
-                    //user=new Medico();
+                    
                     sql = "Update medico set nombre=?, nac=?, correo=?, pswd=? where codmed=?";
                 }
                 if(user instanceof Administrador ){
-                   // user=new Administrador();
+                   
                     sql = "Update administrador set nombre=?, nac=?, correo=?, pswd=? where codad=?";
                     System.out.println("PASO PARA ADMI");
                 }
@@ -208,25 +207,22 @@ public class DAOLog {
             return user;
     }
     
-    
-    
-  
-    
-    
-    public String codAdmi(String id){
-        String est="";
+     public String busNuevosMed() {
+        int nueMed=0;String idhors="",txt="";
+         List<Medico> med=new ArrayList<>();
         Connection conn = null;
         try {
             conn = MySQLConexion.getConexion();
-            String sql = "SELECT codad\n" +
-                         "FROM administrador\n" +
-                         "WHERE correo=?";
+            String sql = "select idhor from Medico";
             PreparedStatement st = conn.prepareStatement(sql);
-            st.setString(1, id);
             ResultSet rs = st.executeQuery();
-            if (rs.next()) {
-                est=rs.getString(1);
+            while (rs.next()) {
+                idhors=rs.getString(1);
+                if(idhors.equals("")){
+                    nueMed++;
+                }
             }
+            txt="Asignar horarios ("+nueMed+")";
         } catch (Exception ex) {
             ex.printStackTrace();
         } finally {
@@ -238,34 +234,11 @@ public class DAOLog {
             } catch (Exception e2) {
             }
         }
-        return est;
-    }  
-    
-    public String codMed(String id){
-        String est="";
-        Connection conn = null;
-        try {
-            conn = MySQLConexion.getConexion();
-            String sql = "SELECT codmed\n" +
-                         "FROM medico\n" +
-                         "WHERE correo=?";
-            PreparedStatement st = conn.prepareStatement(sql);
-            st.setString(1, id);
-            ResultSet rs = st.executeQuery();
-            if (rs.next()) {
-                est=rs.getString(1);
-            }
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        } finally {
-            try {
 
-                if (conn != null) {
-                    conn.close();
-                }
-            } catch (Exception e2) {
-            }
-        }
-        return est;
-    }  
+        return txt;
+
+    }
+    
+   
+   
 }

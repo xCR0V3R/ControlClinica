@@ -28,43 +28,51 @@ public class CtrlAdmin implements ActionListener, MouseListener{
         this.vAdmi = vAdmi; this.objAdmi=objAdmi; 
         metAdmi=new MethodsAdmi(this.vAdmi);
         JOptionPane.showMessageDialog(null, "Espere 10 segundos, por favor");
-        metAdmi.welcome(this.objAdmi, this.vAdmi.btnImagen, this.vAdmi.jLBienvenidoA, this.objAdmi.getNombre());
+        metAdmi.welcome(this.objAdmi, this.vAdmi.btnImagen, this.vAdmi.jLBienvenidoA, this.objAdmi.getNombre(),0);
         metAdmi.inJcbxEspecialidad();
+        metAdmi.nuevosMedicos();
         metAdmi.openJFrame(this.vAdmi,"ADMINISTRADOR");
+        //BOTONES
         this.vAdmi.btnConfigUser.addActionListener(this);
         this.vAdmi.btnLogout.addActionListener(this);
         this.vAdmi.btnSalir2.addActionListener(this);
         this.vAdmi.btnSalir3.addActionListener(this);
         this.vAdmi.btnReportes.addActionListener(this);
         this.vAdmi.btnNuevoP.addActionListener(this);
-         this.vAdmi.btnRetornar1.addActionListener(this);
+        this.vAdmi.btnRetornar1.addActionListener(this);
         this.vAdmi.btnRetornar2.addActionListener(this);
         this.vAdmi.btnRetornar3.addActionListener(this);
         this.vAdmi.btnRetornar5.addActionListener(this);
         this.vAdmi.btnRetornar6.addActionListener(this);
+        this.vAdmi.btnVolverNH.addActionListener(this);
         this.vAdmi.btnBusPaciente.addActionListener(this);
         this.vAdmi.btnRegistrar.addActionListener(this);
         this.vAdmi.btnAsistenciaM.addActionListener(this);
         this.vAdmi.btnReiniciar.addActionListener(this);
         this.vAdmi.btnMostrarCita.addActionListener(this);
-        this.vAdmi.jcbxEspecialidadNC.addActionListener(this);
-        this.vAdmi.jcbxDoctorNC.addActionListener(this);
         this.vAdmi.btnHorario.addActionListener(this);
-        this.vAdmi.btnHorarioCostos.addActionListener(this);
-        this.vAdmi.jcbArea.addActionListener(this); 
-        this.vAdmi.jcbMedicos.addActionListener(this);
-        this.vAdmi.jcbxEspCosto.addActionListener(this);
         this.vAdmi.btnActPerfil.addActionListener(this);
         this.vAdmi.btnActReportes.addActionListener(this);
-        this.vAdmi.jcbxEspHorarios.addActionListener(this);
         this.vAdmi.btnActHorarios.addActionListener(this);
         this.vAdmi.btnClean.addActionListener(this);
         this.vAdmi.btnGenCod.addActionListener(this);
         this.vAdmi.btnAddHorario.addActionListener(this);
         this.vAdmi.btnActCosto.addActionListener(this);
-        this.vAdmi.jTHorarios.addMouseListener(this);
         this.vAdmi.btnCleanNC.addActionListener(this);
-        
+        this.vAdmi.btnHorarioCostos.addActionListener(this);
+        this.vAdmi.btnAsigHor.addActionListener(this);
+        this.vAdmi.btnSalir7.addActionListener(this);
+        //COMBO BOX
+        this.vAdmi.jcbxEspecialidadNC.addActionListener(this);
+        this.vAdmi.jcbxDoctorNC.addActionListener(this);
+        this.vAdmi.jcbArea.addActionListener(this); 
+        this.vAdmi.jcbMedicos.addActionListener(this);
+        this.vAdmi.jcbxEspCosto.addActionListener(this);
+        this.vAdmi.jcbxEspHorarios.addActionListener(this);
+        this.vAdmi.jcbxEspAsignarH.addActionListener(this);
+        //TABLAS
+        this.vAdmi.jTHorarios.addMouseListener(this);
+        this.vAdmi.jTNuevosMedicos.addMouseListener(this);
         //VALOR EXTRA - AYUDA
         this.vAdmi.jmAyudaRC.addMouseListener(this);
         this.vAdmi.jmAyudaNC.addMouseListener(this);
@@ -80,6 +88,9 @@ public class CtrlAdmin implements ActionListener, MouseListener{
            System.exit(0);
         }
         if(e.getSource()==vAdmi.btnSalir3){
+           System.exit(0);
+        }
+        if(e.getSource()==vAdmi.btnSalir7){
            System.exit(0);
         }
         if(e.getSource()==vAdmi.btnConfigUser){
@@ -100,10 +111,15 @@ public class CtrlAdmin implements ActionListener, MouseListener{
             vAdmi.jtxtHoraSalida.setText("");
           }
         
+         
+         if(e.getSource()==vAdmi.btnAsigHor){
+             metAdmi.tablaBotonesExtra(vAdmi.jTNuevosMedicos, "", 2);
+            metAdmi.openJFrame(vAdmi.jfAsignarHorarios, "Asignar nuevos horarios");
+          }        
               
          if(e.getSource()== vAdmi.btnAddHorario){
            metAdmi.addHorarioN();
-           metAdmi.tablaHorarios(vAdmi.jTHorarios, vAdmi.jcbxEspHorarios.getSelectedItem().toString());
+           metAdmi.tablaBotonesExtra(vAdmi.jTHorarios, vAdmi.jcbxEspHorarios.getSelectedItem().toString(),1);
           }       
         
         if(e.getSource()==vAdmi.btnNuevoP){
@@ -143,12 +159,16 @@ public class CtrlAdmin implements ActionListener, MouseListener{
         
         if(e.getSource()==vAdmi.btnActHorarios){
             metAdmi.actualizarH();
-             metAdmi.tablaHorarios(vAdmi.jTHorarios, vAdmi.jcbxEspHorarios.getSelectedItem().toString());
+             metAdmi.tablaBotonesExtra(vAdmi.jTHorarios, vAdmi.jcbxEspHorarios.getSelectedItem().toString(),1);
         }
         
         if(e.getSource()==vAdmi.jcbxEspHorarios){
-            metAdmi.tablaHorarios(vAdmi.jTHorarios, vAdmi.jcbxEspHorarios.getSelectedItem().toString());
+            metAdmi.tablaBotonesExtra(vAdmi.jTHorarios, vAdmi.jcbxEspHorarios.getSelectedItem().toString(),1);
             //IMPLEMENTAR LA LISTA 
+        }
+        
+         if(e.getSource()==vAdmi.jcbxEspAsignarH){
+            metAdmi.tablaShowSchedule();
         }
         
         if (e.getSource() == vAdmi.btnBusPaciente) {
@@ -163,7 +183,7 @@ public class CtrlAdmin implements ActionListener, MouseListener{
         if(e.getSource()==vAdmi.btnAsistenciaM){
         vAdmi.setVisible(false);
         metAdmi.openJFrame(vAdmi.jfAsisMedica,"Asistencia");
-        metAdmi.inTabla();
+        metAdmi.inTablaAsisMed();
         }
         
         if(e.getSource()==vAdmi.btnReiniciar){
@@ -212,58 +232,33 @@ public class CtrlAdmin implements ActionListener, MouseListener{
             vAdmi.jfModHoraCoste.setVisible(false);
         }
         
+         if(e.getSource()==vAdmi.btnVolverNH){
+            metAdmi.nuevosMedicos();
+            vAdmi.setVisible(true);
+            vAdmi.jfAsignarHorarios.setVisible(false);
+        }
+        
         //Actualizar Perfil
         if(e.getSource()==vAdmi.btnActPerfil){
            metAdmi.actDatosUser(objAdmi,objAdmi.getCodad(),vAdmi.configNac,
                                 vAdmi.configNombre.getText(),vAdmi.configCorreo.getText(),
                                 vAdmi.configPswd.getText());
+           metAdmi.welcome(objAdmi, vAdmi.btnImagen,vAdmi.jLBienvenidoA, "",1);
             JOptionPane.showMessageDialog(null, "Datos actualizados");
-            vAdmi.jfConfigP.setVisible(false);
-            vAdmi.setVisible(true);
+            
         }
         
     }
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        JTable jt=vAdmi.jTHorarios;
-       if(e.getSource()==jt){
-           int column=jt.getColumnModel().getColumnIndexAtX(e.getX());
-           int row=e.getY()/jt.getRowHeight();
-           if(column<=jt.getColumnCount() && column>=0 && row<=jt.getRowCount() && row >=0){
-               Object ob=jt.getValueAt(row, column); 
-               if(ob instanceof JButton){
-                   ((JButton)ob).doClick();
-                   JButton botones=(JButton)ob;
-                   if(botones.getName().equals("btnMod")){
-                       String cod=String.valueOf(jt.getValueAt(row, 0));
-                       metAdmi.modHorario(cod);
-                       //JOptionPane.showMessageDialog(null, "MODIFICAR\nCODIGO:"+cod);
-                   }
-                   if(botones.getName().equals("btnDel")){
-                       String cod=String.valueOf(jt.getValueAt(row, 0));
-                       int op=0;
-                       try{
-                            op=Integer.parseInt(JOptionPane.showInputDialog("¿Está seguro que eliminará el horario de código: "+cod
-                               +"?\n1.SÍ\n2.NO"));
-                            if(op==1) {
-                                metAdmi.deleteHorario(cod);
-                                metAdmi.tablaHorarios(vAdmi.jTHorarios, vAdmi.jcbxEspHorarios.getSelectedItem().toString());
-                                
-                            }
-                            if(op==2) JOptionPane.showMessageDialog(null, "ASAAA CASI WE :V");
-                       }catch (Exception ex) {
-                           JOptionPane.showMessageDialog(null, "¡ERROR! \nDetalle: "+ex);
-                       }
-                      
-                      
-                       
-                       //JOptionPane.showMessageDialog(null, "ELIMINADO");
-                   }
-               }
-           }
-           
-       }
+        
+       if(e.getSource()==vAdmi.jTHorarios){
+          metAdmi.metodosinTable(vAdmi.jTHorarios, e, 1);
+        }
+       if(e.getSource()==vAdmi.jTNuevosMedicos){
+          metAdmi.metodosinTable(vAdmi.jTNuevosMedicos, e, 2);
+        }
        
         if(e.getSource()==vAdmi.jmAyudaRC){
             String mensaje= "-----------------------------Ayuda-----------------------------"

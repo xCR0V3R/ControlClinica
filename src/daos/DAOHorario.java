@@ -57,16 +57,19 @@ public class DAOHorario {
                 sql = "select h.codes, dias, hfin, hinicio, h.idhor\n"
                         + "from horario h inner join medico m\n"
                         + "on h.idhor=m.idhor where nombre=?";
-                
+                System.out.println("ENTRO A SQL 1");
             }
             else{
                 sql = "select codes, dias, hfin, hinicio, idhor from horario where idhor=?";
             }
             
                 st = conn.prepareStatement(sql);
+                System.out.println("PASO PreparedStatement");
                 st.setString(1, nom);
                 rs = st.executeQuery();
+                 System.out.println("HIZO EL QUERY");
             if (rs.next()) {
+                System.out.println("Entro al WHILE");
                 h= new Horario();
                 h.setCodes(rs.getString(1));
                 h.setDias(rs.getString(2));
@@ -77,6 +80,7 @@ public class DAOHorario {
             }
         } catch (Exception ex) {
             ex.printStackTrace();
+            System.out.println("entro a esta exception");
         } finally {
             try {
 
@@ -205,4 +209,31 @@ public class DAOHorario {
 
 		
 	}
+         
+         public void addHorNewMed(String id, String nom) {
+        Connection conn = null; 
+        try {
+            String sql = "Update medico set idhor=? where nombre=?";
+             conn = MySQLConexion.getConexion();
+             
+             PreparedStatement st = conn.prepareStatement(sql);
+             
+             st.setString(1, id);
+             st.setString(2, nom);
+             st.executeUpdate();
+             JOptionPane.showMessageDialog(null, "¡Horario Actualizado!");
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            try {
+       if (conn != null) {
+                    conn.close();
+                }
+            } catch (Exception e2) {
+            }
+        }
+
+    }
+         
+         
 }

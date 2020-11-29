@@ -120,14 +120,14 @@ public class DAORegistro {
     public List<Medico> lisMed() {
         List<Medico> lis = new ArrayList<>();
         Connection conn = null;
-
+        String sql="";
         try {
-            conn = MySQLConexion.getConexion();
-            String sql = "select * from Medico";
-            PreparedStatement st = conn.prepareStatement(sql);
-            ResultSet rs = st.executeQuery();
+           conn = MySQLConexion.getConexion();
             
-            while (rs.next()) {
+                sql = "select * from Medico";
+                PreparedStatement st = conn.prepareStatement(sql);
+                ResultSet rs = st.executeQuery();
+                while (rs.next()) {
                 Medico a = new Medico();
                 a.setCodmed(rs.getString(1));
                 a.setCodes(rs.getString(2));
@@ -141,8 +141,76 @@ public class DAORegistro {
                 a.setIdhorario(rs.getString(10));
                 a.setAsistencia(rs.getString(11));
                 lis.add(a);
+            
+          }
+           
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            try {
+
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (Exception e2) {
             }
-            //System.out.println("PASO MEDICOS");
+        }
+
+        return lis;
+    }
+    
+    public List<Medico> asistencia() {
+        List<Medico> lis = new ArrayList<>();
+        Connection conn = null;
+        String sql="";
+        try {
+           conn = MySQLConexion.getConexion();
+            
+                sql = "select codmed, m.nombre doctor, e.nombre especialidad,asis from medico as m inner join especialidad e on m.codes=e.codes";
+                PreparedStatement st = conn.prepareStatement(sql);
+                ResultSet rs = st.executeQuery();
+                while (rs.next()) {
+                Medico a = new Medico();
+                a.setCodmed(rs.getString(1));
+                a.setNombre(rs.getString(2));
+                a.setCodes(rs.getString(3));
+                a.setAsistencia(rs.getString(4));
+                lis.add(a);
+          }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            try {
+
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (Exception e2) {
+            }
+        }
+
+        return lis;
+    }
+    
+    public List<Medico> lisMedNuevos(){
+        List<Medico> lis = new ArrayList<>();
+        Connection conn = null;
+
+        try {
+            conn = MySQLConexion.getConexion();
+            String sql="select m.nombre, e.nombre especialidad, idhor  from medico as m inner join especialidad as e on m.codes=e.codes where idhor=?";
+            PreparedStatement st = conn.prepareStatement(sql);
+            st.setString(1, "");
+            ResultSet rs = st.executeQuery();
+            
+            while (rs.next()) {
+               Medico a = new Medico();
+                a.setNombre(rs.getString(1));
+                a.setCodes(rs.getString(2));
+                a.setIdhorario(rs.getString(3));
+                lis.add(a);
+            }
+           
         } catch (Exception ex) {
             ex.printStackTrace();
         } finally {
@@ -233,6 +301,33 @@ public class DAORegistro {
         return lis;
     }
     
+    public String nomEsp(String id) {
+       String nom="";
+        Connection conn = null;
+        try {
+            conn = MySQLConexion.getConexion();
+            String sql = "select nombre from especialidad where codes=?";
+            PreparedStatement st = conn.prepareStatement(sql);
+            st.setString(1, id);
+            ResultSet rs = st.executeQuery();
+            
+            while (rs.next()) {
+               nom=rs.getString(1);
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            try {
+
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (Exception e2) {
+            }
+        }
+
+        return nom;
+    }
     
     
 }

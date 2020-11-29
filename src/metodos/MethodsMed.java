@@ -35,8 +35,15 @@ public class MethodsMed extends MethodsMain{
     
     public void inHorario(String nom, JLabel dias, JLabel horas){
         Horario hor=daoH.busHorario(nom,1);
+        if(hor!=null){
         dias.setText(hor.getDias().toUpperCase());
-        horas.setText(hor.getHinicio() + "-" + hor.getHfin());
+        horas.setText(hor.getHinicio() + "-" + hor.getHfin());}
+        else{
+            JOptionPane.showMessageDialog(null, "¡Coordine con el administrador para que le asigne un horario!");
+            dias.setText("No asignado");
+            horas.setText("No asignado");
+        }
+            
     }
     
     

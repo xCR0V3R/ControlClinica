@@ -19,7 +19,7 @@ public class CtrlMedico implements ActionListener {
         this.vMed = vMed; this.objMed=objMed;
         //marcar ASIS
         daoL.actAsis(this.objMed.getCodmed(), "SI");
-        metMed.welcome(this.objMed, this.vMed.btnImagen, this.vMed.jLBienvenidoD, this.objMed.getNombre());
+        metMed.welcome(this.objMed, this.vMed.btnImagen, this.vMed.jLBienvenidoD, this.objMed.getNombre(),0);
         metMed.inHorario(this.objMed.getNombre(), this.vMed.jLDiasAtencion, this.vMed.jLHorariosAtencion);
         metMed.openJFrame(this.vMed, "MEDICO");
         this.vMed.btnConfigUser.addActionListener(this);
@@ -62,15 +62,15 @@ public class CtrlMedico implements ActionListener {
         
         if (e.getSource() == vMed.btnVolver) {
             vMed.jfConfigP.setVisible(false);
-            metMed.openJFrame(this.vMed, "MEDICO");
+            metMed.openJFrame(vMed, "MEDICO");
         }
         if (e.getSource() == vMed.btnActPerfil) {
             metMed.actDatosUser(objMed, objMed.getCodmed(), 
                     vMed.configNac, vMed.configNom.getText(), 
                     vMed.configCorreo.getText(), vMed.configPswd.getText());
+            metMed.welcome(objMed,vMed.btnImagen, vMed.jLBienvenidoD, "",1);
             JOptionPane.showMessageDialog(null, "Datos actualizados");
-            vMed.jfConfigP.setVisible(false);
-            vMed.setVisible(true);
+            
         }
 
         if (e.getSource() == vMed.btnLogout1) {

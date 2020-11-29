@@ -9,6 +9,7 @@ import java.net.URI;
 import javax.swing.*;
 import daos.*;
 import entidades.*;
+import java.awt.event.MouseEvent;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -40,6 +41,7 @@ public class MethodsAdmi extends MethodsMain{
         mostrarEsp(vAdmi.jcbxEspecialidadNC);
         mostrarEsp(vAdmi.jcbxEspCosto);
         mostrarEsp(vAdmi.jcbxEspHorarios);
+        mostrarEsp(vAdmi.jcbxEspAsignarH);
     } 
     
     public void jcbxLisMedicos(JComboBox jcbMed, JComboBox jcbEsp){
@@ -59,7 +61,8 @@ public class MethodsAdmi extends MethodsMain{
         double cost=daoC.busCosto(cod); 
         vAdmi.jTextCosto.setText(String.valueOf(cost));
    } 
-      public void mostrarCostoNC(){ 
+   
+   public void mostrarCostoNC(){ 
         String name = vAdmi.jcbxEspecialidadNC.getSelectedItem().toString();
         String cod=daoR.busCodEsp(name);
         double cost=daoC.busCosto(cod); 
@@ -86,24 +89,42 @@ public class MethodsAdmi extends MethodsMain{
         }
     }
     
-    public void inTabla(){
-        String[] cab1={"Codigo","Medic@","CodEsp","Asistio"};
+    public void inTablaAsisMed(){
+        String[] cab1={"Codigo","Medic@","Especialidad","Asistio"};
         String[][] data1={};
         tablaFE=new DefaultTableModel(data1,cab1); JTable jt=vAdmi.jTAsistencia;
         jt.setModel(tablaFE);
+        ajustarColumns(jt, 0, 55);
         ajustarColumns(jt, 1, 150);
+        ajustarColumns(jt, 2, 120);
+        ajustarColumns(jt, 3, 50);
         acTabla();
     }
     
+     public void tablaShowSchedule(){
+         String[] cabecera={"IDHorario","Días","Horario"};String[][] data={};
+         DefaultTableModel tabSS=new DefaultTableModel(data, cabecera);JTable jt=vAdmi.jTHorariosDisp;
+        jt.setModel(tabSS);
+        String name=vAdmi.jcbxEspAsignarH.getSelectedItem().toString();
+        String codes=daoR.busCodEsp(name);
+        List<Horario> lisH=daoH.lisHorarios(codes); int max=lisH.size();
+        for(Horario h:lisH){
+            String[] fila={h.getIdhor(),h.getDias(),h.getHinicio()+"-"+h.getHfin()};
+            tabSS.addRow(fila);
+        }
+        ajustarColumns(jt, 2, 95);
+        //ajustarColumns(jt, 0, 95);
+    }
+    
     public void acTabla(){
-        List<Medico> med=daoR.lisMed(); int max=med.size();
-        for(int i=0;i<max;i++){
-            String[] fila={med.get(i).getCodmed(),med.get(i).getNombre(),med.get(i).getCodes(),med.get(i).getAsistencia()};
+        List<Medico> med=daoR.asistencia(); int max=med.size();
+        for(Medico m:med){
+            String[] fila={m.getCodmed(),m.getNombre(),m.getCodes(),m.getAsistencia()}; 
             tablaFE.addRow(fila);
         }
-    }
+     }
     public void borrarTabla(){
-        List<Medico> med=daoR.lisMed(); int max=med.size();
+        List<Medico> med=daoR.asistencia(); int max=med.size();
         for(int i=0;i<max;i++){
              tablaFE.removeRow(i);
         }
@@ -164,28 +185,99 @@ public class MethodsAdmi extends MethodsMain{
        return daoC.actCosto(codes, Double.parseDouble(vAdmi.jTextCosto.getText()));
    }
    
-   public void tablaHorarios(JTable tabla,String nombre){
+   public void tablaBotonesExtra(JTable tabla,String nombre,int id){
+       JButton btnDel = new JButton("");
        JButton btnMod=new JButton("");
-       btnMod.setName("btnMod");
-       JButton btnDel=new JButton("");
-       btnDel.setName("btnDel");
        tabla.setDefaultRenderer(Object.class, new Render());
        btnMod.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/modificarH.png")));
-       btnDel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/eliminar.png")));
-        String[] cab1 = {"ID", "Dias", "Horario","Modificar","Eliminar"};
-        String[][] data1 = {};
-        tabl = new DefaultTableModel(data1, cab1);
-        tabla.setModel(tabl); String codes=daoR.busCodEsp(nombre);
-        List<Horario> lisH=daoH.lisHorarios(codes);
-        
-        for (Horario x : lisH) {
-            Object[] fila = {x.getIdhor(), x.getDias(), x.getHinicio()+"-"+x.getHfin(),btnMod,btnDel};
+       String[][] data1 = {};
+       
+       if(id==1){
+           btnMod.setName("btnMod");
+           btnDel.setName("btnDel");
+           btnDel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/eliminar.png")));
+           String[] cab2={"ID","Dias","Horario","Modificar","Eliminar"};
+           tabl = new DefaultTableModel(data1, cab2);
+           String codes = daoR.busCodEsp(nombre);
+           List<Horario> lisH=daoH.lisHorarios(codes);
+           for (Horario x : lisH) {
+               Object[] fila = {x.getIdhor(), x.getDias(), x.getHinicio() + "-" + x.getHfin(), btnMod, btnDel};
+               tabl.addRow(fila);
+            }
+         
+       }
+       if(id==2){
+           btnMod.setName("btnAdd");
+           String[] cab={"Médico","Especialidad","IdHorario","Modificar"};
+           tabl = new DefaultTableModel(data1, cab);
+           List<Medico> lisM=daoR.lisMedNuevos();
+           for(Medico m:lisM){
+               Object[] fil={m.getNombre(),m.getCodes(),m.getIdhorario(),btnMod};
+               tabl.addRow(fil);
+           }
            
-            tabl.addRow(fila);
-        } 
-        ajustarColumns(tabla, 2, 80);
-       tabla.setRowHeight(30);
+       }
+        tabla.setModel(tabl);
+           ajustarColumns(tabla, 2, 80);
+           tabla.setRowHeight(30);
+      
+        
     }
+   
+   public void metodosinTable(JTable jt, MouseEvent e,int id){
+           int column=jt.getColumnModel().getColumnIndexAtX(e.getX());
+           int row=e.getY()/jt.getRowHeight();
+           if(column<=jt.getColumnCount() && column>=0 && row<=jt.getRowCount() && row >=0){
+               Object ob=jt.getValueAt(row, column); 
+               if(ob instanceof JButton){
+                   ((JButton)ob).doClick();
+                   JButton botones=(JButton)ob;
+                
+                if(id==1){   
+                   if(botones.getName().equals("btnMod")){
+                       String cod=String.valueOf(jt.getValueAt(row, 0));
+                       modHorario(cod);
+                     }
+                   if(botones.getName().equals("btnDel")){
+                       String cod=String.valueOf(jt.getValueAt(row, 0));
+                       int op=0;
+                       try{
+                            op=Integer.parseInt(JOptionPane.showInputDialog("¿Está seguro que eliminará el horario de código: "+cod
+                               +"?\n1.SÍ\n2.NO"));
+                            if(op==1) {
+                                deleteHorario(cod);
+                                tablaBotonesExtra(vAdmi.jTHorarios, vAdmi.jcbxEspHorarios.getSelectedItem().toString(),1);
+                                
+                            }
+                            if(op==2) JOptionPane.showMessageDialog(null, "ASAAA CASI WE :V");
+                       }catch (Exception ex) {
+                           JOptionPane.showMessageDialog(null, "¡ERROR! \nDetalle: "+ex);
+                       }
+                    }
+                        }
+                if(id==2){
+                   if(botones.getName().equals("btnAdd")){
+                       String nom=String.valueOf(jt.getValueAt(row, 0));
+                       String idhor=String.valueOf(jt.getValueAt(row, 2));
+                       //
+                        int op=0;
+                       try{
+                            op=Integer.parseInt(JOptionPane.showInputDialog("¿Está seguro que le asignará el IDHorario:"
+                                    +idhor+ " a: "+nom+"?\n1.SÍ\n2.NO"));
+                            if(op==1) {
+                               
+                                daoH.addHorNewMed(idhor, nom);
+                                tablaBotonesExtra(vAdmi.jTNuevosMedicos,"",2);
+                            }
+                            
+                       }catch (Exception ex) {
+                           JOptionPane.showMessageDialog(null, "¡ERROR! \nDetalle: "+ex);
+                       }
+                     } 
+                }
+               }
+           }
+   }
    
    public void modHorario(String id){
        Horario h=daoH.busHorario(id, 2);
@@ -228,6 +320,15 @@ public class MethodsAdmi extends MethodsMain{
        Horario h=dataH();
        daoH.actHorarios(h);
    }  
+   
+   public void nuevosMedicos(){
+       String estado="";
+       estado=daoL.busNuevosMed();
+      vAdmi.btnAsigHor.setText(estado);
+      if(estado.equals("Asignar horarios (0)")){
+           vAdmi.btnAsigHor.setEnabled(false);
+      }
+   }
   
    public void limpiarNC(VAdmi f){ 
        f.txtDNI.setText("");

@@ -43,16 +43,22 @@ public class MethodsMain {
         esIcono(fr);
     }
     
-    public void welcome(Usuario user,JButton btn,JLabel label,String nom){
+    public void welcome(Usuario user,JButton btn,JLabel label,String nom,int ind){
         String inicio = "";
         if(user.getSexo()== 'F') inicio = "Bienvenida, ";
         if(user.getSexo()== 'M') inicio = "Bienvenido, ";
         
         if(user instanceof Medico ){
+            if(ind==1){
+                nom=daoL.busMed(((Medico) user).getCodmed()).getNombre();
+            }
             if (user.getSexo() == 'F') addIMG(btn, URLDocF);
             if (user.getSexo() == 'M') addIMG(btn, URLDocM);
         }
         if(user instanceof Administrador ){
+            if(ind==1){
+                nom=daoL.busAdmi(((Administrador) user).getCodad()).getNombre();
+            }
             if (user.getSexo() == 'F') addIMG(btn, URLAdmiF);
             if (user.getSexo() == 'M') addIMG(btn, URLAdmiM);
         }

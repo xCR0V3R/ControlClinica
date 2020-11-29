@@ -66,19 +66,10 @@ public class MethodsLog extends MethodsMain{
             daoR.addAdmi(a);
          }
         
-       /* public void mostrarEsp(JComboBox jcb){
-            jcb.removeAllItems();
-            jcb.addItem("-Seleccionar-");
-            List<String> lisEsp = daoR.lisNomEsp();
-            int max = lisEsp.size();
-            for (int i = 0; i < max; i++) {
-                jcb.addItem(lisEsp.get(i));
-            }
-        }*/
-        
+              
       public void regMed(){
             String codes=daoR.busCodEsp(dEsp);
-            String idhorario=null;
+            String idhorario="";
             Medico md=new Medico(codes, dTip, dNac,dNom,dSexo, dCorreo, dPswd, dDNI,idhorario,"NO");
             daoR.addMed(md);
            //System.out.println("AGREGANDO MEDICO");
