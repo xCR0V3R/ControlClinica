@@ -55,7 +55,12 @@ public class MethodsAdmi extends MethodsMain{
         }
     } 
    
-   public void mostrarCosto(){ 
+   public void costo(String nom,JTextField prec){
+       String cod=daoR.busCodEsp(nom);
+        double cost=daoC.busCosto(cod); 
+        prec.setText(String.valueOf(cost));
+   } 
+   /*public void mostrarCosto(){ 
         String name = vAdmi.jcbxEspCosto.getSelectedItem().toString();
         String cod=daoR.busCodEsp(name);
         double cost=daoC.busCosto(cod); 
@@ -64,10 +69,10 @@ public class MethodsAdmi extends MethodsMain{
    
    public void mostrarCostoNC(){ 
         String name = vAdmi.jcbxEspecialidadNC.getSelectedItem().toString();
-        String cod=daoR.busCodEsp(name);
+         String cod=daoR.busCodEsp(name); 
         double cost=daoC.busCosto(cod); 
-        vAdmi.jtxtPrecioNC.setText(String.valueOf(cost));
-   }
+       vAdmi.jtxtPrecioNC.setText(String.valueOf(cost));
+   }*/
     
     public void mostrarHor(){
         String nomd = vAdmi.jcbxDoctorNC.getSelectedItem().toString();

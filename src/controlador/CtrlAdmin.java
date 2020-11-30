@@ -142,10 +142,10 @@ public class CtrlAdmin implements ActionListener, MouseListener{
 
         if(e.getSource()==vAdmi.jcbxEspecialidadNC){
             metAdmi.jcbxLisMedicos(vAdmi.jcbxDoctorNC,vAdmi.jcbxEspecialidadNC);
-            metAdmi.mostrarCostoNC();
+            metAdmi.costo(vAdmi.jcbxEspecialidadNC.getSelectedItem().toString(), vAdmi.jtxtPrecioNC);
          }
         if(e.getSource()==vAdmi.jcbxEspCosto){
-           metAdmi.mostrarCosto();
+           metAdmi.costo(vAdmi.jcbxEspCosto.getSelectedItem().toString(),vAdmi.jTextCosto);
         }
        
         if(e.getSource()==vAdmi.btnGenCod){
