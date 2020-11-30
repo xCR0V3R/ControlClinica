@@ -60,20 +60,7 @@ public class MethodsAdmi extends MethodsMain{
         double cost=daoC.busCosto(cod); 
         prec.setText(String.valueOf(cost));
    } 
-   /*public void mostrarCosto(){ 
-        String name = vAdmi.jcbxEspCosto.getSelectedItem().toString();
-        String cod=daoR.busCodEsp(name);
-        double cost=daoC.busCosto(cod); 
-        vAdmi.jTextCosto.setText(String.valueOf(cost));
-   } 
-   
-   public void mostrarCostoNC(){ 
-        String name = vAdmi.jcbxEspecialidadNC.getSelectedItem().toString();
-         String cod=daoR.busCodEsp(name); 
-        double cost=daoC.busCosto(cod); 
-       vAdmi.jtxtPrecioNC.setText(String.valueOf(cost));
-   }*/
-    
+
     public void mostrarHor(){
         String nomd = vAdmi.jcbxDoctorNC.getSelectedItem().toString();
         Horario hor=daoH.busHorario(nomd,1);
