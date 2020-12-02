@@ -56,9 +56,6 @@ public class VLogueo extends javax.swing.JFrame {
         jrbFemenino = new javax.swing.JRadioButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jmAyuda = new javax.swing.JMenu();
-        jmiAyuda = new javax.swing.JMenuItem();
-        jmiForo = new javax.swing.JMenuItem();
-        jmiSitioWeb = new javax.swing.JMenuItem();
         groupSexo = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -160,16 +157,6 @@ public class VLogueo extends javax.swing.JFrame {
 
         jmAyuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ayuda.png"))); // NOI18N
         jmAyuda.setText("Ayuda");
-
-        jmiAyuda.setText("Ayuda de Clinimax");
-        jmAyuda.add(jmiAyuda);
-
-        jmiForo.setText("Foro de soporte Clinimax");
-        jmAyuda.add(jmiForo);
-
-        jmiSitioWeb.setText("Sitio web de Clinimax");
-        jmAyuda.add(jmiSitioWeb);
-
         jMenuBar1.add(jmAyuda);
 
         nuevRegistro.setJMenuBar(jMenuBar1);
@@ -449,10 +436,7 @@ public class VLogueo extends javax.swing.JFrame {
     public javax.swing.JComboBox<String> jcbTipoUser;
     public javax.swing.JComboBox<String> jcbxEspecialidad1;
     public javax.swing.JLabel jlEspecialidad;
-    private javax.swing.JMenu jmAyuda;
-    public javax.swing.JMenuItem jmiAyuda;
-    public javax.swing.JMenuItem jmiForo;
-    public javax.swing.JMenuItem jmiSitioWeb;
+    public javax.swing.JMenu jmAyuda;
     public javax.swing.JPasswordField jpssContra;
     public javax.swing.JRadioButton jrbFemenino;
     public javax.swing.JRadioButton jrbMasculino;

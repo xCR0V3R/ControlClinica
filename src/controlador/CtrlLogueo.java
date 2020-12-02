@@ -4,12 +4,14 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import daos.*;import javax.swing.JFrame;
+import daos.*;import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import vistaa.*; import metodos.*;
 
 
-public class CtrlLogueo implements ActionListener{
+public class CtrlLogueo implements ActionListener, MouseListener{
     VLogueo log;
     MethodsLog mLog;
     DAOLog daoL=new DAOLog();
@@ -25,10 +27,7 @@ public class CtrlLogueo implements ActionListener{
         this.log.btnSalir.addActionListener(this);
         this.log.btnRegistro.addActionListener(this);
         
-        //SUPPORT sin implementar
-        this.log.jmiAyuda.addActionListener(this);
-        this.log.jmiForo.addActionListener(this);
-        this.log.jmiSitioWeb.addActionListener(this);
+        this.log.jmAyuda.addMouseListener(this);
     }
     
     
@@ -104,20 +103,36 @@ public class CtrlLogueo implements ActionListener{
           
              
          }    
-              
-        //Botones de ayuda, falta implementar
-         /*
-         if(e.getSource()==log.jmiAyuda){
-             mLog.support("https://www.clinicainternacional.com.pe/");
-         }
-         if(e.getSource()==log.jmiForo){
-             mLog.support("https://www.clinicainternacional.com.pe/");
-         }
-         if(e.getSource()==log.jmiSitioWeb){
-             mLog.support("https://www.clinicainternacional.com.pe/");
-         } */
-         
-         
     } 
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        if(e.getSource()==log.jmAyuda){
+            String mensaje= "-----------------------------Ayuda-----------------------------"
+                    + "\nIngrese los datos que desea que tenga su perfil y en caso sea médico, elija la especialidad"
+                    + "\ndespués presione en el botón registrar para procesar sus datos. Que tenga un excelente día ";
+            JOptionPane.showMessageDialog(null, mensaje);
+        }
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+        //
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        //
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+        //
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+        //
+    }
     
 }
