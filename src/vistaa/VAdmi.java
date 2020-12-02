@@ -38,6 +38,8 @@ public class VAdmi extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         configCorreo = new javax.swing.JTextField();
         configPswd = new javax.swing.JTextField();
+        jMenuBar4 = new javax.swing.JMenuBar();
+        jmAyuda2 = new javax.swing.JMenu();
         jfReporteCitas = new javax.swing.JFrame();
         jLabel5 = new javax.swing.JLabel();
         jcbArea = new javax.swing.JComboBox<>();
@@ -97,6 +99,8 @@ public class VAdmi extends javax.swing.JFrame {
         btnRetornar5 = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTAsistencia = new javax.swing.JTable();
+        jMenuBar5 = new javax.swing.JMenuBar();
+        jmAyuda3 = new javax.swing.JMenu();
         jfModHoraCoste = new javax.swing.JFrame();
         jLabel16 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
@@ -126,7 +130,8 @@ public class VAdmi extends javax.swing.JFrame {
         jLabel39 = new javax.swing.JLabel();
         jLabel37 = new javax.swing.JLabel();
         btnClean = new javax.swing.JButton();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuBar6 = new javax.swing.JMenuBar();
+        jmAyuda4 = new javax.swing.JMenu();
         jfAsignarHorarios = new javax.swing.JFrame();
         jLabel26 = new javax.swing.JLabel();
         jLabel44 = new javax.swing.JLabel();
@@ -138,6 +143,8 @@ public class VAdmi extends javax.swing.JFrame {
         jTHorariosDisp = new javax.swing.JTable();
         btnVolverNH = new javax.swing.JButton();
         btnSalir7 = new javax.swing.JButton();
+        jMenuBar7 = new javax.swing.JMenuBar();
+        jmAyuda5 = new javax.swing.JMenu();
         btnReportes = new javax.swing.JButton();
         btnNuevoP = new javax.swing.JButton();
         btnConfigUser = new javax.swing.JButton();
@@ -154,8 +161,6 @@ public class VAdmi extends javax.swing.JFrame {
         btnAsigHor = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jmAyuda = new javax.swing.JMenu();
-        jmiForo = new javax.swing.JMenuItem();
-        jmiSitioWeb = new javax.swing.JMenuItem();
 
         jfConfigP.setMinimumSize(new java.awt.Dimension(425, 418));
 
@@ -168,7 +173,7 @@ public class VAdmi extends javax.swing.JFrame {
         jPanel2.add(btnActPerfil);
         btnActPerfil.setBounds(190, 340, 130, 28);
         jPanel2.add(configNombre);
-        configNombre.setBounds(162, 134, 223, 20);
+        configNombre.setBounds(162, 134, 223, 22);
 
         btnRetornar1.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
         btnRetornar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/volver.png"))); // NOI18N
@@ -176,7 +181,7 @@ public class VAdmi extends javax.swing.JFrame {
         jPanel2.add(btnRetornar1);
         btnRetornar1.setBounds(50, 340, 110, 28);
         jPanel2.add(configNac);
-        configNac.setBounds(162, 182, 176, 20);
+        configNac.setBounds(162, 182, 176, 22);
 
         jLabel10.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(102, 0, 51));
@@ -207,11 +212,17 @@ public class VAdmi extends javax.swing.JFrame {
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/AcUsuario.png"))); // NOI18N
         jLabel15.setText("CONFIGURAR PERFIL");
         jPanel2.add(jLabel15);
-        jLabel15.setBounds(36, 25, 270, 72);
+        jLabel15.setBounds(36, 25, 262, 72);
         jPanel2.add(configCorreo);
-        configCorreo.setBounds(160, 230, 190, 20);
+        configCorreo.setBounds(160, 230, 190, 22);
         jPanel2.add(configPswd);
-        configPswd.setBounds(160, 270, 190, 20);
+        configPswd.setBounds(160, 270, 190, 22);
+
+        jmAyuda2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ayuda.png"))); // NOI18N
+        jmAyuda2.setText("Ayuda");
+        jMenuBar4.add(jmAyuda2);
+
+        jfConfigP.setJMenuBar(jMenuBar4);
 
         javax.swing.GroupLayout jfConfigPLayout = new javax.swing.GroupLayout(jfConfigP.getContentPane());
         jfConfigP.getContentPane().setLayout(jfConfigPLayout);
@@ -225,7 +236,7 @@ public class VAdmi extends javax.swing.JFrame {
             jfConfigPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jfConfigPLayout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 5, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jfReporteCitas.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -719,37 +730,25 @@ public class VAdmi extends javax.swing.JFrame {
         );
 
         jfAsisMedica.setMinimumSize(new java.awt.Dimension(472, 442));
-        jfAsisMedica.setPreferredSize(new java.awt.Dimension(472, 442));
-        jfAsisMedica.getContentPane().setLayout(null);
 
         jLabel8.setFont(new java.awt.Font("Russo One", 0, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(102, 0, 0));
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/doc.png"))); // NOI18N
         jLabel8.setText("ASISTENCIA MÉDICA");
-        jfAsisMedica.getContentPane().add(jLabel8);
-        jLabel8.setBounds(74, 11, 225, 32);
 
         jLabel31.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
         jLabel31.setForeground(new java.awt.Color(102, 0, 51));
         jLabel31.setText("Fecha Actual");
-        jfAsisMedica.getContentPane().add(jLabel31);
-        jLabel31.setBounds(85, 61, 75, 16);
 
         rSLabelFecha2.setForeground(new java.awt.Color(102, 0, 102));
-        jfAsisMedica.getContentPane().add(rSLabelFecha2);
-        rSLabelFecha2.setBounds(187, 61, 93, 29);
 
         btnReiniciar.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
         btnReiniciar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/reset.png"))); // NOI18N
         btnReiniciar.setText("Reiniciar");
-        jfAsisMedica.getContentPane().add(btnReiniciar);
-        btnReiniciar.setBounds(290, 360, 130, 28);
 
         btnRetornar5.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
         btnRetornar5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/volver.png"))); // NOI18N
         btnRetornar5.setText("Volver");
-        jfAsisMedica.getContentPane().add(btnRetornar5);
-        btnRetornar5.setBounds(165, 360, 110, 28);
 
         jTAsistencia.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -772,8 +771,49 @@ public class VAdmi extends javax.swing.JFrame {
         });
         jScrollPane3.setViewportView(jTAsistencia);
 
-        jfAsisMedica.getContentPane().add(jScrollPane3);
-        jScrollPane3.setBounds(26, 108, 410, 200);
+        jmAyuda3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ayuda.png"))); // NOI18N
+        jmAyuda3.setText("Ayuda");
+        jMenuBar5.add(jmAyuda3);
+
+        jfAsisMedica.setJMenuBar(jMenuBar5);
+
+        javax.swing.GroupLayout jfAsisMedicaLayout = new javax.swing.GroupLayout(jfAsisMedica.getContentPane());
+        jfAsisMedica.getContentPane().setLayout(jfAsisMedicaLayout);
+        jfAsisMedicaLayout.setHorizontalGroup(
+            jfAsisMedicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jfAsisMedicaLayout.createSequentialGroup()
+                .addGap(74, 74, 74)
+                .addComponent(jLabel8))
+            .addGroup(jfAsisMedicaLayout.createSequentialGroup()
+                .addGap(85, 85, 85)
+                .addComponent(jLabel31)
+                .addGap(27, 27, 27)
+                .addComponent(rSLabelFecha2, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jfAsisMedicaLayout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jfAsisMedicaLayout.createSequentialGroup()
+                .addGap(165, 165, 165)
+                .addComponent(btnRetornar5, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15)
+                .addComponent(btnReiniciar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jfAsisMedicaLayout.setVerticalGroup(
+            jfAsisMedicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jfAsisMedicaLayout.createSequentialGroup()
+                .addGap(11, 11, 11)
+                .addComponent(jLabel8)
+                .addGap(18, 18, 18)
+                .addGroup(jfAsisMedicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel31)
+                    .addComponent(rSLabelFecha2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(52, 52, 52)
+                .addGroup(jfAsisMedicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnRetornar5, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnReiniciar, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
 
         jfModHoraCoste.setMinimumSize(new java.awt.Dimension(695, 675));
 
@@ -1003,6 +1043,12 @@ public class VAdmi extends javax.swing.JFrame {
             }
         });
 
+        jmAyuda4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ayuda.png"))); // NOI18N
+        jmAyuda4.setText("Ayuda");
+        jMenuBar6.add(jmAyuda4);
+
+        jfModHoraCoste.setJMenuBar(jMenuBar6);
+
         javax.swing.GroupLayout jfModHoraCosteLayout = new javax.swing.GroupLayout(jfModHoraCoste.getContentPane());
         jfModHoraCoste.getContentPane().setLayout(jfModHoraCosteLayout);
         jfModHoraCosteLayout.setHorizontalGroup(
@@ -1052,7 +1098,7 @@ public class VAdmi extends javax.swing.JFrame {
                 .addGroup(jfModHoraCosteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jfModHoraCosteLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18))
@@ -1067,8 +1113,6 @@ public class VAdmi extends javax.swing.JFrame {
                 .addComponent(btnRetornar6, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(25, 25, 25))
         );
-
-        jMenuItem1.setText("jMenuItem1");
 
         jfAsignarHorarios.setMinimumSize(new java.awt.Dimension(449, 574));
 
@@ -1145,6 +1189,12 @@ public class VAdmi extends javax.swing.JFrame {
         btnSalir7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/salir.png"))); // NOI18N
         btnSalir7.setText("Salir");
 
+        jmAyuda5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ayuda.png"))); // NOI18N
+        jmAyuda5.setText("Ayuda");
+        jMenuBar7.add(jmAyuda5);
+
+        jfAsignarHorarios.setJMenuBar(jMenuBar7);
+
         javax.swing.GroupLayout jfAsignarHorariosLayout = new javax.swing.GroupLayout(jfAsignarHorarios.getContentPane());
         jfAsignarHorarios.getContentPane().setLayout(jfAsignarHorariosLayout);
         jfAsignarHorariosLayout.setHorizontalGroup(
@@ -1192,7 +1242,7 @@ public class VAdmi extends javax.swing.JFrame {
                 .addGroup(jfAsignarHorariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnVolverNH, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSalir7, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -1259,13 +1309,6 @@ public class VAdmi extends javax.swing.JFrame {
 
         jmAyuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ayuda.png"))); // NOI18N
         jmAyuda.setText("Ayuda");
-
-        jmiForo.setText("Foro de soporte CliniMax");
-        jmAyuda.add(jmiForo);
-
-        jmiSitioWeb.setText("Sitio web de CliniMax");
-        jmAyuda.add(jmiSitioWeb);
-
         jMenuBar1.add(jmAyuda);
 
         setJMenuBar(jMenuBar1);
@@ -1502,7 +1545,10 @@ public class VAdmi extends javax.swing.JFrame {
     public javax.swing.JMenuBar jMenuBar1;
     public javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JMenuBar jMenuBar3;
-    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuBar jMenuBar4;
+    private javax.swing.JMenuBar jMenuBar5;
+    private javax.swing.JMenuBar jMenuBar6;
+    private javax.swing.JMenuBar jMenuBar7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -1535,10 +1581,12 @@ public class VAdmi extends javax.swing.JFrame {
     public javax.swing.JFrame jfNuevaCita;
     public javax.swing.JFrame jfReporteCitas;
     public javax.swing.JMenu jmAyuda;
+    public javax.swing.JMenu jmAyuda2;
+    public javax.swing.JMenu jmAyuda3;
+    public javax.swing.JMenu jmAyuda4;
+    public javax.swing.JMenu jmAyuda5;
     public javax.swing.JMenu jmAyudaNC;
     public javax.swing.JMenu jmAyudaRC;
-    public javax.swing.JMenuItem jmiForo;
-    public javax.swing.JMenuItem jmiSitioWeb;
     public javax.swing.JTextField jtxtDiasH;
     public javax.swing.JFormattedTextField jtxtHoraEntrada;
     public javax.swing.JFormattedTextField jtxtHoraSalida;

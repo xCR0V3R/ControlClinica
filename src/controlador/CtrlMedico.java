@@ -3,13 +3,15 @@ package controlador;
 import entidades.Medico;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import daos.*;import java.text.SimpleDateFormat;
+import daos.*;import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import vistaa.*; import metodos.*;
 
-public class CtrlMedico implements ActionListener {
+public class CtrlMedico implements ActionListener, MouseListener {
     VMedico vMed; 
     MethodsMed metMed=new MethodsMed();
     Medico objMed;
@@ -30,15 +32,11 @@ public class CtrlMedico implements ActionListener {
         this.vMed.btnLogout1.addActionListener(this);
         this.vMed.btnVolver1.addActionListener(this);
         this.vMed.btnActCitas.addActionListener(this);
-        
-         //SUPPORT, falta implementar
-        this.vMed.jmiAyuda.addActionListener(this);
-        this.vMed.jmiForo.addActionListener(this);
-        this.vMed.jmiSitioWeb.addActionListener(this);
-        this.vMed.jmiAyuda1.addActionListener(this);
-        this.vMed.jmiForo1.addActionListener(this);
-        this.vMed.jmiSitioWeb1.addActionListener(this);
-    } 
+        //SUPPORT, falta implementar
+        this.vMed.jmAyuda.addMouseListener(this);
+        this.vMed.jmAyuda2.addMouseListener(this);
+        this.vMed.jmAyuda3.addMouseListener(this);
+    }
                          
      
     @Override
@@ -87,26 +85,53 @@ public class CtrlMedico implements ActionListener {
             metMed.visualizarReportCita(vMed.tablaReporte, objMed.getCodmed());
             JOptionPane.showMessageDialog(null, "Actualización exitosa");
         }
-
-        /*
-        if(e.getSource()==vmed.jmiAyuda){
-             metLog.support("https://www.clinicainternacional.com.pe/");
-        }
-        if(e.getSource()==vmed.jmiForo){
-             metLog.support("https://www.clinicainternacional.com.pe/");
-        }
-        if(e.getSource()==vmed.jmiSitioWeb){
-             metLog.support("https://www.clinicainternacional.com.pe/");
-        }
-        if(e.getSource()==vmed.jmiAyuda1){
-             metLog.support("https://www.clinicainternacional.com.pe/");
-        }
-        if(e.getSource()==vmed.jmiForo1){
-             metLog.support("https://www.clinicainternacional.com.pe/");
-        }
-        if(e.getSource()==vmed.jmiSitioWeb1){
-             metLog.support("https://www.clinicainternacional.com.pe/");
-        }*/
-    
+        
 }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        if(e.getSource()==vMed.jmAyuda){
+            String mensaje= "-----------------------------Ayuda-----------------------------"
+                    + "\nEn esta ventana se pueden apreciar los datos principales del usuario médico que ingresó"
+                    + "\n1-. El primer botón que es el de citas lo redirigirá a una ventana en la que el médico "
+                    + "\n    podrá ver las citas pendientes que tiene con las fechas respectivas"
+                    + "\n2-. El segundo botón que es el de configurar perfil, que te redirige a una ventana en la"
+                    + "\n    que se se pueden modificar ciertos datos del usuario";
+            JOptionPane.showMessageDialog(null, mensaje);
+        }
+        if(e.getSource()==vMed.jmAyuda2){
+            String mensaje= "-----------------------------Ayuda-----------------------------"
+                    + "\nEn esta ventana se puede modificar "
+                    + "\n1-. En este apartado puede apreciar una tabla que guarda la información de las citas programadas"
+                    + "\n2-. El botón de actualizar mantiene al día los datos de la tabla en caso se haga alguna modificación"
+                    + "\n    reciente.";
+            JOptionPane.showMessageDialog(null, mensaje);
+        }
+        if(e.getSource()==vMed.jmAyuda3){
+            String mensaje= "-----------------------------Ayuda-----------------------------"
+                    + "\nEn esta ventana se pueden modificar los datos del médico, tales como Nombre, Fecha de Nacimiento,"
+                    + "\ncorreo y contraseña, y luego de eso presionar el botón actualizar para procesar la modificación";
+            JOptionPane.showMessageDialog(null, mensaje);
+        }
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+        //
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        //
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+        //
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+        //
+    }
 }

@@ -76,6 +76,11 @@ public class CtrlAdmin implements ActionListener, MouseListener{
         //VALOR EXTRA - AYUDA
         this.vAdmi.jmAyudaRC.addMouseListener(this);
         this.vAdmi.jmAyudaNC.addMouseListener(this);
+        this.vAdmi.jmAyuda.addMouseListener(this);
+        this.vAdmi.jmAyuda2.addMouseListener(this);
+        this.vAdmi.jmAyuda3.addMouseListener(this);
+        this.vAdmi.jmAyuda4.addMouseListener(this);
+        this.vAdmi.jmAyuda5.addMouseListener(this);
     } 
     
         
@@ -296,6 +301,35 @@ public class CtrlAdmin implements ActionListener, MouseListener{
                     + "\nusted lo requiera"
                     + "\n7-. Si desea volver a la ventana anterior, de clic en el botón 'Retornar'"
                     + "\n8-. En caso desee salir del programa, de clic en el botón 'Salir'";
+            JOptionPane.showMessageDialog(null, mensaje);
+        }
+        if(e.getSource()==vAdmi.jmAyuda){
+            String mensaje= "-----------------------------Ayuda-----------------------------"
+                    + "\nSeleccione el botón requerido para acceder a la ventana a la que usted desea ingresar"
+                    + "\nSi no desea continuar, accione el botón Salir";
+            JOptionPane.showMessageDialog(null, mensaje);
+        }
+        if(e.getSource()==vAdmi.jmAyuda2){
+            String mensaje= "-----------------------------Ayuda-----------------------------"
+                    + "\nEn esta ventana se pueden modificar los datos del administrador, tales como Nombre, Fecha de Nacimiento,"
+                    + "\ncorreo y contraseña, y luego de eso presionar el botón actualizar para procesar la modificación";
+            JOptionPane.showMessageDialog(null, mensaje);
+        }
+        if(e.getSource()==vAdmi.jmAyuda3){
+            String mensaje= "-----------------------------Ayuda-----------------------------"
+                    + "\n1-. En este apartado puede apreciar una tabla que guarda la información de las citas programadas"
+                    + "\n2-. El botón de actualizar mantiene al día los datos de la tabla en caso se haga alguna modificación"
+                    + "\n    reciente.";
+            JOptionPane.showMessageDialog(null, mensaje);
+        }
+        if(e.getSource()==vAdmi.jmAyuda4){
+            String mensaje= "-----------------------------Ayuda-----------------------------"
+                    + "\n ";
+            JOptionPane.showMessageDialog(null, mensaje);
+        }
+        if(e.getSource()==vAdmi.jmAyuda5){
+            String mensaje= "-----------------------------Ayuda-----------------------------"
+                    + "\n ";
             JOptionPane.showMessageDialog(null, mensaje);
         }
     }

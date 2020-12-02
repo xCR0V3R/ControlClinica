@@ -40,6 +40,8 @@ public class VMedico extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         configPswd = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
+        jMenuBar2 = new javax.swing.JMenuBar();
+        jmAyuda3 = new javax.swing.JMenu();
         jfCitasMed = new javax.swing.JFrame();
         jLabel19 = new javax.swing.JLabel();
         btnVolver1 = new javax.swing.JButton();
@@ -49,9 +51,6 @@ public class VMedico extends javax.swing.JFrame {
         btnActCitas = new javax.swing.JButton();
         jMenuBar3 = new javax.swing.JMenuBar();
         jmAyuda2 = new javax.swing.JMenu();
-        jmiAyuda1 = new javax.swing.JMenuItem();
-        jmiForo1 = new javax.swing.JMenuItem();
-        jmiSitioWeb1 = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
         jLBienvenidoD = new javax.swing.JLabel();
         btnImagen = new javax.swing.JButton();
@@ -72,9 +71,6 @@ public class VMedico extends javax.swing.JFrame {
         btnLogout = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jmAyuda = new javax.swing.JMenu();
-        jmiAyuda = new javax.swing.JMenuItem();
-        jmiForo = new javax.swing.JMenuItem();
-        jmiSitioWeb = new javax.swing.JMenuItem();
 
         jfConfigP.setLocationByPlatform(true);
         jfConfigP.setMinimumSize(new java.awt.Dimension(410, 410));
@@ -163,8 +159,14 @@ public class VMedico extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnActPerfil))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        jmAyuda3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ayuda.png"))); // NOI18N
+        jmAyuda3.setText("Ayuda");
+        jMenuBar2.add(jmAyuda3);
+
+        jfConfigP.setJMenuBar(jMenuBar2);
 
         javax.swing.GroupLayout jfConfigPLayout = new javax.swing.GroupLayout(jfConfigP.getContentPane());
         jfConfigP.getContentPane().setLayout(jfConfigPLayout);
@@ -247,21 +249,6 @@ public class VMedico extends javax.swing.JFrame {
 
         jmAyuda2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ayuda.png"))); // NOI18N
         jmAyuda2.setText("Ayuda");
-
-        jmiAyuda1.setText("Ayuda de CliniMax");
-        jmiAyuda1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jmiAyuda1ActionPerformed(evt);
-            }
-        });
-        jmAyuda2.add(jmiAyuda1);
-
-        jmiForo1.setText("Foro de soporte CliniMax");
-        jmAyuda2.add(jmiForo1);
-
-        jmiSitioWeb1.setText("Sitio web de CliniMax");
-        jmAyuda2.add(jmiSitioWeb1);
-
         jMenuBar3.add(jmAyuda2);
 
         jfCitasMed.setJMenuBar(jMenuBar3);
@@ -502,21 +489,6 @@ public class VMedico extends javax.swing.JFrame {
 
         jmAyuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ayuda.png"))); // NOI18N
         jmAyuda.setText("Ayuda");
-
-        jmiAyuda.setText("Ayuda de CliniMax");
-        jmiAyuda.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jmiAyudaActionPerformed(evt);
-            }
-        });
-        jmAyuda.add(jmiAyuda);
-
-        jmiForo.setText("Foro de soporte CliniMax");
-        jmAyuda.add(jmiForo);
-
-        jmiSitioWeb.setText("Sitio web de CliniMax");
-        jmAyuda.add(jmiSitioWeb);
-
         jMenuBar1.add(jmAyuda);
 
         setJMenuBar(jMenuBar1);
@@ -537,10 +509,6 @@ public class VMedico extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jmiAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiAyudaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jmiAyudaActionPerformed
-
     private void btnConfigUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfigUserActionPerformed
         // TODO add your handling code here: 
         
@@ -549,10 +517,6 @@ public class VMedico extends javax.swing.JFrame {
     private void btnVolver1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolver1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnVolver1ActionPerformed
-
-    private void jmiAyuda1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiAyuda1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jmiAyuda1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -619,6 +583,7 @@ public class VMedico extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuBar jMenuBar2;
     public javax.swing.JMenuBar jMenuBar3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -630,12 +595,7 @@ public class VMedico extends javax.swing.JFrame {
     public javax.swing.JFrame jfConfigP;
     public javax.swing.JMenu jmAyuda;
     public javax.swing.JMenu jmAyuda2;
-    public javax.swing.JMenuItem jmiAyuda;
-    public javax.swing.JMenuItem jmiAyuda1;
-    public javax.swing.JMenuItem jmiForo;
-    public javax.swing.JMenuItem jmiForo1;
-    public javax.swing.JMenuItem jmiSitioWeb;
-    public javax.swing.JMenuItem jmiSitioWeb1;
+    public javax.swing.JMenu jmAyuda3;
     private rojeru_san.RSLabelFecha rSLabelFecha1;
     private rojeru_san.RSLabelHora rSLabelHora1;
     public javax.swing.JTable tablaReporte;
