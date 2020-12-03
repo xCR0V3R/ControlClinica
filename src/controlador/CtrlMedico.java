@@ -104,7 +104,13 @@ public class CtrlMedico implements ActionListener, MouseListener {
                     + "\nEn esta ventana se puede modificar "
                     + "\n1-. En este apartado puede apreciar una tabla que guarda la información de las citas programadas"
                     + "\n2-. El botón de actualizar mantiene al día los datos de la tabla en caso se haga alguna modificación"
-                    + "\n    reciente.";
+                    + "\n    reciente."
+                    + "\n3-. Para activar el mecanismo de actualizar, primero se tiene que modificar la tabla, en la columna "
+                    + "\n    'Estado' y la fila que pertenezca a la cita a la que le quiere editar el estado, existen 3 tipos"
+                    + "\n    de estado, que son el Pendiente, que viene por defecto al agregar una cita, el postergado, cuando"
+                    + "\n    el médico o el paciente postergan la cita, y el cancelado, cuando la cita queda cancelada, para que"
+                    + "\n    esta última tenga efecto y elimine la cita, se debe presionar el botón 'Actualizar' inmediatamente"
+                    + "\n    después de que se modifique el dato en la tabla, para realizar la eliminación de la cita.";
             JOptionPane.showMessageDialog(null, mensaje);
         }
         if(e.getSource()==vMed.jmAyuda3){

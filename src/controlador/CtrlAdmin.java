@@ -278,8 +278,14 @@ public class CtrlAdmin implements ActionListener, MouseListener{
                     + "\n clic al botón 'Mostrar' para que se visualicen los datos en la tabla, en el caso de que"
                     + "\n se haya modificado un dato de la tabla en ese instante, se debería dar clic en el botón"
                     + "\n 'Actualizar' para mostrar los datos nuevos"
-                    + "\n4-. Si desea volver a la ventana anterior, de clic en el botón 'Retornar'"
-                    + "\n5-. En caso desee salir del programa, de clic en el botón 'Salir'";
+                    + "\n4-. Para activar el mecanismo de actualizar, primero se tiene que modificar la tabla, en la columna "
+                    + "\n    'Estado' y la fila que pertenezca a la cita a la que le quiere editar el estado, existen 3 tipos"
+                    + "\n    de estado, que son el Pendiente, que viene por defecto al agregar una cita, el postergado, cuando"
+                    + "\n    el médico o el paciente postergan la cita, y el cancelado, cuando la cita queda cancelada, para que"
+                    + "\n    esta última tenga efecto y elimine la cita, se debe presionar el botón 'Actualizar' inmediatamente"
+                    + "\n    después de que se modifique el dato en la tabla, para realizar la eliminación de la cita."
+                    + "\n5-. Si desea volver a la ventana anterior, de clic en el botón 'Retornar'"
+                    + "\n6-. En caso desee salir del programa, de clic en el botón 'Salir'";
             JOptionPane.showMessageDialog(null, mensaje);
         }
         if(e.getSource()==vAdmi.jmAyudaNC){
