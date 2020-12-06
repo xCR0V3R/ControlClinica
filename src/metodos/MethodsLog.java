@@ -14,20 +14,16 @@ import java.text.SimpleDateFormat;
 
 
 public class MethodsLog extends MethodsMain{
-        
-    DAORegistro daoR=new DAORegistro();
-    VLogueo log;
     
+    VLogueo log;
     String dNom; String dNac; private String dTip;int dDNI;private String dCorreo;private String dPswd;
     private String dEsp; private char dSexo;
-    
     SimpleDateFormat formato=new SimpleDateFormat("yyyy-MM-dd");
     
     public MethodsLog(){}
     
     public MethodsLog(VLogueo log){
         this.log=log;
-        
     }
     
      public void inRegistro(){
