@@ -25,10 +25,13 @@ public class MethodsMain {
     private static final String URLDocM="/imagenes/docM.png";
     private static final String URLAdmiM="/imagenes/admiM.png";
     private static final String URLAdmiF="/imagenes/admiFe.png";
-    DAOLog daoL = new DAOLog();
-    DAORegistro daoR=new DAORegistro();
-    DAOCitas daoC=new DAOCitas();
+    protected DAOLog daoL=new DAOLog();
+    protected DAORegistro daoR=new DAORegistro();
+    protected DAOCitas daoC=new DAOCitas();
+    protected DAOHorario daoH=new DAOHorario();
+    
     public MethodsMain() {
+       
     }
     
     public void esIcono(JFrame loge){
@@ -163,5 +166,7 @@ public class MethodsMain {
     
         daoC.actEstadoCita(arr);
     }
+
+
    
 }

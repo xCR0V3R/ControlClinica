@@ -10,8 +10,6 @@ import javax.swing.table.DefaultTableModel;
 
 public class MethodsMed extends MethodsMain{
     
-    DAOCitas daoC = new DAOCitas();
-    DAOHorario daoH=new DAOHorario();
     List<Cita> calc = new ArrayList();
     DefaultTableModel tabl;
 

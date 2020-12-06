@@ -25,12 +25,7 @@ public class MethodsAdmi extends MethodsMain{
     
     VAdmi vAdmi;
     DefaultTableModel tablaFE; 
-    DAORegistro daoR=new DAORegistro(); 
-    DAOLog daoL=new DAOLog();
-    DAOCitas daoC=new DAOCitas();
-    DAOHorario daoH=new DAOHorario();
     DefaultTableModel tabl; 
-    
     
     public MethodsAdmi(VAdmi vAdmi){
         this.vAdmi=vAdmi;
@@ -149,6 +144,7 @@ public class MethodsAdmi extends MethodsMain{
        List<Medico> med=daoR.lisMed();int max=med.size();
        for(int i=0;i<max;i++){
            daoL.actAsis(med.get(i).getCodmed(), asist);
+          // getDaoL().actAsis(med.get(i).getCodmed(), asist);
        }
        JOptionPane.showMessageDialog(null, "Asistencia Reiniciada");
        acTabla();
