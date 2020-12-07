@@ -1,10 +1,10 @@
 
-package testeo;
+package principal;
 import vistaa.*;
 import controlador.*;
 import daos.*;
 
-public class test {
+public class main {
     
     public static void main(String[] args) {
        VLogueo log=new VLogueo();
