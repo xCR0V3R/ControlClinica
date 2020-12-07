@@ -179,7 +179,6 @@ public class MethodsAdmi extends MethodsMain{
        tabla.setDefaultRenderer(Object.class, new Render());
        btnMod.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/modificarH.png")));
        String[][] data1 = {};
-       
        if(id==1){
            btnMod.setName("btnMod");
            btnDel.setName("btnDel");
@@ -192,8 +191,7 @@ public class MethodsAdmi extends MethodsMain{
                Object[] fila = {x.getIdhor(), x.getDias(), x.getHinicio() + "-" + x.getHfin(), btnMod, btnDel};
                tabl.addRow(fila);
             }
-         
-       }
+        }
        if(id==2){
            btnMod.setName("btnAdd");
            String[] cab={"Médico","Especialidad","IdHorario","Modificar"};
@@ -208,36 +206,32 @@ public class MethodsAdmi extends MethodsMain{
         tabla.setModel(tabl);
            ajustarColumns(tabla, 2, 80);
            tabla.setRowHeight(30);
-      
-        
     }
    
    public void metodosinTable(JTable jt, MouseEvent e,int id){
-           int column=jt.getColumnModel().getColumnIndexAtX(e.getX());
-           int row=e.getY()/jt.getRowHeight();
-           if(column<=jt.getColumnCount() && column>=0 && row<=jt.getRowCount() && row >=0){
-               Object ob=jt.getValueAt(row, column); 
-               if(ob instanceof JButton){
-                   ((JButton)ob).doClick();
-                   JButton botones=(JButton)ob;
-                
-                if(id==1){   
-                   if(botones.getName().equals("btnMod")){
-                       String cod=String.valueOf(jt.getValueAt(row, 0));
-                       modHorario(cod);
+    int column=jt.getColumnModel().getColumnIndexAtX(e.getX());
+    int row=e.getY()/jt.getRowHeight();
+     if(column<=jt.getColumnCount() && column>=0 && row<=jt.getRowCount() && row >=0){
+          Object ob=jt.getValueAt(row, column); 
+          if(ob instanceof JButton){
+             ((JButton)ob).doClick();
+             JButton botones=(JButton)ob;
+             if(id==1){   
+                if(botones.getName().equals("btnMod")){
+                String cod=String.valueOf(jt.getValueAt(row, 0));
+                modHorario(cod);
                      }
-                   if(botones.getName().equals("btnDel")){
-                       String cod=String.valueOf(jt.getValueAt(row, 0));
-                       int op=0;
-                       try{
-                            op=Integer.parseInt(JOptionPane.showInputDialog("¿Está seguro que eliminará el horario de código: "+cod
-                               +"?\n1.SÍ\n2.NO"));
-                            if(op==1) {
-                                deleteHorario(cod);
-                                tablaBotonesExtra(vAdmi.jTHorarios, vAdmi.jcbxEspHorarios.getSelectedItem().toString(),1);
-                                
-                            }
-                            if(op==2) JOptionPane.showMessageDialog(null, "ASAAA CASI WE :V");
+                if(botones.getName().equals("btnDel")){
+                 String cod=String.valueOf(jt.getValueAt(row, 0));
+                 int op=0;
+                 try{
+                     op=Integer.parseInt(JOptionPane.showInputDialog("¿Está seguro que eliminará el horario de código: "+cod
+                        +"?\n1.SÍ\n2.NO"));
+                     if(op==1) {
+                     deleteHorario(cod);
+                     tablaBotonesExtra(vAdmi.jTHorarios, vAdmi.jcbxEspHorarios.getSelectedItem().toString(),1);
+                      }
+                     if(op==2) JOptionPane.showMessageDialog(null, "No eliminado");
                        }catch (Exception ex) {
                            JOptionPane.showMessageDialog(null, "¡ERROR! \nDetalle: "+ex);
                        }
