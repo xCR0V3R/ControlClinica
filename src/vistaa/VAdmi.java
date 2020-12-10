@@ -389,7 +389,7 @@ public class VAdmi extends javax.swing.JFrame {
         );
 
         jfNuevaCita.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        jfNuevaCita.setMinimumSize(new java.awt.Dimension(678, 545));
+        jfNuevaCita.setMinimumSize(new java.awt.Dimension(678, 560));
 
         btnRegistrar.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
         btnRegistrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Registrar.png"))); // NOI18N

@@ -27,7 +27,6 @@ public class DAOLog {
 
             if (rs.next()) {
                 busqueda = 1;
-                System.out.println("Entro a Medico");
                 cod = rs.getString(1);
                 if (busqueda == 1) {
                     Medico med = busMed(cod);
@@ -49,7 +48,6 @@ public class DAOLog {
                 if (rs2.next()) {
                     //String nombre=rs.getString(1);
                     cod = rs2.getString(1);
-                    System.out.println("Entro a Administrador");
                     busqueda = 2;
                     if (busqueda == 2) {
                         Administrador admi = busAdmi(cod);
@@ -176,13 +174,10 @@ public class DAOLog {
 	 try{
              String sql="";
                 if(user instanceof Medico ){
-                    
                     sql = "Update medico set nombre=?, nac=?, correo=?, pswd=? where codmed=?";
                 }
                 if(user instanceof Administrador ){
-                   
-                    sql = "Update administrador set nombre=?, nac=?, correo=?, pswd=? where codad=?";
-                    System.out.println("PASO PARA ADMI");
+                   sql = "Update administrador set nombre=?, nac=?, correo=?, pswd=? where codad=?";
                 }
              
              conn = MySQLConexion.getConexion();
@@ -192,8 +187,6 @@ public class DAOLog {
              st.setString(3, correo);
              st.setString(4, pswd);
              st.setString(5, cod);
-             System.out.println("CODE: "+cod);
-             
              st.executeUpdate();
 	
 	 }catch(Exception ex){

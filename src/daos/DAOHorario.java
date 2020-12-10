@@ -57,20 +57,17 @@ public class DAOHorario {
                 sql = "select h.codes, dias, hfin, hinicio, h.idhor\n"
                         + "from horario h inner join medico m\n"
                         + "on h.idhor=m.idhor where nombre=?";
-                System.out.println("ENTRO A SQL 1");
+                
             }
             else{
                 sql = "select codes, dias, hfin, hinicio, idhor from horario where idhor=?";
             }
-            
                 st = conn.prepareStatement(sql);
-                System.out.println("PASO PreparedStatement");
                 st.setString(1, nom);
                 rs = st.executeQuery();
-                 System.out.println("HIZO EL QUERY");
+                
             if (rs.next()) {
-                System.out.println("Entro al WHILE");
-                h= new Horario();
+                 h= new Horario();
                 h.setCodes(rs.getString(1));
                 h.setDias(rs.getString(2));
                 h.setHfin(rs.getString(3));
@@ -80,7 +77,6 @@ public class DAOHorario {
             }
         } catch (Exception ex) {
             ex.printStackTrace();
-            System.out.println("entro a esta exception");
         } finally {
             try {
 
@@ -125,11 +121,11 @@ public class DAOHorario {
         if(allHorarios().size()==0){
             cod="H001";
         }else{
-            int fin=allHorarios().size()-1;//Definir en números cual es el último número del código
-            cod=allHorarios().get(fin).getIdhor();//Una vez definido el número, lo ubicas en el sistema de "A000?"
-            int nro=Integer.parseInt(cod.substring(2))+1;//Aquí le aumentas el valor de 1 a la parte numérica
-            DecimalFormat sd=new DecimalFormat("000");//Aquí se define el formato del número "A000?"
-            cod="H"+sd.format(nro);//Se usa el formato "A000?" aumentándole el número que obtuvimos consecuente al último valor
+            int fin=allHorarios().size()-1;
+            cod=allHorarios().get(fin).getIdhor();
+            int nro=Integer.parseInt(cod.substring(2))+1;
+            DecimalFormat sd=new DecimalFormat("000");
+            cod="H"+sd.format(nro);
             
         }
         return cod;

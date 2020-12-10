@@ -323,19 +323,36 @@ public class CtrlAdmin implements ActionListener, MouseListener{
         }
         if(e.getSource()==vAdmi.jmAyuda3){
             String mensaje= "-----------------------------Ayuda-----------------------------"
-                    + "\n1-. En este apartado puede apreciar una tabla que guarda la información de las citas programadas"
-                    + "\n2-. El botón de actualizar mantiene al día los datos de la tabla en caso se haga alguna modificación"
-                    + "\n    reciente.";
+                    + "\n Este apartado puede se listan la asistencia en el día de los médicos"
+                    + "\n En caso de que acabe el día, debe dar click en el botón 'Reiniciar'."
+                    + "\n De esta manera al siguiente día todos los médicos deben de marcar de nuevo una asistencia ";
             JOptionPane.showMessageDialog(null, mensaje);
         }
         if(e.getSource()==vAdmi.jmAyuda4){
             String mensaje= "-----------------------------Ayuda-----------------------------"
-                    + "\n ";
+                    + "\n //HORARIOS//"
+                    + "\n Elija la especialidad para ver todos los horarios disponibles"
+                    + "\n MODIFICAR: Seleccione el botón con un lapiz para modificar el horario. Luego dé click en el botón actualizar en caso se haya efectuado un cambio"
+                    + "\n ELIMINAR: Seleccione el botón con un tacho para eliminar el horario de dicha fila. Confirme la eliminación 1 o 2 para no eliminarlo"
+                    + "\n AÑADIR:   1.Seleccione la especialidad que añadirá el horario en el combobox superior"
+                    + "\n           2.Click en el botón de generar ID"
+                    + "\n           3.Ingrese los demás datos "
+                    + "\n           4.Finalmente dar click en el botón de 'Añadir'"
+                    + "\n Nota: En caso que desee limpiar todos los datos en los campos de horario, dar click en el botón con la brocha"
+                    + "\n\n  //COSTO//"
+                    + "\n En caso quiera modificar algún costo de una especialidad"
+                    + "\n 1.Seleccionar la especialidad en el combobox inferior"
+                    + "\n 2.Ingresar el nuevo valor de coste para la especialidad"
+                    + "\n 3.Dar click en el botón 'Actualizar' y listo." ;
             JOptionPane.showMessageDialog(null, mensaje);
         }
         if(e.getSource()==vAdmi.jmAyuda5){
             String mensaje= "-----------------------------Ayuda-----------------------------"
-                    + "\n ";
+                    + "\n La presente vista es para asignar un horario a un médico nuevo ingresado al sistema"
+                    + "\n 1.Revisar los ID de horarios disponibles según la especialidad"
+                    + "\n 2.Dar click en la celda de IDHorario y escribir el ID que se asignará al médico"
+                    + "\n 3.Dé click en el botón con un lápiz en la fila modificar"
+                    + "\n 4.Finalmente elige entre 1 o 2 para aceptar o rechazar lo asignado. Luego de esto, se actualizará en la base de datos con los nuevos datos  ";
             JOptionPane.showMessageDialog(null, mensaje);
         }
     }

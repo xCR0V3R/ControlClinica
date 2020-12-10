@@ -124,8 +124,9 @@ public class MethodsAdmi extends MethodsMain{
         c.setDnipac(Integer.parseInt(vAdmi.txtDNI.getText()));
         c.setDiacit(fordia.format(vAdmi.dtCita.getDate()));
         c.setHoracit(vAdmi.txtHora.getText());
-        daoC.addCita(c);
+        
         try {
+            daoC.addCita(c);
             Paciente p = new Paciente();
             p.setDni(Integer.parseInt(vAdmi.txtDNI.getText()));
             p.setIdtip("U003");
@@ -134,7 +135,7 @@ public class MethodsAdmi extends MethodsMain{
             daoC.addPaci(p);
             JOptionPane.showMessageDialog(null, "Paciente registrado");
         } catch (Exception ex) {
-
+            
         }
         JOptionPane.showMessageDialog(null, "Cita generada");
     }
@@ -322,6 +323,8 @@ public class MethodsAdmi extends MethodsMain{
        f.dtCita.setCalendar(null); 
       f.jcbxEspecialidadNC.setSelectedIndex(0);
       f.jcbxDoctorNC.setSelectedIndex(0);
+      f.lbNombre.setVisible(false);f.txtNombre.setVisible(false);
+      f.lbNumero.setVisible(false); f.txtNumero.setVisible(false);
        f.txtDNI.requestFocus();
        
    }
