@@ -6,7 +6,7 @@
       <Properties>
         <Property name="locationByPlatform" type="boolean" value="true"/>
         <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[410, 410]"/>
+          <Dimension value="[410, 430]"/>
         </Property>
       </Properties>
       <AuxValues>

@@ -73,7 +73,7 @@ public class VMedico extends javax.swing.JFrame {
         jmAyuda = new javax.swing.JMenu();
 
         jfConfigP.setLocationByPlatform(true);
-        jfConfigP.setMinimumSize(new java.awt.Dimension(410, 410));
+        jfConfigP.setMinimumSize(new java.awt.Dimension(410, 430));
 
         btnActPerfil.setFont(new java.awt.Font("Quicksand", 0, 12)); // NOI18N
         btnActPerfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/actualizar.png"))); // NOI18N
