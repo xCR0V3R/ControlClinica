@@ -281,12 +281,10 @@ public class DAORegistro {
             String sql = "select nombre from especialidad";
             PreparedStatement st = conn.prepareStatement(sql);
             ResultSet rs = st.executeQuery();
-            
             while (rs.next()) {
                 lis.add(rs.getString(1));
             }
-            //System.out.println("PASO MEDICOS");
-        } catch (Exception ex) {
+         } catch (Exception ex) {
             ex.printStackTrace();
         } finally {
             try {
