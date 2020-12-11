@@ -117,9 +117,6 @@ public class DAOCitas {
 
     }
     
-    
-    //public List<Med>
-    
     public List<Medico> lisMedEs(String id) {
         List<Medico> lis = new ArrayList<>();
         Connection conn = null;
