@@ -265,15 +265,14 @@ public class DAOCitas {
     }
 
   public List<Cita> lisListarCita(String cod) {
-        List<Cita> lis = new ArrayList<>();
-        Connection conn = null; 
+        List<Cita> lis = new ArrayList<>(); Connection conn = null; 
         try { 
             conn = MySQLConexion.getConexion();
-            String sql = "select id, paciente.dnip, paciente.nomp, feccit, estado, hora from citas INNER JOIN paciente ON citas.dnip=paciente.dnip INNER JOIN medico ON citas.codmed=medico.codmed where nombre=?";
+            String sql = "select id, paciente.dnip, paciente.nomp, feccit, estado, hora from citas INNER JOIN "
+                    + "paciente ON citas.dnip=paciente.dnip INNER JOIN medico ON citas.codmed=medico.codmed where nombre=?";
             PreparedStatement st = conn.prepareStatement(sql);
             st.setString(1, cod); 
             ResultSet rs = st.executeQuery();
-            
             while (rs.next()) {
                 Cita c = new Cita();
                 c.setIdCita(rs.getString(1));
@@ -288,14 +287,12 @@ public class DAOCitas {
             ex.printStackTrace();
         } finally {
             try {
-
                 if (conn != null) {
                     conn.close();
                 }
             } catch (Exception e2) {
             }
         }
-
         return lis;
     }
   
